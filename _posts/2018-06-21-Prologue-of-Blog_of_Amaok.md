@@ -2,8 +2,8 @@
 title: "开场白 of Blog.amaok.com"
 author: xy
 date: 2018-06-21 23:00:00 +0800
-categories: [Note]
-tags: [Archive]
+categories: [Archive]
+tags: [Note]
 ---
 
 我是阿毛，00年生人。

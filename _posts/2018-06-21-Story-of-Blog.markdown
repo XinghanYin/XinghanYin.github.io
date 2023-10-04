@@ -2,8 +2,8 @@
 title: "网站折腾记"
 author: xy
 date: 2018-06-21 01:00:00 +0800
-categories: [Note]
-tags: [Archive]
+categories: [Archive]
+tags: [Note,Web]
 ---
 
 ![妹Blog](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/Archive/20180621.png)

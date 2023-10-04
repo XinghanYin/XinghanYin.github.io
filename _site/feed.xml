@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>XINGHAN YIN</title>
   <subtitle>随心，克己，开心，欢愉。</subtitle>
-  <updated>2023-10-04T11:14:58-04:00</updated>
+  <updated>2023-10-04T11:51:03-04:00</updated>
   <author>
     <name>XINGHAN YIN</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/Hello-World-Again/" rel="alternate" type="text/html" title="Hello World Again" />
     <published>2023-10-04T01:00:00-04:00</published>
   
-    <updated>2023-10-04T10:59:51-04:00</updated>
+    <updated>2023-10-04T11:15:11-04:00</updated>
   
     <id>http://localhost:4000/posts/Hello-World-Again/</id>
     <content src="http://localhost:4000/posts/Hello-World-Again/" />
@@ -90,6 +90,67 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
   
   <entry>
+    <title>星空之上_第一集</title>
+    <link href="http://localhost:4000/posts/Above-the-Stars/" rel="alternate" type="text/html" title="星空之上_第一集" />
+    <published>2018-06-26T12:00:00-04:00</published>
+  
+    <updated>2018-06-26T12:00:00-04:00</updated>
+  
+    <id>http://localhost:4000/posts/Above-the-Stars/</id>
+    <content src="http://localhost:4000/posts/Above-the-Stars/" />
+    <author>
+      <name>xy</name>
+    </author>
+
+  
+    
+    <category term="Archive" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+
+前言：
+我是一个深度的科幻作品爱好者。最喜欢的科幻小说是《银河帝国》系列，没有其次。读过很多脍炙人口的科幻小说，风格迥异，构思新奇，都给我带来了快乐，但印象大都不太深刻，有一种吃快餐的感觉。
+几年来一直忙高中课程的学习，忙高考。高考终于结束了，如今，我终于有了一点时间来写一部我自己的科幻小说。
+这是我的处女作，作品名暂定为《星空之上》，向我所向往着的星空致敬。
+文字中不乏天马行空的地方，但我会力求科学上的严谨，如有错误，还请读者多多指教。
+
+
+***阿毛
+
+2018.06.27***
+
+
+
+
+引子
+一切都黯淡下来了，灰白色的波动填满了空间，吞噬着这里仅存的热量。
+
+在即将到来的漫长冬夜里，荒芜将会无情的取代一切，充斥整个宇宙。
+
+地球上，所剩无几的光芒眺望着逐渐远去的地平线，这是星空对所有文明进行的最终审判。
+
+这将是无边无际的黑暗，亦将是永恒的黑暗。
+
+##第一集
+
+“2020...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>《十二公民》观后感</title>
     <link href="http://localhost:4000/posts/Twelve-Citizens/" rel="alternate" type="text/html" title="《十二公民》观后感" />
     <published>2018-06-21T12:00:00-04:00</published>
@@ -104,7 +165,7 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
   
     
-    <category term="Movie" />
+    <category term="Archive" />
     
   
 
@@ -152,7 +213,7 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
   
     
-    <category term="Note" />
+    <category term="Archive" />
     
   
 
@@ -201,7 +262,7 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
   
     
-    <category term="Note" />
+    <category term="Archive" />
     
   
 
@@ -230,52 +291,6 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 我从16年信竞退役以后就没怎么培养过自己的前端技术，很明显感觉到现在手生了不少。技术要慢慢练，争取4年后能在圈内分得一点小小位置。
 
 15年之前有一个ihtml.org的域名，我把所有的作品都放在里面了。当...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>我的十八岁</title>
-    <link href="http://localhost:4000/posts/Eighteen-Years-Old/" rel="alternate" type="text/html" title="我的十八岁" />
-    <published>2018-05-10T12:00:00-04:00</published>
-  
-    <updated>2018-05-10T12:00:00-04:00</updated>
-  
-    <id>http://localhost:4000/posts/Eighteen-Years-Old/</id>
-    <content src="http://localhost:4000/posts/Eighteen-Years-Old/" />
-    <author>
-      <name>xy</name>
-    </author>
-
-  
-    
-    <category term="Note" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      从保定回来以后，就马不停蹄的做这个网站。
-
-本来准备复活已经积灰的妹Blog，结果我的新浪云早就因为拖欠续费凉凉了。翻箱倒柜之前的数据备份也找不到了，很是心累，于是才有了推翻重做的打算。
-
-在Hostker和Aliyun两家服务商之间犹豫了很久，最终选择了性价比较高的Hostker，其实最主要的是这家的UI做的太萌了。
-
-服务器各方面都很满意，就是官方限制SSR有点难受。当然了，政策优先，毕竟不能跟官方对着干。
-
-多年来一直使用WindowsServer，这是第一次实际上手Linux的服务器。不得不说，Linux的确是运行效率高，少了很多杂七杂八的进程，更适合做服务器。
-
-我从16年信竞退役以后就没怎么培养过自己的前端技术，很明显感觉到现在手生了不少。技术要慢慢练，争取4年后能在圈内分得一点小小位置。
-
-15年之前有一个ihtml.org的域名，我把所有的作品都放在里面了。当时的服务...
     </summary>
   
 

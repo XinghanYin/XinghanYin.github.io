@@ -2,11 +2,11 @@
 title: "《十二公民》观后感"
 author: xy
 date: 2018-06-22 00:00:00 +0800
-categories: [Movie]
-tags: [Archive]
+categories: [Archive]
+tags: [Movie]
 ---
 
-![Tweleve-Citizens](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/Manhattan/1.jpeg)
+![Tweleve-Citizens](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/Archive/20180622.jpeg)
 
 ---
 
