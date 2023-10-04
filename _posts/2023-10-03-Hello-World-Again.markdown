@@ -36,6 +36,7 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战.
 希望未来能给自己，给身边的人带来幸福。
 
 保持冷静，继续向前。
+
 ---
 
 ![Manhattan-2](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/Manhattan/2.jpeg)

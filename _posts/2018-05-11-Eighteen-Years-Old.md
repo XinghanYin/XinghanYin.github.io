@@ -1,15 +1,10 @@
 ---
-title: "网站折腾记"
+title: "我的十八岁"
 author: xy
-date: 2019-08-02 01:00:00 +0800
+date: 2018-05-11 00:00:00 +0800
 categories: [Note]
 tags: [Archive]
 ---
-
-![妹Blog](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/Archive/20190802.jpeg)
-
----
-
 
 从保定回来以后，就马不停蹄的做这个网站。
 
