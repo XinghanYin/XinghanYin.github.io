@@ -1,23 +1,36 @@
 ---
 title: "Hello World Again"
 author: xy
-date: 2023-10-03 09:00:00 -0400
+date: 2023-10-04 01:00:00 -0400
 categories: [Thinking, Blogging]
 tags: [EMO]
 ---
 ![Manhattan-1](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/3BA29434-2205-4683-B2A9-DDFEE869729F_1_105_c.jpeg)
 ![Manhattan-2](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/E6A80C0C-C137-41FE-83E5-33FDB89F7B88_1_105_c.jpeg)
-来美国快40天了，算是人生一个新阶段的开始吧。
 
-说实在的，好像已经几年没有认真的写点东西了。
+
+来美国快40天了，算是人生一个新阶段的开始吧。
 
 ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战...
 
-好多的事情，好多的人。
+好多的事，好多的人。
 
-时间就像水，一不留神就被海绵吸走了
+说实在的，好像已经几年没有认真的写点东西了。
 
-我是一个学渣，一个不爱学习的人，一个充满了低级趣味的人。从大一下开始，每天要么是去春熙路逛逛逛，要么苟在宿舍里打游戏，要么就是在GYM疯狂撸铁
+身为一个不太优秀的小镇做题家，之前我从来没出过国。今年8月底，我们从成都出发，从迪拜到纽约，跨国
+
+
+时间就像水，一不留神就被海绵吸走了。
+
+体重还是下不去，数学还是学不会。
+
+我是一个无聊的人，一个充满了低级趣味的人。
+
+什么都想做，什么都想学，想变厉害，想成为学霸，但结果论的收获其实相较于想的来说，只有一点点，走到今天全是幸运使然吧。
+
+并不是妄自菲薄，也许是找不到实现自我价值的地方而已吧。
+
+
 
 
 
