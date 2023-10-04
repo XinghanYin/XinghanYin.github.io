@@ -1,8 +1,9 @@
 ---
-layout: post
 title: "Hello World Again"
+author: xy
 date: 2023-10-03 09:00:00 -0400
-categories: Thinking
+categories: [Thinking, Blogging]
+tags: [EMO]
 ---
 ![Manhattan-1](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/3BA29434-2205-4683-B2A9-DDFEE869729F_1_105_c.jpeg)
 ![Manhattan-2](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/E6A80C0C-C137-41FE-83E5-33FDB89F7B88_1_105_c.jpeg)
