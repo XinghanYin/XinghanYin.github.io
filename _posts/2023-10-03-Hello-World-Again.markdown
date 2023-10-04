@@ -2,11 +2,12 @@
 title: "Hello World Again"
 author: xy
 date: 2023-10-04 01:00:00 -0400
-categories: [Thinking, Blogging]
-tags: [EMO]
+categories: [Thinking]
+tags: [EMO,WEB]
 ---
-![Manhattan-1](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/3BA29434-2205-4683-B2A9-DDFEE869729F_1_105_c.jpeg)
+![Manhattan-1](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/Manhattan/1.jpeg)
 
+---
 
 来美国快40天了，算是人生一个新阶段的开始吧。
 
@@ -18,7 +19,7 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战.
 
 身为一个不太优秀的小镇做题家，之前和国内大多数人一样，从来没出过国。今年8月底，我们从成都出发，从迪拜到纽约，跨国大洲大洋，回头一想还是别有一番滋味。
 
-![Fly](/https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/assets/img/Dubai2023/1.jpeg)
+![Fly](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/assets/img/Dubai2023/1.jpeg)
 
 时间就像水，一不留神就被海绵吸走了。
 
@@ -35,8 +36,9 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战.
 希望未来能给自己，给身边的人带来幸福。
 
 保持冷静，继续向前。
+---
 
-![Manhattan-2](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/E6A80C0C-C137-41FE-83E5-33FDB89F7B88_1_105_c.jpeg)
+![Manhattan-2](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/Manhattan/2.jpeg)
 
 
 
