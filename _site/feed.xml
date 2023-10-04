@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>XINGHAN YIN</title>
   <subtitle>随心，克己，开心，欢愉。</subtitle>
-  <updated>2023-10-04T11:57:59-04:00</updated>
+  <updated>2023-10-04T13:30:45-04:00</updated>
   <author>
     <name>XINGHAN YIN</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,49 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Via Dubai</title>
+    <link href="http://localhost:4000/posts/Via-Dubai/" rel="alternate" type="text/html" title="Via Dubai" />
+    <published>2023-10-04T13:10:00-04:00</published>
+  
+    <updated>2023-10-04T13:10:00-04:00</updated>
+  
+    <id>http://localhost:4000/posts/Via-Dubai/</id>
+    <content src="http://localhost:4000/posts/Via-Dubai/" />
+    <author>
+      <name>xy</name>
+    </author>
+
+  
+    
+    <category term="Travel" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      接上文，8月25日从中国出发后的第一个目的地，迪拜。
+
+历经9小时飞行，在当地时间晚上10点抵达。
+
+
+落地滑行中
+
+
+机场通道的Rolex
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -144,7 +187,7 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
     <link href="http://localhost:4000/posts/Above-the-Stars/" rel="alternate" type="text/html" title="星空之上_第一集" />
     <published>2018-06-26T12:00:00-04:00</published>
   
-    <updated>2018-06-26T12:00:00-04:00</updated>
+    <updated>2023-10-04T11:58:15-04:00</updated>
   
     <id>http://localhost:4000/posts/Above-the-Stars/</id>
     <content src="http://localhost:4000/posts/Above-the-Stars/" />
@@ -242,55 +285,6 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 从最初的有罪对无罪11:1的投票数到最后的全票无罪，是八号陪审员用严密的逻辑推理，谨慎的现场还原，精准的计算和深度的思考，用自己对于真相的执念，一步步换过来的。
 
 在观影初期，三、七、十号陪审员让我产生了厌恶感，直接把我带入故事。这三位演员精准的还原了市侩者们的浓烈气息，演技很爆炸。我最初是不愿意听这三个人发言的，但随着故事一步步的进行，无法预料的剧情和陪审员们性格的逐渐展露...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>开场白 of Blog.amaok.com</title>
-    <link href="http://localhost:4000/posts/Prologue-of-Blog_of_Amaok/" rel="alternate" type="text/html" title="开场白 of Blog.amaok.com" />
-    <published>2018-06-21T11:00:00-04:00</published>
-  
-    <updated>2023-10-04T11:51:16-04:00</updated>
-  
-    <id>http://localhost:4000/posts/Prologue-of-Blog_of_Amaok/</id>
-    <content src="http://localhost:4000/posts/Prologue-of-Blog_of_Amaok/" />
-    <author>
-      <name>xy</name>
-    </author>
-
-  
-    
-    <category term="Archive" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      我是阿毛，00年生人。
-很喜欢新鲜事物，热爱阅读和创作，科幻爱好者。多年来自我感觉良好，从来不承认自己是文艺青年。
-
-2013年起接触前端和程序设计，高中时期参加过信息学竞赛。技术有限，不是蒟蒻也不是大犇，曾拥有过准国家队水平。
-
-2016年OI退役，2017年高考落榜。一年高复让我对很多事都看开了不少，中二力也有所下降。
-
-这是我第一次使用WordPress。狗年春节前后我的老博客因为续费原因弄丢了整个数据库。索性全换新，从头再来。
-
-对算法和计科抱有狂热的兴趣，想成为一个比较厉害的全栈工程师。
-
-对自身才华不敢恭维，只能说勉强够用。平常也写诗写文章，写过几篇杂七杂八的论文，其他的时间还是都用在学习文化课和计算机技术方面了。
-
-曾经是一个比较优秀的独立游戏玩家。高复让我认识到玩物丧志，估计以后玩游戏会越来越少。英语、专业技术和我的五年计划能使我的生活充实并快乐。
-
-讨厌思维懒惰的人...
     </summary>
   
 
