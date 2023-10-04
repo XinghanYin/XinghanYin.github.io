@@ -18,7 +18,7 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战.
 
 身为一个不太优秀的小镇做题家，之前和国内大多数人一样，从来没出过国。今年8月底，我们从成都出发，从迪拜到纽约，跨国大洲大洋，回头一想还是别有一番滋味。
 
-![Fly](/assets/img/dubai2023/1.jpeg)
+![Fly](/https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/assets/img/Dubai2023/1.jpeg)
 
 时间就像水，一不留神就被海绵吸走了。
 
