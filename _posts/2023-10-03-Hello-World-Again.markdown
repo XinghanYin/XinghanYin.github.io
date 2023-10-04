@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Hello World Again"
+date: 2023-10-03 09:00:00 -0400
+categories: Thinking
+---
+![Manhattan-1](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/3BA29434-2205-4683-B2A9-DDFEE869729F_1_105_c.jpeg)
+![Manhattan-2](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/E6A80C0C-C137-41FE-83E5-33FDB89F7B88_1_105_c.jpeg)
+来美国快40天了，算是人生一个新阶段的开始吧。
+
+说实在的，好像已经几年没有认真的写点东西了。
+
+ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战...
+
+好多的事情，好多的人。
+
+时间就像水，一不留神就被海绵吸走了
+
+我是一个学渣，一个不爱学习的人，一个充满了低级趣味的人。从大一下开始，每天要么是去春熙路逛逛逛，要么苟在宿舍里打游戏，要么就是在GYM疯狂撸铁
+
+
+
