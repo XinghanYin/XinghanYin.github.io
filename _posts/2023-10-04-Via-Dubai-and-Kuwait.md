@@ -2,13 +2,13 @@
 title: "Via Dubai & Kuwait"
 author: xy
 date: 2023-10-04 13:10:00 -0400
-categories: [Travel,Dubai]
+categories: [Travel,Asia]
 tags: [Photo]
 img_path: /images/Dubai2023
 ---
 
 ![Dubai](/Dubai.png)
-_Dubai & Kuwait_
+_Dubai and Kuwait_
 
 接上文，8月25日从中国出发后的第一个目的地，迪拜。
 

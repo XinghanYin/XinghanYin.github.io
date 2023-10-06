@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>XINGHAN YIN</title>
   <subtitle>随心，克己，想象，欢愉。</subtitle>
-  <updated>2023-10-05T22:20:51-04:00</updated>
+  <updated>2023-10-06T00:01:21-04:00</updated>
   <author>
     <name>XINGHAN YIN</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,61 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>一些照片</title>
+    <link href="http://localhost:4000/posts/Some-Photos/" rel="alternate" type="text/html" title="一些照片" />
+    <published>2023-10-05T23:56:00-04:00</published>
+  
+    <updated>2023-10-05T23:56:00-04:00</updated>
+  
+    <id>http://localhost:4000/posts/Some-Photos/</id>
+    <content src="http://localhost:4000/posts/Some-Photos/" />
+    <author>
+      <name>xy</name>
+    </author>
+
+  
+    
+    <category term="Photo" />
+    
+    <category term="USA" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      前两天去了史蒂文斯，在曼哈顿对岸，拍了一些还不错的照片。
+
+
+Building
+
+
+Hudson上的一盏小帆
+
+
+天龙人的座驾
+
+
+Manhattan
+
+
+Manhattan at Night
+
+
+Moon at Newark
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -36,7 +91,7 @@
     
     <category term="Travel" />
     
-    <category term="Dubai" />
+    <category term="Asia" />
     
   
 
@@ -49,7 +104,7 @@
 
 
       
-Dubai &amp;amp; Kuwait
+Dubai and Kuwait
 
 接上文，8月25日从中国出发后的第一个目的地，迪拜。
 
@@ -117,7 +172,7 @@ Beverage
 
 
 
-C...
+Cak...
     </summary>
   
 
@@ -125,8 +180,8 @@ C...
 
   
   <entry>
-    <title>Hello World Again</title>
-    <link href="http://localhost:4000/posts/Hello-World-Again/" rel="alternate" type="text/html" title="Hello World Again" />
+    <title>Hello World Again!</title>
+    <link href="http://localhost:4000/posts/Hello-World-Again/" rel="alternate" type="text/html" title="Hello World Again!" />
     <published>2023-10-04T01:00:00-04:00</published>
   
     <updated>2023-10-04T13:30:59-04:00</updated>
@@ -195,14 +250,14 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
   
   <entry>
-    <title>星空之上_第二集</title>
-    <link href="http://localhost:4000/posts/Above-the-Stars2/" rel="alternate" type="text/html" title="星空之上_第二集" />
-    <published>2018-06-26T14:00:00-04:00</published>
+    <title>真实玩者成长记 - 壹</title>
+    <link href="http://localhost:4000/posts/Realgamer1/" rel="alternate" type="text/html" title="真实玩者成长记 - 壹" />
+    <published>2018-11-26T13:00:00-05:00</published>
   
-    <updated>2018-06-26T14:00:00-04:00</updated>
+    <updated>2018-11-26T13:00:00-05:00</updated>
   
-    <id>http://localhost:4000/posts/Above-the-Stars2/</id>
-    <content src="http://localhost:4000/posts/Above-the-Stars2/" />
+    <id>http://localhost:4000/posts/Realgamer1/</id>
+    <content src="http://localhost:4000/posts/Realgamer1/" />
     <author>
       <name>xy</name>
     </author>
@@ -225,19 +280,27 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
 
 
-庞勇坐到车里的第一时间起，他就听到了自己剧烈的心跳声。
+我来这里是为了逃避现实，但我发现了远比自己更重要的东西，我交到了许多朋友，我找到了真爱。 ——《头号玩家》
 
-加厚过的车体、狭窄且密封的防弹玻璃窗、用精制钢板隔开的宽敞车厢，都彰显着庞勇身边这个中年人不同寻常的身份。
 
-庞勇努力地保持着冷静，绞尽脑汁的思考着这个中年人究竟是谁。
 
-“庞教授，我这么做是出于对您的安全考虑，还希望您能谅解。”在这辆车开出很久以后，中年人终于开口了。从庞勇上车后他就一直看着庞勇，富有磁性的嗓音和线条分明的轮廓都能给人留下很好的印象，但这并没有缓和庞勇惊疑不定的心情。
+打小我就是个喜欢游戏的孩子。与世呼吸了将近20年，很年轻，但我不知道这颗热爱游戏的心还是否能同我的生命，一直跳动下去。这些年来，遇到了很多精彩的好游戏，很多精彩的故事。我不想失去这些五颜六色的回忆，有感而发，随笔一些文字来记下从小到大我遇上的那些难忘、难言、感动的体验。
 
-“你是谁，你们准备把我带到什么地方？”汗水从庞勇的鼻尖划过。
+启蒙：PlayStation时光
 
-中年人熟练地点上一支烟，笑了笑，并没有理会这个问题。“庞教授，您认识我。”
+我最早开始接触游戏应该是三四岁，那时候老叔有一台PS1。就是最早的，读碟、得插存档卡的那种。现在回忆起来真的感觉有些遥远。
 
-庞勇一愣。他早就注意到，无论是把他“请”进车里的精壮司机还是面前的这个中年人，他们身上都穿着制式独特的新型军装。庞勇开始打量起来这张刚毅的面庞，他与部队打过的交道并不算多，他真的想不起来自己究竟...
+
+图 1 最早的PlayStation开机画面
+
+
+图 2  PlayStation
+
+一回忆著一拈看，便似花前重见面。
+
+《古惑狼》
+
+玩的最多的，是一头狼的冒险故事，有神庙，有机关。可以在水下驾驶潜艇，前往一个又一个的岛上去战斗。这...
     </summary>
   
 
@@ -245,14 +308,14 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
   
   <entry>
-    <title>星空之上_第一集</title>
-    <link href="http://localhost:4000/posts/Above-the-Stars/" rel="alternate" type="text/html" title="星空之上_第一集" />
-    <published>2018-06-26T12:00:00-04:00</published>
+    <title>常用背包模板</title>
+    <link href="http://localhost:4000/posts/some_dps/" rel="alternate" type="text/html" title="常用背包模板" />
+    <published>2018-11-26T13:00:00-05:00</published>
   
-    <updated>2023-10-04T11:58:15-04:00</updated>
+    <updated>2018-11-26T13:00:00-05:00</updated>
   
-    <id>http://localhost:4000/posts/Above-the-Stars/</id>
-    <content src="http://localhost:4000/posts/Above-the-Stars/" />
+    <id>http://localhost:4000/posts/some_dps/</id>
+    <content src="http://localhost:4000/posts/some_dps/" />
     <author>
       <name>xy</name>
     </author>
@@ -271,82 +334,32 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
 
 
-      
+      背包问题主要是背模板，这一段时间一直在学习背包相关的问题，记录几个dp模板吧。
 
-前言：
+一些复杂的背包问题（如泛化物品）未收录
 
-我是一个深度的科幻作品爱好者。最喜欢的科幻小说是《银河帝国》系列，没有其次。读过很多脍炙人口的科幻小说，风格迥异，构思新奇，都给我带来了快乐，但印象大都不太深刻，有一种吃快餐的感觉。
-几年来一直忙高中课程的学习，忙高考。高考终于结束了，如今，我终于有了一点时间来写一部我自己的科幻小说。
-这是我的处女作，作品名暂定为《星空之上》，向我所向往着的星空致敬。
-文字中不乏天马行空的地方，但我会力求科学上的严谨，如有错误，还请读者多多指教。
+01背包问题：
 
-阿毛
+无优化
 
-2018.06.27
+for(int i=1;i&amp;lt;=n;i++) { for(int j=0;j&amp;lt;=m;c++) { f[i][j]=f[i-1][j]; if(j&amp;gt;=w[i])
+f[i][j]=max(f[i][j],f[i-1][j-w[i]]+v[i]);
+}
+}
 
+一维数组优化：
 
-
-引子
-
-一切都黯淡下来了，灰白色的波动填满了空间，吞噬着这里仅存的热量。
-
-在即将到来的漫长冬夜里，荒芜将会无情的取代一切，充斥整个宇宙。
-
-地球上，所剩无几的光芒眺望着逐渐远去的地平线，这是星空对所有文明进行的最终审判。
-
-这将是无边无际的黑暗，亦将是永恒的黑暗。
-
-第一集
-
-“2020年6月15日星云...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>《十二公民》观后感</title>
-    <link href="http://localhost:4000/posts/Twelve-Citizens/" rel="alternate" type="text/html" title="《十二公民》观后感" />
-    <published>2018-06-21T12:00:00-04:00</published>
-  
-    <updated>2023-10-04T11:51:16-04:00</updated>
-  
-    <id>http://localhost:4000/posts/Twelve-Citizens/</id>
-    <content src="http://localhost:4000/posts/Twelve-Citizens/" />
-    <author>
-      <name>xy</name>
-    </author>
-
-  
-    
-    <category term="Archive" />
-    
-  
-
-  
-    <summary>
-      
+for(int i=1;i&amp;lt;=n;i++) { for(int j=m;j&amp;gt;=0;j–)
+{
+if(j&amp;gt;=w[i])
+f[j]=max(f[j],f[j-w[i]]+v[i]);
+}
+}
 
 
+更进一步的常数优化：
 
-
-
-      
-
-
-
-真相，是少数人的教条；表相，是多数人的真理。
-
-我向《Twelve Citizens》的故事致敬。我同样向《十二怒汉》的编剧Reginald.Rose致敬，尽管我从来没看过它。
-
-我认为，对于在某时某刻某些事件中扑朔迷离的真相，人们更乐于接受唾手可得的表相。不仅限于大多数人，也包括经常自认高明的我自己。
-
-镜头拉回故事，相信八号陪审员也是如此。这是生命所谓的“自然法则”所定义的——“恐惧来源于未知”。
-
-从最初的有罪对无罪11:1的投票数到最后的全票无罪，是八号陪审员用严密的逻辑推理，谨慎的现场还原，精准的计算和深度的思考，用自己对于真相的执念，一步步换过来的。
-
-在观影初期，三、七、十号陪审员让我产生了厌恶感，直接把我带入故事。这三位演员精准的还原了市侩者们的浓烈气息，演技很爆炸。我最初是不愿意听这三个人发言的，但随着故事一步步的进行，无法预料的剧情和陪审员们性格的逐渐展露...
+for(int i=1;i&amp;lt;=n;i++) { sumw+=w[i]; bound=max(m-sumw,w[i]...
     </summary>
   
 

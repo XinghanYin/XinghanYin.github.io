@@ -1,9 +1,9 @@
 ---
-title: "Hello World Again"
+title: "Hello World Again!"
 author: xy
 date: 2023-10-04 01:00:00 -0400
 categories: [Thinking]
-tags: [EMO,WEB]
+tags: [EMO]
 ---
 ![Manhattan-1](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/Manhattan/1.jpeg)
 
