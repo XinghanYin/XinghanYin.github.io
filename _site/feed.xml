@@ -3,8 +3,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://localhost:4000/</id>
   <title>XINGHAN YIN</title>
-  <subtitle>随性，克己，勤勉，谦虚。</subtitle>
-  <updated>2023-10-06T13:48:34-04:00</updated>
+  <subtitle>随心，克己，想象，欢愉。</subtitle>
+  <updated>2023-10-06T00:01:21-04:00</updated>
   <author>
     <name>XINGHAN YIN</name>
     <uri>http://localhost:4000/</uri>
@@ -79,7 +79,7 @@ Moon at Newark
     <link href="http://localhost:4000/posts/Via-Dubai-and-Kuwait/" rel="alternate" type="text/html" title="Via Dubai &amp;amp; Kuwait" />
     <published>2023-10-04T13:10:00-04:00</published>
   
-    <updated>2023-10-04T13:10:00-04:00</updated>
+    <updated>2023-10-05T16:14:53-04:00</updated>
   
     <id>http://localhost:4000/posts/Via-Dubai-and-Kuwait/</id>
     <content src="http://localhost:4000/posts/Via-Dubai-and-Kuwait/" />
@@ -184,7 +184,7 @@ Cak...
     <link href="http://localhost:4000/posts/Hello-World-Again/" rel="alternate" type="text/html" title="Hello World Again!" />
     <published>2023-10-04T01:00:00-04:00</published>
   
-    <updated>2023-10-04T01:00:00-04:00</updated>
+    <updated>2023-10-04T13:30:59-04:00</updated>
   
     <id>http://localhost:4000/posts/Hello-World-Again/</id>
     <content src="http://localhost:4000/posts/Hello-World-Again/" />

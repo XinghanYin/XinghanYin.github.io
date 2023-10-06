@@ -2,6 +2,9 @@
 
 # Import the theme
 theme: jekyll-theme-chirpy
+# Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
+# and doesn't have a custom domain.
+baseurl: ""
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
@@ -14,19 +17,18 @@ timezone: America/New_York
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: XINGHAN YIN # the main title
+title: XINGHAN YIN  # the main title
 
-tagline: Making better for humanities. # it will display as the sub-title
+tagline: 尹星寒的博客 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  随性，克己，勤勉，谦虚。
+  随心，克己，想象，欢愉。
 
-# Fill in the protocol & hostname for your site.
-# e.g. 'https://username.github.io', note that it does not end with a '/'.
+# fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "yinxinghan.com"
 
 github:
-  username: github_username # change to your github username
+  username: XinghanYin # change to your github username
 
 twitter:
   username: twitter_username # change to your twitter username
@@ -38,7 +40,7 @@ social:
   email: xy5@njit.edu # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your twitter homepage
+    # change to your twitter homepage
     - https://github.com/XinghanYin # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
@@ -63,7 +65,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: dark# [light|dark]
+theme_mode: # [light|dark]
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
@@ -73,7 +75,7 @@ theme_mode: dark# [light|dark]
 img_cdn: ""
 
 # the avatar on sidebar, support local or CORS resources
-avatar: "/images/avatar.jpeg"
+avatar: "/avatar.jpeg"
 
 # boolean type, the global switch for TOC in posts.
 toc: true
@@ -110,9 +112,6 @@ pwa:
   enabled: true # the option for PWA feature
 
 paginate: 10
-
-# The base URL of your site
-baseurl: ""
 
 # ------------ The following options are not recommended to be modified ------------------
 

@@ -13,8 +13,12 @@
 
 
 
+
+
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh" data-mode="dark# [light|dark]">
+<html lang="zh" 
+  
+>
   <!-- The Head -->
 
 <head>
@@ -37,8 +41,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Friends" />
 <meta property="og:locale" content="zh" />
-<meta name="description" content="随性，克己，勤勉，谦虚。" />
-<meta property="og:description" content="随性，克己，勤勉，谦虚。" />
+<meta name="description" content="随心，克己，想象，欢愉。" />
+<meta property="og:description" content="随心，克己，想象，欢愉。" />
 <link rel="canonical" href="http://localhost:4000/tags/friends/" />
 <meta property="og:url" content="http://localhost:4000/tags/friends/" />
 <meta property="og:site_name" content="XINGHAN YIN" />
@@ -47,7 +51,7 @@
 <meta property="twitter:title" content="Friends" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"随性，克己，勤勉，谦虚。","headline":"Friends","url":"http://localhost:4000/tags/friends/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"随心，克己，想象，欢愉。","headline":"Friends","url":"http://localhost:4000/tags/friends/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -96,7 +100,7 @@
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
@@ -107,9 +111,152 @@
 
   
 
-  
-
   <!-- JavaScript -->
+
+  
+    <!-- Switch the mode between dark and light. -->
+
+<script type="text/javascript">
+  class ModeToggle {
+    static get MODE_KEY() {
+      return 'mode';
+    }
+    static get MODE_ATTR() {
+      return 'data-mode';
+    }
+    static get DARK_MODE() {
+      return 'dark';
+    }
+    static get LIGHT_MODE() {
+      return 'light';
+    }
+    static get ID() {
+      return 'mode-toggle';
+    }
+
+    constructor() {
+      if (this.hasMode) {
+        if (this.isDarkMode) {
+          if (!this.isSysDarkPrefer) {
+            this.setDark();
+          }
+        } else {
+          if (this.isSysDarkPrefer) {
+            this.setLight();
+          }
+        }
+      }
+
+      let self = this;
+
+      /* always follow the system prefers */
+      this.sysDarkPrefers.addEventListener('change', () => {
+        if (self.hasMode) {
+          if (self.isDarkMode) {
+            if (!self.isSysDarkPrefer) {
+              self.setDark();
+            }
+          } else {
+            if (self.isSysDarkPrefer) {
+              self.setLight();
+            }
+          }
+
+          self.clearMode();
+        }
+
+        self.notify();
+      });
+    } /* constructor() */
+
+    get sysDarkPrefers() {
+      return window.matchMedia('(prefers-color-scheme: dark)');
+    }
+
+    get isSysDarkPrefer() {
+      return this.sysDarkPrefers.matches;
+    }
+
+    get isDarkMode() {
+      return this.mode === ModeToggle.DARK_MODE;
+    }
+
+    get isLightMode() {
+      return this.mode === ModeToggle.LIGHT_MODE;
+    }
+
+    get hasMode() {
+      return this.mode != null;
+    }
+
+    get mode() {
+      return sessionStorage.getItem(ModeToggle.MODE_KEY);
+    }
+
+    /* get the current mode on screen */
+    get modeStatus() {
+      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
+        return ModeToggle.DARK_MODE;
+      } else {
+        return ModeToggle.LIGHT_MODE;
+      }
+    }
+
+    setDark() {
+      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
+      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
+    }
+
+    setLight() {
+      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
+      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
+    }
+
+    clearMode() {
+      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
+      sessionStorage.removeItem(ModeToggle.MODE_KEY);
+    }
+
+    /* Notify another plugins that the theme mode has changed */
+    notify() {
+      window.postMessage(
+        {
+          direction: ModeToggle.ID,
+          message: this.modeStatus
+        },
+        '*'
+      );
+    }
+
+    flipMode() {
+      if (this.hasMode) {
+        if (this.isSysDarkPrefer) {
+          if (this.isLightMode) {
+            this.clearMode();
+          } else {
+            this.setLight();
+          }
+        } else {
+          if (this.isDarkMode) {
+            this.clearMode();
+          } else {
+            this.setDark();
+          }
+        }
+      } else {
+        if (this.isSysDarkPrefer) {
+          this.setLight();
+        } else {
+          this.setDark();
+        }
+      }
+
+      this.notify();
+    } /* flipMode() */
+  } /* ModeToggle */
+
+  const modeToggle = new ModeToggle();
+</script>
 
   
 
@@ -126,14 +273,14 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="/images/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
     <h1 class="site-title">
       <a href="/">XINGHAN YIN</a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0">Making better for humanities.</p>
+    <p class="site-subtitle fst-italic mb-0">尹星寒的博客</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -193,13 +340,21 @@
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
+      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
+
+      
+        <span class="icon-border"></span>
+      
+    
 
     
       
 
       
         <a
-          href="https://github.com/github_username"
+          href="https://github.com/XinghanYin"
           aria-label="github"
           
 
@@ -284,7 +439,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container d-flex flex-column px-xxl-5">
+      <div class="container px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -353,14 +508,16 @@
 </header>
 
 
-        <div class="row flex-grow-1">
-          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+        <div class="row">
+          <main
+            aria-label="Main Content"
+            class="col-12 col-lg-11 col-xl-9 px-md-4 pb-5"
+          >
             
-              
-
-
 
 <article class="px-1">
+  
+    
   
     
 
@@ -426,13 +583,14 @@
 </div>
 
   
+
+  
 </article>
 
-            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
             <div class="access">
               <!-- Get the last 5 posts from lastmod list. -->
 
@@ -448,6 +606,49 @@
 
 
 
+
+  <section id="access-lastmod">
+    <h2 class="panel-heading">Recently Updated</h2>
+    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Via-Dubai-and-Kuwait/">Via Dubai & Kuwait</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Hello-World-Again/">Hello World Again!</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Above-the-Stars/">星空之上_第一集</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Eighteen-Years-Old/">我的十八岁</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Story-of-Blog/">网站折腾记</a>
+        </li>
+      
+    </ul>
+  </section>
+  <!-- #access-lastmod -->
 
 
               <!-- The trending tags list -->
@@ -805,7 +1006,7 @@
   <p>
     ©
     <time>2023</time>
-    <a href="https://twitter.com/username">XINGHAN YIN</a>.
+    <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -815,7 +1016,7 @@
     
   </p>
 
-  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+  <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
   </p>
 </footer>
 
@@ -1279,7 +1480,7 @@
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/zh.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/dayjs@1.11.9/dayjs.min.js,npm/dayjs@1.11.9/locale/zh.min.js,npm/dayjs@1.11.9/plugin/relativeTime.min.js,npm/dayjs@1.11.9/plugin/localizedFormat.min.js"></script>
 
 
 

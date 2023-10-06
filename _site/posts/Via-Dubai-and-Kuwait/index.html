@@ -13,8 +13,12 @@
 
 
 
+
+
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh" data-mode="dark# [light|dark]">
+<html lang="zh" 
+  
+>
   <!-- The Head -->
 
 <head>
@@ -36,7 +40,7 @@
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Via Dubai &amp; Kuwait" />
-<meta name="author" content="xy" />
+<meta name="author" content="XINGHAN YIN" />
 <meta property="og:locale" content="zh" />
 <meta name="description" content="Dubai and Kuwait" />
 <meta property="og:description" content="Dubai and Kuwait" />
@@ -48,9 +52,9 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Via Dubai &amp; Kuwait" />
 <meta name="twitter:site" content="@twitter_username" />
-<meta name="twitter:creator" content="@xy" />
+<meta name="twitter:creator" content="@XINGHAN YIN" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"xy"},"dateModified":"2023-10-04T13:10:00-04:00","datePublished":"2023-10-04T13:10:00-04:00","description":"Dubai and Kuwait","headline":"Via Dubai &amp; Kuwait","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Via-Dubai-and-Kuwait/"},"url":"http://localhost:4000/posts/Via-Dubai-and-Kuwait/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"XINGHAN YIN","url":"https://github.com/XinghanYin/"},"dateModified":"2023-10-05T16:14:53-04:00","datePublished":"2023-10-04T13:10:00-04:00","description":"Dubai and Kuwait","headline":"Via Dubai &amp; Kuwait","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Via-Dubai-and-Kuwait/"},"url":"http://localhost:4000/posts/Via-Dubai-and-Kuwait/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -99,7 +103,7 @@
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
@@ -111,15 +115,156 @@
   
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
-  
-
-  
     <!-- Manific Popup -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
   
 
   <!-- JavaScript -->
+
+  
+    <!-- Switch the mode between dark and light. -->
+
+<script type="text/javascript">
+  class ModeToggle {
+    static get MODE_KEY() {
+      return 'mode';
+    }
+    static get MODE_ATTR() {
+      return 'data-mode';
+    }
+    static get DARK_MODE() {
+      return 'dark';
+    }
+    static get LIGHT_MODE() {
+      return 'light';
+    }
+    static get ID() {
+      return 'mode-toggle';
+    }
+
+    constructor() {
+      if (this.hasMode) {
+        if (this.isDarkMode) {
+          if (!this.isSysDarkPrefer) {
+            this.setDark();
+          }
+        } else {
+          if (this.isSysDarkPrefer) {
+            this.setLight();
+          }
+        }
+      }
+
+      let self = this;
+
+      /* always follow the system prefers */
+      this.sysDarkPrefers.addEventListener('change', () => {
+        if (self.hasMode) {
+          if (self.isDarkMode) {
+            if (!self.isSysDarkPrefer) {
+              self.setDark();
+            }
+          } else {
+            if (self.isSysDarkPrefer) {
+              self.setLight();
+            }
+          }
+
+          self.clearMode();
+        }
+
+        self.notify();
+      });
+    } /* constructor() */
+
+    get sysDarkPrefers() {
+      return window.matchMedia('(prefers-color-scheme: dark)');
+    }
+
+    get isSysDarkPrefer() {
+      return this.sysDarkPrefers.matches;
+    }
+
+    get isDarkMode() {
+      return this.mode === ModeToggle.DARK_MODE;
+    }
+
+    get isLightMode() {
+      return this.mode === ModeToggle.LIGHT_MODE;
+    }
+
+    get hasMode() {
+      return this.mode != null;
+    }
+
+    get mode() {
+      return sessionStorage.getItem(ModeToggle.MODE_KEY);
+    }
+
+    /* get the current mode on screen */
+    get modeStatus() {
+      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
+        return ModeToggle.DARK_MODE;
+      } else {
+        return ModeToggle.LIGHT_MODE;
+      }
+    }
+
+    setDark() {
+      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
+      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
+    }
+
+    setLight() {
+      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
+      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
+    }
+
+    clearMode() {
+      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
+      sessionStorage.removeItem(ModeToggle.MODE_KEY);
+    }
+
+    /* Notify another plugins that the theme mode has changed */
+    notify() {
+      window.postMessage(
+        {
+          direction: ModeToggle.ID,
+          message: this.modeStatus
+        },
+        '*'
+      );
+    }
+
+    flipMode() {
+      if (this.hasMode) {
+        if (this.isSysDarkPrefer) {
+          if (this.isLightMode) {
+            this.clearMode();
+          } else {
+            this.setLight();
+          }
+        } else {
+          if (this.isDarkMode) {
+            this.clearMode();
+          } else {
+            this.setDark();
+          }
+        }
+      } else {
+        if (this.isSysDarkPrefer) {
+          this.setLight();
+        } else {
+          this.setDark();
+        }
+      }
+
+      this.notify();
+    } /* flipMode() */
+  } /* ModeToggle */
+
+  const modeToggle = new ModeToggle();
+</script>
 
   
 
@@ -136,14 +281,14 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="/images/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
     <h1 class="site-title">
       <a href="/">XINGHAN YIN</a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0">Making better for humanities.</p>
+    <p class="site-subtitle fst-italic mb-0">尹星寒的博客</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -203,13 +348,21 @@
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
+      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
+
+      
+        <span class="icon-border"></span>
+      
+    
 
     
       
 
       
         <a
-          href="https://github.com/github_username"
+          href="https://github.com/XinghanYin"
           aria-label="github"
           
 
@@ -294,7 +447,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container d-flex flex-column px-xxl-5">
+      <div class="container px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -357,10 +510,18 @@
 </header>
 
 
-        <div class="row flex-grow-1">
-          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+        <div class="row">
+          <main
+            aria-label="Main Content"
+            class="col-12 col-lg-11 col-xl-9 px-md-4"
+          >
             
-              <!-- Refactor the HTML structure -->
+
+<article class="px-1">
+  
+    
+  
+    <!-- Refactor the HTML structure -->
 
 
 
@@ -382,9 +543,7 @@
 <!-- Change the icon of checkbox -->
 
 
-
-<!-- Handle images -->
-
+<!-- images -->
 
 
 
@@ -414,68 +573,6 @@
     
     
     
-
-    
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-      
-
-      
-    
-
-    <!-- take out classes -->
-    
-
-    
-    
-
-    
-
-    
-      
-    
-
-    <!-- lazy-load images -->
-    
-
-    
-      <!-- make sure the `<img>` is wrapped by `<a>` -->
-      
-
-      
-        <!-- create the image wrapper -->
-        
-
-        
-        
-      
-    
-
-    <!-- combine -->
-    
-  
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
     
 
     
@@ -500,15 +597,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -518,14 +621,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -537,6 +638,7 @@
     
     
 
+    
     
     
     
@@ -563,15 +665,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -581,14 +689,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -600,6 +706,7 @@
     
     
 
+    
     
     
     
@@ -626,15 +733,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -644,14 +757,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -663,6 +774,7 @@
     
     
 
+    
     
     
     
@@ -689,15 +801,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -707,14 +825,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -726,6 +842,7 @@
     
     
 
+    
     
     
     
@@ -752,15 +869,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -770,14 +893,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -789,6 +910,7 @@
     
     
 
+    
     
     
     
@@ -815,15 +937,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -833,14 +961,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -852,6 +978,7 @@
     
     
 
+    
     
     
     
@@ -878,15 +1005,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -896,14 +1029,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -915,6 +1046,7 @@
     
     
 
+    
     
     
     
@@ -941,15 +1073,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -959,14 +1097,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -978,6 +1114,7 @@
     
     
 
+    
     
     
     
@@ -1004,15 +1141,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1022,14 +1165,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1041,6 +1182,7 @@
     
     
 
+    
     
     
     
@@ -1067,15 +1209,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1085,14 +1233,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1104,6 +1250,7 @@
     
     
 
+    
     
     
     
@@ -1130,15 +1277,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1148,14 +1301,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1167,6 +1318,7 @@
     
     
 
+    
     
     
     
@@ -1193,15 +1345,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1211,14 +1369,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1230,6 +1386,7 @@
     
     
 
+    
     
     
     
@@ -1256,15 +1413,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1274,14 +1437,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1293,6 +1454,7 @@
     
     
 
+    
     
     
     
@@ -1319,15 +1481,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1337,14 +1505,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1356,6 +1522,7 @@
     
     
 
+    
     
     
     
@@ -1382,15 +1549,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1400,14 +1573,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1419,6 +1590,7 @@
     
     
 
+    
     
     
     
@@ -1445,15 +1617,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1463,14 +1641,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1482,6 +1658,7 @@
     
     
 
+    
     
     
     
@@ -1508,15 +1685,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1526,14 +1709,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1545,6 +1726,7 @@
     
     
 
+    
     
     
     
@@ -1571,15 +1753,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1589,14 +1777,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1608,6 +1794,7 @@
     
     
 
+    
     
     
     
@@ -1634,15 +1821,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1652,14 +1845,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1671,6 +1862,7 @@
     
     
 
+    
     
     
     
@@ -1697,15 +1889,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1715,14 +1913,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1734,6 +1930,7 @@
     
     
 
+    
     
     
     
@@ -1760,15 +1957,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1778,14 +1981,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1797,6 +1998,7 @@
     
     
 
+    
     
     
     
@@ -1823,15 +2025,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1841,14 +2049,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1860,6 +2066,7 @@
     
     
 
+    
     
     
     
@@ -1886,15 +2093,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1904,14 +2117,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1923,6 +2134,7 @@
     
     
 
+    
     
     
     
@@ -1949,15 +2161,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -1967,14 +2185,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -1986,6 +2202,7 @@
     
     
 
+    
     
     
     
@@ -2012,15 +2229,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2030,14 +2253,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2049,6 +2270,7 @@
     
     
 
+    
     
     
     
@@ -2075,15 +2297,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2093,14 +2321,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2112,6 +2338,7 @@
     
     
 
+    
     
     
     
@@ -2138,15 +2365,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2156,14 +2389,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2175,6 +2406,7 @@
     
     
 
+    
     
     
     
@@ -2201,15 +2433,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2219,14 +2457,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2238,6 +2474,7 @@
     
     
 
+    
     
     
     
@@ -2264,15 +2501,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2282,14 +2525,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2301,6 +2542,7 @@
     
     
 
+    
     
     
     
@@ -2327,15 +2569,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2345,14 +2593,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2364,6 +2610,7 @@
     
     
 
+    
     
     
     
@@ -2390,15 +2637,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2408,14 +2661,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2427,6 +2678,7 @@
     
     
 
+    
     
     
     
@@ -2453,15 +2705,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2471,14 +2729,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2490,6 +2746,7 @@
     
     
 
+    
     
     
     
@@ -2516,15 +2773,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2534,14 +2797,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2553,6 +2814,7 @@
     
     
 
+    
     
     
     
@@ -2579,15 +2841,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2597,14 +2865,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2616,6 +2882,7 @@
     
     
 
+    
     
     
     
@@ -2642,15 +2909,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2660,14 +2933,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2679,6 +2950,7 @@
     
     
 
+    
     
     
     
@@ -2705,15 +2977,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2723,14 +3001,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2742,6 +3018,7 @@
     
     
 
+    
     
     
     
@@ -2768,15 +3045,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2786,14 +3069,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2805,6 +3086,7 @@
     
     
 
+    
     
     
     
@@ -2831,15 +3113,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2849,14 +3137,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2868,6 +3154,7 @@
     
     
 
+    
     
     
     
@@ -2894,15 +3181,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2912,14 +3205,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2931,6 +3222,7 @@
     
     
 
+    
     
     
     
@@ -2957,15 +3249,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -2975,14 +3273,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -2994,6 +3290,7 @@
     
     
 
+    
     
     
     
@@ -3020,15 +3317,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3038,14 +3341,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3057,6 +3358,7 @@
     
     
 
+    
     
     
     
@@ -3083,15 +3385,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3101,14 +3409,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3120,6 +3426,7 @@
     
     
 
+    
     
     
     
@@ -3146,15 +3453,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3164,14 +3477,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3183,6 +3494,7 @@
     
     
 
+    
     
     
     
@@ -3209,15 +3521,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3227,14 +3545,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3246,6 +3562,7 @@
     
     
 
+    
     
     
     
@@ -3272,15 +3589,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3290,14 +3613,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3309,6 +3630,7 @@
     
     
 
+    
     
     
     
@@ -3335,15 +3657,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3353,14 +3681,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3372,6 +3698,7 @@
     
     
 
+    
     
     
     
@@ -3398,15 +3725,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3416,14 +3749,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3435,6 +3766,7 @@
     
     
 
+    
     
     
     
@@ -3461,15 +3793,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3479,14 +3817,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3498,6 +3834,7 @@
     
     
 
+    
     
     
     
@@ -3524,15 +3861,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3542,14 +3885,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3561,6 +3902,7 @@
     
     
 
+    
     
     
     
@@ -3587,15 +3929,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3605,14 +3953,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3624,6 +3970,7 @@
     
     
 
+    
     
     
     
@@ -3650,15 +3997,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3668,14 +4021,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3687,6 +4038,7 @@
     
     
 
+    
     
     
     
@@ -3713,15 +4065,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3731,14 +4089,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3750,6 +4106,7 @@
     
     
 
+    
     
     
     
@@ -3776,15 +4133,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3794,14 +4157,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3813,6 +4174,7 @@
     
     
 
+    
     
     
     
@@ -3839,15 +4201,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3857,14 +4225,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3876,6 +4242,7 @@
     
     
 
+    
     
     
     
@@ -3902,15 +4269,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3920,14 +4293,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -3939,6 +4310,7 @@
     
     
 
+    
     
     
     
@@ -3965,15 +4337,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -3983,14 +4361,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -4002,6 +4378,7 @@
     
     
 
+    
     
     
     
@@ -4028,15 +4405,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -4046,14 +4429,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -4065,6 +4446,7 @@
     
     
 
+    
     
     
     
@@ -4091,15 +4473,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -4109,14 +4497,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -4128,6 +4514,7 @@
     
     
 
+    
     
     
     
@@ -4154,15 +4541,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -4172,14 +4565,12 @@
       
         <!-- create the image wrapper -->
         
-
-        
-        
       
     
 
     <!-- combine -->
     
+
   
     
 
@@ -4191,6 +4582,7 @@
     
     
 
+    
     
     
     
@@ -4217,15 +4609,21 @@
     
 
     
-    
 
     
 
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
     
       
     
 
-    <!-- lazy-load images -->
+    <!-- Bypass the HTML-proofer test -->
     
 
     
@@ -4235,17 +4633,84 @@
       
         <!-- create the image wrapper -->
         
+      
+    
 
-        
+    <!-- combine -->
+    
+
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+
+    
+
+    
+
+    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
+    
+    
+
+    <!-- add image placeholder -->
+    
+      
+    
+
+    <!-- Bypass the HTML-proofer test -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
         
       
     
 
     <!-- combine -->
     
+
   
 
   
+
 
 
 <!-- Add header for code snippets -->
@@ -4286,15 +4751,14 @@
 
 
 
-<article class="px-1">
-  <header>
-    <h1 data-toc-skip>Via Dubai & Kuwait</h1>
+<header>
+  <h1 data-toc-skip>Via Dubai & Kuwait</h1>
 
-    <div class="post-meta text-muted">
-      <!-- published date -->
-      <span>
-        Posted
-        <!--
+  <div class="post-meta text-muted">
+    <!-- published date -->
+    <span>
+      Posted
+      <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -4313,32 +4777,55 @@
   Oct  4, 2023
 </time>
 
+    </span>
+
+    <!-- lastmod date -->
+    
+      <span>
+        Updated
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1696536893"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Oct  5, 2023
+</time>
+
+      </span>
+    
+
+    
+
+    <div class="d-flex justify-content-between">
+      <!-- author(s) -->
+      <span>
+        
+
+        By
+
+        <em>
+          
+            
+              <a href="https://github.com/XinghanYin/">XINGHAN YIN</a>
+              
+            
+          
+        </em>
       </span>
 
-      <!-- lastmod date -->
-      
-
-      
-
-      <div class="d-flex justify-content-between">
-        <!-- author(s) -->
-        <span>
-          
-
-          By
-
-          <em>
-            
-              
-                <a href=""></a>
-                
-              
-            
-          </em>
-        </span>
-
-        <!-- read time -->
-        <!-- Calculate the post's reading time, and display the word count in tooltip -->
+      <!-- read time -->
+      <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
@@ -4362,158 +4849,158 @@
 >
   <em>7 min</em> read</span>
 
-      </div>
-      <!-- .d-flex -->
     </div>
-    <!-- .post-meta -->
-  </header>
+    <!-- .d-flex -->
+  </div>
+  <!-- .post-meta -->
+</header>
 
-  <div class="content">
-    <p><a href="/images/Dubai2023//Dubai.png" class="popup img-link  shimmer"><img src="/images/Dubai2023//Dubai.png" alt="Dubai" loading="lazy"></a>
+<div class="content">
+  <p><a href="/images/Dubai2023//Dubai.png" class="popup img-link "><img data-src="/images/Dubai2023//Dubai.png" alt="Dubai" class="lazyload" data-proofer-ignore></a>
 <em>Dubai and Kuwait</em></p>
 
 <p>接上文，8月25日从中国出发后的第一个目的地，迪拜。</p>
 
-<p><a href="/images/Dubai2023//35.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//35.jpeg" alt="CNEI" loading="lazy"></a>
+<p><a href="/images/Dubai2023//35.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//35.jpeg" alt="CNEI" class="lazyload" data-proofer-ignore></a>
 <em>中国边检</em></p>
 
-<p><a href="/images/Dubai2023//8.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//8.jpeg" alt="FLY" loading="lazy"></a>
+<p><a href="/images/Dubai2023//8.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//8.jpeg" alt="FLY" class="lazyload" data-proofer-ignore></a>
 <em>天空太美了</em></p>
 
 <p>历经9小时飞行，在当地时间晚上10点抵达。</p>
 
-<p><a href="/images/Dubai2023//23.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//23.jpeg" alt="Window" loading="lazy"></a>
+<p><a href="/images/Dubai2023//23.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//23.jpeg" alt="Window" class="lazyload" data-proofer-ignore></a>
 <em>落地滑行中</em></p>
 
-<p><a href="/images/Dubai2023//24.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//24.jpeg" alt="Rolex" loading="lazy"></a>
+<p><a href="/images/Dubai2023//24.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//24.jpeg" alt="Rolex" class="lazyload" data-proofer-ignore></a>
 <em>机场通道的Rolex</em></p>
 
-<p><a href="/images/Dubai2023//25.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//25.jpeg" alt="Subway1" loading="lazy"></a>
+<p><a href="/images/Dubai2023//25.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//25.jpeg" alt="Subway1" class="lazyload" data-proofer-ignore></a>
 <em>轻轨</em></p>
 
-<p><a href="/images/Dubai2023//26.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//26.jpeg" alt="Subway2" loading="lazy"></a>
+<p><a href="/images/Dubai2023//26.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//26.jpeg" alt="Subway2" class="lazyload" data-proofer-ignore></a>
 <em>轻轨</em></p>
 
 <p>停机坪通往机场大厅是轻轨连接的，因为迪拜的温度实在太高了。</p>
 
-<p><a href="/images/Dubai2023//2.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//2.jpeg" alt="5G Card" loading="lazy"></a>
+<p><a href="/images/Dubai2023//2.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//2.jpeg" alt="5G Card" class="lazyload" data-proofer-ignore></a>
 <em>落地就送电话卡</em></p>
 
 <p>我们带着大小六个箱子，还有两个背包，总计160公斤的行李</p>
 
-<p><a href="/images/Dubai2023//9.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//9.jpeg" alt="5G Card" loading="lazy"></a>
+<p><a href="/images/Dubai2023//9.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//9.jpeg" alt="5G Card" class="lazyload" data-proofer-ignore></a>
 <em>出海关就送电话卡</em></p>
 
-<p><a href="/images/Dubai2023//27.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//27.jpeg" alt="Shop &amp; Gold" loading="lazy"></a>
+<p><a href="/images/Dubai2023//27.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//27.jpeg" alt="Shop &amp; Gold" class="lazyload" data-proofer-ignore></a>
 <em>机场商店的黄金柜台</em></p>
 
-<p><a href="/images/Dubai2023//10.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//10.jpeg" alt="Texi1" loading="lazy"></a>
+<p><a href="/images/Dubai2023//10.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//10.jpeg" alt="Texi1" class="lazyload" data-proofer-ignore></a>
 <em>出租车打表价格</em></p>
 
 <p>从Dubai机场出发的出租车打表价格，当地货币迪拉姆和人民币比例是1:2，并不算贵，基本上距离越远平均价格越低。</p>
 
-<p><a href="/images/Dubai2023//28.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//28.jpeg" alt="Texi2" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023//28.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//28.jpeg" alt="Texi2" class="lazyload" data-proofer-ignore></a></p>
 
-<p><a href="/images/Dubai2023//29.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//29.jpeg" alt="Texi3" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023//29.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//29.jpeg" alt="Texi3" class="lazyload" data-proofer-ignore></a></p>
 
 <p>到达酒店，办理入住。</p>
 
-<p><a href="/images/Dubai2023//30.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//30.jpeg" alt="Hotel Card" loading="lazy"></a>
+<p><a href="/images/Dubai2023//30.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//30.jpeg" alt="Hotel Card" class="lazyload" data-proofer-ignore></a>
 <em>房卡</em></p>
 
-<p><a href="/images/Dubai2023//31.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//31.jpeg" alt="TV" loading="lazy"></a>
+<p><a href="/images/Dubai2023//31.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//31.jpeg" alt="TV" class="lazyload" data-proofer-ignore></a>
 <em>欢迎信息</em></p>
 
 <p>迪拜的酒店没想象的贵，五星基本都在350迪拉姆左右，如果不含早餐就只需要260迪拉姆。</p>
 
 <p>早餐也还不错，但是比中国的同级别酒店标准要低。</p>
 
-<p><a href="/images/Dubai2023//11.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//11.jpeg" alt="Breakfast1" loading="lazy"></a>
+<p><a href="/images/Dubai2023//11.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//11.jpeg" alt="Breakfast1" class="lazyload" data-proofer-ignore></a>
 <em>Beverage</em></p>
 
-<p><a href="/images/Dubai2023//12.JPG" class="popup img-link  shimmer"><img src="/images/Dubai2023//12.JPG" alt="Breakfast2" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023//12.JPG" class="popup img-link "><img data-src="/images/Dubai2023//12.JPG" alt="Breakfast2" class="lazyload" data-proofer-ignore></a></p>
 
-<p><a href="/images/Dubai2023//13.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//13.jpeg" alt="Breakfast3" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023//13.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//13.jpeg" alt="Breakfast3" class="lazyload" data-proofer-ignore></a></p>
 
-<p><a href="/images/Dubai2023//14.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//14.jpeg" alt="Breakfast4" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023//14.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//14.jpeg" alt="Breakfast4" class="lazyload" data-proofer-ignore></a></p>
 
-<p><a href="/images/Dubai2023//3.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//3.jpeg" alt="Breakfast5" loading="lazy"></a>
+<p><a href="/images/Dubai2023//3.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//3.jpeg" alt="Breakfast5" class="lazyload" data-proofer-ignore></a>
 <em>Cake</em></p>
 
 <p>主厨人很不错，看我们是外国游客，送了一份草莓小蛋糕。</p>
 
 <p>吃完早饭，出发去我们今天的第一个目的地 - Dubai Mall</p>
 
-<p><a href="/images/Dubai2023//4.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//4.jpeg" alt="Berj Khalifa" loading="lazy"></a>
+<p><a href="/images/Dubai2023//4.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//4.jpeg" alt="Berj Khalifa" class="lazyload" data-proofer-ignore></a>
 <em>很远就可以看到哈利法塔了</em></p>
 
 <p>Dubai Mall就在哈利法塔的下面，据说是全世界最大的商场。</p>
 
 <p>整个商场分很多不同的区域，一进去先是中国馆。</p>
 
-<p><a href="/images/Dubai2023//5.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//5.jpeg" alt="CN Field" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023//5.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//5.jpeg" alt="CN Field" class="lazyload" data-proofer-ignore></a></p>
 
 <p>也有海底捞和华为。</p>
 
-<p><a href="/images/Dubai2023//32.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//32.jpeg" alt="CN Field" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023//32.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//32.jpeg" alt="CN Field" class="lazyload" data-proofer-ignore></a></p>
 
-<p><a href="/images/Dubai2023//33.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//33.jpeg" alt="CN Field" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023//33.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//33.jpeg" alt="CN Field" class="lazyload" data-proofer-ignore></a></p>
 
-<p><a href="/images/Dubai2023//34.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//34.jpeg" alt="CN Field" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023//34.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//34.jpeg" alt="CN Field" class="lazyload" data-proofer-ignore></a></p>
 
 <p>商场中央有一块巨大的显示屏，下面是溜冰场。</p>
 
-<iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/Me4XEiOlbJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe class="embed-video youtube lazyload" src="https://www.youtube.com/embed/Me4XEiOlbJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <p>一开始司机一直跟我们说Fish、Fish，我也没听明白到底是啥。到了美国才知道，Dubai Mall下面是一个大水族馆…，我才知道他说的是Aquarium.</p>
 
 <p>不过倒是也见到水了 - 一个小瀑布：</p>
 
-<iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/-EcroVruzMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe class="embed-video youtube lazyload" src="https://www.youtube.com/embed/-EcroVruzMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <p>在商场继续逛了一会儿。</p>
 
-<p><a href="/images/Dubai2023//16.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//16.jpeg" alt="CN Field" loading="lazy"></a>
+<p><a href="/images/Dubai2023//16.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//16.jpeg" alt="CN Field" class="lazyload" data-proofer-ignore></a>
 <em>电竞用品门店</em></p>
 
-<p><a href="/images/Dubai2023//17.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023//17.jpeg" alt="CN Field" loading="lazy"></a>
+<p><a href="/images/Dubai2023//17.jpeg" class="popup img-link "><img data-src="/images/Dubai2023//17.jpeg" alt="CN Field" class="lazyload" data-proofer-ignore></a>
 <em>从商场往外看的样子</em></p>
 
 <p>接下来我们就去了哈利法塔顶层的观景餐厅 - AT.MOSPHERE</p>
 
 <p>虽然Dubai Mall就在哈利法塔底下，但是因为商场太大，还是需要坐车到哈利法塔。</p>
 
-<p><a href="/images/Dubai2023/38.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/38.jpeg" alt="Man" loading="lazy"></a>
+<p><a href="/images/Dubai2023/38.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/38.jpeg" alt="Man" class="lazyload" data-proofer-ignore></a>
 <em>保镖 / 佣人</em></p>
 
 <p>我们在塔下面往上看，一眼看不到天。</p>
 
-<p><a href="/images/Dubai2023/37.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/37.jpeg" alt="Elevator" loading="lazy"></a>
+<p><a href="/images/Dubai2023/37.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/37.jpeg" alt="Elevator" class="lazyload" data-proofer-ignore></a>
 <em>高速电梯</em></p>
 
 <p>这个电梯只有123层，30秒就可以直达餐厅。</p>
 
-<p><a href="/images/Dubai2023/40.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/40.jpeg" alt="AT.MOSPHERE" loading="lazy"></a>
+<p><a href="/images/Dubai2023/40.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/40.jpeg" alt="AT.MOSPHERE" class="lazyload" data-proofer-ignore></a>
 <em>迎客玉孔雀</em></p>
 
-<p><a href="/images/Dubai2023/39.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/39.jpeg" alt="AT.MOSPHERE" loading="lazy"></a>
+<p><a href="/images/Dubai2023/39.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/39.jpeg" alt="AT.MOSPHERE" class="lazyload" data-proofer-ignore></a>
 <em>AT.MOSPHERE</em></p>
 
 <p>餐厅环境和风景确实很好。</p>
 
-<p><a href="/images/Dubai2023/7.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/7.jpeg" alt="HighView" loading="lazy"></a>
+<p><a href="/images/Dubai2023/7.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/7.jpeg" alt="HighView" class="lazyload" data-proofer-ignore></a>
 <em>可以一眼望很远</em></p>
 
-<iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/8bp-zMq16o4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe class="embed-video youtube lazyload" src="https://www.youtube.com/embed/8bp-zMq16o4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <p>我提前订了海鲜拼盘，但还是礼貌性的看一下菜单。</p>
 
-<p><a href="/images/Dubai2023/36.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/36.jpeg" alt="Menu" loading="lazy"></a>
+<p><a href="/images/Dubai2023/36.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/36.jpeg" alt="Menu" class="lazyload" data-proofer-ignore></a>
 <em>菜单</em></p>
 
 <p>先上了前菜和面包，然后拼盘上来了。</p>
 
-<p><a href="/images/Dubai2023/18.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/18.jpeg" alt="Ocean" loading="lazy"></a>
+<p><a href="/images/Dubai2023/18.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/18.jpeg" alt="Ocean" class="lazyload" data-proofer-ignore></a>
 <em>拼盘</em></p>
 
 <p>卖相还是不错的，但是食材其实很一般。一多半的价格其实是买的风景。</p>
@@ -4522,97 +5009,97 @@
 
 <p>小表演：</p>
 
-<iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/vy6XVDHSoaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe class="embed-video youtube lazyload" src="https://www.youtube.com/embed/vy6XVDHSoaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <p>吃完饭我们就在塔上和附近拍拍拍</p>
 
-<p><a href="/images/Dubai2023/19.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/19.jpeg" alt="HighPic" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023/19.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/19.jpeg" alt="HighPic" class="lazyload" data-proofer-ignore></a></p>
 
-<p><a href="/images/Dubai2023/20.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/20.jpeg" alt="HighPic" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023/20.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/20.jpeg" alt="HighPic" class="lazyload" data-proofer-ignore></a></p>
 
-<p><a href="/images/Dubai2023/41.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/41.jpeg" alt="HighPic" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023/41.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/41.jpeg" alt="HighPic" class="lazyload" data-proofer-ignore></a></p>
 
-<p><a href="/images/Dubai2023/43.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/43.jpeg" alt="HighPic" loading="lazy"></a>
+<p><a href="/images/Dubai2023/43.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/43.jpeg" alt="HighPic" class="lazyload" data-proofer-ignore></a>
 <em>牛</em></p>
 
-<p><a href="/images/Dubai2023/44.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/44.jpeg" alt="HighPic" loading="lazy"></a>
+<p><a href="/images/Dubai2023/44.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/44.jpeg" alt="HighPic" class="lazyload" data-proofer-ignore></a>
 <em>马</em></p>
 
-<p><a href="/images/Dubai2023/45.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/45.jpeg" alt="HighPic" loading="lazy"></a>
+<p><a href="/images/Dubai2023/45.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/45.jpeg" alt="HighPic" class="lazyload" data-proofer-ignore></a>
 <em>5迪拉姆一根的香蕉</em></p>
 
-<p><a href="/images/Dubai2023/46.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/46.jpeg" alt="HighPic" loading="lazy"></a>
+<p><a href="/images/Dubai2023/46.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/46.jpeg" alt="HighPic" class="lazyload" data-proofer-ignore></a>
 <em>跟香蕉一个价格的星冰乐</em></p>
 
 <p>虽然这个香蕉很贵，但是美国香蕉更贵hhh。</p>
 
 <p>溜达溜达，去大翅膀打了卡。</p>
 
-<p><a href="/images/Dubai2023/6.jpg" class="popup img-link  shimmer"><img src="/images/Dubai2023/6.jpg" alt="Wing" loading="lazy"></a>
+<p><a href="/images/Dubai2023/6.jpg" class="popup img-link "><img data-src="/images/Dubai2023/6.jpg" alt="Wing" class="lazyload" data-proofer-ignore></a>
 <em>Wing of Freedom</em></p>
 
 <p>之后我们就回酒店休息了。</p>
 
-<iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/K6OnmBWDG_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe class="embed-video youtube lazyload" src="https://www.youtube.com/embed/K6OnmBWDG_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <p>在迪拜最奢侈的事情，就是可以在沙漠里游泳了吧。</p>
 
 <p>也是从这一点，感觉出来这确实是一家五星级。</p>
 
-<p><a href="/images/Dubai2023/42.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/42.jpeg" alt="Pool" loading="lazy"></a>
+<p><a href="/images/Dubai2023/42.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/42.jpeg" alt="Pool" class="lazyload" data-proofer-ignore></a>
 <em>奢侈的泳池</em></p>
 
 <p>晚上没有再出门了，实在是太疲惫，打了一个电话直接从酒店厨房点的饭。</p>
 
-<p><a href="/images/Dubai2023/47.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/47.jpeg" alt="Dinner" loading="lazy"></a>
+<p><a href="/images/Dubai2023/47.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/47.jpeg" alt="Dinner" class="lazyload" data-proofer-ignore></a>
 <em>中东本地菜</em></p>
 
-<p><a href="/images/Dubai2023/48.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/48.jpeg" alt="Dinner" loading="lazy"></a>
+<p><a href="/images/Dubai2023/48.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/48.jpeg" alt="Dinner" class="lazyload" data-proofer-ignore></a>
 <em>中东特色炒饭</em></p>
 
 <p>又歇了一小会，去机场了</p>
 
-<p><a href="/images/Dubai2023/49.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/49.jpeg" alt="Cases" loading="lazy"></a>
+<p><a href="/images/Dubai2023/49.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/49.jpeg" alt="Cases" class="lazyload" data-proofer-ignore></a>
 <em>服务这一块很到位</em></p>
 
-<p><a href="/images/Dubai2023/50.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/50.jpeg" alt="Cases2" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023/50.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/50.jpeg" alt="Cases2" class="lazyload" data-proofer-ignore></a></p>
 
-<p><a href="/images/Dubai2023/51.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/51.jpeg" alt="CasesCar" loading="lazy"></a>
+<p><a href="/images/Dubai2023/51.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/51.jpeg" alt="CasesCar" class="lazyload" data-proofer-ignore></a>
 <em>车上</em></p>
 
 <p>开始托运过安检啦</p>
 
-<p><a href="/images/Dubai2023/52.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/52.jpeg" alt="Check" loading="lazy"></a>
+<p><a href="/images/Dubai2023/52.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/52.jpeg" alt="Check" class="lazyload" data-proofer-ignore></a>
 <em>行李托运</em></p>
 
-<p><a href="/images/Dubai2023/53.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/53.jpeg" alt="hw" loading="lazy"></a>
+<p><a href="/images/Dubai2023/53.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/53.jpeg" alt="hw" class="lazyload" data-proofer-ignore></a>
 <em>在赶作业的Yuyu</em></p>
 
 <p>不得不说，迪拜的安检是真的松，不看人体的x光，也不需要搜身拖鞋，just put the luggage on the belt, 仿佛中国的地铁安检。而且允许托运枪支弹药，太震惊了。</p>
 
 <p>顺利上了飞机，出发前往Kuwait。</p>
 
-<iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/0p1d0YLOH4w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe class="embed-video youtube lazyload" src="https://www.youtube.com/embed/0p1d0YLOH4w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <p>抵达</p>
 
-<p><a href="/images/Dubai2023/54.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/54.jpeg" alt="Kuwait" loading="lazy"></a>
+<p><a href="/images/Dubai2023/54.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/54.jpeg" alt="Kuwait" class="lazyload" data-proofer-ignore></a>
 <em>Welcome to Kuwait</em></p>
 
-<p><a href="/images/Dubai2023/55.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/55.jpeg" alt="ICEC" loading="lazy"></a>
+<p><a href="/images/Dubai2023/55.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/55.jpeg" alt="ICEC" class="lazyload" data-proofer-ignore></a>
 <em>国内没见过的冰激凌</em></p>
 
-<p><a href="/images/Dubai2023/56.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/56.jpeg" alt="ICEC" loading="lazy"></a>
+<p><a href="/images/Dubai2023/56.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/56.jpeg" alt="ICEC" class="lazyload" data-proofer-ignore></a>
 <em>三角巧克力冰激凌</em></p>
 
-<p><a href="/images/Dubai2023/57.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/57.jpeg" alt="ICEC" loading="lazy"></a>
+<p><a href="/images/Dubai2023/57.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/57.jpeg" alt="ICEC" class="lazyload" data-proofer-ignore></a>
 <em>三角巧克力冰激凌</em></p>
 
 <p>因为在Kuwait的中转时间只有一个多小时，所以待了一会就上飞机了。</p>
 
 <p>因为目的地是美国，所以安检非常严格，比出中国海关的时候还要严一些。</p>
 
-<p><a href="/images/Dubai2023/58.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/58.jpeg" alt="Brige" loading="lazy"></a>
+<p><a href="/images/Dubai2023/58.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/58.jpeg" alt="Brige" class="lazyload" data-proofer-ignore></a>
 <em>廊桥登机</em></p>
 
 <p>Kuwait Line不能网上值机，现场值机的时候已经没办法给我们分配挨着的座位了，而且没有一个人是挨着舷窗的。</p>
@@ -4621,74 +5108,74 @@
 
 <p>第一次飞美国，挨着窗户的成就，达成！</p>
 
-<p><a href="/images/Dubai2023/59.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/59.jpeg" alt="随手拍" loading="lazy"></a>
+<p><a href="/images/Dubai2023/59.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/59.jpeg" alt="随手拍" class="lazyload" data-proofer-ignore></a>
 <em>起飞前</em></p>
 
-<p><a href="/images/Dubai2023/60.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/60.jpeg" alt="随手拍" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023/60.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/60.jpeg" alt="随手拍" class="lazyload" data-proofer-ignore></a></p>
 
 <p>等了没多久就起飞了，跟我一起看看吧。</p>
 
-<iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/O32WhWu_Tx8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe class="embed-video youtube lazyload" src="https://www.youtube.com/embed/O32WhWu_Tx8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
-<p><a href="/images/Dubai2023/61.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/61.jpeg" alt="随手拍" loading="lazy"></a>
+<p><a href="/images/Dubai2023/61.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/61.jpeg" alt="随手拍" class="lazyload" data-proofer-ignore></a>
 <em>波斯湾</em></p>
 
 <p>贫瘠的土地。</p>
 
-<p><a href="/images/Dubai2023/62.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/62.jpeg" alt="随手拍" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023/62.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/62.jpeg" alt="随手拍" class="lazyload" data-proofer-ignore></a></p>
 
-<p><a href="/images/Dubai2023/63.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/63.jpeg" alt="随手拍" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023/63.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/63.jpeg" alt="随手拍" class="lazyload" data-proofer-ignore></a></p>
 
-<p><a href="/images/Dubai2023/64.jpeg" class="popup img-link  shimmer"><img src="/images/Dubai2023/64.jpeg" alt="随手拍" loading="lazy"></a></p>
+<p><a href="/images/Dubai2023/64.jpeg" class="popup img-link "><img data-src="/images/Dubai2023/64.jpeg" alt="随手拍" class="lazyload" data-proofer-ignore></a></p>
 
 <p>至此。</p>
 
 
-  </div>
+</div>
 
-  <div class="post-tail-wrapper text-muted">
-    <!-- categories -->
-    
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        
-          <a href="/categories/travel/">Travel</a>,
-          <a href="/categories/asia/">Asia</a>
-      </div>
-    
+<div class="post-tail-wrapper text-muted">
+  <!-- categories -->
+  
+    <div class="post-meta mb-3">
+      <i class="far fa-folder-open fa-fw me-1"></i>
+      
+        <a href="/categories/travel/">Travel</a>,
+        <a href="/categories/asia/">Asia</a>
+    </div>
+  
 
-    <!-- tags -->
-    
-      <div class="post-tags">
-        <i class="fa fa-tags fa-fw me-1"></i>
-        
-          <a
-            href="/tags/photo/"
-            class="post-tag no-text-decoration"
-          >Photo</a>
-        
-      </div>
-    
+  <!-- tags -->
+  
+    <div class="post-tags">
+      <i class="fa fa-tags fa-fw me-1"></i>
+      
+        <a
+          href="/tags/photo/"
+          class="post-tag no-text-decoration"
+        >Photo</a>
+      
+    </div>
+  
 
-    <div
-      class="
-        post-tail-bottom
-        d-flex justify-content-between align-items-center mt-5 pb-2
-      "
-    >
-      <div class="license-wrapper">
+  <div
+    class="
+      post-tail-bottom
+      d-flex justify-content-between align-items-center mt-5 pb-2
+    "
+  >
+    <div class="license-wrapper">
+      
         
-          
 
-          This post is licensed under 
+        This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
          by the author.
-        
-      </div>
+      
+    </div>
 
-      <!-- Post sharing snippet -->
+    <!-- Post sharing snippet -->
 
 <div class="share-wrapper d-flex align-items-center">
   <span class="share-label text-muted me-1">Share</span>
@@ -4752,18 +5239,21 @@
   </span>
 </div>
 
-    </div>
-    <!-- .post-tail-bottom -->
   </div>
-  <!-- div.post-tail-wrapper -->
+  <!-- .post-tail-bottom -->
+</div>
+<!-- div.post-tail-wrapper -->
+
+
+  
+
+  
 </article>
 
-
-            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
             <div class="access">
               <!-- Get the last 5 posts from lastmod list. -->
 
@@ -4779,6 +5269,49 @@
 
 
 
+
+  <section id="access-lastmod">
+    <h2 class="panel-heading">Recently Updated</h2>
+    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Via-Dubai-and-Kuwait/">Via Dubai & Kuwait</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Hello-World-Again/">Hello World Again!</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Above-the-Stars/">星空之上_第一集</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Eighteen-Years-Old/">我的十八岁</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/Story-of-Blog/">网站折腾记</a>
+        </li>
+      
+    </ul>
+  </section>
+  <!-- #access-lastmod -->
 
 
               <!-- The trending tags list -->
@@ -5131,7 +5664,8 @@
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
               
-              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+                
+                <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
 
 <!-- The total size of related posts -->
 
@@ -5302,9 +5836,9 @@ Moon at Newark
   <!-- #related-posts -->
 
 
-            
               
-              <!-- Navigation buttons at the bottom of the post. -->
+                
+                <!-- Navigation buttons at the bottom of the post. -->
 
 <nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
   
@@ -5331,11 +5865,12 @@ Moon at Newark
   
 </nav>
 
-            
               
-              <!--  The comments switcher -->
+                
+                <!--  The comments switcher -->
 
 
+              
             
 
             <!-- The Footer -->
@@ -5350,7 +5885,7 @@ Moon at Newark
   <p>
     ©
     <time>2023</time>
-    <a href="https://twitter.com/username">XINGHAN YIN</a>.
+    <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -5360,7 +5895,7 @@ Moon at Newark
     
   </p>
 
-  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+  <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
   </p>
 </footer>
 
@@ -5852,7 +6387,7 @@ Moon at Newark
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/zh.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.9/dayjs.min.js,npm/dayjs@1.11.9/locale/zh.min.js,npm/dayjs@1.11.9/plugin/relativeTime.min.js,npm/dayjs@1.11.9/plugin/localizedFormat.min.js"></script>
 
 
 

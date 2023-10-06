@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no" />
+    <link rel="shortcut icon" href="https://www.amaok.com/favicon.ico">
+    <title>LM MCServer | 轻量化MC服务器</title>
+
+    <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/mdui/0.4.2/css/mdui.min.css">
+    <script src="https://cdnjs.loli.net/ajax/libs/mdui/0.4.2/js/mdui.min.js"></script>
+    <style>
+        .m-download>a,
+        .m-download>button {
+            margin: 4px 2px;
+        }
+
+        .m-download p {
+            font-size: 12px;
+            color: rgb(178, 176, 182);
+        }
+
+        #mview_background {
+            opacity: 0.4;
+            z-index: -3;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            min-height: 475px;
+            background-image: url("bg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #f-link a {
+            color: rgb(198, 194, 206);
+            display: inline;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body class="mdui-color-grey-900">
+    <div id="mview_background"></div>
+    <header class="mdui-toolbar ">
+        <a href="index.html" class="mdui-typo-title"> <span style="color: #e4c306;">LM</span> MCServer 2.0</a>
+        <div class="mdui-toolbar-spacer"></div>
+    </header>
+    <div class="mdui-container" style="margin-top: 14vh;min-height: 410px;">
+        <div class="mdui-row">
+            <div class="mdui-col-xs-12">
+                <h4 class="mdui-typo-headline"><span style="color: #e4c306;">LM</span> MCServer | 轻量化MC服务器</h4>
+           
+                <p class=".mdui-typo-title-opacity"> 是兄弟，就来撸树！    这是纯爷们间友情的见证。</p>
+              
+               <!-- <p class=".mdui-typo-title-opacity"> <span id="span_dt_dt1">Loding..</span></p> -->
+              <p>服务器共运行 408 天 6 小时 56 分 3 秒 ， 目前已停机。</p>
+                <div class="m-download">
+                    <!--mc1.amaok.com--> 
+                    <p class="mdui-typo-body-1">壹号 · 19913 · MC官方原版服务器</p>
+                   <!--<a href="http://mc1.amaok.com/ServerBack_20190916.zip"
+                        class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-green-300">服务器端 ·  Linux</a>-->
+                    <a href="http://mc1.amaok.com/Client.zip" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-yellow-500">客户端 v1.13.2 · Windows</a>
+                   <a href=""
+                        class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-pink-500">详细配置信息</a>
+                  
+                    
+                    <p class="mdui-typo-body-1">贰号 · 20020 · 卡洛兰科技</p>
+                    <a href="http://mc2.amaok.com/install.zip"
+                        class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-green-500">客户端 v1.12.2 · Windows</a>
+                   <a href=""
+                        class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-blue-500">详细配置信息</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="">
+      <div class="mdui-container">
+            <div class="mdui-col-xs-12">
+              	 <p id="f-link" class="mdui-typo-caption-opacity mdui-typo">LMMCS由<a href="https://www.amaok.com">Amaok</a>和LZK共同维护.</p>
+                <span class="mdui-typo-caption-opacity">版权所有 © 2014-2019 Amaok. All rights reserved.</span>
+                <p id="f-link" class="mdui-typo-caption-opacity mdui-typo">公益項目 | 友情鏈接
+                    <a href="https://www.minecraft.net/zh-hans//">Minecraft </a>
+                    <a href="http://www.mcbbs.net/">MCBBS.NET </a>
+                    <a href="https://www.amaok.com/">Amaok.com </a>
+                    <a href="https://www.amaok.com/web/Chr15tama0arealgamer/">Chr15tama0</a>
+                </p>
+            </div>
+        </div>
+        <div class="mdui-container">
+            <div class="mdui-col-xs-12">
+                <span class="mdui-typo-caption-opacity"></span>
+                
+                </p>
+            </div>
+        </div>
+    </footer>
+  
+</body>
+
+<!--时间的计时器-->
+<script language="javascript">
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+  BirthDay=new Date("09/13/2019 15:10:00");//月日年
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=Math.floor(e_hrsold);
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=Math.floor((e_hrsold-hrsold)*60);
+seconds=Math.floor((e_minsold-minsold)*60);
+span_dt_dt1.innerHTML="服务器已稳定运行 - "+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒. ";
+}
+show_date_time();
+</script>
+</html>
