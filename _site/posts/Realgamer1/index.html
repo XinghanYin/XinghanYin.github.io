@@ -13,12 +13,8 @@
 
 
 
-
-
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh" 
-  
->
+<html lang="zh" data-mode="dark# [light|dark]">
   <!-- The Head -->
 
 <head>
@@ -40,10 +36,10 @@
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="真实玩者成长记 - 壹" />
-<meta name="author" content="XINGHAN YIN" />
+<meta name="author" content="xy" />
 <meta property="og:locale" content="zh" />
-<meta name="description" content="随心，克己，想象，欢愉。" />
-<meta property="og:description" content="随心，克己，想象，欢愉。" />
+<meta name="description" content="随性，克己，勤勉，谦虚。" />
+<meta property="og:description" content="随性，克己，勤勉，谦虚。" />
 <link rel="canonical" href="http://localhost:4000/posts/Realgamer1/" />
 <meta property="og:url" content="http://localhost:4000/posts/Realgamer1/" />
 <meta property="og:site_name" content="XINGHAN YIN" />
@@ -52,9 +48,9 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="真实玩者成长记 - 壹" />
 <meta name="twitter:site" content="@twitter_username" />
-<meta name="twitter:creator" content="@XINGHAN YIN" />
+<meta name="twitter:creator" content="@xy" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"XINGHAN YIN","url":"https://github.com/XinghanYin/"},"dateModified":"2018-11-26T13:00:00-05:00","datePublished":"2018-11-26T13:00:00-05:00","description":"随心，克己，想象，欢愉。","headline":"真实玩者成长记 - 壹","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Realgamer1/"},"url":"http://localhost:4000/posts/Realgamer1/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"xy"},"dateModified":"2018-11-26T13:00:00-05:00","datePublished":"2018-11-26T13:00:00-05:00","description":"随性，克己，勤勉，谦虚。","headline":"真实玩者成长记 - 壹","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Realgamer1/"},"url":"http://localhost:4000/posts/Realgamer1/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -103,7 +99,7 @@
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
@@ -115,156 +111,15 @@
   
 
   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+  
+
+  
     <!-- Manific Popup -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
   
 
   <!-- JavaScript -->
-
-  
-    <!-- Switch the mode between dark and light. -->
-
-<script type="text/javascript">
-  class ModeToggle {
-    static get MODE_KEY() {
-      return 'mode';
-    }
-    static get MODE_ATTR() {
-      return 'data-mode';
-    }
-    static get DARK_MODE() {
-      return 'dark';
-    }
-    static get LIGHT_MODE() {
-      return 'light';
-    }
-    static get ID() {
-      return 'mode-toggle';
-    }
-
-    constructor() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (!this.isSysDarkPrefer) {
-            this.setDark();
-          }
-        } else {
-          if (this.isSysDarkPrefer) {
-            this.setLight();
-          }
-        }
-      }
-
-      let self = this;
-
-      /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
-
-          self.clearMode();
-        }
-
-        self.notify();
-      });
-    } /* constructor() */
-
-    get sysDarkPrefers() {
-      return window.matchMedia('(prefers-color-scheme: dark)');
-    }
-
-    get isSysDarkPrefer() {
-      return this.sysDarkPrefers.matches;
-    }
-
-    get isDarkMode() {
-      return this.mode === ModeToggle.DARK_MODE;
-    }
-
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
-    }
-
-    get hasMode() {
-      return this.mode != null;
-    }
-
-    get mode() {
-      return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }
-
-    /* get the current mode on screen */
-    get modeStatus() {
-      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
-        return ModeToggle.DARK_MODE;
-      } else {
-        return ModeToggle.LIGHT_MODE;
-      }
-    }
-
-    setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
-    }
-
-    setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
-    }
-
-    clearMode() {
-      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
-
-    /* Notify another plugins that the theme mode has changed */
-    notify() {
-      window.postMessage(
-        {
-          direction: ModeToggle.ID,
-          message: this.modeStatus
-        },
-        '*'
-      );
-    }
-
-    flipMode() {
-      if (this.hasMode) {
-        if (this.isSysDarkPrefer) {
-          if (this.isLightMode) {
-            this.clearMode();
-          } else {
-            this.setLight();
-          }
-        } else {
-          if (this.isDarkMode) {
-            this.clearMode();
-          } else {
-            this.setDark();
-          }
-        }
-      } else {
-        if (this.isSysDarkPrefer) {
-          this.setLight();
-        } else {
-          this.setDark();
-        }
-      }
-
-      this.notify();
-    } /* flipMode() */
-  } /* ModeToggle */
-
-  const modeToggle = new ModeToggle();
-</script>
 
   
 
@@ -281,14 +136,14 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="/images/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
     <h1 class="site-title">
       <a href="/">XINGHAN YIN</a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0">尹星寒的博客</p>
+    <p class="site-subtitle fst-italic mb-0">Making better for humanities.</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -348,21 +203,13 @@
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
-
-      
-        <span class="icon-border"></span>
-      
-    
 
     
       
 
       
         <a
-          href="https://github.com/XinghanYin"
+          href="https://github.com/github_username"
           aria-label="github"
           
 
@@ -447,7 +294,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container px-xxl-5">
+      <div class="container d-flex flex-column px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -510,18 +357,10 @@
 </header>
 
 
-        <div class="row">
-          <main
-            aria-label="Main Content"
-            class="col-12 col-lg-11 col-xl-9 px-md-4"
-          >
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-
-<article class="px-1">
-  
-    
-  
-    <!-- Refactor the HTML structure -->
+              <!-- Refactor the HTML structure -->
 
 
 
@@ -543,7 +382,9 @@
 <!-- Change the icon of checkbox -->
 
 
-<!-- images -->
+
+<!-- Handle images -->
+
 
 
 
@@ -573,7 +414,6 @@
     
     
     
-    
 
     
       
@@ -597,21 +437,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -621,12 +455,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -638,7 +474,6 @@
     
     
 
-    
     
     
     
@@ -665,21 +500,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -689,12 +518,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -706,7 +537,6 @@
     
     
 
-    
     
     
     
@@ -733,21 +563,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -757,12 +581,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -774,7 +600,6 @@
     
     
 
-    
     
     
     
@@ -801,21 +626,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -825,12 +644,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -842,7 +663,6 @@
     
     
 
-    
     
     
     
@@ -869,21 +689,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -893,12 +707,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -910,7 +726,6 @@
     
     
 
-    
     
     
     
@@ -937,21 +752,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -961,12 +770,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -978,7 +789,6 @@
     
     
 
-    
     
     
     
@@ -1005,21 +815,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -1029,12 +833,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -1046,7 +852,6 @@
     
     
 
-    
     
     
     
@@ -1073,21 +878,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -1097,12 +896,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -1114,7 +915,6 @@
     
     
 
-    
     
     
     
@@ -1141,21 +941,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -1165,12 +959,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -1182,7 +978,6 @@
     
     
 
-    
     
     
     
@@ -1209,21 +1004,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -1233,12 +1022,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -1250,7 +1041,6 @@
     
     
 
-    
     
     
     
@@ -1277,21 +1067,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -1301,12 +1085,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -1318,7 +1104,6 @@
     
     
 
-    
     
     
     
@@ -1345,21 +1130,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -1369,12 +1148,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -1386,7 +1167,6 @@
     
     
 
-    
     
     
     
@@ -1413,21 +1193,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -1437,12 +1211,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -1454,7 +1230,6 @@
     
     
 
-    
     
     
     
@@ -1481,21 +1256,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -1505,12 +1274,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -1522,7 +1293,6 @@
     
     
 
-    
     
     
     
@@ -1549,21 +1319,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -1573,12 +1337,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -1590,7 +1356,6 @@
     
     
 
-    
     
     
     
@@ -1617,21 +1382,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -1641,12 +1400,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -1658,7 +1419,6 @@
     
     
 
-    
     
     
     
@@ -1685,21 +1445,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -1709,16 +1463,17 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
 
   
-
 
 
 <!-- Add header for code snippets -->
@@ -1752,7 +1507,6 @@
       
 
       
-
     
       
 
@@ -1764,7 +1518,6 @@
       
 
       
-
     
       
 
@@ -1776,7 +1529,6 @@
       
 
       
-
     
       
 
@@ -1788,7 +1540,6 @@
       
 
       
-
     
       
 
@@ -1800,11 +1551,9 @@
       
 
       
-
     
 
     
-
   
 
   
@@ -1828,7 +1577,6 @@
       
 
       
-
     
       
 
@@ -1840,7 +1588,6 @@
       
 
       
-
     
       
 
@@ -1852,11 +1599,9 @@
       
 
       
-
     
 
     
-
   
 
   
@@ -1877,14 +1622,15 @@
 
 
 
-<header>
-  <h1 data-toc-skip>真实玩者成长记 - 壹</h1>
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>真实玩者成长记 - 壹</h1>
 
-  <div class="post-meta text-muted">
-    <!-- published date -->
-    <span>
-      Posted
-      <!--
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1903,32 +1649,32 @@
   Nov 26, 2018
 </time>
 
-    </span>
-
-    <!-- lastmod date -->
-    
-
-    
-
-    <div class="d-flex justify-content-between">
-      <!-- author(s) -->
-      <span>
-        
-
-        By
-
-        <em>
-          
-            
-              <a href="https://github.com/XinghanYin/">XINGHAN YIN</a>
-              
-            
-          
-        </em>
       </span>
 
-      <!-- read time -->
-      <!-- Calculate the post's reading time, and display the word count in tooltip -->
+      <!-- lastmod date -->
+      
+
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              
+                <a href=""></a>
+                
+              
+            
+          </em>
+        </span>
+
+        <!-- read time -->
+        <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
@@ -1952,20 +1698,20 @@
 >
   <em>7 min</em> read</span>
 
+      </div>
+      <!-- .d-flex -->
     </div>
-    <!-- .d-flex -->
-  </div>
-  <!-- .post-meta -->
-</header>
+    <!-- .post-meta -->
+  </header>
 
-<div class="content">
-  <p><a href="/images/Realgamer1//Real.png" class="popup img-link "><img data-src="/images/Realgamer1//Real.png" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a></p>
+  <div class="content">
+    <p><a href="/images/Realgamer1//Real.png" class="popup img-link  shimmer"><img src="/images/Realgamer1//Real.png" alt="真实玩者成长记" loading="lazy"></a></p>
 
 <hr />
 
 <p><strong><em>我来这里是为了逃避现实，但我发现了远比自己更重要的东西，我交到了许多朋友，我找到了真爱。 ——《头号玩家》</em></strong></p>
 
-<p><a href="/images/Realgamer1//1.jpg" class="popup img-link "><img data-src="/images/Realgamer1//1.jpg" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="/images/Realgamer1//1.jpg" class="popup img-link  shimmer"><img src="/images/Realgamer1//1.jpg" alt="真实玩者成长记" loading="lazy"></a></p>
 
 <p>打小我就是个喜欢游戏的孩子。与世呼吸了将近20年，很年轻，但我不知道这颗热爱游戏的心还是否能同我的生命，一直跳动下去。这些年来，遇到了很多精彩的好游戏，很多精彩的故事。我不想失去这些五颜六色的回忆，有感而发，随笔一些文字来记下从小到大我遇上的那些难忘、难言、感动的体验。</p>
 
@@ -1973,10 +1719,10 @@
 
 <p>我最早开始接触游戏应该是三四岁，那时候老叔有一台PS1。就是最早的，读碟、得插存档卡的那种。现在回忆起来真的感觉有些遥远。</p>
 
-<p><a href="/images/Realgamer1//2.jpg" class="popup img-link "><img data-src="/images/Realgamer1//2.jpg" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//2.jpg" class="popup img-link  shimmer"><img src="/images/Realgamer1//2.jpg" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 1 最早的PlayStation开机画面</em></p>
 
-<p><a href="/images/Realgamer1//3.jpg" class="popup img-link "><img data-src="/images/Realgamer1//3.jpg" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//3.jpg" class="popup img-link  shimmer"><img src="/images/Realgamer1//3.jpg" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 2  PlayStation</em></p>
 
 <h2 id="一回忆著一拈看便似花前重见面"><span class="me-2">一回忆著一拈看，便似花前重见面。</span><a href="#一回忆著一拈看便似花前重见面" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -1985,58 +1731,58 @@
 
 <p>玩的最多的，是一头狼的冒险故事，有神庙，有机关。可以在水下驾驶潜艇，前往一个又一个的岛上去战斗。这是《古惑狼》（Crash Bandicoot）。但Bandicoot的汉译是袋狸，我可能就直接翻译成《碰碰狐》了（那估计玩的人就少了，毕竟碰碰狐这个名字太丑…）。</p>
 
-<p><a href="/images/Realgamer1//4.png" class="popup img-link "><img data-src="/images/Realgamer1//4.png" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//4.png" class="popup img-link  shimmer"><img src="/images/Realgamer1//4.png" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 3  其实是袋狸的古惑狼</em></p>
 
-<p><a href="/images/Realgamer1//5.jpg" class="popup img-link "><img data-src="/images/Realgamer1//5.jpg" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//5.jpg" class="popup img-link  shimmer"><img src="/images/Realgamer1//5.jpg" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 4  原版游戏画面</em></p>
 
 <h3 id="皇牌空战"><span class="me-2">《皇牌空战》</span><a href="#皇牌空战" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <p>有一个开战斗机的游戏、发射导弹贼刺激。这是《皇牌空战3》（Ace Combat 3）。那会儿觉得代入感十足，就像真的在开战斗机，帅得很。也正是因为这款游戏，我变得特别钟爱于fps游戏中驾驶战斗机的部分。现在整天泡在新时代的画面下，再回头看，顿时觉得游戏技术的发展真的改变了很多。</p>
 
-<p><a href="/images/Realgamer1//6.jpg" class="popup img-link "><img data-src="/images/Realgamer1//6.jpg" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//6.jpg" class="popup img-link  shimmer"><img src="/images/Realgamer1//6.jpg" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 5  《3》的封面</em></p>
 
-<p><a href="/images/Realgamer1//7.jpg" class="popup img-link "><img data-src="/images/Realgamer1//7.jpg" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//7.jpg" class="popup img-link  shimmer"><img src="/images/Realgamer1//7.jpg" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 6  《3》的游戏画面</em></p>
 
-<p><a href="/images/Realgamer1//8.jpg" class="popup img-link "><img data-src="/images/Realgamer1//8.jpg" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//8.jpg" class="popup img-link  shimmer"><img src="/images/Realgamer1//8.jpg" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 7  2019年出品的《7》代画面</em></p>
 
 <h3 id="合金弹头"><span class="me-2">《合金弹头》</span><a href="#合金弹头" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <p>印象最深刻的，就是《合金弹头》（Metal Slug）。这个游戏我打的最多，晚上关了灯在床上疯狂搓手柄的场面还历历在目。现在回忆起来，我当时玩的应该是《X》，因为第二关是木乃伊关，但也有可能是《1》，因为《1》上有没有木乃伊关我不知道。后来在PSP上玩历代合集的时候也是，一直分不清楚哪代是哪代，总之突突突就完事了。</p>
 
-<p><a href="/images/Realgamer1//9.jpg" class="popup img-link "><img data-src="/images/Realgamer1//9.jpg" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//9.jpg" class="popup img-link  shimmer"><img src="/images/Realgamer1//9.jpg" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 8  某代四人组 By: TakxxxYoxxxx</em></p>
 
-<p><a href="/images/Realgamer1//10.jpg" class="popup img-link "><img data-src="/images/Realgamer1//10.jpg" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//10.jpg" class="popup img-link  shimmer"><img src="/images/Realgamer1//10.jpg" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 9  多代人物合照 By: Tonko</em></p>
 
 <h2 id="成龙-特技之王"><span class="me-2">《成龙-特技之王》</span><a href="#成龙-特技之王" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p>还有一个成龙的游戏，记得最清楚的是一辆大卡车从上面开下来，需要往下面边跑边躲，特别刺激。这是《成龙-特技之王》（Jackie Chan’s Stuntmaster）。我老叔说是《成龙踢馆》，这肯定是他记混了，毕竟《踢馆》可是FC上的一大经典（笑）。</p>
 
-<p><a href="/images/Realgamer1//11.png" class="popup img-link "><img data-src="/images/Realgamer1//11.png" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//11.png" class="popup img-link  shimmer"><img src="/images/Realgamer1//11.png" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 10  《特技之王》的封面</em></p>
 
-<p><a href="/images/Realgamer1//12.jpg" class="popup img-link "><img data-src="/images/Realgamer1//12.jpg" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//12.jpg" class="popup img-link  shimmer"><img src="/images/Realgamer1//12.jpg" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 11  《特技之王》原版游戏画面</em></p>
 
-<p><a href="/images/Realgamer1//13.jpg" class="popup img-link "><img data-src="/images/Realgamer1//13.jpg" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//13.jpg" class="popup img-link  shimmer"><img src="/images/Realgamer1//13.jpg" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 12  《踢馆》原版游戏画面</em></p>
 
 <h2 id="海底大战争"><span class="me-2">《海底大战争》</span><a href="#海底大战争" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p>另外一个是开潜水艇往前闯关的，我只有跟老叔一块玩的时候才能过关，第三关有一个巨人从下面往上掏，必须快速往上走才行。有九成九这是《海底大战争》（In The Hunt）。Q版的画风，模糊记得还能升级武器，背景是深海和冰山，不知道现在患了轻微深海恐惧症的我还能不能快乐的打通关。</p>
 
-<p><a href="/images/Realgamer1//14.jpg" class="popup img-link "><img data-src="/images/Realgamer1//14.jpg" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//14.jpg" class="popup img-link  shimmer"><img src="/images/Realgamer1//14.jpg" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 13  海底大战争原版画面</em></p>
 
 <h2 id="名将"><span class="me-2">《名将》</span><a href="#名将" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <p>最后，就是一代经典游戏——《名将》。小时候的我，只记得两个印象深刻的人物，一个是开机器人的奶嘴炫酷小孩，另外一个就是双刀转转转的木乃伊。最后的boss好像是在一个有地球模型的房间里。那会不知道什么叫打击感，也不知道什么连招，只知道唰唰唰的暴揍敌人很快乐（当然也有可能是被暴揍）。</p>
 
-<p><a href="/images/Realgamer1//15.jpg" class="popup img-link "><img data-src="/images/Realgamer1//15.jpg" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//15.jpg" class="popup img-link  shimmer"><img src="/images/Realgamer1//15.jpg" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 14  名将的四大角色</em></p>
 
-<p><a href="/images/Realgamer1//16.jpg" class="popup img-link "><img data-src="/images/Realgamer1//16.jpg" alt="真实玩者成长记" class="lazyload" data-proofer-ignore></a>
+<p><a href="/images/Realgamer1//16.jpg" class="popup img-link  shimmer"><img src="/images/Realgamer1//16.jpg" alt="真实玩者成长记" loading="lazy"></a>
 <em>图 15  名将的原版游戏画面</em></p>
 
 <h2 id="lifeisastruggle"><span class="me-2"><strong><em>LifeIsAStruggle.</em></strong></span><a href="#lifeisastruggle" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -2049,50 +1795,50 @@
 <p>这就是我的游戏启蒙时光，真好啊。</p>
 
 
-</div>
+  </div>
 
-<div class="post-tail-wrapper text-muted">
-  <!-- categories -->
-  
-    <div class="post-meta mb-3">
-      <i class="far fa-folder-open fa-fw me-1"></i>
-      
-        <a href="/categories/archive/">Archive</a>
-    </div>
-  
-
-  <!-- tags -->
-  
-    <div class="post-tags">
-      <i class="fa fa-tags fa-fw me-1"></i>
-      
-        <a
-          href="/tags/codes/"
-          class="post-tag no-text-decoration"
-        >Codes</a>
-      
-    </div>
-  
-
-  <div
-    class="
-      post-tail-bottom
-      d-flex justify-content-between align-items-center mt-5 pb-2
-    "
-  >
-    <div class="license-wrapper">
-      
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
         
+          <a href="/categories/archive/">Archive</a>
+      </div>
+    
 
-        This post is licensed under 
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/codes/"
+            class="post-tag no-text-decoration"
+          >Codes</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
          by the author.
-      
-    </div>
+        
+      </div>
 
-    <!-- Post sharing snippet -->
+      <!-- Post sharing snippet -->
 
 <div class="share-wrapper d-flex align-items-center">
   <span class="share-label text-muted me-1">Share</span>
@@ -2156,21 +1902,18 @@
   </span>
 </div>
 
+    </div>
+    <!-- .post-tail-bottom -->
   </div>
-  <!-- .post-tail-bottom -->
-</div>
-<!-- div.post-tail-wrapper -->
-
-
-  
-
-  
+  <!-- div.post-tail-wrapper -->
 </article>
 
+
+            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
               <!-- Get the last 5 posts from lastmod list. -->
 
@@ -2186,49 +1929,6 @@
 
 
 
-
-  <section id="access-lastmod">
-    <h2 class="panel-heading">Recently Updated</h2>
-    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Via-Dubai-and-Kuwait/">Via Dubai & Kuwait</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Hello-World-Again/">Hello World Again!</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Above-the-Stars/">星空之上_第一集</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Eighteen-Years-Old/">我的十八岁</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Story-of-Blog/">网站折腾记</a>
-        </li>
-      
-    </ul>
-  </section>
-  <!-- #access-lastmod -->
 
 
               <!-- The trending tags list -->
@@ -2571,7 +2271,7 @@
 
 
 
-  <section id="toc-wrapper" class="ps-0 pe-4 mb-5">
+  <section id="toc-wrapper" class="ps-0 pe-4">
     <h2 class="panel-heading ps-3 pt-2 mb-2">Contents</h2>
     <nav id="toc"></nav>
   </section>
@@ -2586,8 +2286,7 @@
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
               
-                
-                <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
 
 <!-- The total size of related posts -->
 
@@ -2935,9 +2634,9 @@ using namespace ...
   <!-- #related-posts -->
 
 
+            
               
-                
-                <!-- Navigation buttons at the bottom of the post. -->
+              <!-- Navigation buttons at the bottom of the post. -->
 
 <nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
   
@@ -2964,12 +2663,11 @@ using namespace ...
   
 </nav>
 
+            
               
-                
-                <!--  The comments switcher -->
+              <!--  The comments switcher -->
 
 
-              
             
 
             <!-- The Footer -->
@@ -2984,7 +2682,7 @@ using namespace ...
   <p>
     ©
     <time>2023</time>
-    <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
+    <a href="https://twitter.com/username">XINGHAN YIN</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -2994,7 +2692,7 @@ using namespace ...
     
   </p>
 
-  <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
   </p>
 </footer>
 
@@ -3493,7 +3191,7 @@ using namespace ...
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.9/dayjs.min.js,npm/dayjs@1.11.9/locale/zh.min.js,npm/dayjs@1.11.9/plugin/relativeTime.min.js,npm/dayjs@1.11.9/plugin/localizedFormat.min.js,npm/tocbot@4.21.1/dist/tocbot.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/zh.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.21.1/dist/tocbot.min.js"></script>
 
 
 

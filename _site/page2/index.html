@@ -13,12 +13,8 @@
 
 
 
-
-
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh" 
-  
->
+<html lang="zh" data-mode="dark# [light|dark]">
   <!-- The Head -->
 
 <head>
@@ -41,8 +37,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="XINGHAN YIN" />
 <meta property="og:locale" content="zh" />
-<meta name="description" content="随心，克己，想象，欢愉。" />
-<meta property="og:description" content="随心，克己，想象，欢愉。" />
+<meta name="description" content="随性，克己，勤勉，谦虚。" />
+<meta property="og:description" content="随性，克己，勤勉，谦虚。" />
 <link rel="canonical" href="http://localhost:4000/page2/" />
 <meta property="og:url" content="http://localhost:4000/page2/" />
 <meta property="og:site_name" content="XINGHAN YIN" />
@@ -52,7 +48,7 @@
 <meta property="twitter:title" content="XINGHAN YIN" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"随心，克己，想象，欢愉。","headline":"XINGHAN YIN","url":"http://localhost:4000/page2/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"随性，克己，勤勉，谦虚。","headline":"XINGHAN YIN","url":"http://localhost:4000/page2/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -101,7 +97,7 @@
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
@@ -111,153 +107,12 @@
   
 
   
-
-  <!-- JavaScript -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+  
 
   
-    <!-- Switch the mode between dark and light. -->
 
-<script type="text/javascript">
-  class ModeToggle {
-    static get MODE_KEY() {
-      return 'mode';
-    }
-    static get MODE_ATTR() {
-      return 'data-mode';
-    }
-    static get DARK_MODE() {
-      return 'dark';
-    }
-    static get LIGHT_MODE() {
-      return 'light';
-    }
-    static get ID() {
-      return 'mode-toggle';
-    }
-
-    constructor() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (!this.isSysDarkPrefer) {
-            this.setDark();
-          }
-        } else {
-          if (this.isSysDarkPrefer) {
-            this.setLight();
-          }
-        }
-      }
-
-      let self = this;
-
-      /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
-
-          self.clearMode();
-        }
-
-        self.notify();
-      });
-    } /* constructor() */
-
-    get sysDarkPrefers() {
-      return window.matchMedia('(prefers-color-scheme: dark)');
-    }
-
-    get isSysDarkPrefer() {
-      return this.sysDarkPrefers.matches;
-    }
-
-    get isDarkMode() {
-      return this.mode === ModeToggle.DARK_MODE;
-    }
-
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
-    }
-
-    get hasMode() {
-      return this.mode != null;
-    }
-
-    get mode() {
-      return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }
-
-    /* get the current mode on screen */
-    get modeStatus() {
-      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
-        return ModeToggle.DARK_MODE;
-      } else {
-        return ModeToggle.LIGHT_MODE;
-      }
-    }
-
-    setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
-    }
-
-    setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
-    }
-
-    clearMode() {
-      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
-
-    /* Notify another plugins that the theme mode has changed */
-    notify() {
-      window.postMessage(
-        {
-          direction: ModeToggle.ID,
-          message: this.modeStatus
-        },
-        '*'
-      );
-    }
-
-    flipMode() {
-      if (this.hasMode) {
-        if (this.isSysDarkPrefer) {
-          if (this.isLightMode) {
-            this.clearMode();
-          } else {
-            this.setLight();
-          }
-        } else {
-          if (this.isDarkMode) {
-            this.clearMode();
-          } else {
-            this.setDark();
-          }
-        }
-      } else {
-        if (this.isSysDarkPrefer) {
-          this.setLight();
-        } else {
-          this.setDark();
-        }
-      }
-
-      this.notify();
-    } /* flipMode() */
-  } /* ModeToggle */
-
-  const modeToggle = new ModeToggle();
-</script>
+  <!-- JavaScript -->
 
   
 
@@ -274,14 +129,14 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="/images/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
     <h1 class="site-title">
       <a href="/">XINGHAN YIN</a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0">尹星寒的博客</p>
+    <p class="site-subtitle fst-italic mb-0">Making better for humanities.</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -341,21 +196,13 @@
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
-
-      
-        <span class="icon-border"></span>
-      
-    
 
     
       
 
       
         <a
-          href="https://github.com/XinghanYin"
+          href="https://github.com/github_username"
           aria-label="github"
           
 
@@ -440,7 +287,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container px-xxl-5">
+      <div class="container d-flex flex-column px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -487,42 +334,10 @@
 </header>
 
 
-        <div class="row">
-          <main
-            aria-label="Main Content"
-            class="col-12 col-lg-11 col-xl-9 px-md-4 pb-5"
-          >
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-
-
-
-
-
-
-
-
-<!-- Get pinned posts -->
-
-
-
-
-
-
-<!-- Get default posts -->
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="post-list" class="flex-grow-1 pe-xl-2">
-  <!-- Refactor the HTML structure -->
+              <!-- Refactor the HTML structure -->
 
 
 
@@ -544,7 +359,9 @@
 <!-- Change the icon of checkbox -->
 
 
-<!-- images -->
+
+<!-- Handle images -->
+
 
 
 
@@ -584,37 +401,67 @@
 
 <!-- return -->
 
+
+
+
+
+
+
+
+
+<!-- Get pinned posts -->
+
+
+
+
+
+
+<!-- Get default posts -->
+
+
+
+
+
+
+
+
+
+
+<div id="post-list" class="flex-grow-1 px-xl-1">
   
-    <article class="card-wrapper">
-      <a href="/posts/Dalian/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Dalian/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">大连游记</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">大连游记</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              从2015年起，我就想来大连了。苦于被时间和琐事所困，这个心愿一直搁置到了2018年的夏天才得以实现。
+                从2015年起，我就想来大连了。苦于被时间和琐事所困，这个心愿一直搁置到了2018年的夏天才得以实现。
 
 还记得当初是因为学信竞才认识的安康和导师。时间飞逝，不知不觉间我们已经是相识多年的老朋友了。从懵懂的中学少年时代到奋进的大学青年时代，我们经历的很少，也经历了很多。我很感慨，这是一种很幸福的感慨，一种怀念过去的感慨。
 
 2018年7月11日
 
 7月11日晚，我从济南机场飞往大连。其间一路...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -632,42 +479,46 @@
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Travel,
-                    Asia,
-                    China
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Travel,
+                      Asia,
+                      China
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/WBSYS/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/WBSYS/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">《我不是药神》短评</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">《我不是药神》短评</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              我的朋友圈被药神刷屏了。
+                我的朋友圈被药神刷屏了。
 
 上周六，我和大邱、登申一块去了电影院，看了这部已经被刷疯了的片子。
 
@@ -677,14 +528,14 @@
 整部电影给我的感受是很细腻的。我体验到了一种很现实的、充满市井气息的、触人心弦的人性美。
 
 那天晚上我了解到了电影的原型，2015年那个真正的程勇接受的司法审判。就记得当时嚼着口香糖，边嚼边想这人真他妈是个好人。从头到尾，这实际上都是一个很真善美的故事，不管是电影中，还...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -702,40 +553,44 @@
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Above-the-Stars2/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Above-the-Stars2/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">星空之上_第二集</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">星空之上_第二集</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              
+                
 
 
 
@@ -746,14 +601,14 @@
 庞勇努力地保持着冷静，绞尽脑汁的思考着这个中年人究竟是谁。
 
 “庞教授，我这么做是出于对您的安全考虑，还希望您能谅解。”在这辆车开出很久以后，中年人终于开口了。从庞勇上车后他就一直看着庞勇，富有磁性的嗓音和线条分明的轮...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -771,40 +626,44 @@
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Above-the-Stars/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Above-the-Stars/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">星空之上_第一集</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">星空之上_第一集</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              
+                
 
 前言：
 
@@ -812,14 +671,14 @@
 几年来一直忙高中课程的学习，忙高考。高考终于结束了，如今，我终于有了一点时间来写一部我自己的科幻小说。
 这是我的处女作，作品名暂定为《星空之上》，向我所向往着的星空致敬。
 文字中不乏天马行空的地方...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -837,40 +696,44 @@
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Twelve-Citizens/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Twelve-Citizens/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">《十二公民》观后感</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">《十二公民》观后感</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              
+                
 
 
 
@@ -881,14 +744,14 @@
 我认为，对于在某时某刻某些事件中扑朔迷离的真相，人们更乐于接受唾手可得的表相。不仅限于大多数人，也包括经常自认高明的我自己。
 
 镜头拉回故事，相信八号陪审员也是如此。这是生命所谓的“自然法则”所定义的——“...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -906,40 +769,44 @@
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Prologue-of-Blog_of_Amaok/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Prologue-of-Blog_of_Amaok/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">开场白 of Blog.amaok.com</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">开场白 of Blog.amaok.com</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              我是阿毛，00年生人。
+                我是阿毛，00年生人。
 很喜欢新鲜事物，热爱阅读和创作，科幻爱好者。多年来自我感觉良好，从来不承认自己是文艺青年。
 
 2013年起接触前端和程序设计，高中时期参加过信息学竞赛。技术有限，不是蒟蒻也不是大犇，曾拥有过准国家队水平。
@@ -947,14 +814,14 @@
 2016年OI退役，2017年高考落榜。一年高复让我对很多事都看开了不少，中二力也有所下降。
 
 这是我第一次使用WordPress。狗年春节前后我的老博客因为续费...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -972,40 +839,44 @@
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Story-of-Blog/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Story-of-Blog/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">网站折腾记</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">网站折腾记</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              
+                
 
 
 
@@ -1016,14 +887,14 @@
 在Hostker和Aliyun两家服务商之间犹豫了很久，最终选择了性价比较高的Hostker，其实最主要的是这家的UI做的太萌了。
 
 服务器各方面都很满意，就是官方限制SSR有点难受。当然了，政策...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1041,54 +912,58 @@
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Eighteen-Years-Old/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Eighteen-Years-Old/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">我的十八岁</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">我的十八岁</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              光阴荏苒，已是韶华十八载。
+                光阴荏苒，已是韶华十八载。
 
 感悟很多，但是不能够一吐为快。FirstAtAll，我觉得人之一生不能平淡无奇，这是我对未来目标该从何出发，计划该如何制定的首要考虑因素。
 
 我对先进的技术保持着高度兴奋，不局限于国界，不局限于当前的时代，不局限于现实。
 
 在正常情况下，以现阶段的生活水平和医疗水准，我的一生大抵过去了1/5。我很年轻，我的创造力在同龄人中算得上较强，我毅力很强，我有信心和实力得...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1106,26 +981,25 @@
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-
-
 </div>
 <!-- #post-list -->
 
@@ -1205,10 +1079,12 @@
 
 
 
+
+            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
               <!-- Get the last 5 posts from lastmod list. -->
 
@@ -1224,49 +1100,6 @@
 
 
 
-
-  <section id="access-lastmod">
-    <h2 class="panel-heading">Recently Updated</h2>
-    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Via-Dubai-and-Kuwait/">Via Dubai & Kuwait</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Hello-World-Again/">Hello World Again!</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Above-the-Stars/">星空之上_第一集</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Eighteen-Years-Old/">我的十八岁</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Story-of-Blog/">网站折腾记</a>
-        </li>
-      
-    </ul>
-  </section>
-  <!-- #access-lastmod -->
 
 
               <!-- The trending tags list -->
@@ -1624,7 +1457,7 @@
   <p>
     ©
     <time>2023</time>
-    <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
+    <a href="https://twitter.com/username">XINGHAN YIN</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -1634,7 +1467,7 @@
     
   </p>
 
-  <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
   </p>
 </footer>
 
@@ -2109,7 +1942,7 @@
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/dayjs@1.11.9/dayjs.min.js,npm/dayjs@1.11.9/locale/zh.min.js,npm/dayjs@1.11.9/plugin/relativeTime.min.js,npm/dayjs@1.11.9/plugin/localizedFormat.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/zh.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
 
 
 

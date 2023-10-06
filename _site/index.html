@@ -13,12 +13,8 @@
 
 
 
-
-
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh" 
-  
->
+<html lang="zh" data-mode="dark# [light|dark]">
   <!-- The Head -->
 
 <head>
@@ -41,8 +37,8 @@
 <meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="XINGHAN YIN" />
 <meta property="og:locale" content="zh" />
-<meta name="description" content="随心，克己，想象，欢愉。" />
-<meta property="og:description" content="随心，克己，想象，欢愉。" />
+<meta name="description" content="随性，克己，勤勉，谦虚。" />
+<meta property="og:description" content="随性，克己，勤勉，谦虚。" />
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="XINGHAN YIN" />
@@ -52,7 +48,7 @@
 <meta property="twitter:title" content="XINGHAN YIN" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"随心，克己，想象，欢愉。","headline":"XINGHAN YIN","name":"XINGHAN YIN","sameAs":["https://github.com/XinghanYin"],"url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","description":"随性，克己，勤勉，谦虚。","headline":"XINGHAN YIN","name":"XINGHAN YIN","sameAs":["https://twitter.com/username","https://github.com/XinghanYin"],"url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -101,7 +97,7 @@
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
@@ -111,153 +107,12 @@
   
 
   
-
-  <!-- JavaScript -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+  
 
   
-    <!-- Switch the mode between dark and light. -->
 
-<script type="text/javascript">
-  class ModeToggle {
-    static get MODE_KEY() {
-      return 'mode';
-    }
-    static get MODE_ATTR() {
-      return 'data-mode';
-    }
-    static get DARK_MODE() {
-      return 'dark';
-    }
-    static get LIGHT_MODE() {
-      return 'light';
-    }
-    static get ID() {
-      return 'mode-toggle';
-    }
-
-    constructor() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (!this.isSysDarkPrefer) {
-            this.setDark();
-          }
-        } else {
-          if (this.isSysDarkPrefer) {
-            this.setLight();
-          }
-        }
-      }
-
-      let self = this;
-
-      /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
-
-          self.clearMode();
-        }
-
-        self.notify();
-      });
-    } /* constructor() */
-
-    get sysDarkPrefers() {
-      return window.matchMedia('(prefers-color-scheme: dark)');
-    }
-
-    get isSysDarkPrefer() {
-      return this.sysDarkPrefers.matches;
-    }
-
-    get isDarkMode() {
-      return this.mode === ModeToggle.DARK_MODE;
-    }
-
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
-    }
-
-    get hasMode() {
-      return this.mode != null;
-    }
-
-    get mode() {
-      return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }
-
-    /* get the current mode on screen */
-    get modeStatus() {
-      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
-        return ModeToggle.DARK_MODE;
-      } else {
-        return ModeToggle.LIGHT_MODE;
-      }
-    }
-
-    setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
-    }
-
-    setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
-    }
-
-    clearMode() {
-      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
-
-    /* Notify another plugins that the theme mode has changed */
-    notify() {
-      window.postMessage(
-        {
-          direction: ModeToggle.ID,
-          message: this.modeStatus
-        },
-        '*'
-      );
-    }
-
-    flipMode() {
-      if (this.hasMode) {
-        if (this.isSysDarkPrefer) {
-          if (this.isLightMode) {
-            this.clearMode();
-          } else {
-            this.setLight();
-          }
-        } else {
-          if (this.isDarkMode) {
-            this.clearMode();
-          } else {
-            this.setDark();
-          }
-        }
-      } else {
-        if (this.isSysDarkPrefer) {
-          this.setLight();
-        } else {
-          this.setDark();
-        }
-      }
-
-      this.notify();
-    } /* flipMode() */
-  } /* ModeToggle */
-
-  const modeToggle = new ModeToggle();
-</script>
+  <!-- JavaScript -->
 
   
 
@@ -274,14 +129,14 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="/images/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
     <h1 class="site-title">
       <a href="/">XINGHAN YIN</a>
     </h1>
-    <p class="site-subtitle fst-italic mb-0">尹星寒的博客</p>
+    <p class="site-subtitle fst-italic mb-0">Making better for humanities.</p>
   </header>
   <!-- .profile-wrapper -->
 
@@ -341,21 +196,13 @@
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
-
-      
-        <span class="icon-border"></span>
-      
-    
 
     
       
 
       
         <a
-          href="https://github.com/XinghanYin"
+          href="https://github.com/github_username"
           aria-label="github"
           
 
@@ -440,7 +287,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container px-xxl-5">
+      <div class="container d-flex flex-column px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -487,42 +334,10 @@
 </header>
 
 
-        <div class="row">
-          <main
-            aria-label="Main Content"
-            class="col-12 col-lg-11 col-xl-9 px-md-4 pb-5"
-          >
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-
-
-
-
-
-
-
-
-<!-- Get pinned posts -->
-
-
-
-
-
-
-<!-- Get default posts -->
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="post-list" class="flex-grow-1 pe-xl-2">
-  <!-- Refactor the HTML structure -->
+              <!-- Refactor the HTML structure -->
 
 
 
@@ -544,7 +359,9 @@
 <!-- Change the icon of checkbox -->
 
 
-<!-- images -->
+
+<!-- Handle images -->
+
 
 
 
@@ -584,23 +401,53 @@
 
 <!-- return -->
 
+
+
+
+
+
+
+
+
+<!-- Get pinned posts -->
+
+
+
+
+
+
+<!-- Get default posts -->
+
+
+
+
+
+
+
+
+
+
+<div id="post-list" class="flex-grow-1 px-xl-1">
   
-    <article class="card-wrapper">
-      <a href="/posts/Some-Photos/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Some-Photos/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">一些照片</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">一些照片</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              前两天去了史蒂文斯，在曼哈顿对岸，拍了一些还不错的照片。
+                前两天去了史蒂文斯，在曼哈顿对岸，拍了一些还不错的照片。
 
 
 Building
@@ -620,14 +467,14 @@ Manhattan at Night
 
 Moon at Newark
 
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -645,41 +492,45 @@ Moon at Newark
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Photo,
-                    USA
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Photo,
+                      USA
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Via-Dubai-and-Kuwait/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Via-Dubai-and-Kuwait/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">Via Dubai & Kuwait</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Via Dubai & Kuwait</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              
+                
 Dubai and Kuwait
 
 接上文，8月25日从中国出发后的第一个目的地，迪拜。
@@ -714,14 +565,14 @@ Dubai and Kuwait
 
 出海关就送电话卡
 ...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -739,41 +590,45 @@ Dubai and Kuwait
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Travel,
-                    Asia
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Travel,
+                      Asia
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Hello-World-Again/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Hello-World-Again/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">Hello World Again!</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Hello World Again!</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              
+                
 
 
 
@@ -790,14 +645,14 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
 
 时间就像水，一不留神就被海绵吸...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -815,40 +670,44 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Thinking
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Thinking
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Realgamer1/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Realgamer1/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">真实玩者成长记 - 壹</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">真实玩者成长记 - 壹</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              
+                
 
 
 
@@ -858,14 +717,14 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
 打小我就是个喜欢游戏的孩子。与世呼吸了将近20年，很年轻，但我不知道这颗热爱游戏的心还是否能同我的生命，一直跳动下去。这些年来，遇到了很多精彩的好游戏，很多精彩的故事。我不想失去这些五颜六色的回忆，有感而发，随笔一些文字来记下从小到大我遇上的那些难忘、难言、感动的体验。
 ...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -883,40 +742,44 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/some_dps/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/some_dps/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">常用背包模板</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">常用背包模板</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              背包问题主要是背模板，这一段时间一直在学习背包相关的问题，记录几个dp模板吧。
+                背包问题主要是背模板，这一段时间一直在学习背包相关的问题，记录几个dp模板吧。
 
 一些复杂的背包问题（如泛化物品）未收录
 
@@ -926,14 +789,14 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
 for(int i=1;i&amp;lt;=n;i++) { for(int j=0;j&amp;lt;=m;c++) { f[i][j]=f[i-1][j]; if(j&amp;gt;=w[i])
 f[i][j]=max(f[i][j],f[i-1][j-w[i]...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -951,40 +814,44 @@ f[i][j]=max(f[i][j],f[i-1][j-w[i]...
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/prime_linear_sieve/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/prime_linear_sieve/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">线性筛素数</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">线性筛素数</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              日常突然更新的学习笔记。
+                日常突然更新的学习笔记。
 
 最近做了一道在很大的范围里筛选出素数的神仙题，因为超时搞得很头疼，所以想来深入了解一下线性筛法，提高程序运行效率。
 
@@ -995,14 +862,14 @@ f[i][j]=max(f[i][j],f[i-1][j-w[i]...
 基本思想：素数的倍数一定不是素数
 
 实现方法：用一个长度为N+1的数组保存信息（0表示素数，1表示非素数），先假设所有的数都是素数（初始化...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1020,53 +887,57 @@ f[i][j]=max(f[i][j],f[i-1][j-w[i]...
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/some_gcds/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/some_gcds/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">GCD的几种实现方法</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">GCD的几种实现方法</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              最简单的gcd算法：
+                最简单的gcd算法：
 
 int gcd(int x, int y)
 {
 if(y == 0) return x;
 if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用的gcd算法： [cc] int gcd(int a, int b){ return a == 0 ? b : gcd(b % a, a); ...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1084,40 +955,44 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/acm-icpc-asia-qingdao-regional-contest-online/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/acm-icpc-asia-qingdao-regional-contest-online/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">ACM-ICPC Asia Qingdao Regional Contest, Online</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">ACM-ICPC Asia Qingdao Regional Contest, Online</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              
+                
 
 
 
@@ -1136,14 +1011,14 @@ Problem A. Live Love：
 代码如下：
 
 using namespace ...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1161,52 +1036,56 @@ using namespace ...
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/sshd-problem/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/sshd-problem/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">sshd连接修复笔记</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">sshd连接修复笔记</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              前言：阿毛这个博客服务器的sshd从几个月前就出现问题，命令只能通过管理控制台自带的SVN去执行，并且是osx自带的ssh和windows的xshell都连不上。这就让人很难受了。
+                前言：阿毛这个博客服务器的sshd从几个月前就出现问题，命令只能通过管理控制台自带的SVN去执行，并且是osx自带的ssh和windows的xshell都连不上。这就让人很难受了。
 
 查了很多资料，但是鄙人实在是太菜了，一直没找到是哪里出的问题，重启也重启了，补包也补包了，重装也重装了，甚至还自己写了几个脚本想强行启动，但始终是不行。
 
 所以阿毛就需要找一个解决方案，因为本身就是一个linu...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1224,40 +1103,44 @@ using namespace ...
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Bridge-construction/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Bridge-construction/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">大桥施工笔记</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">大桥施工笔记</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              鉴于某些不可描述的原因，科学上网的路越来越窄，笔者不得不自己搭桥。
+                鉴于某些不可描述的原因，科学上网的路越来越窄，笔者不得不自己搭桥。
 
 为了以防记忆丧失，无法正确使用大桥，便写下这篇笔记。
 
@@ -1268,14 +1151,14 @@ SSR部署脚本（CentOS6/Debian6/Ubuntu14 ）：
 yum -y install wget
 
 wget –no-check-certificate https://freed.ga/github/shadowsoc...
-            </p>
-          </div>
+              </p>
+            </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1293,26 +1176,25 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-
-
 </div>
 <!-- #post-list -->
 
@@ -1392,10 +1274,12 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 
 
 
+
+            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
               <!-- Get the last 5 posts from lastmod list. -->
 
@@ -1411,49 +1295,6 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 
 
 
-
-  <section id="access-lastmod">
-    <h2 class="panel-heading">Recently Updated</h2>
-    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Via-Dubai-and-Kuwait/">Via Dubai & Kuwait</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Hello-World-Again/">Hello World Again!</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Above-the-Stars/">星空之上_第一集</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Eighteen-Years-Old/">我的十八岁</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/Story-of-Blog/">网站折腾记</a>
-        </li>
-      
-    </ul>
-  </section>
-  <!-- #access-lastmod -->
 
 
               <!-- The trending tags list -->
@@ -1811,7 +1652,7 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
   <p>
     ©
     <time>2023</time>
-    <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
+    <a href="https://twitter.com/username">XINGHAN YIN</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -1821,7 +1662,7 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
   </p>
 
-  <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
   </p>
 </footer>
 
@@ -2296,7 +2137,7 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/dayjs@1.11.9/dayjs.min.js,npm/dayjs@1.11.9/locale/zh.min.js,npm/dayjs@1.11.9/plugin/relativeTime.min.js,npm/dayjs@1.11.9/plugin/localizedFormat.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/zh.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
 
 
 
