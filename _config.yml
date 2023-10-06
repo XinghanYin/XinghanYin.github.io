@@ -22,10 +22,10 @@ title: XINGHAN YIN  # the main title
 tagline: 尹星寒的博客 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  随心，克己，开心，欢愉。
+  随心，克己，想象，欢愉。
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ""
+url: "yinxinghan.com"
 
 github:
   username: XinghanYin # change to your github username
