@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>XINGHAN YIN</title>
   <subtitle>随心，克己，想象，欢愉。</subtitle>
-  <updated>2023-10-06T14:09:45-04:00</updated>
+  <updated>2023-10-06T16:02:25-04:00</updated>
   <author>
     <name>XINGHAN YIN</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,45 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Linux Kernel Note 1</title>
+    <link href="http://localhost:4000/posts/Hello-World-for-Linux-Kernel/" rel="alternate" type="text/html" title="Linux Kernel Note 1" />
+    <published>2023-10-06T15:00:00-04:00</published>
+  
+    <updated>2023-10-06T15:00:00-04:00</updated>
+  
+    <id>http://localhost:4000/posts/Hello-World-for-Linux-Kernel/</id>
+    <content src="http://localhost:4000/posts/Hello-World-for-Linux-Kernel/" />
+    <author>
+      <name>xy</name>
+    </author>
+
+  
+    
+    <category term="System" />
+    
+    <category term="Linux Kernel" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      After talking with Zephyr, I got the Unix73 paper and prepared to build Linux kernel by myself.
+
+In fact, I almost did’t have used Linux except sometimes host websites or webapps.
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -250,21 +289,23 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
   
   <entry>
-    <title>真实玩者成长记 - 壹</title>
-    <link href="http://localhost:4000/posts/Realgamer1/" rel="alternate" type="text/html" title="真实玩者成长记 - 壹" />
-    <published>2018-11-26T13:00:00-05:00</published>
+    <title>不管你信不信，俺下地狱了</title>
+    <link href="http://localhost:4000/posts/pw05/" rel="alternate" type="text/html" title="不管你信不信，俺下地狱了" />
+    <published>2021-03-08T04:00:00-05:00</published>
   
-    <updated>2018-11-26T13:00:00-05:00</updated>
+    <updated>2021-03-08T04:00:00-05:00</updated>
   
-    <id>http://localhost:4000/posts/Realgamer1/</id>
-    <content src="http://localhost:4000/posts/Realgamer1/" />
+    <id>http://localhost:4000/posts/pw05/</id>
+    <content src="http://localhost:4000/posts/pw05/" />
     <author>
-      <name>xy</name>
+      <name>pw0</name>
     </author>
 
   
     
     <category term="Archive" />
+    
+    <category term="pw0" />
     
   
 
@@ -276,90 +317,23 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
 
 
-      
+      说来你可能不信，我下地狱了
 
+那天的天气是什么样的我不记得了，具体是什么时间地点也不记得了，只记得我正准备睡觉，天空就突然变成了紫红色，满溢着鬼魅的样子。漂浮着血色极光的天空里混杂着阵阵黑烟，远方的天空甚至黑压压地出现了沙暴一样的异界……
 
+我勒个去！这可真是，百年难得一见啊！
 
-我来这里是为了逃避现实，但我发现了远比自己更重要的东西，我交到了许多朋友，我找到了真爱。 ——《头号玩家》
+当然，这又和我即将睡觉有什么关系呢，我翻了个身准备睡去——没有什么能阻止我午睡。
 
+“喂，去地狱了。”一个人在我身后戳了戳我。
 
+什么玩意，莫挨老子！
 
-打小我就是个喜欢游戏的孩子。与世呼吸了将近20年，很年轻，但我不知道这颗热爱游戏的心还是否能同我的生命，一直跳动下去。这些年来，遇到了很多精彩的好游戏，很多精彩的故事。我不想失去这些五颜六色的回忆，有感而发，随笔一些文字来记下从小到大我遇上的那些难忘、难言、感动的体验。
+我瞥了他一眼，他穿着带兜帽的黑色长袍，背上背着一个散发着不详气息的巨大乌黑镰刀。那长袍的质感让我怀疑它是从优衣库买来的，我甚至能脱口而出它的配料：“75%的涤纶和25%的棉”。当然，这只是我随口瞎说的，我只是觉得它和我室友丢的那件破运动服很像。
 
-启蒙：PlayStation时光
+而最违和的在于衣服上刺着四个绣花大字：“无常”“死神”。
 
-我最早开始接触游戏应该是三四岁，那时候老叔有一台PS1。就是最早的，读碟、得插存档卡的那种。现在回忆起来真的感觉有些遥远。
-
-
-图 1 最早的PlayStation开机画面
-
-
-图 2  PlayStation
-
-一回忆著一拈看，便似花前重见面。
-
-《古惑狼》
-
-玩的最多的，是一头狼的冒险故事，有神庙，有机关。可以在水下驾驶潜艇，前往一个又一个的岛上去战斗。这...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>常用背包模板</title>
-    <link href="http://localhost:4000/posts/some_dps/" rel="alternate" type="text/html" title="常用背包模板" />
-    <published>2018-11-26T13:00:00-05:00</published>
-  
-    <updated>2018-11-26T13:00:00-05:00</updated>
-  
-    <id>http://localhost:4000/posts/some_dps/</id>
-    <content src="http://localhost:4000/posts/some_dps/" />
-    <author>
-      <name>xy</name>
-    </author>
-
-  
-    
-    <category term="Archive" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      背包问题主要是背模板，这一段时间一直在学习背包相关的问题，记录几个dp模板吧。
-
-一些复杂的背包问题（如泛化物品）未收录
-
-01背包问题：
-
-无优化
-
-for(int i=1;i&amp;lt;=n;i++) { for(int j=0;j&amp;lt;=m;c++) { f[i][j]=f[i-1][j]; if(j&amp;gt;=w[i])
-f[i][j]=max(f[i][j],f[i-1][j-w[i]]+v[i]);
-}
-}
-
-一维数组优化：
-
-for(int i=1;i&amp;lt;=n;i++) { for(int j=m;j&amp;gt;=0;j–)
-{
-if(j&amp;gt;=w[i])
-f[j]=max(f[j],f[j-w[i]]+v[i]);
-}
-}
-
-
-更进一步的常数优化：
-
-for(int i=1;i&amp;lt;=n;i++) { sumw+=w[i]; bound=max(m-sumw,w[i]...
+“我去你的吧，还搞中西合璧啊，别打扰老子睡觉。”我...
     </summary>
   
 

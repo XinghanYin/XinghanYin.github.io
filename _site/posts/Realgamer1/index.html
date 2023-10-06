@@ -2281,6 +2281,40 @@
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2335,44 +2369,6 @@
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2536,13 +2532,13 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/codes/">Codes</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
@@ -2613,7 +2609,79 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -2785,7 +2853,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/Bridge-construction/" class="post-preview card h-100">
+          <a href="/posts/Hello-World-for-Linux-Kernel/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2799,14 +2867,14 @@
   
     class="small"
   
-  data-ts="1533571200"
+  data-ts="1696618800"
   data-df="ll"
   
 >
-  Aug  6, 2018
+  Oct  6, 2023
 </time>
 
-              <h4 class="pt-0 my-2">大桥施工笔记</h4>
+              <h4 class="pt-0 my-2">Linux Kernel Note 1</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -2815,59 +2883,10 @@
 
 
 
-                  鉴于某些不可描述的原因，科学上网的路越来越窄，笔者不得不自己搭桥。
+                  After talking with Zephyr, I got the Unix73 paper and prepared to build Linux kernel by myself.
 
-为了以防记忆丧失，无法正确使用大桥，便写下这篇笔记。
+In fact, I almost did’t have used Linux except sometimes host websites or webapps.
 
-
-
-已于2019年8月23日更新
-SSR部署脚本（CentOS6/Debian6/Ubuntu14 ）：
-yum -y install wget
-
-wget –no-check-certificate https://freed.ga/github/shadowsoc...
-                </p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/sshd-problem/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-    class="small"
-  
-  data-ts="1534327200"
-  data-df="ll"
-  
->
-  Aug 15, 2018
-</time>
-
-              <h4 class="pt-0 my-2">sshd连接修复笔记</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  前言：阿毛这个博客服务器的sshd从几个月前就出现问题，命令只能通过管理控制台自带的SVN去执行，并且是osx自带的ssh和windows的xshell都连不上。这就让人很难受了。
-
-查了很多资料，但是鄙人实在是太菜了，一直没找到是哪里出的问题，重启也重启了，补包也补包了，重装也重装了，甚至还自己写了几个脚本想强行启动，但始终是不行。
-
-所以阿毛就需要找一个解决方案，因为本身就是一个linu...
                 </p>
               </div>
             </div>
@@ -2930,6 +2949,49 @@ using namespace ...
           </a>
         </article>
       
+        <article class="col">
+          <a href="/posts/some_gcds/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+    class="small"
+  
+  data-ts="1541995200"
+  data-df="ll"
+  
+>
+  Nov 11, 2018
+</time>
+
+              <h4 class="pt-0 my-2">GCD的几种实现方法</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  最简单的gcd算法：
+
+int gcd(int x, int y)
+{
+if(y == 0) return x;
+if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用的gcd算法： [cc] int gcd(int a, int b){ return a == 0 ? b : gcd(b % a, a); ...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -2955,11 +3017,11 @@ using namespace ...
 
   
     <a
-      href="/posts/Hello-World-Again/"
+      href="/posts/pw0/"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>Hello World Again!</p>
+      <p>你知道吗，龙是存在的</p>
     </a>
   
 </nav>
@@ -3056,6 +3118,40 @@ using namespace ...
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3110,44 +3206,6 @@ using namespace ...
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3311,13 +3369,13 @@ using namespace ...
         <a class="post-tag btn btn-outline-primary" href="/tags/codes/">Codes</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>

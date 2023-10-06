@@ -1046,6 +1046,40 @@
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1100,44 +1134,6 @@
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1301,13 +1297,13 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/codes/">Codes</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
@@ -1493,6 +1489,66 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -1545,7 +1601,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/Above-the-Stars/" class="post-preview card h-100">
+          <a href="/posts/acm-icpc-asia-qingdao-regional-contest-online/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1559,14 +1615,14 @@
   
     class="small"
   
-  data-ts="1530028800"
+  data-ts="1537192800"
   data-df="ll"
   
 >
-  Jun 26, 2018
+  Sep 17, 2018
 </time>
 
-              <h4 class="pt-0 my-2">星空之上_第一集</h4>
+              <h4 class="pt-0 my-2">ACM-ICPC Asia Qingdao Regional Contest, Online</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -1576,13 +1632,31 @@
 
 
                   
+
+
 
 前言：
 
-我是一个深度的科幻作品爱好者。最喜欢的科幻小说是《银河帝国》系列，没有其次。读过很多脍炙人口的科幻小说，风格迥异，构思新奇，都给我带来了快乐，但印象大都不太深刻，有一种吃快餐的感觉。
-几年来一直忙高中课程的学习，忙高考。高考终于结束了，如今，我终于有了一点时间来写一部我自己的科幻小说。
-这是我的处女作，作品名暂定为《星空之上》，向我所向往着的星空致敬。
-文字中不乏天马行空的地方...
+昨天参加了一波青岛赛区的ACM网络赛，很快乐的水了一下午，感觉自己一直不在状态。
+
+只做出来五道题，C题思路有问题，WA了几次，超时了几次，罚时罚到爆炸。
+
+简单记录一下五道题的思路和代码。
+
+Problem A. Live Love：
+
+非常水的一道题，本质就是一个数列问题，求数列中特殊值的连续个数最大值和最小值，纯模拟。
+
+代码如下：
+
+1
+2
+3
+4
+5
+6
+7
+us...
                 </p>
               </div>
             </div>
@@ -1590,7 +1664,7 @@
         </article>
       
         <article class="col">
-          <a href="/posts/Above-the-Stars2/" class="post-preview card h-100">
+          <a href="/posts/some_gcds/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1604,14 +1678,14 @@
   
     class="small"
   
-  data-ts="1530036000"
+  data-ts="1541995200"
   data-df="ll"
   
 >
-  Jun 26, 2018
+  Nov 11, 2018
 </time>
 
-              <h4 class="pt-0 my-2">星空之上_第二集</h4>
+              <h4 class="pt-0 my-2">GCD的几种实现方法</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -1620,17 +1694,16 @@
 
 
 
-                  
+                  最简单的gcd算法：
 
-
-
-庞勇坐到车里的第一时间起，他就听到了自己剧烈的心跳声。
-
-加厚过的车体、狭窄且密封的防弹玻璃窗、用精制钢板隔开的宽敞车厢，都彰显着庞勇身边这个中年人不同寻常的身份。
-
-庞勇努力地保持着冷静，绞尽脑汁的思考着这个中年人究竟是谁。
-
-“庞教授，我这么做是出于对您的安全考虑，还希望您能谅解。”在这辆车开出很久以后，中年人终于开口了。从庞勇上车后他就一直看着庞勇，富有磁性的嗓音和线条分明的轮...
+1
+2
+3
+4
+int gcd(int x, int y)
+{
+if(y == 0) return x;
+if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用的gcd算法： [cc] int gcd(int a, int b){ return a == 0 ? b : gcd(b %...
                 </p>
               </div>
             </div>
@@ -1638,7 +1711,7 @@
         </article>
       
         <article class="col">
-          <a href="/posts/WBSYS/" class="post-preview card h-100">
+          <a href="/posts/prime_linear_sieve/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1652,14 +1725,14 @@
   
     class="small"
   
-  data-ts="1531213200"
+  data-ts="1543165200"
   data-df="ll"
   
 >
-  Jul 10, 2018
+  Nov 25, 2018
 </time>
 
-              <h4 class="pt-0 my-2">《我不是药神》短评</h4>
+              <h4 class="pt-0 my-2">线性筛素数</h4>
               <div class="text-muted small">
                 <p>
                   
@@ -1668,16 +1741,17 @@
 
 
 
-                  我的朋友圈被药神刷屏了。
+                  日常突然更新的学习笔记。
 
-上周六，我和大邱、登申一块去了电影院，看了这部已经被刷疯了的片子。
+最近做了一道在很大的范围里筛选出素数的神仙题，因为超时搞得很头疼，所以想来深入了解一下线性筛法，提高程序运行效率。
 
+我们常说的线性筛是指在线性时间内把素数表筛出来的过程，这里介绍两种筛法.
 
-正在分析剧情的大邱。
+一般筛法（埃拉托斯特尼筛法）：
 
-整部电影给我的感受是很细腻的。我体验到了一种很现实的、充满市井气息的、触人心弦的人性美。
+基本思想：素数的倍数一定不是素数
 
-那天晚上我了解到了电影的原型，2015年那个真正的程勇接受的司法审判。就记得当时嚼着口香糖，边嚼边想这人真他妈是个好人。从头到尾，这实际上都是一个很真善美的故事，不管是电影中，还...
+实现方法：用一个长度为N+1的数组保存信息（0表示素数，1表示非素数），先假设所有的数都是素数（初始化...
                 </p>
               </div>
             </div>
@@ -1810,6 +1884,40 @@
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1864,44 +1972,6 @@
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2065,13 +2135,13 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/codes/">Codes</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
