@@ -6,7 +6,7 @@ categories: [Archive]
 tags: [Novel]
 ---
 
-![星空之上](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/Archive/up_stars_1-1.jpg)
+![星空之上](https://data.yinxinghan.com/Blog/Before2024/up_stars_1-1.jpg)
 
 ---
 

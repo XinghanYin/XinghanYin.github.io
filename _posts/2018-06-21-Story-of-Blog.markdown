@@ -4,10 +4,12 @@ author: xy
 date: 2018-06-21 01:00:00 +0800
 categories: [Archive]
 tags: [Note,Web]
+img_path: http://data.yinxinghan.com/Blog/2024/0318/
 ---
 
-![妹Blog](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/Archive/20180621.png)
+<!--![妹Blog](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/Archive/20180621.png)-->
 
+![妹Blog](https://data.yinxinghan.com/Blog/Before2024/20180621.png)
 ---
 
 

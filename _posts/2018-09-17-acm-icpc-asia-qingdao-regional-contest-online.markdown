@@ -4,7 +4,7 @@ author: xy
 date: 2018-09-17 22:00:00 +0800
 categories: [Archive]
 tags: [Codes]
-img_path: /images/Archive
+img_path: https://data.yinxinghan.com/Blog/Before2024
 ---
 
 ![ICPCQingdaoOnline](/ICPCQingdaoOnline.png)

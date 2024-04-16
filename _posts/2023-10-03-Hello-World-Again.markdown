@@ -4,6 +4,7 @@ author: xy
 date: 2023-10-04 01:00:00 -0400
 categories: [Thinking]
 tags: [EMO]
+img_path: https://data.yinxinghan.com/Blog/Before2024
 ---
 ![Manhattan-1](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/Manhattan/1.jpeg)
 

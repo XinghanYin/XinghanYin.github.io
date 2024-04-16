@@ -6,7 +6,7 @@ categories: [Archive]
 tags: [Movie]
 ---
 
-![Tweleve-Citizens](https://raw.githubusercontent.com/XinghanYin/XinghanYin.github.io/main/images/Archive/20180622.jpeg)
+![Tweleve-Citizens](https://data.yinxinghan.com/Blog/Before2024/20180622.jpeg)
 
 ---
 
