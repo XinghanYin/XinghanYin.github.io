@@ -1,7 +1,7 @@
 ---
 title: "SPM - Cost Estimation"
 author: xy
-date: 2024-04-16 13:10:00 -0400
+date: 2024-04-16 10:10:00 -0400
 categories: [Study,Software Project Management]
 tags: [Study,SPM]
 ---
