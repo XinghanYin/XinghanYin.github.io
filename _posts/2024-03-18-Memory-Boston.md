@@ -4,7 +4,7 @@ author: xy
 date: 2024-03-18 13:10:00 -0400
 categories: [Travel,Boston]
 tags: [Photo]
-img_path: http://data.yinxinghan.com/Blog/2024/Boston/
+img_path: /2024/Boston/
 ---
 
 春假的时候，我跟宇宇一块去了趟波士顿，玩了五天。

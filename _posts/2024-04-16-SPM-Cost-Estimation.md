@@ -9,7 +9,7 @@ tags: [Study,SPM]
 
 # Excample Description
 
-A project 'X' has 2 iterations, each 6 months. Certain problem may anise within the project at the 6 months which may cause devastating effects. You as a project manager, have 3 options to consider from each of which has a success & a failure date.
+A project 'X' has 2 iterations, each 6 months. Certain problem may arise within the project at the 6 months which may cause devastating effects. You as a project manager, have 3 options to consider from each of which has a success & a failure date.
  > **( Note: Attention!! The summary is 2x6 = 12 months )**
 
 
