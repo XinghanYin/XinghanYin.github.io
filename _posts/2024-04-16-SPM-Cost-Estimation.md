@@ -89,7 +89,7 @@ $$
 It will cost 30984.68 dollars when nothing had gone wrong.
 
 ### Question 2:
-**1.Continue as it is:-** 
+**1. Option1: Continue as it is:-** 
 
 **Success: -**
 NCF Calculation:
@@ -105,6 +105,59 @@ $$
 3. Year 2: $$12*3000=36000$$
 4. Then:
 $$
-NPV = \frac{-1200}{(1+\frac{12}{120})^0}+\frac{16000}{(1+\frac{12}{120})^1}+\frac{36000}{(1+\frac{12}{120})^2}=...=56070.40816
+NPV = \frac{-12000}{(1+\frac{12}{100})^0}+\frac{16000}{(1+\frac{12}{100})^1}+\frac{36000}{(1+\frac{12}{100})^2}=...=30984.69388
 $$
 
+**Failure: -** 
+NCF Calculation: 
+
+1. Year 0: $$12*-1000=-12000$$
+2. Year 1:
+ $$
+\begin{cases}
+ 9 * -1000 &= -9000\\
+ 3*0&=0\\
+\end{cases} =- 9000
+$$
+3. Year 2:$$
+\begin{cases}
+1*0&=0\\
+11*3000&=33000\\
+\end{cases} =33000
+$$
+
+4. Then:
+$$
+NPV = \frac{-12000}{(1+\frac{12}{100})^0}+\frac{-9000}{(1+\frac{12}{100})^1}+\frac{33000}{(1+\frac{12}{100})^2}=...=6271.6836
+$$
+
+\
+**2. Option 2: Reshuffle Resources: Skip, Same as above.**
+
+**3. Option 3: Hire Consultants: -**
+NCF Calculation:-
+
+1. Year 0: 
+$$
+\begin{cases}
+12*-1000&=-12000\\
+6*-1200&=-7200\\
+\end{cases} =-19200
+$$
+2. Year 1: 
+$$
+\begin{cases}
+1*-1000&=-1000\\
+1*-1200&=-1200\\
+4*0&=0\\
+7*2000&=14000\\
+\end{cases} =11800
+$$
+2. Year 2: 
+$$
+12*3000=36000
+$$
+4. Then:
+$$
+NPV = \frac{-19200}{(1+\frac{12}{100})^0}+\frac{11800}{(1+\frac{12}{100})^1}+\frac{36000}{(1+\frac{12}{100})^2}=...=20034.69388
+$$
