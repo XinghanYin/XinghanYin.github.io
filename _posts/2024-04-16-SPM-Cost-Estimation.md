@@ -55,7 +55,55 @@ A project 'X' has 2 iterations, each 6 months. Certain problem may anise within 
 
 ## Formulars
 
-Net-Present Value: This is value of all future and present cash flows over the entire life of the asset.
-
+- Net Present Value ( NPV ): This is value of all future and present cash flows over the entire life of the asset.
+$$
 NPV = \sum_{t=0}^N \frac{NCF}{(1+i)^t}
+$$
 > N is year.
+
+- Net Cash Flow ( NCF ): Total IN and OUT.
+
+### Qustion 1:
+NCF Calculation:
+1.  Year 0: $$12 * -1000 = -12000$$
+2.  Year 1: 
+$$
+ \begin{cases}
+ 4 * 0 &= 0\\
+ 8 * 2000 &= 16000
+\end{cases} =16000
+$$
+
+
+3. Year 2: $$12 * 3000 = 36000$$
+4. Then:
+$$
+NPV = \sum_{t=0}^N \frac{NCF}{(1+i)^t}=\frac{-1200}{(1+\frac{12}{120})^0}+\frac{16000}{(1+\frac{12}{120})^1}+\frac{36000}{(1+\frac{12}{120})^2}
+\\
+=-12000+\frac{16000}{1.12}+\frac{16000}{(1.12)^2}
+\\
+=30984.68
+$$
+
+It will cost 30984.68 dollars when nothing had gone wrong.
+
+### Question 2:
+**1.Continue as it is:-** 
+
+**Success: -**
+NCF Calculation:
+1. Year 0: $$12*-1000=-12000$$
+2. Year 1:
+$$
+ \begin{cases}
+ 4 * -1000 &= -4000\\
+ 4*0&=0\\
+ 4 * 2000 &= 8000
+\end{cases} =4000
+$$
+3. Year 2: $$12*3000=36000$$
+4. Then:
+$$
+NPV = \frac{-1200}{(1+\frac{12}{120})^0}+\frac{16000}{(1+\frac{12}{120})^1}+\frac{36000}{(1+\frac{12}{120})^2}=...=56070.40816
+$$
+
