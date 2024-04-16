@@ -56,6 +56,7 @@ A project 'X' has 2 iterations, each 6 months. Certain problem may anise within 
 ## Formulars
 
 - Net Present Value ( NPV ): This is value of all future and present cash flows over the entire life of the asset.
+
 $$
 NPV = \sum_{t=0}^N \frac{NCF}{(1+i)^t}
 $$
