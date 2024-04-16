@@ -7,7 +7,7 @@ tags: [Codes]
 img_path: https://data.yinxinghan.com/Blog/Before2024
 ---
 
-![ICPCQingdaoOnline](/ICPCQingdaoOnline.png)
+![ICPCQingdaoOnline](ICPCQingdaoOnline.png)
 
 ---
 

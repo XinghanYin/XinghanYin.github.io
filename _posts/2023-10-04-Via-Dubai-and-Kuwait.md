@@ -7,97 +7,97 @@ tags: [Photo]
 img_path: https://data.yinxinghan.com/Blog/Before2024/Dubai2023
 ---
 
-![Dubai](/Dubai.png)
+![Dubai](Dubai.png)
 _Dubai and Kuwait_
 
 接上文，8月25日从中国出发后的第一个目的地，迪拜。
 
-![CNEI](/35.jpeg)
+![CNEI](35.jpeg)
 _中国边检_
 
-![FLY](/8.jpeg)
+![FLY](8.jpeg)
 _天空太美了_
 
 历经9小时飞行，在当地时间晚上10点抵达。
 
-![Window](/23.jpeg)
+![Window](23.jpeg)
 _落地滑行中_
 
-![Rolex](/24.jpeg)
+![Rolex](24.jpeg)
 _机场通道的Rolex_
 
-![Subway1](/25.jpeg)
+![Subway1](25.jpeg)
 _轻轨_
 
-![Subway2](/26.jpeg)
+![Subway2](26.jpeg)
 _轻轨_
 
 停机坪通往机场大厅是轻轨连接的，因为迪拜的温度实在太高了。
 
-![5G Card](/2.jpeg)
+![5G Card](2.jpeg)
 _落地就送电话卡_
 
 我们带着大小六个箱子，还有两个背包，总计160公斤的行李
 
-![5G Card](/9.jpeg)
+![5G Card](9.jpeg)
 _出海关就送电话卡_
 
-![Shop & Gold](/27.jpeg)
+![Shop & Gold](27.jpeg)
 _机场商店的黄金柜台_
 
-![Texi1](/10.jpeg)
+![Texi1](10.jpeg)
 _出租车打表价格_
 
 从Dubai机场出发的出租车打表价格，当地货币迪拉姆和人民币比例是1:2，并不算贵，基本上距离越远平均价格越低。
 
-![Texi2](/28.jpeg)
+![Texi2](28.jpeg)
 
-![Texi3](/29.jpeg)
+![Texi3](29.jpeg)
 
 到达酒店，办理入住。
 
-![Hotel Card](/30.jpeg)
+![Hotel Card](30.jpeg)
 _房卡_
 
-![TV](/31.jpeg)
+![TV](31.jpeg)
 _欢迎信息_
 
 迪拜的酒店没想象的贵，五星基本都在350迪拉姆左右，如果不含早餐就只需要260迪拉姆。
 
 早餐也还不错，但是比中国的同级别酒店标准要低。
 
-![Breakfast1](/11.jpeg)
+![Breakfast1](11.jpeg)
 _Beverage_
 
-![Breakfast2](/12.JPG)
+![Breakfast2](12.JPG)
 
-![Breakfast3](/13.jpeg)
+![Breakfast3](13.jpeg)
 
-![Breakfast4](/14.jpeg)
+![Breakfast4](14.jpeg)
 
-![Breakfast5](/3.jpeg)
+![Breakfast5](3.jpeg)
 _Cake_
 
 主厨人很不错，看我们是外国游客，送了一份草莓小蛋糕。
 
 吃完早饭，出发去我们今天的第一个目的地 - Dubai Mall
 
-![Berj Khalifa](/4.jpeg)
+![Berj Khalifa](4.jpeg)
 _很远就可以看到哈利法塔了_
 
 Dubai Mall就在哈利法塔的下面，据说是全世界最大的商场。
 
 整个商场分很多不同的区域，一进去先是中国馆。
 
-![CN Field](/5.jpeg)
+![CN Field](5.jpeg)
 
 也有海底捞和华为。
 
-![CN Field](/32.jpeg)
+![CN Field](32.jpeg)
 
-![CN Field](/33.jpeg)
+![CN Field](33.jpeg)
 
-![CN Field](/34.jpeg)
+![CN Field](34.jpeg)
 
 商场中央有一块巨大的显示屏，下面是溜冰场。
 
@@ -113,10 +113,10 @@ Dubai Mall就在哈利法塔的下面，据说是全世界最大的商场。
 
 在商场继续逛了一会儿。
 
-![CN Field](/16.jpeg)
+![CN Field](16.jpeg)
 _电竞用品门店_
 
-![CN Field](/17.jpeg)
+![CN Field](17.jpeg)
 _从商场往外看的样子_
 
 接下来我们就去了哈利法塔顶层的观景餐厅 - AT.MOSPHERE
