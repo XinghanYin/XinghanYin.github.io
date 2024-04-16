@@ -45,15 +45,6 @@ A project 'X' has 2 iterations, each 6 months. Certain problem may anise within 
 - The monthly revenue for the 2nd year = $3000
 - Increment Rate: 12% per year. ( On Costs & Revenues )
 
-
-## Questions
-
-> ***Kindly note that the project is begin developed in the 0th year.***
-
-1. What would be your initial estimations as a project manager is nothing had gone wrong?
-
-2. Which of the above 3 options. Would you adopt to minimire the amont of duration from the initial estimation?
-
 ## Formulars
 
 - Net Present Value ( NPV ): This is value of all future and present cash flows over the entire life of the asset.
@@ -63,6 +54,15 @@ $$
 > N is year.
 
 - Net Cash Flow ( NCF ): Total IN and OUT.
+
+## Questions
+
+> ***Kindly note that the project is begin developed in the 0th year.***
+
+1. What would be your initial estimations as a project manager is nothing had gone wrong?
+
+2. Which of the above 3 options. Would you adopt to minimire the amont of duration from the initial estimation?
+
 
 ### Qustion 1:
 NCF Calculation:
