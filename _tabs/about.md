@@ -6,7 +6,6 @@ order: 4
 
 <center><h1>寒冷大王</h1></center>
 
-## 关于我
 
 ![Xinghan in Palm Beach](/images/Xinghan_PalmBeach.JPG)
 
