@@ -26,7 +26,7 @@ body {
 }
 
 #galleryPhoto {
-  max-width: 70%;
+  max-width: 90%;
   max-height: 70%;
   border-radius: 10px;
   cursor: pointer;
@@ -34,7 +34,7 @@ body {
 }
 
 .navigation {
-  position: fixed;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -45,16 +45,22 @@ body {
 }
 
 .navigation button {
-  background: none;
+  background: rgba(0, 0, 0, 0.5);
   border: none;
-  color: #000;
-  font-size: 48px;
+  color: #fff;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: background-color 0.3s;
 }
 
 .navigation button:hover {
-  color: #888;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .photo-info {
@@ -106,4 +112,17 @@ body {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  #galleryPhoto {
+    max-width: 100%;
+    max-height: 60%;
+  }
+
+  .navigation button {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+  }
 }
