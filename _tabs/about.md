@@ -29,7 +29,7 @@ order: 4
 
 ## 一些经历
 
-* **? / 2003 - ? / 2004 MiaoMiao Kindergarten**
+### * **? / 2003 - ? / 2004 MiaoMiao Kindergarten**
 
 > **中间被拉到大班，然后被李霄瀚欺负。**
 
@@ -39,7 +39,7 @@ order: 4
 
 > **住在老院里，有爷爷奶奶、老姥（奶奶的嫂子）和我们一家。**
 
-* **09 / 2004 - 07 / 2005 Yucai Primary School，Pre Grade**
+### * **09 / 2004 - 07 / 2005 Yucai Primary School，Pre Grade**
 
 > **上课经常迟到。**
 
@@ -47,21 +47,21 @@ order: 4
 
 > **跳过了大半（学前班分小半和大半，都读完需要两年）。**
 
-* **09 / 2005 - 06 / 2010 Yucai Primary School**
+### * **09 / 2005 - 06 / 2010 Yucai Primary School**
 
 > **喜欢一个女同学六年，从一年级到六年级。**
 
 > **我喜欢玩赛尔号，经常花钱买米米卡，但是没有普尼。**
- 
+
 > **遇到的最好的老师是五年级的陈老师。**
 
 > **参加了几次演讲比赛，取得好成绩。**
 
 > **成绩不拔尖，从来没有因为考试成绩拿过奖状。**
- 
+
 > **性格软弱，受到过霸凌。**
 
-* **08 / 2010 - 06 / 2014 Bilingual Middle School**
+### * **08 / 2010 - 06 / 2014 Bilingual Middle School**
 
 > ***认识了一些好朋友。***
 
@@ -73,9 +73,14 @@ order: 4
 
 > **初二的时候开始接触网页开发和最基础的IDE。**
 
-* **09 / 2014 - 03 / 2015 Wuyi High School**
-* **02 / 2016 - 06 / 2017 Qinghe High School & Koolearn of Tianjin**
-* **09 / 2017 - 01 / 2018 Wuyi High School**
-* **02 / 2018 - 06 / 2018 Qinghe High School**
-* **08 / 2018 - 06 / 2022 UESTC, BEng, Computer Science**
-* **09 / 2023 - 05 / 2025, NJIT, MS, Computer Science**
+### * **09 / 2014 - 03 / 2015 Wuyi High School**
+
+### * **02 / 2016 - 06 / 2017 Qinghe High School & Koolearn of Tianjin**
+
+### * **09 / 2017 - 01 / 2018 Wuyi High School**
+
+### * **02 / 2018 - 06 / 2018 Qinghe High School**
+
+### * **08 / 2018 - 06 / 2022 UESTC, BEng, Computer Science**
+
+### * **09 / 2023 - 05 / 2025, NJIT, MS, Computer Science**
