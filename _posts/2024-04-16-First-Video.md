@@ -6,3 +6,4 @@ categories: [Code]
 tags: [Video]
 ---
 
+{% Video https://data.yinxinghan.com/Blog/videos/tiandiyishaou.mov 500 400 %}
