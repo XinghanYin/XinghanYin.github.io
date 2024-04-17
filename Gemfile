@@ -26,3 +26,6 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 if RUBY_PLATFORM =~ /linux-musl/
   gem "jekyll-sass-converter", "~> 2.0"
 end
+
+# 20240417 为博客安装播放器 https://github.com/cookpete/react-player?tab=readme-ov-file#supported-media
+gem 'jekyll-react-player'
