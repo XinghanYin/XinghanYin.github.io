@@ -6,4 +6,4 @@ categories: [Code]
 tags: [Video]
 ---
 
-{% reactplayer /videos/tiandiyishaou.mov %}
+{% reactplayer https://www.youtube.com/watch?v=LXb3EKWsInQ %}
