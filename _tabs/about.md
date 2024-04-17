@@ -8,7 +8,7 @@ order: 4
 
 ## 关于我
 
-![Xinghan in Palm Beach](images/Xinghan_PalmBeach.JPG)
+![Xinghan in Palm Beach](/images/Xinghan_PalmBeach.JPG)
 
 我是星寒，属龙，在中国北方的一个小县城里长大，喜欢唠嗑、吃饭、和朋友们一起到处走走。
 
