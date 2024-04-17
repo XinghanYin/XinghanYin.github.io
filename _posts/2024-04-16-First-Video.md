@@ -6,4 +6,3 @@ categories: [Code]
 tags: [Video]
 ---
 
-{% reactplayer https://www.youtube.com/watch?v=LXb3EKWsInQ %}
