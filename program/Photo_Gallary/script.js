@@ -9,23 +9,21 @@ const focalLengthInfo = document.getElementById('focalLength');
 const locationInfo = document.getElementById('location');
 const prevButton = document.getElementById('prevButton');
 const nextButton = document.getElementById('nextButton');
-const cdnUrlInput = document.getElementById('cdnUrl');
+
+const CDN_URL = 'https://data.yinxinghan.com/';
 
 let photos = [];
 let currentPhotoIndex = 0;
 
-cdnUrlInput.addEventListener('change', () => {
-  const cdnUrl = cdnUrlInput.value;
-  fetch('photos.json')
-    .then(response => response.json())
-    .then(data => {
-      photos = data.map(photo => ({
-        ...photo,
-        url: `${cdnUrl}${photo.url}`
-      }));
-      displayPhoto();
-    });
-});
+fetch('photos.json')
+  .then(response => response.json())
+  .then(data => {
+    photos = data.map(photo => ({
+      ...photo,
+      url: `${CDN_URL}${photo.url}`
+    }));
+    displayPhoto();
+  });
 
 function displayPhoto() {
   const photo = photos[currentPhotoIndex];

@@ -34,7 +34,7 @@ body {
 }
 
 .navigation {
-  position: absolute;
+  position: fixed;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -47,14 +47,14 @@ body {
 .navigation button {
   background: none;
   border: none;
-  color: #fff;
-  font-size: 24px;
+  color: #000;
+  font-size: 48px;
   cursor: pointer;
   transition: color 0.3s;
 }
 
 .navigation button:hover {
-  color: #ccc;
+  color: #888;
 }
 
 .photo-info {
@@ -106,21 +106,4 @@ body {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
-}
-
-.cdn-input {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.cdn-input label {
-  color: #fff;
-  margin-right: 10px;
-}
-
-.cdn-input input {
-  padding: 5px;
-  width: 300px;
 }
