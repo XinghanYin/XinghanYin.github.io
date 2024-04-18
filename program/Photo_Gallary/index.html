@@ -32,3 +32,44 @@
   <script src="script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XINGHAN's Picture Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fontawesome.css">
+  <link rel="icon" href="favicon_32.ico" sizes="32x32">
+  <link rel="icon" href="favicon_64.ico" sizes="64x64">
+  <link rel="icon" href="favicon_96.ico" sizes="96x96">
+  <link rel="icon" href="favicon_256.ico" sizes="256x256">
+</head>
+<body>
+  <header>
+    <h1>XINGHAN's Picture Gallery</h1>
+  </header>
+  <div class="logo">
+    <img src="https://data.yinxinghan.com/Blog/avatar.jpeg" alt="Logo">
+  </div>
+  <div class="gallery">
+    <img src="" alt="Gallery Photo" id="galleryPhoto">
+    <div class="navigation">
+      <button id="prevButton"><i class="fas fa-chevron-left"></i></button>
+      <button id="nextButton"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="photo-info">
+      <p id="series"></p>
+      <p id="camera"></p>
+      <p id="lens"></p>
+      <p id="focalLength"></p>
+      <p id="location"></p>
+    </div>
+  </div>
+  <div id="fullscreenModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="fullscreenPhoto">
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

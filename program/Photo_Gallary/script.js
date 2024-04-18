@@ -10,7 +10,7 @@ const locationInfo = document.getElementById('location');
 const prevButton = document.getElementById('prevButton');
 const nextButton = document.getElementById('nextButton');
 
-const CDN_URL = 'https://data.yinxinghan.com/';
+const CDN_URL = 'https://data.yinxinghan.com';
 
 let photos = [];
 let currentPhotoIndex = 0;
@@ -22,28 +22,47 @@ fetch('photos.json')
       ...photo,
       url: `${CDN_URL}${photo.url}`
     }));
+    shufflePhotos();
     displayPhoto();
   });
+
+function shufflePhotos() {
+  for (let i = photos.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [photos[i], photos[j]] = [photos[j], photos[i]];
+  }
+}
 
 function displayPhoto() {
   const photo = photos[currentPhotoIndex];
   galleryPhoto.src = photo.url;
+  galleryPhoto.classList.remove('loaded');
 
   seriesInfo.textContent = photo.series ? `Series: ${photo.series}` : '';
   cameraInfo.textContent = photo.camera ? `Camera: ${photo.camera}` : '';
   lensInfo.textContent = photo.lens ? `Lens: ${photo.lens}` : '';
   focalLengthInfo.textContent = photo.focalLength ? `Focal Length: ${photo.focalLength}` : '';
   locationInfo.textContent = photo.location ? `Location: ${photo.location}` : '';
+
+  galleryPhoto.addEventListener('load', () => {
+    galleryPhoto.classList.add('loaded');
+  });
 }
 
 function showPreviousPhoto() {
-  currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
-  displayPhoto();
+  galleryPhoto.classList.remove('loaded');
+  setTimeout(() => {
+    currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+    displayPhoto();
+  }, 500);
 }
 
 function showNextPhoto() {
-  currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
-  displayPhoto();
+  galleryPhoto.classList.remove('loaded');
+  setTimeout(() => {
+    currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+    displayPhoto();
+  }, 500);
 }
 
 function openFullscreen() {
