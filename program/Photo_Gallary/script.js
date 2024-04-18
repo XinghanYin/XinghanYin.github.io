@@ -33,7 +33,6 @@ function shufflePhotos() {
   }
 }
 
-
 function displayPhoto() {
   const photo = photos[currentPhotoIndex];
   galleryPhoto.src = photo.url;
@@ -46,12 +45,9 @@ function displayPhoto() {
   locationInfo.textContent = photo.location ? `Location: ${photo.location}` : '';
 
   galleryPhoto.addEventListener('load', () => {
-    setTimeout(() => {
-      galleryPhoto.classList.add('loaded');
-    }, 100);
+    galleryPhoto.classList.add('loaded');
   });
 }
-
 
 function showPreviousPhoto() {
   galleryPhoto.classList.remove('loaded');
