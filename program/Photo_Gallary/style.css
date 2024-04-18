@@ -3,9 +3,9 @@ body {
   padding: 0;
   background-color: #F6F8FA;
   font-family: Arial, sans-serif;
-  display: flex;
+ /* display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh;*/
 }
 
 header {
@@ -32,17 +32,18 @@ h1 {
 }
 
 .gallery {
-  flex: 1;
+  /*flex: 1;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
+   height: 100vh;
 }
 
 #galleryPhoto {
-  max-width: 60%;
-  max-height: 60%;
+  max-width: 70%;
+  max-height: 70%;
   border-radius: 10px;
   cursor: pointer;
 }
