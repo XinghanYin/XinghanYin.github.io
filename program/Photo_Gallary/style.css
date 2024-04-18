@@ -43,11 +43,8 @@ h1 {
 #galleryPhoto {
   max-width: 60%;
   max-height: 60%;
-  object-fit: contain;
   border-radius: 10px;
   cursor: pointer;
-  opacity: 0;
-  transition: opacity 1s;
 }
 
 #galleryPhoto.loaded {
