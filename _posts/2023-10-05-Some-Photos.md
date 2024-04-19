@@ -4,7 +4,7 @@ author: xy
 date: 2023-10-05 23:56:00 -0400
 categories: [Photo,USA]
 tags: [Photo]
-img_path: http://data.yinxinghan.com/Blog/Before2024/2023/Nov/05/
+img_path: /Before2024/2023/Nov/05/
 ---
 
 前两天去了史蒂文斯，在曼哈顿对岸，拍了一些还不错的照片。
