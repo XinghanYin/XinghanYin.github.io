@@ -11,7 +11,8 @@ body {
     background-position: center;
     background-size: contain;
     transition: opacity 1s ease-in-out;
-    border-radius: 20px;
+    border-radius: 50%; /* 将边框半径设置为50%,即圆形 */
+    overflow: hidden; /* 隐藏溢出部分,确保圆角可见 */
 }
 #bg2 {
     opacity: 0;
