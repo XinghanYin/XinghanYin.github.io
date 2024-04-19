@@ -1,9 +1,15 @@
 const CDN_URL = 'https://data.yinxinghan.com';
 
 const images = [
-    "/images/1.jpg",
-    "/images/2.jpg",
-    "/images/3.jpg",
+    //20240419添加
+    "/Blog/Before2024/2023/Nov/05/1.JPG",
+    "/Blog/Before2024/2023/Nov/05/2.jpeg",
+    "/Blog/Before2024/2023/Nov/05/5.JPG",
+    "/Blog/images/Xinghan_PalmBeach.JPG",
+    "/Blog/Before2024/Dubai2023/8.jpeg",
+    "/Blog/Before2024/Dubai2023/17.jpeg" //,
+    
+
     // ...在这里添加更多图片的相对路径
 ].map(url => CDN_URL + url);
 
