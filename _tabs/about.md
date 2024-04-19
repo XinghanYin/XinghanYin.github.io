@@ -27,7 +27,7 @@ order: 4
 
 ## 想说的话
 
-## 一些经历
+## 教育经历
 
 ### * **? / 2003 - ? / 2004 MiaoMiao Kindergarten**
 
