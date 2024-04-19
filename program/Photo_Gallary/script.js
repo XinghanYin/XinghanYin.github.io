@@ -1,4 +1,4 @@
-const CDN_URL = 'https://data.yinxinghan.com';
+const CDN_URL = 'https://data.yinxinghan.com/';
 
 fetch('images.json')
     .then(response => response.json())
