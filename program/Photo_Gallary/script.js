@@ -20,22 +20,27 @@ fetch('images.json')
             const bg1 = document.getElementById("bg1");
             const bg2 = document.getElementById("bg2");
 
-            if (bg1.style.opacity === "" || bg1.style.opacity === "1") {
-                bg2.style.backgroundImage = `url('${images[randomIndex]}')`;  
-                bg2.style.opacity = 1;
-                bg1.style.opacity = 0;
-            } else {
-                bg1.style.backgroundImage = `url('${images[randomIndex]}')`;
-                bg1.style.opacity = 1;
-                bg2.style.opacity = 0;
-            }
+            const img = new Image();
+            img.onload = function() {
+                if (bg1.style.opacity === "" || bg1.style.opacity === "1") {
+                    bg2.style.backgroundImage = `url('${this.src}')`;
+                    bg2.style.opacity = 1;
+                    bg1.style.opacity = 0;
+                } else {
+                    bg1.style.backgroundImage = `url('${this.src}')`;
+                    bg1.style.opacity = 1;
+                    bg2.style.opacity = 0;
+                }
+            };
+            img.onerror = function() {
+                console.error('Failed to load image: ', this.src);
+            };
+            img.src = images[randomIndex];
         }
 
         window.onload = function() {
-            const bg1 = document.getElementById("bg1");
-            bg1.style.backgroundImage = `url('${images[getRandomImageIndex()]}')`;
+            setRandomImage();
         };
 
         document.body.onclick = setRandomImage;
-        document.oncontextmenu = () => false;
     });
