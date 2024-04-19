@@ -1,80 +1,41 @@
-const galleryPhoto = document.getElementById('galleryPhoto');
-const fullscreenModal = document.getElementById('fullscreenModal');
-const fullscreenPhoto = document.getElementById('fullscreenPhoto');
-const closeBtn = document.getElementsByClassName('close')[0];
-const seriesInfo = document.getElementById('series');
-const cameraInfo = document.getElementById('camera');
-const lensInfo = document.getElementById('lens');
-const focalLengthInfo = document.getElementById('focalLength');
-const locationInfo = document.getElementById('location');
-const prevButton = document.getElementById('prevButton');
-const nextButton = document.getElementById('nextButton');
-
 const CDN_URL = 'https://data.yinxinghan.com';
 
-let photos = [];
-let currentPhotoIndex = 0;
+fetch('images.json')
+    .then(response => response.json())
+    .then(data => {
+        const images = data.images.map(url => CDN_URL + url);
+        let lastImageIndex = -1;
 
-fetch('photos.json')
-  .then(response => response.json())
-  .then(data => {
-    photos = data.map(photo => ({
-      ...photo,
-      url: `${CDN_URL}${photo.url}`
-    }));
-    shufflePhotos();
-    displayPhoto();
-  });
+        function getRandomImageIndex() {
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * images.length);
+            } while (randomIndex === lastImageIndex);
+            lastImageIndex = randomIndex;
+            return randomIndex;
+        }
 
-function shufflePhotos() {
-  for (let i = photos.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [photos[i], photos[j]] = [photos[j], photos[i]];
-  }
-}
+        function setRandomImage() {
+            const randomIndex = getRandomImageIndex();
+            const bg1 = document.getElementById("bg1");
+            const bg2 = document.getElementById("bg2");
 
-function displayPhoto() {
-  const photo = photos[currentPhotoIndex];
-  galleryPhoto.src = photo.url;
-  galleryPhoto.classList.remove('loaded');
+            if (bg1.style.opacity === "" || bg1.style.opacity === "1") {
+                bg2.style.backgroundImage = `url('${images[randomIndex]}')`;  
+                bg2.style.opacity = 1;
+                bg1.style.opacity = 0;
+            } else {
+                bg1.style.backgroundImage = `url('${images[randomIndex]}')`;
+                bg1.style.opacity = 1;
+                bg2.style.opacity = 0;
+            }
+        }
 
-  seriesInfo.textContent = photo.series ? `Series: ${photo.series}` : '';
-  cameraInfo.textContent = photo.camera ? `Camera: ${photo.camera}` : '';
-  lensInfo.textContent = photo.lens ? `Lens: ${photo.lens}` : '';
-  focalLengthInfo.textContent = photo.focalLength ? `Focal Length: ${photo.focalLength}` : '';
-  locationInfo.textContent = photo.location ? `Location: ${photo.location}` : '';
+        window.onload = function() {
+            const bg1 = document.getElementById("bg1");
+            bg1.style.backgroundImage = `url('${images[getRandomImageIndex()]}')`;
+        };
 
-  galleryPhoto.addEventListener('load', () => {
-    galleryPhoto.classList.add('loaded');
-  });
-}
-
-function showPreviousPhoto() {
-  galleryPhoto.classList.remove('loaded');
-  setTimeout(() => {
-    currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
-    displayPhoto();
-  }, 500);
-}
-
-function showNextPhoto() {
-  galleryPhoto.classList.remove('loaded');
-  setTimeout(() => {
-    currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
-    displayPhoto();
-  }, 500);
-}
-
-function openFullscreen() {
-  fullscreenPhoto.src = photos[currentPhotoIndex].url;
-  fullscreenModal.style.display = "block";
-}
-
-function closeFullscreen() {
-  fullscreenModal.style.display = "none";
-}
-
-prevButton.addEventListener('click', showPreviousPhoto);
-nextButton.addEventListener('click', showNextPhoto);
-galleryPhoto.addEventListener('click', openFullscreen);
-closeBtn.addEventListener('click', closeFullscreen);
+        document.body.onclick = setRandomImage;
+        document.oncontextmenu = () => false;
+    });

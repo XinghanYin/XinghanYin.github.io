@@ -4,7 +4,7 @@ author: xy
 date: 2023-10-04 13:10:00 -0400
 categories: [Travel,Asia]
 tags: [Photo]
-img_path: http://data.yinxinghan.com/Blog/Before2024/Dubai2023/
+img_path: /Before2024/Dubai2023/
 ---
 
 ![Dubai](Dubai.png)
