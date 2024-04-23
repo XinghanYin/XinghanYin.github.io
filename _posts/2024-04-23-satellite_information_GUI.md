@@ -22,7 +22,7 @@ _Reset-1_
 ![Reset](0-1.png)
 _Reset-2_
 
-![Reset](0-3.png)
+![Reset](1.png)
 _Summary data_
 
 The high (> 45 degrees) orbital inclination geosynchronous satellites:
