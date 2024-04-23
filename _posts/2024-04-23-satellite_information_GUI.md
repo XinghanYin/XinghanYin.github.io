@@ -7,7 +7,7 @@ tags: [Study, Code]
 img_path: /2024/0423/
 ---
 
-This is a filter for information on all active satellites in orbit which can help you find the sat data that you want.
+This is a filter for information on all active satellites in orbit that can help you find the sat data which you want.
 
 Develop in Java, GUI.
 
@@ -23,11 +23,11 @@ _Reset-1_
 _Reset-2_
 
 ![Reset](1.png)
-_Summary data_
+_Data Summary_
 
 The high (> 45 degrees) orbital inclination geosynchronous satellites:
 ![2](2.png)
-_high (> 45 degrees)_
+_High > 45 degrees Sats_
 
 The satellite system comprises the bulk of the satellites in MEO (around mean motion 5) in the small histogram peak below:
 
