@@ -4,7 +4,7 @@ author: xy
 date: 2018-08-15 18:00:00 +0800
 categories: [Archive]
 tags: [Codes]
-img_path: https://data.yinxinghan.com/Blog/Before2024
+img_path: /Blog/Before2024
 ---
 
 前言：阿毛这个博客服务器的sshd从几个月前就出现问题，命令只能通过管理控制台自带的SVN去执行，并且是osx自带的ssh和windows的xshell都连不上。这就让人很难受了。
