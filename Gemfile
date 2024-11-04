@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 # 指定 Jekyll 版本
 gem "jekyll", "~> 4.3.0"
+gem "jekyll-theme-chirpy"
 
 # 安装 Jekyll 主题依赖
 gem "jekyll-seo-tag"          # SEO 标签
