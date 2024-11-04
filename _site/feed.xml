@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4000/</id>
+  <id>yinxinghan.com/</id>
   <title>XINGHAN YIN</title>
   <subtitle>随心，克己，想象，欢愉。</subtitle>
-  <updated>2024-11-03T23:11:29-05:00</updated>
+  <updated>2024-11-03T23:33:12-05:00</updated>
   <author>
     <name>XINGHAN YIN</name>
-    <uri>http://localhost:4000/</uri>
+    <uri>yinxinghan.com/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="yinxinghan.com/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="zh"
-    href="http://localhost:4000/"/>
+    href="yinxinghan.com/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator>
   <rights> © 2024 XINGHAN YIN </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>三脚猫俱乐部 | SJM Club</title>
-    <link href="http://localhost:4000/posts/SJMClubV1/" rel="alternate" type="text/html" title="三脚猫俱乐部 | SJM Club" />
+    <link href="yinxinghan.com/posts/SJMClubV1/" rel="alternate" type="text/html" title="三脚猫俱乐部 | SJM Club" />
     <published>2024-11-03T12:30:00-05:00</published>
   
     <updated>2024-11-03T12:30:00-05:00</updated>
   
-    <id>http://localhost:4000/posts/SJMClubV1/</id>
-    <content src="http://localhost:4000/posts/SJMClubV1/" />
+    <id>yinxinghan.com/posts/SJMClubV1/</id>
+    <content type="text/html" src="yinxinghan.com/posts/SJMClubV1/" />
     <author>
       <name>xy</name>
     </author>
@@ -40,15 +40,7 @@
     
   
 
-  
-    <summary>
-      
-
-
-
-
-
-      三脚猫俱乐部 | SJM Club
+  <summary>三脚猫俱乐部 | SJM Club
 
 三脚猫俱乐部是给我们的三脚猫俱乐部开发的官网。 目前的V1版本是纯粹的，一个探索前端动画交互的小型静态网站项目，完全基于CSS、JavaScript、HTML进行开发，包含多种视觉特效和交互体验。今天特地写这篇文章，详细介绍项目的设计、部分代码文件的功能，以及背后的实现原理。
 
@@ -59,7 +51,7 @@
   代码文件讲解
     
       index.html
-      style.css &amp;amp; fonts.css
+      style.css &amp;amp;amp; fonts.css
       who.js
       animations.js
       effect.js
@@ -73,22 +65,20 @@
 
 项目概览
 
-三脚猫俱乐部的初衷是为了展示纯前端技术下的动画效果，包括渐...
-    </summary>
-  
+三脚猫俱乐部的初衷是为了展示纯前端技术下的动画效果，包括渐...</summary>
 
   </entry>
 
   
   <entry>
     <title>要转PY了</title>
-    <link href="http://localhost:4000/posts/TurntoPY/" rel="alternate" type="text/html" title="要转PY了" />
+    <link href="yinxinghan.com/posts/TurntoPY/" rel="alternate" type="text/html" title="要转PY了" />
     <published>2024-09-30T20:45:00-05:00</published>
   
     <updated>2024-09-30T20:45:00-05:00</updated>
   
-    <id>http://localhost:4000/posts/TurntoPY/</id>
-    <content src="http://localhost:4000/posts/TurntoPY/" />
+    <id>yinxinghan.com/posts/TurntoPY/</id>
+    <content type="text/html" src="yinxinghan.com/posts/TurntoPY/" />
     <author>
       <name>xy</name>
     </author>
@@ -99,19 +89,11 @@
     
   
 
-  
-    <summary>
-      
-
-
-
-
-
-      在研究动规问题的时候，看了不少大神的代码，发现Python好像天生就适合做动态规划。
+  <summary>在研究动规问题的时候，看了不少大神的代码，发现Python好像天生就适合做动态规划。
 
 比如同样都是要剪枝，Cpp需要判断条件：
 
-int&amp;amp; res = memo[i];
+int&amp;amp;amp; res = memo[i];
 if (res) {
 return res;
 }
@@ -123,37 +105,35 @@ return res;
 
 又比如用Cpp写的这句：
 
-auto dfs = [&amp;amp;](auto&amp;amp;&amp;amp; dfs, int i) -&amp;gt; int {
-if (i &amp;lt;= 0) {
+auto dfs = [&amp;amp;amp;](auto&amp;amp;amp;&amp;amp;amp; dfs, int i) -&amp;amp;gt; int {
+if (i &amp;amp;lt;= 0) {
 return 0;
 }
 
 
-[&amp;amp;]是Lambda表达式，-&amp;gt; int是lambda函数的返回类型声明。
+[&amp;amp;amp;]是Lambda表达式，-&amp;amp;gt; int是lambda函数的返回类型声明。
 
 在Py里，是这样的：
 
-def dfs(i: int) -&amp;gt; int:
-            if i &amp;lt;= 0:
+def dfs(i: int) -&amp;amp;gt; int:
+            if i &amp;amp;lt;= 0:
                 return 0
 
 
-不需要显式的捕...
-    </summary>
-  
+不需要显式的捕...</summary>
 
   </entry>
 
   
   <entry>
     <title>Leetcode 1845</title>
-    <link href="http://localhost:4000/posts/Leetcode1845/" rel="alternate" type="text/html" title="Leetcode 1845" />
+    <link href="yinxinghan.com/posts/Leetcode1845/" rel="alternate" type="text/html" title="Leetcode 1845" />
     <published>2024-09-29T20:10:00-05:00</published>
   
     <updated>2024-09-30T20:55:54-05:00</updated>
   
-    <id>http://localhost:4000/posts/Leetcode1845/</id>
-    <content src="http://localhost:4000/posts/Leetcode1845/" />
+    <id>yinxinghan.com/posts/Leetcode1845/</id>
+    <content type="text/html" src="yinxinghan.com/posts/Leetcode1845/" />
     <author>
       <name>xy</name>
     </author>
@@ -164,15 +144,7 @@ def dfs(i: int) -&amp;gt; int:
     
   
 
-  
-    <summary>
-      
-
-
-
-
-
-      今天遇到的有意思的题，难度看起来不算大，我最开始看到的时候以为能秒杀这道题但是有几个输入极大的check point，所以第一个版本的code挂了。
+  <summary>今天遇到的有意思的题，难度看起来不算大，我最开始看到的时候以为能秒杀这道题但是有几个输入极大的check point，所以第一个版本的code挂了。
 
 先看题面吧：
 
@@ -191,22 +163,20 @@ Leetcode 1845. Seat Reservation Manager
 示例 1：
 
 输入：
-[&amp;#34;SeatManager&amp;#...
-    </summary>
-  
+[&amp;amp;#34;SeatManager&amp;amp;#...</summary>
 
   </entry>
 
   
   <entry>
     <title>HHKB</title>
-    <link href="http://localhost:4000/posts/HHKB/" rel="alternate" type="text/html" title="HHKB" />
+    <link href="yinxinghan.com/posts/HHKB/" rel="alternate" type="text/html" title="HHKB" />
     <published>2024-04-24T12:30:00-05:00</published>
   
     <updated>2024-04-26T16:06:12-05:00</updated>
   
-    <id>http://localhost:4000/posts/HHKB/</id>
-    <content src="http://localhost:4000/posts/HHKB/" />
+    <id>yinxinghan.com/posts/HHKB/</id>
+    <content type="text/html" src="yinxinghan.com/posts/HHKB/" />
     <author>
       <name>xy</name>
     </author>
@@ -219,15 +189,7 @@ Leetcode 1845. Seat Reservation Manager
     
   
 
-  
-    <summary>
-      
-
-
-
-
-
-      记得第一次了解到HHKB，是在高中的时候。
+  <summary>记得第一次了解到HHKB，是在高中的时候。
 
 这把键盘被称为是编码的终极大杀器。
 
@@ -263,22 +225,20 @@ Amazon Screenshot
 
 
 HHKB Professional HYBRID Type-S
-...
-    </summary>
-  
+...</summary>
 
   </entry>
 
   
   <entry>
     <title>Sat Finder</title>
-    <link href="http://localhost:4000/posts/satellite_information_GUI/" rel="alternate" type="text/html" title="Sat Finder" />
+    <link href="yinxinghan.com/posts/satellite_information_GUI/" rel="alternate" type="text/html" title="Sat Finder" />
     <published>2024-04-23T10:00:00-05:00</published>
   
     <updated>2024-09-24T17:29:18-05:00</updated>
   
-    <id>http://localhost:4000/posts/satellite_information_GUI/</id>
-    <content src="http://localhost:4000/posts/satellite_information_GUI/" />
+    <id>yinxinghan.com/posts/satellite_information_GUI/</id>
+    <content type="text/html" src="yinxinghan.com/posts/satellite_information_GUI/" />
     <author>
       <name>xy</name>
     </author>
@@ -289,15 +249,7 @@ HHKB Professional HYBRID Type-S
     
   
 
-  
-    <summary>
-      
-
-
-
-
-
-      This is a filter for information on all active satellites in orbit that can help you find the sat data which you want.
+  <summary>This is a filter for information on all active satellites in orbit that can help you find the sat data which you want.
 
 Develop in Java, GUI.
 
@@ -316,13 +268,11 @@ Reset-2
 
 Data Summary
 
-The high (&amp;gt; 45 degrees) orbital inclination geosynchronous satellites:
+The high (&amp;amp;gt; 45 degrees) orbital inclination geosynchronous satellites:
 
-High &amp;gt; 45 degrees Sats
+High &amp;amp;gt; 45 degrees Sats
 
-The satellite system comprises the bulk of the sa...
-    </summary>
-  
+The satellite system comprises the bulk of the sa...</summary>
 
   </entry>
 

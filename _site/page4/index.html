@@ -15,43 +15,37 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="zh" >
-  <!-- The Head -->
-
-<head>
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  >
+  ><!-- Setup Open Graph image -->
 
   
 
-  
-
-  
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="XINGHAN YIN" />
 <meta property="og:locale" content="zh" />
 <meta name="description" content="随心，克己，想象，欢愉。" />
 <meta property="og:description" content="随心，克己，想象，欢愉。" />
-<link rel="canonical" href="http://localhost:4000/page4/" />
-<meta property="og:url" content="http://localhost:4000/page4/" />
+<link rel="canonical" href="yinxinghan.com/page4/" />
+<meta property="og:url" content="yinxinghan.com/page4/" />
 <meta property="og:site_name" content="XINGHAN YIN" />
 <meta property="og:type" content="website" />
-<link rel="prev" href="http://localhost:4000/page3" />
+<link rel="prev" href="yinxinghan.com/page3" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="XINGHAN YIN" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"随心，克己，想象，欢愉。","headline":"XINGHAN YIN","url":"http://localhost:4000/page4/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"随心，克己，想象，欢愉。","headline":"XINGHAN YIN","url":"yinxinghan.com/page4/"}</script>
 <!-- End Jekyll SEO tag -->
 
-  
 
   <title>XINGHAN YIN
   </title>
@@ -66,7 +60,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="XINGHAN YIN">
 <meta name="application-name" content="XINGHAN YIN">
@@ -75,34 +71,26 @@
 <meta name="theme-color" content="#ffffff">
 
 
+  <!-- Resource Hints -->
   
     
-      <link rel="preconnect" href="https://fonts.googleapis.com" >
-      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
-    
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
-    
-      <link rel="preconnect" href="https://fonts.googleapis.com" >
-      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
-    
-      <link rel="preconnect" href="https://cdn.jsdelivr.net" >
-      <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
-    
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
-  
-
-  <!-- GA -->
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  
 
-  <!-- Font Awesome -->
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
+
+  <!-- Web Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
+
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
 
-  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
+  <!-- 3rd-party Dependencies -->
 
   
 
@@ -136,54 +124,34 @@
     }
 
     constructor() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (!this.isSysDarkPrefer) {
-            this.setDark();
-          }
-        } else {
-          if (this.isSysDarkPrefer) {
-            this.setLight();
-          }
-        }
-      }
-
-      let self = this;
-
-      /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
+      let self = this;this.sysDarkPrefers.addEventListener('change', () => {
         if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
-
           self.clearMode();
         }
-
         self.notify();
       });
-    } /* constructor() */
+
+      if (!this.hasMode) {
+        return;
+      }
+
+      if (this.isDarkMode) {
+        this.setDark();
+      } else {
+        this.setLight();
+      }
+    }
 
     get sysDarkPrefers() {
       return window.matchMedia('(prefers-color-scheme: dark)');
     }
 
-    get isSysDarkPrefer() {
+    get isPreferDark() {
       return this.sysDarkPrefers.matches;
     }
 
     get isDarkMode() {
       return this.mode === ModeToggle.DARK_MODE;
-    }
-
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
     }
 
     get hasMode() {
@@ -192,14 +160,11 @@
 
     get mode() {
       return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }
-
-    /* get the current mode on screen */
-    get modeStatus() {
-      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
-        return ModeToggle.DARK_MODE;
+    }get modeStatus() {
+      if (this.hasMode) {
+        return this.mode;
       } else {
-        return ModeToggle.LIGHT_MODE;
+        return this.isPreferDark ? ModeToggle.DARK_MODE : ModeToggle.LIGHT_MODE;
       }
     }
 
@@ -216,10 +181,7 @@
     clearMode() {
       document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
       sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
-
-    /* Notify another plugins that the theme mode has changed */
-    notify() {
+    }notify() {
       window.postMessage(
         {
           direction: ModeToggle.ID,
@@ -231,21 +193,9 @@
 
     flipMode() {
       if (this.hasMode) {
-        if (this.isSysDarkPrefer) {
-          if (this.isLightMode) {
-            this.clearMode();
-          } else {
-            this.setLight();
-          }
-        } else {
-          if (this.isDarkMode) {
-            this.clearMode();
-          } else {
-            this.setDark();
-          }
-        }
+        this.clearMode();
       } else {
-        if (this.isSysDarkPrefer) {
+        if (this.isPreferDark) {
           this.setLight();
         } else {
           this.setDark();
@@ -253,8 +203,8 @@
       }
 
       this.notify();
-    } /* flipMode() */
-  } /* ModeToggle */
+    }
+  }
 
   const modeToggle = new ModeToggle();
 </script>
@@ -271,16 +221,9 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle">
-      
-        
-        <img src="https://data.yinxinghan.com/Blog/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
-      
-    </a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="https://data.yinxinghan.com/Blog/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
-    <h1 class="site-title">
-      <a href="/">XINGHAN YIN</a>
-    </h1>
+    <a class="site-title d-block" href="/">XINGHAN YIN</a>
     <p class="site-subtitle fst-italic mb-0">尹星寒的博客</p>
   </header>
   <!-- .profile-wrapper -->
@@ -341,7 +284,7 @@
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
+      <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
         <i class="fas fa-adjust"></i>
       </button>
 
@@ -471,7 +414,7 @@
       <i class="fas fa-search fa-fw"></i>
     </button>
 
-    <search class="align-items-center ms-3 ms-lg-0">
+    <search id="search" class="align-items-center ms-3 ms-lg-0">
       <i class="fas fa-search fa-fw"></i>
       <input
         class="form-control"
@@ -562,19 +505,14 @@
 
 
 
-<!-- Get pinned posts -->
+<!-- Get pinned posts on current page -->
 
 
 
 
 
 
-<!-- Get default posts -->
-
-
-
-
-
+<!-- Get normal posts on current page -->
 
 
 
@@ -593,14 +531,7 @@
             <h1 class="card-title my-2 mt-md-0">大桥施工笔记</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                鉴于某些不可描述的原因，科学上网的路越来越窄，笔者不得不自己搭桥。
+              <p>鉴于某些不可描述的原因，科学上网的路越来越窄，笔者不得不自己搭桥。
 
 为了以防记忆丧失，无法正确使用大桥，便写下这篇笔记。
 
@@ -610,8 +541,7 @@
 SSR部署脚本（CentOS6/Debian6/Ubuntu14 ）：
 yum -y install wget
 
-wget –no-check-certificate https://freed.ga/github/shadowsoc...
-              </p>
+wget –no-check-certificate https://freed.ga/github/shadowsoc...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -666,21 +596,13 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
             <h1 class="card-title my-2 mt-md-0">大连游记</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                从2015年起，我就想来大连了。苦于被时间和琐事所困，这个心愿一直搁置到了2018年的夏天才得以实现。
+              <p>从2015年起，我就想来大连了。苦于被时间和琐事所困，这个心愿一直搁置到了2018年的夏天才得以实现。
 
 还记得当初是因为学信竞才认识的安康和导师。时间飞逝，不知不觉间我们已经是相识多年的老朋友了。从懵懂的中学少年时代到奋进的大学青年时代，我们经历的很少，也经历了很多。我很感慨，这是一种很幸福的感慨，一种怀念过去的感慨。
 
 2018年7月11日
 
-7月11日晚，我从济南机场飞往大连。其间一路...
-              </p>
+7月11日晚，我从济南机场飞往大连。其间一路...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -737,14 +659,7 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
             <h1 class="card-title my-2 mt-md-0">《我不是药神》短评</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                我的朋友圈被药神刷屏了。
+              <p>我的朋友圈被药神刷屏了。
 
 上周六，我和大邱、登申一块去了电影院，看了这部已经被刷疯了的片子。
 
@@ -753,8 +668,7 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 
 整部电影给我的感受是很细腻的。我体验到了一种很现实的、充满市井气息的、触人心弦的人性美。
 
-那天晚上我了解到了电影的原型，2015年那个真正的程勇接受的司法审判。就记得当时嚼着口香糖，边嚼边想这人真他妈是个好人。从头到尾，这实际上都是一个很真善美的故事，不管是电影中，还...
-              </p>
+那天晚上我了解到了电影的原型，2015年那个真正的程勇接受的司法审判。就记得当时嚼着口香糖，边嚼边想这人真他妈是个好人。从头到尾，这实际上都是一个很真善美的故事，不管是电影中，还...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -809,25 +723,13 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
             <h1 class="card-title my-2 mt-md-0">星空之上_第二集</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                
-
-
-
-庞勇坐到车里的第一时间起，他就听到了自己剧烈的心跳声。
+              <p>庞勇坐到车里的第一时间起，他就听到了自己剧烈的心跳声。
 
 加厚过的车体、狭窄且密封的防弹玻璃窗、用精制钢板隔开的宽敞车厢，都彰显着庞勇身边这个中年人不同寻常的身份。
 
 庞勇努力地保持着冷静，绞尽脑汁的思考着这个中年人究竟是谁。
 
-“庞教授，我这么做是出于对您的安全考虑，还希望您能谅解。”在这辆车开出很久以后，中年人终于开口了。从庞勇上车后他就一直看着庞勇，富有磁性的嗓音和线条分明的轮...
-              </p>
+“庞教授，我这么做是出于对您的安全考虑，还希望您能谅解。”在这辆车开出很久以后，中年人终于开口了。从庞勇上车后他就一直看着庞勇，富有磁性的嗓音和线条分明的轮廓都能给...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -882,22 +784,12 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
             <h1 class="card-title my-2 mt-md-0">星空之上_第一集</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                
-
-前言：
+              <p>前言：
 
 我是一个深度的科幻作品爱好者。最喜欢的科幻小说是《银河帝国》系列，没有其次。读过很多脍炙人口的科幻小说，风格迥异，构思新奇，都给我带来了快乐，但印象大都不太深刻，有一种吃快餐的感觉。
 几年来一直忙高中课程的学习，忙高考。高考终于结束了，如今，我终于有了一点时间来写一部我自己的科幻小说。
 这是我的处女作，作品名暂定为《星空之上》，向我所向往着的星空致敬。
-文字中不乏天马行空的地方...
-              </p>
+文字中不乏天马行空的地方，但...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -952,25 +844,13 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
             <h1 class="card-title my-2 mt-md-0">《十二公民》观后感</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                
-
-
-
-真相，是少数人的教条；表相，是多数人的真理。
+              <p>真相，是少数人的教条；表相，是多数人的真理。
 
 我向《Twelve Citizens》的故事致敬。我同样向《十二怒汉》的编剧Reginald.Rose致敬，尽管我从来没看过它。
 
 我认为，对于在某时某刻某些事件中扑朔迷离的真相，人们更乐于接受唾手可得的表相。不仅限于大多数人，也包括经常自认高明的我自己。
 
-镜头拉回故事，相信八号陪审员也是如此。这是生命所谓的“自然法则”所定义的——“...
-              </p>
+镜头拉回故事，相信八号陪审员也是如此。这是生命所谓的“自然法则”所定义的——“恐惧来源...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -1025,22 +905,14 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
             <h1 class="card-title my-2 mt-md-0">开场白 of Blog.amaok.com</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                我是阿毛，00年生人。
+              <p>我是阿毛，00年生人。
 很喜欢新鲜事物，热爱阅读和创作，科幻爱好者。多年来自我感觉良好，从来不承认自己是文艺青年。
 
 2013年起接触前端和程序设计，高中时期参加过信息学竞赛。技术有限，不是蒟蒻也不是大犇，曾拥有过准国家队水平。
 
 2016年OI退役，2017年高考落榜。一年高复让我对很多事都看开了不少，中二力也有所下降。
 
-这是我第一次使用WordPress。狗年春节前后我的老博客因为续费...
-              </p>
+这是我第一次使用WordPress。狗年春节前后我的老博客因为续费...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -1095,25 +967,13 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
             <h1 class="card-title my-2 mt-md-0">网站折腾记</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                
-
-
-
-从保定回来以后，就马不停蹄的做这个网站。
+              <p>从保定回来以后，就马不停蹄的做这个网站。
 
 本来准备复活已经积灰的妹Blog，结果我的新浪云早就因为拖欠续费凉凉了。翻箱倒柜之前的数据备份也找不到了，很是心累，于是才有了推翻重做的打算。
 
 在Hostker和Aliyun两家服务商之间犹豫了很久，最终选择了性价比较高的Hostker，其实最主要的是这家的UI做的太萌了。
 
-服务器各方面都很满意，就是官方限制SSR有点难受。当然了，政策...
-              </p>
+服务器各方面都很满意，就是官方限制SSR有点难受。当然了，政策优先，毕...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -1168,21 +1028,13 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
             <h1 class="card-title my-2 mt-md-0">我的十八岁</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                光阴荏苒，已是韶华十八载。
+              <p>光阴荏苒，已是韶华十八载。
 
 感悟很多，但是不能够一吐为快。FirstAtAll，我觉得人之一生不能平淡无奇，这是我对未来目标该从何出发，计划该如何制定的首要考虑因素。
 
 我对先进的技术保持着高度兴奋，不局限于国界，不局限于当前的时代，不局限于现实。
 
-在正常情况下，以现阶段的生活水平和医疗水准，我的一生大抵过去了1/5。我很年轻，我的创造力在同龄人中算得上较强，我毅力很强，我有信心和实力得...
-              </p>
+在正常情况下，以现阶段的生活水平和医疗水准，我的一生大抵过去了1/5。我很年轻，我的创造力在同龄人中算得上较强，我毅力很强，我有信心和实力得...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -1348,7 +1200,7 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get the last 5 posts from lastmod list. -->
+              <!-- Get 5 last posted/updated posts -->
 
 
 
@@ -1371,7 +1223,21 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/SJMClubV1/">三脚猫俱乐部 | SJM Club</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/Leetcode1845/">Leetcode 1845</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/TurntoPY/">要转PY了</a>
         </li>
       
         
@@ -1386,20 +1252,6 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
         
         <li class="text-truncate lh-lg">
           <a href="/posts/sshd-problem/">sshd连接修复笔记</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/satellite_information_GUI/">Sat Finder</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/HHKB/">HHKB</a>
         </li>
       
     </ul>
@@ -2106,10 +1958,13 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>
-    ©
+  <p>©
     <time>2024</time>
-    <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
+
+    
+      <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
+    
+
     
       <span
         data-bs-toggle="tooltip"
@@ -2119,7 +1974,14 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
   </p>
 
-  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+  <p>Using the <a
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="v6.2.3"
+        href="https://github.com/cotes2020/jekyll-theme-chirpy"
+        target="_blank"
+        rel="noopener"
+      >Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
   </p>
 </footer>
 
@@ -2128,7 +1990,7 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 
         <!-- The Search results -->
 
-<div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
+<div id="search-result-wrapper" class="d-flex justify-content-center d-none">
   <div class="col-11 content">
     <div id="search-hints">
       <!-- The trending tags list -->
@@ -2824,7 +2686,7 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
       </aside>
     </div>
 
-    <div id="mask"></div>
+    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
 
     
       <aside
@@ -2855,7 +2717,6 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
 
     <!-- JavaScripts -->
-
     <!-- JS selector for site. -->
 
 <!-- commons -->
@@ -2925,37 +2786,27 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 
   
 
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
 
 
-
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/zh.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
 
 
 
 
 
 
-<script defer src="/assets/js/dist/home.min.js"></script>
+
+<script src="/assets/js/dist/home.min.js"></script>
+
+
+
+<!-- Pageviews -->
 
 
 
 
 
 
-    
 
     <!--
   Jekyll Simple Search loader
@@ -2966,14 +2817,12 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 
 
 
-<script>
-  /* Note: dependent library will be loaded in `js-selector.html` */
-  SimpleJekyllSearch({
+<script>SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('search-results'),
     json: '/assets/js/data/search.json',
     searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
-    noResultsText: '<p class="mt-5"></p>',
+    noResultsText: '<p class="mt-5">Oops! No results found.</p>',
     templateMiddleware: function(prop, value, template) {
       if (prop === 'categories') {
         if (value === '') {

@@ -15,44 +15,38 @@
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
 <html lang="zh" >
-  <!-- The Head -->
-
-<head>
+  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  >
+  ><!-- Setup Open Graph image -->
 
   
 
-  
-
-  
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="XINGHAN YIN" />
 <meta property="og:locale" content="zh" />
 <meta name="description" content="随心，克己，想象，欢愉。" />
 <meta property="og:description" content="随心，克己，想象，欢愉。" />
-<link rel="canonical" href="http://localhost:4000/page2/" />
-<meta property="og:url" content="http://localhost:4000/page2/" />
+<link rel="canonical" href="yinxinghan.com/page2/" />
+<meta property="og:url" content="yinxinghan.com/page2/" />
 <meta property="og:site_name" content="XINGHAN YIN" />
 <meta property="og:type" content="website" />
-<link rel="prev" href="http://localhost:4000/" />
-<link rel="next" href="http://localhost:4000/page3" />
+<link rel="prev" href="yinxinghan.com/" />
+<link rel="next" href="yinxinghan.com/page3" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="XINGHAN YIN" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"随心，克己，想象，欢愉。","headline":"XINGHAN YIN","url":"http://localhost:4000/page2/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"随心，克己，想象，欢愉。","headline":"XINGHAN YIN","url":"yinxinghan.com/page2/"}</script>
 <!-- End Jekyll SEO tag -->
 
-  
 
   <title>XINGHAN YIN
   </title>
@@ -67,7 +61,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
+  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="XINGHAN YIN">
 <meta name="application-name" content="XINGHAN YIN">
@@ -76,34 +72,26 @@
 <meta name="theme-color" content="#ffffff">
 
 
+  <!-- Resource Hints -->
   
     
-      <link rel="preconnect" href="https://fonts.googleapis.com" >
-      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
-    
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
-    
-      <link rel="preconnect" href="https://fonts.googleapis.com" >
-      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
-    
-      <link rel="preconnect" href="https://cdn.jsdelivr.net" >
-      <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
-    
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
-  
-
-  <!-- GA -->
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  
 
-  <!-- Font Awesome -->
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
+
+  <!-- Web Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
+
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
 
-  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
+  <!-- 3rd-party Dependencies -->
 
   
 
@@ -137,54 +125,34 @@
     }
 
     constructor() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (!this.isSysDarkPrefer) {
-            this.setDark();
-          }
-        } else {
-          if (this.isSysDarkPrefer) {
-            this.setLight();
-          }
-        }
-      }
-
-      let self = this;
-
-      /* always follow the system prefers */
-      this.sysDarkPrefers.addEventListener('change', () => {
+      let self = this;this.sysDarkPrefers.addEventListener('change', () => {
         if (self.hasMode) {
-          if (self.isDarkMode) {
-            if (!self.isSysDarkPrefer) {
-              self.setDark();
-            }
-          } else {
-            if (self.isSysDarkPrefer) {
-              self.setLight();
-            }
-          }
-
           self.clearMode();
         }
-
         self.notify();
       });
-    } /* constructor() */
+
+      if (!this.hasMode) {
+        return;
+      }
+
+      if (this.isDarkMode) {
+        this.setDark();
+      } else {
+        this.setLight();
+      }
+    }
 
     get sysDarkPrefers() {
       return window.matchMedia('(prefers-color-scheme: dark)');
     }
 
-    get isSysDarkPrefer() {
+    get isPreferDark() {
       return this.sysDarkPrefers.matches;
     }
 
     get isDarkMode() {
       return this.mode === ModeToggle.DARK_MODE;
-    }
-
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
     }
 
     get hasMode() {
@@ -193,14 +161,11 @@
 
     get mode() {
       return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }
-
-    /* get the current mode on screen */
-    get modeStatus() {
-      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
-        return ModeToggle.DARK_MODE;
+    }get modeStatus() {
+      if (this.hasMode) {
+        return this.mode;
       } else {
-        return ModeToggle.LIGHT_MODE;
+        return this.isPreferDark ? ModeToggle.DARK_MODE : ModeToggle.LIGHT_MODE;
       }
     }
 
@@ -217,10 +182,7 @@
     clearMode() {
       document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
       sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
-
-    /* Notify another plugins that the theme mode has changed */
-    notify() {
+    }notify() {
       window.postMessage(
         {
           direction: ModeToggle.ID,
@@ -232,21 +194,9 @@
 
     flipMode() {
       if (this.hasMode) {
-        if (this.isSysDarkPrefer) {
-          if (this.isLightMode) {
-            this.clearMode();
-          } else {
-            this.setLight();
-          }
-        } else {
-          if (this.isDarkMode) {
-            this.clearMode();
-          } else {
-            this.setDark();
-          }
-        }
+        this.clearMode();
       } else {
-        if (this.isSysDarkPrefer) {
+        if (this.isPreferDark) {
           this.setLight();
         } else {
           this.setDark();
@@ -254,8 +204,8 @@
       }
 
       this.notify();
-    } /* flipMode() */
-  } /* ModeToggle */
+    }
+  }
 
   const modeToggle = new ModeToggle();
 </script>
@@ -272,16 +222,9 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle">
-      
-        
-        <img src="https://data.yinxinghan.com/Blog/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
-      
-    </a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="https://data.yinxinghan.com/Blog/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
-    <h1 class="site-title">
-      <a href="/">XINGHAN YIN</a>
-    </h1>
+    <a class="site-title d-block" href="/">XINGHAN YIN</a>
     <p class="site-subtitle fst-italic mb-0">尹星寒的博客</p>
   </header>
   <!-- .profile-wrapper -->
@@ -342,7 +285,7 @@
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
-      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
+      <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
         <i class="fas fa-adjust"></i>
       </button>
 
@@ -472,7 +415,7 @@
       <i class="fas fa-search fa-fw"></i>
     </button>
 
-    <search class="align-items-center ms-3 ms-lg-0">
+    <search id="search" class="align-items-center ms-3 ms-lg-0">
       <i class="fas fa-search fa-fw"></i>
       <input
         class="form-control"
@@ -563,19 +506,14 @@
 
 
 
-<!-- Get pinned posts -->
+<!-- Get pinned posts on current page -->
 
 
 
 
 
 
-<!-- Get default posts -->
-
-
-
-
-
+<!-- Get normal posts on current page -->
 
 
 
@@ -594,14 +532,7 @@
             <h1 class="card-title my-2 mt-md-0">CASIO FX-991CW</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                随着最近计算需求的增加，加上SPM本身有很多Numerical Questions，我发现有一个趁手的计算器真的是迫在眉睫。
+              <p>随着最近计算需求的增加，加上SPM本身有很多Numerical Questions，我发现有一个趁手的计算器真的是迫在眉睫。
 
 特别是前两天在Quiz之前跑到Van Houten Library借了一个FX-115，把我香坏了。
 
@@ -612,8 +543,7 @@ FX-115
 
 比国内便宜很多
 
-手感好，功能多，真不...
-              </p>
+手感好，功能多，真不...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -669,19 +599,9 @@ FX-115
             <h1 class="card-title my-2 mt-md-0">SPM - Cost Estimation</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
+              <p>Excample Description
 
-
-
-
-
-                
-
-Excample Description
-
-A project ‘X’ has 2 iterations, each 6 months. Certain problem may arise within the project at the 6 months which may cause devastating effects. You as a project manager, ha...
-              </p>
+A project ‘X’ has 2 iterations, each 6 months. Certain problem may arise within the project at the 6 months which may cause devastating effects. You as a project manager, have...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -737,15 +657,7 @@ A project ‘X’ has 2 iterations, each 6 months. Certain problem may arise wit
             <h1 class="card-title my-2 mt-md-0">CS库存等级划分 – 参考《斗破苍穹》</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                
-  本文逻辑很不严谨，只为博诸君一笑，请勿上纲上线上态度。
+              <p>本文逻辑很不严谨，只为博诸君一笑，请勿上纲上线上态度。
 
 
 等级
@@ -758,8 +670,7 @@ CS库存等级，从低到高共可分为十二级，分别是斗之气、斗者
 
 斗者（100元以内） ：
 
-这是游戏中最多的一类人，他们常常是休闲玩家，或者对饰品完全不感兴趣的玩家。他们的库存中会有经验掉落的狩猎网格...
-              </p>
+这是游戏中最多的一类人，他们常常是休闲玩家，或者对饰品完全不感兴趣的玩家。他们的库存中会有经验掉落的狩猎网格、各类...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -814,14 +725,7 @@ CS库存等级，从低到高共可分为十二级，分别是斗之气、斗者
             <h1 class="card-title my-2 mt-md-0">2024 Boston</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                春假的时候，我跟宇宇一块去了趟波士顿，玩了五天。
+              <p>春假的时候，我跟宇宇一块去了趟波士顿，玩了五天。
 
 她在
 
@@ -837,10 +741,7 @@ Quincy Market 的小龙虾
 
 昕宇喜欢的甜筒
 
-Quincy Market分为室内和半室外区域，室内区域中间是廊道，两侧是不同的开放式门店。然后在室内的每一侧，隔一段距离就有一个通向室外的出入口，从这里出去就有很多摊位，在半室外区域的
-
-
-              </p>
+Quincy Market分为室内和半室外区域，室内区域中间是廊道，两侧是不同的开放式门店。然后在室内的每一侧，隔一段距离就有一个通向室外的出入口，从这里出去就有很多摊位，在半室外区域的</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -896,22 +797,12 @@ Quincy Market分为室内和半室外区域，室内区域中间是廊道，两�
             <h1 class="card-title my-2 mt-md-0">媳妇送的手机</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                
-哈哈哈
+              <p>哈哈哈
 
 
 哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
 
-爱媳妇！！
-
-              </p>
+爱媳妇！！</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -967,19 +858,9 @@ Quincy Market分为室内和半室外区域，室内区域中间是廊道，两�
             <h1 class="card-title my-2 mt-md-0">Linux Kernel Note 1</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
+              <p>After talking with Zephyr, I got the Unix73 paper and prepared to build Linux kernel by myself.
 
-
-
-
-
-                After talking with Zephyr, I got the Unix73 paper and prepared to build Linux kernel by myself.
-
-In fact, I almost did’t have used Linux except sometimes host websites or webapps.
-
-
-              </p>
+In fact, I almost did’t have used Linux except sometimes host websites or webapps.</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -1035,14 +916,7 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
             <h1 class="card-title my-2 mt-md-0">一些照片</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                前两天去了史蒂文斯，在曼哈顿对岸，拍了一些还不错的照片。
+              <p>前两天去了史蒂文斯，在曼哈顿对岸，拍了一些还不错的照片。
 
 
 Building
@@ -1060,9 +934,7 @@ Manhattan
 Manhattan at Night
 
 
-Moon at Newark
-
-              </p>
+Moon at Newark</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -1118,15 +990,7 @@ Moon at Newark
             <h1 class="card-title my-2 mt-md-0">Via Dubai & Kuwait</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                
-Dubai and Kuwait
+              <p>Dubai and Kuwait
 
 接上文，8月25日从中国出发后的第一个目的地，迪拜。
 
@@ -1159,8 +1023,8 @@ Dubai and Kuwait
 
 
 出海关就送电话卡
-...
-              </p>
+
+...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -1216,18 +1080,7 @@ Dubai and Kuwait
             <h1 class="card-title my-2 mt-md-0">Hello World Again!</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                
-
-
-
-来美国快40天了，算是人生一个新阶段的开始吧。
+              <p>来美国快40天了，算是人生一个新阶段的开始吧。
 
 ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战…
 
@@ -1239,8 +1092,8 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
 
 
-时间就像水，一不留神就被海绵吸...
-              </p>
+时间就像水，一不留神就被海绵吸走了。
+...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -1295,14 +1148,7 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
             <h1 class="card-title my-2 mt-md-0">不管你信不信，俺下地狱了</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>
-                
-
-
-
-
-
-                说来你可能不信，我下地狱了
+              <p>说来你可能不信，我下地狱了
 
 那天的天气是什么样的我不记得了，具体是什么时间地点也不记得了，只记得我正准备睡觉，天空就突然变成了紫红色，满溢着鬼魅的样子。漂浮着血色极光的天空里混杂着阵阵黑烟，远方的天空甚至黑压压地出现了沙暴一样的异界……
 
@@ -1310,8 +1156,7 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
 当然，这又和我即将睡觉有什么关系呢，我翻了个身准备睡去——没有什么能阻止我午睡。
 
-“喂，去地狱了。”一个人在我...
-              </p>
+“喂，去地狱了。”一个人在我...</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
@@ -1478,7 +1323,7 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
           <!-- panel -->
           <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
-              <!-- Get the last 5 posts from lastmod list. -->
+              <!-- Get 5 last posted/updated posts -->
 
 
 
@@ -1501,7 +1346,21 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/SJMClubV1/">三脚猫俱乐部 | SJM Club</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/Leetcode1845/">Leetcode 1845</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/TurntoPY/">要转PY了</a>
         </li>
       
         
@@ -1516,20 +1375,6 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
         
         <li class="text-truncate lh-lg">
           <a href="/posts/sshd-problem/">sshd连接修复笔记</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/satellite_information_GUI/">Sat Finder</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/HHKB/">HHKB</a>
         </li>
       
     </ul>
@@ -2236,10 +2081,13 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>
-    ©
+  <p>©
     <time>2024</time>
-    <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
+
+    
+      <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
+    
+
     
       <span
         data-bs-toggle="tooltip"
@@ -2249,7 +2097,14 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
     
   </p>
 
-  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+  <p>Using the <a
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="v6.2.3"
+        href="https://github.com/cotes2020/jekyll-theme-chirpy"
+        target="_blank"
+        rel="noopener"
+      >Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
   </p>
 </footer>
 
@@ -2258,7 +2113,7 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
         <!-- The Search results -->
 
-<div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
+<div id="search-result-wrapper" class="d-flex justify-content-center d-none">
   <div class="col-11 content">
     <div id="search-hints">
       <!-- The trending tags list -->
@@ -2954,7 +2809,7 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
       </aside>
     </div>
 
-    <div id="mask"></div>
+    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
 
     
       <aside
@@ -2985,7 +2840,6 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
     
 
     <!-- JavaScripts -->
-
     <!-- JS selector for site. -->
 
 <!-- commons -->
@@ -3055,37 +2909,27 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
   
 
-  
-    
-
-    
-
-  
-
-  
-    
-
-    
-
-  
 
 
-
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/zh.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
 
 
 
 
 
 
-<script defer src="/assets/js/dist/home.min.js"></script>
+
+<script src="/assets/js/dist/home.min.js"></script>
+
+
+
+<!-- Pageviews -->
 
 
 
 
 
 
-    
 
     <!--
   Jekyll Simple Search loader
@@ -3096,14 +2940,12 @@ ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战�
 
 
 
-<script>
-  /* Note: dependent library will be loaded in `js-selector.html` */
-  SimpleJekyllSearch({
+<script>SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('search-results'),
     json: '/assets/js/data/search.json',
     searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
-    noResultsText: '<p class="mt-5"></p>',
+    noResultsText: '<p class="mt-5">Oops! No results found.</p>',
     templateMiddleware: function(prop, value, template) {
       if (prop === 'categories') {
         if (value === '') {
