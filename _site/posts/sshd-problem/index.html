@@ -13,12 +13,8 @@
 
 
 
-
-
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh" 
-  
->
+<html lang="zh" >
   <!-- The Head -->
 
 <head>
@@ -38,9 +34,9 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="sshd连接修复笔记" />
-<meta name="author" content="XINGHAN YIN" />
+<meta name="author" content="XINGHAN" />
 <meta property="og:locale" content="zh" />
 <meta name="description" content="前言：阿毛这个博客服务器的sshd从几个月前就出现问题，命令只能通过管理控制台自带的SVN去执行，并且是osx自带的ssh和windows的xshell都连不上。这就让人很难受了。" />
 <meta property="og:description" content="前言：阿毛这个博客服务器的sshd从几个月前就出现问题，命令只能通过管理控制台自带的SVN去执行，并且是osx自带的ssh和windows的xshell都连不上。这就让人很难受了。" />
@@ -48,13 +44,13 @@
 <meta property="og:url" content="http://localhost:4000/posts/sshd-problem/" />
 <meta property="og:site_name" content="XINGHAN YIN" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-08-15T06:00:00-04:00" />
+<meta property="article:published_time" content="2018-08-15T05:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="sshd连接修复笔记" />
 <meta name="twitter:site" content="@twitter_username" />
-<meta name="twitter:creator" content="@XINGHAN YIN" />
+<meta name="twitter:creator" content="@XINGHAN" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"XINGHAN YIN","url":"https://github.com/XinghanYin/"},"dateModified":"2018-08-15T06:00:00-04:00","datePublished":"2018-08-15T06:00:00-04:00","description":"前言：阿毛这个博客服务器的sshd从几个月前就出现问题，命令只能通过管理控制台自带的SVN去执行，并且是osx自带的ssh和windows的xshell都连不上。这就让人很难受了。","headline":"sshd连接修复笔记","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/sshd-problem/"},"url":"http://localhost:4000/posts/sshd-problem/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"XINGHAN","url":"https://github.com/XinghanYin/"},"dateModified":"2024-09-24T17:32:36-05:00","datePublished":"2018-08-15T05:00:00-05:00","description":"前言：阿毛这个博客服务器的sshd从几个月前就出现问题，命令只能通过管理控制台自带的SVN去执行，并且是osx自带的ssh和windows的xshell都连不上。这就让人很难受了。","headline":"sshd连接修复笔记","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/sshd-problem/"},"url":"http://localhost:4000/posts/sshd-problem/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -103,7 +99,7 @@
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
@@ -111,7 +107,11 @@
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.1/dist/tocbot.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.2/dist/tocbot.min.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
   
 
   
@@ -281,7 +281,7 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="/images/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="https://data.yinxinghan.com/Blog/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
@@ -408,7 +408,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['xy5','njit.edu'].join('@')"
+          href="javascript:location.href = 'mailto:' + ['yinchuba','gmail.com'].join('@')"
           aria-label="email"
           
 
@@ -447,7 +447,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container px-xxl-5">
+      <div class="container d-flex flex-column px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -510,18 +510,10 @@
 </header>
 
 
-        <div class="row">
-          <main
-            aria-label="Main Content"
-            class="col-12 col-lg-11 col-xl-9 px-md-4"
-          >
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-
-<article class="px-1">
-  
-    
-  
-    <!-- Refactor the HTML structure -->
+              <!-- Refactor the HTML structure -->
 
 
 
@@ -543,7 +535,9 @@
 <!-- Change the icon of checkbox -->
 
 
-<!-- images -->
+
+<!-- Handle images -->
+
 
 
 
@@ -573,7 +567,6 @@
     
     
     
-    
 
     
       
@@ -597,21 +590,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -621,12 +608,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -638,7 +627,6 @@
     
     
 
-    
     
     
     
@@ -665,21 +653,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -689,12 +671,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -706,7 +690,6 @@
     
     
 
-    
     
     
     
@@ -733,21 +716,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -757,12 +734,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -774,7 +753,6 @@
     
     
 
-    
     
     
     
@@ -801,21 +779,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -825,12 +797,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -842,7 +816,6 @@
     
     
 
-    
     
     
     
@@ -869,21 +842,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -893,16 +860,17 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
 
   
-
 
 
 <!-- Add header for code snippets -->
@@ -943,14 +911,15 @@
 
 
 
-<header>
-  <h1 data-toc-skip>sshd连接修复笔记</h1>
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>sshd连接修复笔记</h1>
 
-  <div class="post-meta text-muted">
-    <!-- published date -->
-    <span>
-      Posted
-      <!--
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -969,32 +938,55 @@
   Aug 15, 2018
 </time>
 
-    </span>
-
-    <!-- lastmod date -->
-    
-
-    
-
-    <div class="d-flex justify-content-between">
-      <!-- author(s) -->
-      <span>
-        
-
-        By
-
-        <em>
-          
-            
-              <a href="https://github.com/XinghanYin/">XINGHAN YIN</a>
-              
-            
-          
-        </em>
       </span>
 
-      <!-- read time -->
-      <!-- Calculate the post's reading time, and display the word count in tooltip -->
+      <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1727217156"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Sep 24, 2024
+</time>
+
+        </span>
+      
+
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              
+                <a href="https://github.com/XinghanYin/">XINGHAN</a>
+                
+              
+            
+          </em>
+        </span>
+
+        <!-- read time -->
+        <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
@@ -1018,48 +1010,48 @@
 >
   <em>2 min</em> read</span>
 
+      </div>
+      <!-- .d-flex -->
     </div>
-    <!-- .d-flex -->
-  </div>
-  <!-- .post-meta -->
-</header>
+    <!-- .post-meta -->
+  </header>
 
-<div class="content">
-  <p>前言：阿毛这个博客服务器的sshd从几个月前就出现问题，命令只能通过管理控制台自带的SVN去执行，并且是osx自带的ssh和windows的xshell都连不上。这就让人很难受了。</p>
+  <div class="content">
+    <p>前言：阿毛这个博客服务器的sshd从几个月前就出现问题，命令只能通过管理控制台自带的SVN去执行，并且是osx自带的ssh和windows的xshell都连不上。这就让人很难受了。</p>
 
 <p>查了很多资料，但是鄙人实在是太菜了，一直没找到是哪里出的问题，重启也重启了，补包也补包了，重装也重装了，甚至还自己写了几个脚本想强行启动，但始终是不行。</p>
 
 <p>所以阿毛就需要找一个解决方案，因为本身就是一个linux小白，加上懒，所以一开始是想通过提交工单解决这个问题的，但是体验很一般（手动掰掰），搁置了很长时间，直到今天才修复。</p>
 
-<p><a href="/images/Archive//sshd_problem1.png" class="popup img-link "><img data-src="/images/Archive//sshd_problem1.png" alt="sshd_problem" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="https://data.yinxinghan.com/Blog/Before2024//sshd_problem1.png" class="popup img-link  shimmer"><img src="https://data.yinxinghan.com/Blog/Before2024//sshd_problem1.png" alt="sshd_problem" loading="lazy"></a></p>
 
 <p>首先，我的ssh包是在的。</p>
 
-<p><a href="/images/Archive//sshd_problem2.png" class="popup img-link "><img data-src="/images/Archive//sshd_problem2.png" alt="sshd_problem" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="https://data.yinxinghan.com/Blog/Before2024//sshd_problem2.png" class="popup img-link  shimmer"><img src="https://data.yinxinghan.com/Blog/Before2024//sshd_problem2.png" alt="sshd_problem" loading="lazy"></a></p>
 
 <p>其次，我的端口也是打开的。</p>
 
-<p><a href="/images/Archive//sshd_problem3.png" class="popup img-link "><img data-src="/images/Archive//sshd_problem3.png" alt="sshd_problem" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="https://data.yinxinghan.com/Blog/Before2024//sshd_problem3.png" class="popup img-link  shimmer"><img src="https://data.yinxinghan.com/Blog/Before2024//sshd_problem3.png" alt="sshd_problem" loading="lazy"></a></p>
 
 <p>但是我试着重启sshd的时候，总会出现这行代码。</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>Job for sshd .service failed because the control process exited with error code. See "systemctl status sshd .service" and " journctl -xe" for details.
 </pre></td></tr></tbody></table></code></div></div>
 <p>一开始我并没在意这行信息的主要内容，我在意是为什么会出现这行信息，于是我又花费了很长时间去找包含这行信息的文件。直到今天，我才发现人就让我输入这俩代码自检一下，真是蠢到家了。于是我试着打出了
 ```journctl -xe</p>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>和
 ```systemctl status sshd .service
 </pre></td></tr></tbody></table></code></div></div>
 <p>这两行代码，眼前一下就明了了。</p>
 
-<p><a href="/images/Archive//sshd_problem4.png" class="popup img-link "><img data-src="/images/Archive//sshd_problem4.png" alt="sshd_problem" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="https://data.yinxinghan.com/Blog/Before2024//sshd_problem4.png" class="popup img-link  shimmer"><img src="https://data.yinxinghan.com/Blog/Before2024//sshd_problem4.png" alt="sshd_problem" loading="lazy"></a></p>
 
 <p>这样的code大概有三批。这时候我才知道：权限好像放的太开了。。。</p>
 
@@ -1067,55 +1059,55 @@
 
 <p>哦，连上了。</p>
 
-<p><a href="/images/Archive//sshd_problem5.png" class="popup img-link "><img data-src="/images/Archive//sshd_problem5.png" alt="sshd_problem" class="lazyload" data-proofer-ignore></a></p>
+<p><a href="https://data.yinxinghan.com/Blog/Before2024//sshd_problem5.png" class="popup img-link  shimmer"><img src="https://data.yinxinghan.com/Blog/Before2024//sshd_problem5.png" alt="sshd_problem" loading="lazy"></a></p>
 
 <p>呵呵。</p>
 
 
-</div>
+  </div>
 
-<div class="post-tail-wrapper text-muted">
-  <!-- categories -->
-  
-    <div class="post-meta mb-3">
-      <i class="far fa-folder-open fa-fw me-1"></i>
-      
-        <a href="/categories/archive/">Archive</a>
-    </div>
-  
-
-  <!-- tags -->
-  
-    <div class="post-tags">
-      <i class="fa fa-tags fa-fw me-1"></i>
-      
-        <a
-          href="/tags/codes/"
-          class="post-tag no-text-decoration"
-        >Codes</a>
-      
-    </div>
-  
-
-  <div
-    class="
-      post-tail-bottom
-      d-flex justify-content-between align-items-center mt-5 pb-2
-    "
-  >
-    <div class="license-wrapper">
-      
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
         
+          <a href="/categories/archive/">Archive</a>
+      </div>
+    
 
-        This post is licensed under 
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/codes/"
+            class="post-tag no-text-decoration"
+          >Codes</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
          by the author.
-      
-    </div>
+        
+      </div>
 
-    <!-- Post sharing snippet -->
+      <!-- Post sharing snippet -->
 
 <div class="share-wrapper d-flex align-items-center">
   <span class="share-label text-muted me-1">Share</span>
@@ -1179,21 +1171,18 @@
   </span>
 </div>
 
+    </div>
+    <!-- .post-tail-bottom -->
   </div>
-  <!-- .post-tail-bottom -->
-</div>
-<!-- div.post-tail-wrapper -->
-
-
-  
-
-  
+  <!-- div.post-tail-wrapper -->
 </article>
 
+
+            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
               <!-- Get the last 5 posts from lastmod list. -->
 
@@ -1218,35 +1207,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Hello-World-Again/">Hello World Again!</a>
+          <a href="/posts/Leetcode1845/">Leetcode 1845</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Via-Dubai-and-Kuwait/">Via Dubai & Kuwait</a>
+          <a href="/posts/Dalian/">大连游记</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Above-the-Stars/">星空之上_第一集</a>
+          <a href="/posts/sshd-problem/">sshd连接修复笔记</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Eighteen-Years-Old/">我的十八岁</a>
+          <a href="/posts/satellite_information_GUI/">Sat Finder</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Story-of-Blog/">网站折腾记</a>
+          <a href="/posts/HHKB/">HHKB</a>
         </li>
       
     </ul>
@@ -1275,35 +1264,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1338,10 +1298,6 @@
     
     
     
-      
-        
-        
-
   
     
     
@@ -1357,10 +1313,6 @@
     
     
     
-      
-        
-        
-
   
     
     
@@ -1375,8 +1327,6 @@
     
     
     
-    
-      
     
   
     
@@ -1412,6 +1362,96 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1426,33 +1466,10 @@
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1464,7 +1481,10 @@
     
     
     
-      
+  
+    
+    
+    
     
   
     
@@ -1500,7 +1520,35 @@
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1535,6 +1583,295 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1558,25 +1895,28 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
       
     </div>
   </section>
@@ -1600,8 +1940,7 @@
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
               
-                
-                <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
 
 <!-- The total size of related posts -->
 
@@ -1856,6 +2195,30 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -1883,8 +2246,6 @@
 
 <time
   
-    class="small"
-  
   data-ts="1696618800"
   data-df="ll"
   
@@ -1893,7 +2254,7 @@
 </time>
 
               <h4 class="pt-0 my-2">Linux Kernel Note 1</h4>
-              <div class="text-muted small">
+              <div class="text-muted">
                 <p>
                   
 
@@ -1905,6 +2266,7 @@
 
 In fact, I almost did’t have used Linux except sometimes host websites or webapps.
 
+
                 </p>
               </div>
             </div>
@@ -1912,7 +2274,7 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
         </article>
       
         <article class="col">
-          <a href="/posts/acm-icpc-asia-qingdao-regional-contest-online/" class="post-preview card h-100">
+          <a href="/posts/Leetcode1845/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1924,17 +2286,15 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
 
 <time
   
-    class="small"
-  
-  data-ts="1537192800"
+  data-ts="1727658600"
   data-df="ll"
   
 >
-  Sep 17, 2018
+  Sep 29, 2024
 </time>
 
-              <h4 class="pt-0 my-2">ACM-ICPC Asia Qingdao Regional Contest, Online</h4>
-              <div class="text-muted small">
+              <h4 class="pt-0 my-2">Leetcode 1845</h4>
+              <div class="text-muted">
                 <p>
                   
 
@@ -1942,32 +2302,18 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
 
 
 
-                  
+                  今天遇到的有意思的题，难度看起来不算大，我最开始看到的时候以为能秒杀这道题但是有几个输入极大的check point，所以第一个版本的code挂了。
+
+先看题面吧：
+
+Leetcode 1845. Seat Reservation Manager
+
+请你设计一个管理 n 个座位预约的系统，座位编号从 1 到 n 。
+
+请你实现 SeatManager 类：
 
 
-
-前言：
-
-昨天参加了一波青岛赛区的ACM网络赛，很快乐的水了一下午，感觉自己一直不在状态。
-
-只做出来五道题，C题思路有问题，WA了几次，超时了几次，罚时罚到爆炸。
-
-简单记录一下五道题的思路和代码。
-
-Problem A. Live Love：
-
-非常水的一道题，本质就是一个数列问题，求数列中特殊值的连续个数最大值和最小值，纯模拟。
-
-代码如下：
-
-1
-2
-3
-4
-5
-6
-7
-us...
+  SeatManager(i...
                 </p>
               </div>
             </div>
@@ -1975,7 +2321,7 @@ us...
         </article>
       
         <article class="col">
-          <a href="/posts/some_gcds/" class="post-preview card h-100">
+          <a href="/posts/TurntoPY/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1987,17 +2333,15 @@ us...
 
 <time
   
-    class="small"
-  
-  data-ts="1541995200"
+  data-ts="1727747100"
   data-df="ll"
   
 >
-  Nov 11, 2018
+  Sep 30, 2024
 </time>
 
-              <h4 class="pt-0 my-2">GCD的几种实现方法</h4>
-              <div class="text-muted small">
+              <h4 class="pt-0 my-2">要转PY了</h4>
+              <div class="text-muted">
                 <p>
                   
 
@@ -2005,16 +2349,32 @@ us...
 
 
 
-                  最简单的gcd算法：
+                  在研究动规问题的时候，看了不少大神的代码，发现Python好像天生就适合做动态规划。
+
+比如同样都是要剪枝，Cpp需要判断条件：
 
 1
 2
 3
 4
-int gcd(int x, int y)
-{
-if(y == 0) return x;
-if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用的gcd算法： [cc] int gcd(int a, int b){ return a == 0 ? b : gcd(b %...
+int&amp;amp; res = memo[i];
+if (res) {
+return res;
+}
+
+而Python只需要一个缓存装饰器就解决了：
+
+1
+@cache
+
+
+又比如用Cpp写的这句：
+
+1
+2
+3
+4
+auto dfs = [&amp;amp...
                 </p>
               </div>
             </div>
@@ -2026,9 +2386,9 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
   <!-- #related-posts -->
 
 
+            
               
-                
-                <!-- Navigation buttons at the bottom of the post. -->
+              <!-- Navigation buttons at the bottom of the post. -->
 
 <nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
   
@@ -2055,12 +2415,11 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
   
 </nav>
 
+            
               
-                
-                <!--  The comments switcher -->
+              <!--  The comments switcher -->
 
 
-              
             
 
             <!-- The Footer -->
@@ -2074,7 +2433,7 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
 >
   <p>
     ©
-    <time>2023</time>
+    <time>2024</time>
     <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
     
       <span
@@ -2085,7 +2444,7 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
   </p>
 
-  <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
   </p>
 </footer>
 
@@ -2118,35 +2477,6 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2181,10 +2511,6 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
-      
-        
-        
-
   
     
     
@@ -2200,10 +2526,6 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
-      
-        
-        
-
   
     
     
@@ -2218,8 +2540,6 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
-    
-      
     
   
     
@@ -2255,6 +2575,96 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2269,33 +2679,10 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2307,7 +2694,10 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
-      
+  
+    
+    
+    
     
   
     
@@ -2343,7 +2733,35 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2378,6 +2796,295 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2401,25 +3108,28 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
       
     </div>
   </section>
@@ -2573,7 +3283,7 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.9/dayjs.min.js,npm/dayjs@1.11.9/locale/zh.min.js,npm/dayjs@1.11.9/plugin/relativeTime.min.js,npm/dayjs@1.11.9/plugin/localizedFormat.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/zh.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
 
 
 

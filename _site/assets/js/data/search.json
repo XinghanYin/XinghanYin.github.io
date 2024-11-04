@@ -1,11 +1,266 @@
 [
   
   {
+    "title": "三脚猫俱乐部 | SJM Club",
+    "url": "/posts/SJMClubV1/",
+    "categories": "Development, Project",
+    "tags": "Sanjiaomao Club, CSS, HTML, Web Animation",
+    "date": "2024-11-03 12:30:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "三脚猫俱乐部 | SJM Club三脚猫俱乐部是给我们的三脚猫俱乐部开发的官网。 目前的V1版本是纯粹的，一个探索前端动画交互的小型静态网站项目，完全基于CSS、JavaScript、HTML进行开发，包含多种视觉特效和交互体验。今天特地写这篇文章，详细介绍项目的设计、部分代码文件的功能，以及背后的实现原理。目录  项目概览  界面预览  代码文件讲解          index.html...",
+    "content": "三脚猫俱乐部 | SJM Club三脚猫俱乐部是给我们的三脚猫俱乐部开发的官网。 目前的V1版本是纯粹的，一个探索前端动画交互的小型静态网站项目，完全基于CSS、JavaScript、HTML进行开发，包含多种视觉特效和交互体验。今天特地写这篇文章，详细介绍项目的设计、部分代码文件的功能，以及背后的实现原理。目录  项目概览  界面预览  代码文件讲解          index.html      style.css &amp; fonts.css      who.js      animations.js      effect.js      sentences.js      utils.js      logo-manager.js        未来计划项目概览三脚猫俱乐部的初衷是为了展示纯前端技术下的动画效果，包括渐变背景、Logo交互、文字切换等丰富的动态交互。页面由多个JavaScript和CSS文件协同工作，实现多样化的视觉体验。界面预览以下展示了三种动画效果，以及鼠标悬停时显示的随机成员信息和动态标语的效果：Hexagon 动画效果Matrix 动画效果Yigo 粒子效果鼠标悬停显示不同成员信息代码文件讲解index.htmlindex.html是整个网站的核心结构文件，包含了页面的基础框架和各个模块的引用。  结构概览：页面包含了container和logo等元素，同时引入了style.css来定义样式，JavaScript文件则用于增强交互。  引入部分：    &lt;link rel=\"stylesheet\" href=\"style.css\"&gt;&lt;script src=\"logo-manager.js\"&gt;&lt;/script&gt;&lt;script src=\"animations.js\"&gt;&lt;/script&gt;&lt;script src=\"effect.js\"&gt;&lt;/script&gt;&lt;!-- 更多JavaScript文件 --&gt;      style.css &amp; fonts.cssstyle.css与fonts.css定义了整个页面的视觉风格和字体使用。  全局样式：页面整体风格为深色主题，使用自定义字体进行排版。style.css主要控制元素的位置、Logo的动画效果以及背景的渐变等。  字体定义：fonts.css中包含了自定义字体，包括中文和英文的字体，通过@font-face加载字体文件。    @font-face {    font-family: 'ZhReRegular';    src: url('zh_reRegular.woff2') format('woff2');    font-display: swap;}      who.jswho.js文件包含了网站的Logo和相关标题、标语的配置，以JSON格式存储并在前端进行动态切换。  成员数据：通过配置不同Logo和标语内容，实现鼠标悬停时的动态切换。    const CONFIG = {    \"defaultLogo\": \"img/ben.svg\",    \"alternatives\": [        { \"logo\": \"img/ben1.svg\", \"title\": \"742.\", \"subtitle\": { \"text\": \"Real Gamer\" } },        { \"logo\": \"img/ben2.svg\", \"title\": \"膨膨\", \"subtitle\": { \"text\": \"Investment | Socialite\" } }        // 更多配置项    ]};      animations.jsanimations.js文件用于实现页面的动画效果，包含matrix、yigo、hexagon三种不同的动画类型。  核心逻辑：通过在Canvas上绘制内容，分别实现了矩阵风格字符流、粒子效果和六边形网格动画。    function startCombinedEffect(effect) {    if (effect === 'matrix') {        drawMatrix(); // 启动Matrix效果    } else if (effect === 'yigo') {        drawYigo(); // 启动粒子效果    } else if (effect === 'hexagon') {        loop(); // 启动六边形动画    }}      effect.jseffect.js用于控制背景的渐变以及鼠标交互的遮罩效果。  渐变背景：渐变背景由GradientBackground对象管理，通过插值和过渡时间使得背景颜色平滑变化。    GradientBackground.setNewTargetColors();gradientBg.style.background = `linear-gradient(45deg, ${currentColor1}, ${currentColor2})`;      sentences.jssentences.js用于管理页面中显示的标题和标语。标语和标题是动态切换的，通过数组存储多个选项，并在JavaScript中循环展示。  标题切换逻辑：通过CycleSequence类来确保标题和标语的循环展示。    const sentenceSequence = new CycleSequence(SENTENCES.alternatives);function cycleText() {    const nextSentence = sentenceSequence.next();    updateTitleText(nextSentence.title, nextSentence.subtitle);}      utils.jsutils.js封装了一些常用的工具函数，例如节流函数、颜色生成、图片预加载等。  节流函数：用于控制某些高频事件的触发，减少性能消耗。    function throttle(func, limit) {    let inThrottle;    return function(...args) {        if (!inThrottle) {            func.apply(this, args);            inThrottle = true;            setTimeout(() =&gt; inThrottle = false, limit);        }    }}      logo-manager.jslogo-manager.js用于控制Logo点击后的动画效果以及角落菜单按钮的显示。  Logo交互：Logo的点击会触发菜单按钮显示，并且在动画期间自动隐藏按钮。    logo.addEventListener('click', () =&gt; this.handleLogoClick());function handleLogoClick() {    if (!this.isAnimationActive()) {        this.toggleCornerButtons(); // 切换四角按钮    }}      未来计划目前网站的功能和效果都实现了较好的交互体验，下一步，我计划：  使用VUE + Element重构前端，进一步提高代码的模块化和复用性。  使用Spring作为后台框架，支持更多动态数据的交互。通过本项目，我学会了如何在不依赖框架的情况下，通过JavaScript和CSS实现动态视觉效果。未来，我会继续探索前端动画和后端交互之间的整合，以实现更复杂的项目。"
+  },
+  
+  {
+    "title": "要转PY了",
+    "url": "/posts/TurntoPY/",
+    "categories": "Codes",
+    "tags": "Codes",
+    "date": "2024-09-30 20:45:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "在研究动规问题的时候，看了不少大神的代码，发现Python好像天生就适合做动态规划。比如同样都是要剪枝，Cpp需要判断条件：int&amp; res = memo[i];if (res) {return res;}而Python只需要一个缓存装饰器就解决了：@cache又比如用Cpp写的这句：auto dfs = [&amp;](auto&amp;&amp; dfs, int i) -&gt...",
+    "content": "在研究动规问题的时候，看了不少大神的代码，发现Python好像天生就适合做动态规划。比如同样都是要剪枝，Cpp需要判断条件：int&amp; res = memo[i];if (res) {return res;}而Python只需要一个缓存装饰器就解决了：@cache又比如用Cpp写的这句：auto dfs = [&amp;](auto&amp;&amp; dfs, int i) -&gt; int {if (i &lt;= 0) {return 0;}[&amp;]是Lambda表达式，-&gt; int是lambda函数的返回类型声明。在Py里，是这样的：def dfs(i: int) -&gt; int:            if i &lt;= 0:                return 0不需要显式的捕获列表，能自动捕获外部作用域的变量。这么多年坚守C/C++做题，在省事这个方面落后了。感觉Py直接把好多东西都自动化了。明天开始所有的动规都用Py来写。"
+  },
+  
+  {
+    "title": "Leetcode 1845",
+    "url": "/posts/Leetcode1845/",
+    "categories": "Codes",
+    "tags": "Codes",
+    "date": "2024-09-29 20:10:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "今天遇到的有意思的题，难度看起来不算大，我最开始看到的时候以为能秒杀这道题但是有几个输入极大的check point，所以第一个版本的code挂了。先看题面吧：Leetcode 1845. Seat Reservation Manager请你设计一个管理 n 个座位预约的系统，座位编号从 1 到 n 。请你实现 SeatManager 类：  SeatManager(int n) 初始化一个...",
+    "content": "今天遇到的有意思的题，难度看起来不算大，我最开始看到的时候以为能秒杀这道题但是有几个输入极大的check point，所以第一个版本的code挂了。先看题面吧：Leetcode 1845. Seat Reservation Manager请你设计一个管理 n 个座位预约的系统，座位编号从 1 到 n 。请你实现 SeatManager 类：  SeatManager(int n) 初始化一个 SeatManager 对象，它管理从 1 到 n 编号的 n 个座位。所有座位初始都是可预约的。  int reserve() 返回可以预约座位的 最小编号 ，此座位变为不可预约。  void unreserve(int seatNumber) 将给定编号 seatNumber 对应的座位变成可以预约。示例 1：输入：[&#34;SeatManager&#34;, &#34;reserve&#34;, &#34;reserve&#34;, &#34;unreserve&#34;, &#34;reserve&#34;, &#34;reserve&#34;, &#34;reserve&#34;, &#34;reserve&#34;, &#34;unreserve&#34;][[5], [], [], [2], [], [], [], [], [5]]输出：[null, 1, 2, null, 2, 3, 4, 5, null]解释：SeatManager seatManager = new SeatManager(5); // 初始化 SeatManager ，有 5 个座位。seatManager.reserve();    // 所有座位都可以预约，所以返回最小编号的座位，也就是 1 。seatManager.reserve();    // 可以预约的座位为 [2,3,4,5] ，返回最小编号的座位，也就是 2 。seatManager.unreserve(2); // 将座位 2 变为可以预约，现在可预约的座位为 [2,3,4,5] 。seatManager.reserve();    // 可以预约的座位为 [2,3,4,5] ，返回最小编号的座位，也就是 2 。seatManager.reserve();    // 可以预约的座位为 [3,4,5] ，返回最小编号的座位，也就是 3 。seatManager.reserve();    // 可以预约的座位为 [4,5] ，返回最小编号的座位，也就是 4 。seatManager.reserve();    // 唯一可以预约的是座位 5 ，所以返回 5 。seatManager.unreserve(5); // 将座位 5 变为可以预约，现在可预约的座位为 [5] 。提示：  1 &lt;= n &lt;= 10^5  1 &lt;= seatNumber &lt;= n  每一次对 reserve 的调用，题目保证至少存在一个可以预约的座位。  每一次对 unreserve 的调用，题目保证 seatNumber 在调用函数前都是被预约状态。  对 reserve 和 unreserve 的调用 总共 不超过 10^5 次。所以最开始我想直接模拟一个bool队列，按顺序标记然后查询座位，代码如下class SeatManager {    int tot=1;    bool seats[100010];    int seatss;public:    SeatManager(int n) {        seatss = n;        for(int i =0;i&lt;100010;i++) seats[i]=false;        for(int i =1;i&lt;=n;i++) seats[i] = true;    }    int reserve() {        int flag=-1;        for(int i =1;i&lt;=seatss;i++){            if(!seats[i]) continue;            else {                seats[i]=false;                flag = i;                break;            }        }        return flag;    }    void unreserve(int seatNumber) {        seats[seatNumber] = true;    }};测试样例也过了，谁知道提交了以后遇到了10万的输入，顺利TTL了。最后用的最小堆，优先队列加greater&lt;&gt;参数实现，代码如下：class SeatManager {    priority_queue&lt;int, vector&lt;int&gt;, greater&lt;&gt;&gt; seats;public:    SeatManager(int n) {        for(int i =1;i&lt;=n;i++) seats.push(i);    }        int reserve() {        int flag=seats.top();        seats.pop();        return flag;    }        void unreserve(int seatNumber) {        seats.push(seatNumber);    }};"
+  },
+  
+  {
+    "title": "HHKB",
+    "url": "/posts/HHKB/",
+    "categories": "Daily, Toy",
+    "tags": "Electronic Product, Toy, Keyboard",
+    "date": "2024-04-24 12:30:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "记得第一次了解到HHKB，是在高中的时候。这把键盘被称为是编码的终极大杀器。而我，又曾把编码视为人生最重要的事情之一。所以最一开始听说这个键盘的时候，真的是眼前一亮，然后我一查价格，差点昏倒。## 折扣价：***2199！！！***对于年仅15岁的我来说，这真的是个天文数字。当时还发了QQ空间。这个渴望的种子一直在我心里很久很久。HHKB Professional 2HHKB是FPU的产品，...",
+    "content": "记得第一次了解到HHKB，是在高中的时候。这把键盘被称为是编码的终极大杀器。而我，又曾把编码视为人生最重要的事情之一。所以最一开始听说这个键盘的时候，真的是眼前一亮，然后我一查价格，差点昏倒。## 折扣价：***2199！！！***对于年仅15岁的我来说，这真的是个天文数字。当时还发了QQ空间。这个渴望的种子一直在我心里很久很久。HHKB Professional 2HHKB是FPU的产品，FPU之前是富士通旗下的，2022年后归了理光，而且这其实是个缩写，Happy Hack Keyboard。从名字上来看，这把键盘就与编程息息相关。加税一共花了320刀。Amazon Screenshot很多人说这把键盘是程序员的终极退烧键盘刚从盒子里拿出来的样子：HHKB Professional HYBRID Type-S本体：HHKB Professional 2这把键盘全名叫HHKB Professional HYBRID Type-S，HYBRID是双模的意思，Type-S是静音系列。说实话，真挺静音的，体验拉满，录了段视频，都是在手指不离开键位的情况下录制的，感受一下。手感的话，这是我用过的手感最舒服的键盘了。从前入过一把熊猫轴的，那把敲起来有一种敲击木头的感觉，声音也是类似。但是总感觉按不到头，就是键程太短导致的，而HHKB的手感类似于拉满的熊猫轴，键程更长更润，爽死了。这个就是我从前那把熊猫轴的键盘，给他配了渐变键帽，很漂亮：圣熊猫轴接着来看HHKB的背面，还带有说明书：HHKB Professional 2背面Switch，负责切换一些键盘使用习惯的：HHKB Professional 2 Switch然后说到HHKB名字里的这个Professional，我找遍了官网，好像所有的经典系列都叫Professional：Professional然后还有一个Stdio系列，说是带触控板的，以后有机会搞来试试。Stdio程序员毕业键盘买了，继续好好码字，好好编程。"
+  },
+  
+  {
+    "title": "Sat Finder",
+    "url": "/posts/satellite_information_GUI/",
+    "categories": "Code",
+    "tags": "Study, Code",
+    "date": "2024-04-23 10:00:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "This is a filter for information on all active satellites in orbit that can help you find the sat data which you want.Develop in Java, GUI.Easy to use.Data Resources: CELESTRAKFork or Download : GI...",
+    "content": "This is a filter for information on all active satellites in orbit that can help you find the sat data which you want.Develop in Java, GUI.Easy to use.Data Resources: CELESTRAKFork or Download : GITHUBReset-1Reset-2Data SummaryThe high (&gt; 45 degrees) orbital inclination geosynchronous satellites:High &gt; 45 degrees SatsThe satellite system comprises the bulk of the satellites in MEO (around mean motion 5) in the small histogram peak below:MEOMEO in FinderThe satellite system comprises the bulk of the satellites in the histogram peak below (around mean motion 13):LEOLEO in Finder"
+  },
+  
+  {
+    "title": "我，组员们的亲爹",
+    "url": "/posts/Iamteammates'qindie/",
+    "categories": "Study",
+    "tags": "Study, Life",
+    "date": "2024-04-21 22:00:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "这学期的Software Architecture, 有一项小组pre，分为mid pre和final pre。我们这组有四个人，其中俩人除了在mid pre的时候见过，其他时候都没见过。我记得是一个白哥，个儿还挺高，一个黑哥，一个黑妹。mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个叫Jaymee的哥们干的。你不管Jaymee干多干少吧，人家好歹干...",
+    "content": "这学期的Software Architecture, 有一项小组pre，分为mid pre和final pre。我们这组有四个人，其中俩人除了在mid pre的时候见过，其他时候都没见过。我记得是一个白哥，个儿还挺高，一个黑哥，一个黑妹。mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个叫Jaymee的哥们干的。你不管Jaymee干多干少吧，人家好歹干，好歹在discord里回回消息，能有个交流。另外的俩属于是我先做好饭，然后把饭嚼碎了喂给他们，还找不到人。也不生气，就是不知道他们这种态度，难道不考虑以后找工作的问题吗。人家也有可能是公民，根本不考虑这些。祝他们前程似锦。"
+  },
+  
+  {
+    "title": "再也不想吃关东煮了",
+    "url": "/posts/DontWantEatGuandongzhuAnymore/",
+    "categories": "Food",
+    "tags": "Life",
+    "date": "2024-04-20 16:30:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "最近想靠纯饿减下肥，所以都是每天中午吃一顿，也几乎没有碳水。可能是这两天吃得太少了，从昨天开始就偏头痛，头左边隔一会就会疼一下。今天早上喝了点豆浆，一下就好多了。看网上说如果一直饿着血糖较低的话会导致大脑缺氧，可能是这个原因。正好今天weee上买的菜到了，买了一大堆的菠菜、牛肉卷、火锅底料还有豆制品。以及一大份关东煮。一开始煮的时候就抄了几个来吃，感觉香烂了，后来吃到鱼卷什么的时候，又甜又腥...",
+    "content": "最近想靠纯饿减下肥，所以都是每天中午吃一顿，也几乎没有碳水。可能是这两天吃得太少了，从昨天开始就偏头痛，头左边隔一会就会疼一下。今天早上喝了点豆浆，一下就好多了。看网上说如果一直饿着血糖较低的话会导致大脑缺氧，可能是这个原因。正好今天weee上买的菜到了，买了一大堆的菠菜、牛肉卷、火锅底料还有豆制品。以及一大份关东煮。一开始煮的时候就抄了几个来吃，感觉香烂了，后来吃到鱼卷什么的时候，又甜又腥，一下就不行了。可能也就吃了不到一半，然后吃了点后加的腐竹和宽粉。记得高中的时候最喜欢吃这个了。以后不吃了，Ojz."
+  },
+  
+  {
+    "title": "忙碌的这些天",
+    "url": "/posts/BusyWeeks/",
+    "categories": "Thinking",
+    "tags": "Study, Life",
+    "date": "2024-04-19 01:30:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "来美国有一个最大的感受，就是课业压力小。总之比国内小。在中国，一般情况下除了广义上的学术stuff，还得care导师的心情，人情世故什么的。跟老板混好了，资源和圈子自然就来了，混不好就不好出头，更有甚者给学生穿小鞋。从某种角度来说，学术剥削已经成为通病了。美国就可以just concentrate for significant things。特别是我选的是Master Project，没有...",
+    "content": "来美国有一个最大的感受，就是课业压力小。总之比国内小。在中国，一般情况下除了广义上的学术stuff，还得care导师的心情，人情世故什么的。跟老板混好了，资源和圈子自然就来了，混不好就不好出头，更有甚者给学生穿小鞋。从某种角度来说，学术剥削已经成为通病了。美国就可以just concentrate for significant things。特别是我选的是Master Project，没有毕业paper之类的，做完自己的research和project就可以溜之大吉了。跟prof的关系更像是crew吧，各自做各自的部分。来美国的这一年来，整体的压力，大，适应环境、找实习、搞科研，都很占精力，但是课业压力确实小。一学期三门课，每周三节，一节三个小时，作业量也还好，给出充足的时间赶due和准备考试。所以我才有时间到处看一看，也能找时间思考思考，写点东西了。印度同学的英语是真的好，感觉他们的avg level是要超过国人很多的。口音特别狠，但是他们的听读写都很厉害。现在记笔记的时候，prof说点什么东西有时候我还得想一想，然后有时候听不清，没听懂得问一下。Indiguys总是在我思考的时候就已经把笔记做好了。 其实我有个猜想，我的室友Akshay说他们每个邦，每个市甚至是村与村之间都有着不同的语言甚至是不同的文字。所以应该对于很多人，不会英语就没办法认知广阔的世界。特别是他们网络环境是开放的，使用Hindi和其他语言的环境应该也不多。 I guess this is the reason.现在又进入期末月了，下周是最后一个授课周，5月7、8、9final。美国的寒假是12月底开始的，Spring Semester从一月中旬开始，五月结束，算下来也是四个月，中间有个春假，整体比国内高校要短很多。暑假接近四个月，5月中到9月初。最近从什么时候开始忙的呢，四月初的时候JD把我拉进他的项目组，然后赶工了一个小东西。紧接上了Software Architecture的pre+committe，然后就准备SPM的Quiz和Oral，连着三周Quiz，忙到今天。下周有两个final pre，两个slides的作业，再然后两周就到期末了。还要抽时间去一趟费城，给车保养，app催我一个多月了。最近还想开发几个东西：  文字冒险引擎 / 模板，用py写，然后在网页玩，slack或者django  能处理excel帮我自动更新表格的一个脚本。最近统计数据重复劳动太多，喊了ycc来帮忙，但是我发现我的想法没法正确传达给他，说明白用的精力比我自己做还麻烦。ycc连四则运算都弄不明白，真的爆笑了。  上一条的完全版本，一个爬虫，爬指定数据的buff和uu数据，总结成一个excel表。  赛博画廊 / 摄影展，目前写了一点点，但是bug太多也不好看。Xinghan’s Photo Gallery大概就是这样。快回国了很高兴。Filco的键帽让我砸坏了，现在空格键很难用，明天把新键帽换上。晚安。"
+  },
+  
+  {
+    "title": "Plan of UU",
+    "url": "/posts/UUAim/",
+    "categories": "Game, CS",
+    "tags": "money, CS",
+    "date": "2024-04-17 17:10:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "目标：纯租赁年利润做到20%以上，向30%靠近。周期：05/01/2024 - 05/01/2025。仓位调整：将M9多普勒等高价值低租金比例的物品卖出，换成租金比例更高的物品，同时保证稳定性。人员  寒冷大王  YCC",
+    "content": "目标：纯租赁年利润做到20%以上，向30%靠近。周期：05/01/2024 - 05/01/2025。仓位调整：将M9多普勒等高价值低租金比例的物品卖出，换成租金比例更高的物品，同时保证稳定性。人员  寒冷大王  YCC"
+  },
+  
+  {
+    "title": "First Video test in here",
+    "url": "/posts/First-Video/",
+    "categories": "Code",
+    "tags": "Video",
+    "date": "2024-04-17 17:10:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "留坑看不到视频窗口就是还没做好。",
+    "content": "留坑看不到视频窗口就是还没做好。"
+  },
+  
+  {
+    "title": "CASIO FX-991CW",
+    "url": "/posts/My-First-Calculator/",
+    "categories": "Daily, Toy",
+    "tags": "Electronic Product, Toy",
+    "date": "2024-04-16 17:10:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "随着最近计算需求的增加，加上SPM本身有很多Numerical Questions，我发现有一个趁手的计算器真的是迫在眉睫。特别是前两天在Quiz之前跑到Van Houten Library借了一个FX-115，把我香坏了。FX-115在了解一番信息之后，发现CASIO的FX-991 好评如潮，遂下单了一个，实际花费应该在16美元左右。比国内便宜很多手感好，功能多，真不错，以后妥妥的买货算租...",
+    "content": "随着最近计算需求的增加，加上SPM本身有很多Numerical Questions，我发现有一个趁手的计算器真的是迫在眉睫。特别是前两天在Quiz之前跑到Van Houten Library借了一个FX-115，把我香坏了。FX-115在了解一番信息之后，发现CASIO的FX-991 好评如潮，遂下单了一个，实际花费应该在16美元左右。比国内便宜很多手感好，功能多，真不错，以后妥妥的买货算租金的利器。包装盒上就可以看到有很多功能很润今天快递一发信息，就把它取了回来，顺便把借来的还了回去。再见啦115开心！"
+  },
+  
+  {
+    "title": "SPM - Cost Estimation",
+    "url": "/posts/SPM-Cost-Estimation/",
+    "categories": "Study, Software Project Management",
+    "tags": "Study, SPM",
+    "date": "2024-04-16 09:10:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "Excample DescriptionA project ‘X’ has 2 iterations, each 6 months. Certain problem may arise within the project at the 6 months which may cause devastating effects. You as a project manager, have 3...",
+    "content": "Excample DescriptionA project ‘X’ has 2 iterations, each 6 months. Certain problem may arise within the project at the 6 months which may cause devastating effects. You as a project manager, have 3 options to consider from each of which has a success &amp; a failure date.  ( Note: Attention!! The summary is 2x6 = 12 months )Continue as it is: -  If it is a success, it creates 4 months delay.  If it is a failure, it creates another 5 month delay.          ( If failure, will cost 9 months total )      Reshuffle Resources: -  Success: Creates a 2 months delay.  Failure: Creates another 3 months delay.          ( If failure, will cost 5 months total )      Hire Consultment: -  Success: Creates a 1 month delay.  Failure: Creates another 1 month delay.          ( If failure, will cost 2 months total )      Consider the following numerical values: -Development:  In house cost pre month = $1000  Consultant company cost per month = $1200Income:  Revenues start after 4 months of project completion.  The monthly revenue for the 1st year = $2000  The monthly revenue for the 2nd year = $3000  Increment Rate: 12% per year. ( On Costs &amp; Revenues )Formulars  Net Present Value ( NPV ): This is value of all future and present cash flows over the entire life of the asset.\\(NPV = \\sum_{t=0}^N \\frac{NCF}{(1+i)^t}\\)          N is year.        Net Cash Flow ( NCF ): Total IN and OUT.Questions  Kindly note that the project is begin developed in the 0th year.      What would be your initial estimations as a project manager is nothing had gone wrong?        Which of the above 3 options. Would you adopt to minimire the amont of duration from the initial estimation?  Qustion 1:NCF Calculation:  Year 0: \\(12 * -1000 = -12000\\)      Year 1: \\(\\begin{cases} 4 * 0 &amp;= 0\\\\ 8 * 2000 &amp;= 16000\\end{cases} =16000\\)    Year 2: \\(12 * 3000 = 36000\\)  Then:\\(NPV = \\sum_{t=0}^N \\frac{NCF}{(1+i)^t}=\\frac{-1200}{(1+\\frac{12}{120})^0}+\\frac{16000}{(1+\\frac{12}{120})^1}+\\frac{36000}{(1+\\frac{12}{120})^2}\\\\=-12000+\\frac{16000}{1.12}+\\frac{16000}{(1.12)^2}\\\\=30984.68\\)It will cost 30984.68 dollars when nothing had gone wrong.Question 2:1. Option1: Continue as it is:-Success: -NCF Calculation:  Year 0: \\(12*-1000=-12000\\)  Year 1:\\(\\begin{cases} 4 * -1000 &amp;= -4000\\\\ 4*0&amp;=0\\\\ 4 * 2000 &amp;= 8000\\end{cases} =4000\\)  Year 2: \\(12*3000=36000\\)  Then:\\(NPV = \\frac{-12000}{(1+\\frac{12}{100})^0}+\\frac{16000}{(1+\\frac{12}{100})^1}+\\frac{36000}{(1+\\frac{12}{100})^2}=...=30984.69388\\)Failure: - NCF Calculation:  Year 0: \\(12*-1000=-12000\\)  Year 1: \\(\\begin{cases} 9 * -1000 &amp;= -9000\\\\ 3*0&amp;=0\\\\\\end{cases} =- 9000\\)      Year 2:\\(\\begin{cases}1*0&amp;=0\\\\11*3000&amp;=33000\\\\\\end{cases} =33000\\)    Then:\\(NPV = \\frac{-12000}{(1+\\frac{12}{100})^0}+\\frac{-9000}{(1+\\frac{12}{100})^1}+\\frac{33000}{(1+\\frac{12}{100})^2}=...=6271.6836\\)2. Option 2: Reshuffle Resources: Skip, Same as above.3. Option 3: Hire Consultants: -NCF Calculation:-  Year 0: \\(\\begin{cases}12*-1000&amp;=-12000\\\\6*-1200&amp;=-7200\\\\\\end{cases} =-19200\\)  Year 1: \\(\\begin{cases}1*-1000&amp;=-1000\\\\1*-1200&amp;=-1200\\\\4*0&amp;=0\\\\7*2000&amp;=14000\\\\\\end{cases} =11800\\)  Year 2: \\(12*3000=36000\\)  Then:\\(NPV = \\frac{-19200}{(1+\\frac{12}{100})^0}+\\frac{11800}{(1+\\frac{12}{100})^1}+\\frac{36000}{(1+\\frac{12}{100})^2}=...=20034.69388\\)"
+  },
+  
+  {
+    "title": "CS库存等级划分 – 参考《斗破苍穹》",
+    "url": "/posts/CS-Inventory-Tier/",
+    "categories": "CS",
+    "tags": "CS",
+    "date": "2024-03-20 18:10:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "  本文逻辑很不严谨，只为博诸君一笑，请勿上纲上线上态度。等级CS库存等级，从低到高共可分为十二级，分别是斗之气、斗者、斗师、大斗师、斗灵、斗王、斗皇、斗宗、斗尊、半圣、斗圣、斗帝。斗之气（≈0）：知晓CS的饰品系统，但几乎没有库存。斗者（100元以内） ：这是游戏中最多的一类人，他们常常是休闲玩家，或者对饰品完全不感兴趣的玩家。他们的库存中会有经验掉落的狩猎网格、各类武器箱子，也可能会出现...",
+    "content": "  本文逻辑很不严谨，只为博诸君一笑，请勿上纲上线上态度。等级CS库存等级，从低到高共可分为十二级，分别是斗之气、斗者、斗师、大斗师、斗灵、斗王、斗皇、斗宗、斗尊、半圣、斗圣、斗帝。斗之气（≈0）：知晓CS的饰品系统，但几乎没有库存。斗者（100元以内） ：这是游戏中最多的一类人，他们常常是休闲玩家，或者对饰品完全不感兴趣的玩家。他们的库存中会有经验掉落的狩猎网格、各类武器箱子，也可能会出现一件两件类似“精英之作”，“猫猫狗狗”，“蠕虫之神”，“毛细血管”的饰品。斗师（100-500元）：常见于喜爱CS的学生党，以及刚开始入坑皮肤的玩家，他们的库存一般已经集齐了三件主战皮肤，可能会出现“红线“、“幻影破坏者”、“可燃冰”等饰品，也会出现一些普通的贴纸。大斗师（1000元）：“小人物同样有小人物的舒畅生活。”这是划分饰品斗师与饰品大斗师的分界线。CS作为一款免费游戏，在游戏中拥有千元的虚拟资产，注定不是泛泛之辈！部分大斗师不仅在贴吧中如鱼得水，更有甚者已经开始接触MAX+平台，了解另一方天地！斗灵（1000-5000元）：如果看到大斗师库存里的龙王M4都可以让你眼神闪烁，那斗灵强者手中的弯刀破伤风与他的久经裹手，岂不是会让你倒吸一口凉气？他们是饰品市场的中坚力量，也是CS的核心玩家。斗王（5000-10000元）：“我此刻不如你，不代表我永远不如你！记住，莫欺少年穷！”斗王斗王，一方之王。每一名斗王，都是从斗灵强者中跻身而出的佼佼者。这是大多数玩家的顶点。到这个阶段，已经值得大家喊上一句“富哥”了。他们拿的是刺刀、锯齿，揣的是二西、火神。不管是他们的库存还是他们的态度，无不在彰显着一句话：“恐怖如斯！”斗皇（10000-50000元）：“道理，只有弱者面对强者时才需要”饰品之皇 – 斗皇。对斗皇而言，不管是斗者还是大斗师，斗灵还是斗王，他们都可以不放在眼里。他们买过蝴蝶刀、玩过爪子、用过薄荷、摸过潘多拉。对斗皇来说，伽马M9是开胃菜，略磨弹弓才是正餐。斗宗（&gt; 50000元)：“年轻人，你见过四连皇冠吗？年轻人，你知道崭新火蛇吗？”成为斗宗，意味着是称霸一方的大哥，意味着有自己的小团体。斗宗也意味着可以开宗立派、有成为各种“老师”的资格。普通的饰品已经无法满足斗宗了，他们要求的是“顶级”二字。斗尊（&gt; 100000元）：“为得钢骨洒热血，我命由我不由天！”斗尊意味着饰品至尊，在整个CS世界中，斗尊是站在金字塔顶尖的一部分人。十万元是饰品玩家的分水岭，他们的库存价值可以换到龙狙 / 永恒 / 野荷 / 暗金咆哮等顶级饰品，也能轻松买到任何其他的地图收藏品。他们有着大量的交易经验，经受过的饰品实在太多，对于斗尊而言，面对绝大多数饰品都不再会感到惊讶。半圣（&gt; 400000元）：“天若妒我，天亦可灭！”四十万以上，皆为半圣。到达半圣这一级别，网易BUFF是他的梳妆台，悠悠有品是他的游乐场。在全球来说，也是凤毛麟角的存在了。来自国家统计局数据显示，2023年全国居民人均可支配收入39218元。成为半圣意味着超过10年能攒下的现金换成了虚拟资产。对半圣来说，只有不想买，没有不能买，麦克阿瑟曾经说过：“我的五星上将身份，也无法让我跻身半圣。如果让我再来一次，我会选择2014年投身市场！”斗圣（&gt; 400000元 &amp; 高端印花）：“菩提古树，立地成圣！”半圣成为真圣的唯一法门，就是投身于高端印花。皇冠/ 14卡托普通队标 / 14科隆全息小眼 / 14DH全息队标 / 15卡托全息队标。有着这些印花的饰品，特别是20年后再造的饰品，都拥有着极高的保值率，但又伴有极低的流通率。在整个饰品市场来说，硬通货想变现仅需分分钟，而印花饰品变现则复杂了无数倍。因此斗圣无疑是热爱CS、喜欢竞技本身的玩家，若只是为投资考虑，何必选择印花？斗帝（ ? ? ? ) ：“我以下，皆为蝼蚁”作为饰品玩家中最强的一档，14卡托全息队标 / 崭新、略磨纪念龙 / 全蓝淬火匕首 /暗金661。如果说斗圣是饰品天花板，那么斗圣是真正超出斗圣的存在。斗圣的一件单品，有时候能超过5位斗圣的库存总和。他们的饰品无法以普通的估价系统计算，也没有固定的标准… 随着一代卡托玩家兔八哥、佳总、芒果，卡托贩子纽约、xuge的离开，也随着2020年的超级翻倍，通往斗帝之门的路变的越来越窄，接近关闭了。  记得写的时候有错别字，但是找不到了，如果有人看到的话请告诉我。"
+  },
+  
+  {
+    "title": "2024 Boston",
+    "url": "/posts/Memory-Boston/",
+    "categories": "Travel, Boston",
+    "tags": "Photo",
+    "date": "2024-03-18 12:10:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "春假的时候，我跟宇宇一块去了趟波士顿，玩了五天。她在真的很喜欢波士顿的云Quincy Market 的小龙虾停车场的好天气昕宇喜欢的甜筒Quincy Market分为室内和半室外区域，室内区域中间是廊道，两侧是不同的开放式门店。然后在室内的每一侧，隔一段距离就有一个通向室外的出入口，从这里出去就有很多摊位，在半室外区域的",
+    "content": "春假的时候，我跟宇宇一块去了趟波士顿，玩了五天。她在真的很喜欢波士顿的云Quincy Market 的小龙虾停车场的好天气昕宇喜欢的甜筒Quincy Market分为室内和半室外区域，室内区域中间是廊道，两侧是不同的开放式门店。然后在室内的每一侧，隔一段距离就有一个通向室外的出入口，从这里出去就有很多摊位，在半室外区域的"
+  },
+  
+  {
+    "title": "媳妇送的手机",
+    "url": "/posts/iPhone15ProMax/",
+    "categories": "Love, Gift",
+    "tags": "Love",
+    "date": "2023-11-16 12:00:00 -0500",
+    
+
+
+
+
+
+    
+    "snippet": "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈爱媳妇！！",
+    "content": "哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈爱媳妇！！"
+  },
+  
+  {
     "title": "Linux Kernel Note 1",
     "url": "/posts/Hello-World-for-Linux-Kernel/",
     "categories": "System, Linux Kernel",
     "tags": "Codes",
-    "date": "2023-10-06 15:00:00 -0400",
+    "date": "2023-10-06 14:00:00 -0500",
     
 
 
@@ -22,7 +277,7 @@
     "url": "/posts/Some-Photos/",
     "categories": "Photo, USA",
     "tags": "Photo",
-    "date": "2023-10-05 23:56:00 -0400",
+    "date": "2023-10-05 22:56:00 -0500",
     
 
 
@@ -39,7 +294,7 @@
     "url": "/posts/Via-Dubai-and-Kuwait/",
     "categories": "Travel, Asia",
     "tags": "Photo",
-    "date": "2023-10-04 13:10:00 -0400",
+    "date": "2023-10-04 12:10:00 -0500",
     
 
 
@@ -56,7 +311,7 @@
     "url": "/posts/Hello-World-Again/",
     "categories": "Thinking",
     "tags": "EMO",
-    "date": "2023-10-04 01:00:00 -0400",
+    "date": "2023-10-04 00:00:00 -0500",
     
 
 
@@ -226,7 +481,7 @@
     "url": "/posts/acm-icpc-asia-qingdao-regional-contest-online/",
     "categories": "Archive",
     "tags": "Codes",
-    "date": "2018-09-17 10:00:00 -0400",
+    "date": "2018-09-17 09:00:00 -0500",
     
 
 
@@ -243,7 +498,7 @@
     "url": "/posts/sshd-problem/",
     "categories": "Archive",
     "tags": "Codes",
-    "date": "2018-08-15 06:00:00 -0400",
+    "date": "2018-08-15 05:00:00 -0500",
     
 
 
@@ -260,7 +515,7 @@
     "url": "/posts/Bridge-construction/",
     "categories": "Archive",
     "tags": "Codes",
-    "date": "2018-08-06 12:00:00 -0400",
+    "date": "2018-08-06 11:00:00 -0500",
     
 
 
@@ -277,7 +532,7 @@
     "url": "/posts/Dalian/",
     "categories": "Travel, Asia, China",
     "tags": "Friends, Photos",
-    "date": "2018-07-22 02:15:00 -0400",
+    "date": "2018-07-22 01:15:00 -0500",
     
 
 
@@ -294,7 +549,7 @@
     "url": "/posts/WBSYS/",
     "categories": "Archive",
     "tags": "Friends",
-    "date": "2018-07-10 05:00:00 -0400",
+    "date": "2018-07-10 04:00:00 -0500",
     
 
 
@@ -311,7 +566,7 @@
     "url": "/posts/Above-the-Stars2/",
     "categories": "Archive",
     "tags": "Novel",
-    "date": "2018-06-26 14:00:00 -0400",
+    "date": "2018-06-26 13:00:00 -0500",
     
 
 
@@ -328,7 +583,7 @@
     "url": "/posts/Above-the-Stars/",
     "categories": "Archive",
     "tags": "Novel",
-    "date": "2018-06-26 12:00:00 -0400",
+    "date": "2018-06-26 11:00:00 -0500",
     
 
 
@@ -345,7 +600,7 @@
     "url": "/posts/Twelve-Citizens/",
     "categories": "Archive",
     "tags": "Movie",
-    "date": "2018-06-21 12:00:00 -0400",
+    "date": "2018-06-21 11:00:00 -0500",
     
 
 
@@ -362,7 +617,7 @@
     "url": "/posts/Prologue-of-Blog_of_Amaok/",
     "categories": "Archive",
     "tags": "Note",
-    "date": "2018-06-21 11:00:00 -0400",
+    "date": "2018-06-21 10:00:00 -0500",
     
 
 
@@ -379,7 +634,7 @@
     "url": "/posts/Story-of-Blog/",
     "categories": "Archive",
     "tags": "Note, Web",
-    "date": "2018-06-20 13:00:00 -0400",
+    "date": "2018-06-20 12:00:00 -0500",
     
 
 
@@ -396,7 +651,7 @@
     "url": "/posts/Eighteen-Years-Old/",
     "categories": "Archive",
     "tags": "Note",
-    "date": "2018-05-10 12:00:00 -0400",
+    "date": "2018-05-10 11:00:00 -0500",
     
 
 

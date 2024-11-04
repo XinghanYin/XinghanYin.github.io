@@ -13,12 +13,8 @@
 
 
 
-
-
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh" 
-  
->
+<html lang="zh" >
   <!-- The Head -->
 
 <head>
@@ -38,9 +34,9 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="一些照片" />
-<meta name="author" content="XINGHAN YIN" />
+<meta name="author" content="XINGHAN" />
 <meta property="og:locale" content="zh" />
 <meta name="description" content="前两天去了史蒂文斯，在曼哈顿对岸，拍了一些还不错的照片。" />
 <meta property="og:description" content="前两天去了史蒂文斯，在曼哈顿对岸，拍了一些还不错的照片。" />
@@ -48,13 +44,13 @@
 <meta property="og:url" content="http://localhost:4000/posts/Some-Photos/" />
 <meta property="og:site_name" content="XINGHAN YIN" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-10-05T23:56:00-04:00" />
+<meta property="article:published_time" content="2023-10-05T22:56:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="一些照片" />
 <meta name="twitter:site" content="@twitter_username" />
-<meta name="twitter:creator" content="@XINGHAN YIN" />
+<meta name="twitter:creator" content="@XINGHAN" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"XINGHAN YIN","url":"https://github.com/XinghanYin/"},"dateModified":"2023-10-05T23:56:00-04:00","datePublished":"2023-10-05T23:56:00-04:00","description":"前两天去了史蒂文斯，在曼哈顿对岸，拍了一些还不错的照片。","headline":"一些照片","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Some-Photos/"},"url":"http://localhost:4000/posts/Some-Photos/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"XINGHAN","url":"https://github.com/XinghanYin/"},"dateModified":"2024-04-19T15:05:46-05:00","datePublished":"2023-10-05T22:56:00-05:00","description":"前两天去了史蒂文斯，在曼哈顿对岸，拍了一些还不错的照片。","headline":"一些照片","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Some-Photos/"},"url":"http://localhost:4000/posts/Some-Photos/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -103,7 +99,7 @@
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
@@ -111,7 +107,11 @@
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.1/dist/tocbot.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.2/dist/tocbot.min.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
   
 
   
@@ -281,7 +281,7 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="/images/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="https://data.yinxinghan.com/Blog/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
@@ -408,7 +408,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['xy5','njit.edu'].join('@')"
+          href="javascript:location.href = 'mailto:' + ['yinchuba','gmail.com'].join('@')"
           aria-label="email"
           
 
@@ -447,7 +447,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container px-xxl-5">
+      <div class="container d-flex flex-column px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -510,18 +510,10 @@
 </header>
 
 
-        <div class="row">
-          <main
-            aria-label="Main Content"
-            class="col-12 col-lg-11 col-xl-9 px-md-4"
-          >
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-
-<article class="px-1">
-  
-    
-  
-    <!-- Refactor the HTML structure -->
+              <!-- Refactor the HTML structure -->
 
 
 
@@ -543,7 +535,9 @@
 <!-- Change the icon of checkbox -->
 
 
-<!-- images -->
+
+<!-- Handle images -->
+
 
 
 
@@ -573,7 +567,6 @@
     
     
     
-    
 
     
       
@@ -597,21 +590,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -621,12 +608,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -638,7 +627,6 @@
     
     
 
-    
     
     
     
@@ -665,21 +653,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -689,12 +671,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -706,7 +690,6 @@
     
     
 
-    
     
     
     
@@ -733,21 +716,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -757,12 +734,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -774,7 +753,6 @@
     
     
 
-    
     
     
     
@@ -801,21 +779,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -825,12 +797,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -842,7 +816,6 @@
     
     
 
-    
     
     
     
@@ -869,21 +842,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -893,12 +860,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -910,7 +879,6 @@
     
     
 
-    
     
     
     
@@ -937,21 +905,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -961,16 +923,17 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
 
   
-
 
 
 <!-- Add header for code snippets -->
@@ -1011,14 +974,15 @@
 
 
 
-<header>
-  <h1 data-toc-skip>一些照片</h1>
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>一些照片</h1>
 
-  <div class="post-meta text-muted">
-    <!-- published date -->
-    <span>
-      Posted
-      <!--
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1037,32 +1001,55 @@
   Oct  5, 2023
 </time>
 
-    </span>
-
-    <!-- lastmod date -->
-    
-
-    
-
-    <div class="d-flex justify-content-between">
-      <!-- author(s) -->
-      <span>
-        
-
-        By
-
-        <em>
-          
-            
-              <a href="https://github.com/XinghanYin/">XINGHAN YIN</a>
-              
-            
-          
-        </em>
       </span>
 
-      <!-- read time -->
-      <!-- Calculate the post's reading time, and display the word count in tooltip -->
+      <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1713557146"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Apr 19, 2024
+</time>
+
+        </span>
+      
+
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              
+                <a href="https://github.com/XinghanYin/">XINGHAN</a>
+                
+              
+            
+          </em>
+        </span>
+
+        <!-- read time -->
+        <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
@@ -1086,78 +1073,78 @@
 >
   <em>1 min</em> read</span>
 
+      </div>
+      <!-- .d-flex -->
     </div>
-    <!-- .d-flex -->
-  </div>
-  <!-- .post-meta -->
-</header>
+    <!-- .post-meta -->
+  </header>
 
-<div class="content">
-  <p>前两天去了史蒂文斯，在曼哈顿对岸，拍了一些还不错的照片。</p>
+  <div class="content">
+    <p>前两天去了史蒂文斯，在曼哈顿对岸，拍了一些还不错的照片。</p>
 
-<p><a href="/images/2023/Nov/05//1.JPG" class="popup img-link "><img data-src="/images/2023/Nov/05//1.JPG" alt="Stevens" class="lazyload" data-proofer-ignore></a>
+<p><a href="https://data.yinxinghan.com/Blog/Before2024/2023/Nov/05/1.JPG" class="popup img-link  shimmer"><img src="https://data.yinxinghan.com/Blog/Before2024/2023/Nov/05/1.JPG" alt="Stevens" loading="lazy"></a>
 <em>Building</em></p>
 
-<p><a href="/images/2023/Nov/05//2.jpeg" class="popup img-link "><img data-src="/images/2023/Nov/05//2.jpeg" alt="Stevens" class="lazyload" data-proofer-ignore></a>
+<p><a href="https://data.yinxinghan.com/Blog/Before2024/2023/Nov/05/2.jpeg" class="popup img-link  shimmer"><img src="https://data.yinxinghan.com/Blog/Before2024/2023/Nov/05/2.jpeg" alt="Stevens" loading="lazy"></a>
 <em>Hudson上的一盏小帆</em></p>
 
-<p><a href="/images/2023/Nov/05//4.jpeg" class="popup img-link "><img data-src="/images/2023/Nov/05//4.jpeg" alt="Stevens" class="lazyload" data-proofer-ignore></a>
+<p><a href="https://data.yinxinghan.com/Blog/Before2024/2023/Nov/05/4.jpeg" class="popup img-link  shimmer"><img src="https://data.yinxinghan.com/Blog/Before2024/2023/Nov/05/4.jpeg" alt="Stevens" loading="lazy"></a>
 <em>天龙人的座驾</em></p>
 
-<p><a href="/images/2023/Nov/05//3.jpg" class="popup img-link "><img data-src="/images/2023/Nov/05//3.jpg" alt="Stevens" class="lazyload" data-proofer-ignore></a>
+<p><a href="https://data.yinxinghan.com/Blog/Before2024/2023/Nov/05/3.jpg" class="popup img-link  shimmer"><img src="https://data.yinxinghan.com/Blog/Before2024/2023/Nov/05/3.jpg" alt="Stevens" loading="lazy"></a>
 <em>Manhattan</em></p>
 
-<p><a href="/images/2023/Nov/05//5.JPG" class="popup img-link "><img data-src="/images/2023/Nov/05//5.JPG" alt="Stevens" class="lazyload" data-proofer-ignore></a>
+<p><a href="https://data.yinxinghan.com/Blog/Before2024/2023/Nov/05/5.JPG" class="popup img-link  shimmer"><img src="https://data.yinxinghan.com/Blog/Before2024/2023/Nov/05/5.JPG" alt="Stevens" loading="lazy"></a>
 <em>Manhattan at Night</em></p>
 
-<p><a href="/images/2023/Nov/05//6.JPG" class="popup img-link "><img data-src="/images/2023/Nov/05//6.JPG" alt="Stevens" class="lazyload" data-proofer-ignore></a>
+<p><a href="https://data.yinxinghan.com/Blog/Before2024/2023/Nov/05/6.JPG" class="popup img-link  shimmer"><img src="https://data.yinxinghan.com/Blog/Before2024/2023/Nov/05/6.JPG" alt="Stevens" loading="lazy"></a>
 <em>Moon at Newark</em></p>
 
-</div>
+  </div>
 
-<div class="post-tail-wrapper text-muted">
-  <!-- categories -->
-  
-    <div class="post-meta mb-3">
-      <i class="far fa-folder-open fa-fw me-1"></i>
-      
-        <a href="/categories/photo/">Photo</a>,
-        <a href="/categories/usa/">USA</a>
-    </div>
-  
-
-  <!-- tags -->
-  
-    <div class="post-tags">
-      <i class="fa fa-tags fa-fw me-1"></i>
-      
-        <a
-          href="/tags/photo/"
-          class="post-tag no-text-decoration"
-        >Photo</a>
-      
-    </div>
-  
-
-  <div
-    class="
-      post-tail-bottom
-      d-flex justify-content-between align-items-center mt-5 pb-2
-    "
-  >
-    <div class="license-wrapper">
-      
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
         
+          <a href="/categories/photo/">Photo</a>,
+          <a href="/categories/usa/">USA</a>
+      </div>
+    
 
-        This post is licensed under 
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/photo/"
+            class="post-tag no-text-decoration"
+          >Photo</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
          by the author.
-      
-    </div>
+        
+      </div>
 
-    <!-- Post sharing snippet -->
+      <!-- Post sharing snippet -->
 
 <div class="share-wrapper d-flex align-items-center">
   <span class="share-label text-muted me-1">Share</span>
@@ -1221,21 +1208,18 @@
   </span>
 </div>
 
+    </div>
+    <!-- .post-tail-bottom -->
   </div>
-  <!-- .post-tail-bottom -->
-</div>
-<!-- div.post-tail-wrapper -->
-
-
-  
-
-  
+  <!-- div.post-tail-wrapper -->
 </article>
 
+
+            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
               <!-- Get the last 5 posts from lastmod list. -->
 
@@ -1260,35 +1244,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Hello-World-Again/">Hello World Again!</a>
+          <a href="/posts/Leetcode1845/">Leetcode 1845</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Via-Dubai-and-Kuwait/">Via Dubai & Kuwait</a>
+          <a href="/posts/Dalian/">大连游记</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Above-the-Stars/">星空之上_第一集</a>
+          <a href="/posts/sshd-problem/">sshd连接修复笔记</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Eighteen-Years-Old/">我的十八岁</a>
+          <a href="/posts/satellite_information_GUI/">Sat Finder</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Story-of-Blog/">网站折腾记</a>
+          <a href="/posts/HHKB/">HHKB</a>
         </li>
       
     </ul>
@@ -1317,35 +1301,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1380,10 +1335,6 @@
     
     
     
-      
-        
-        
-
   
     
     
@@ -1399,10 +1350,6 @@
     
     
     
-      
-        
-        
-
   
     
     
@@ -1417,8 +1364,6 @@
     
     
     
-    
-      
     
   
     
@@ -1454,6 +1399,96 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1468,33 +1503,10 @@
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1506,7 +1518,10 @@
     
     
     
-      
+  
+    
+    
+    
     
   
     
@@ -1542,7 +1557,35 @@
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1577,6 +1620,295 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1600,25 +1932,28 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
       
     </div>
   </section>
@@ -1642,8 +1977,7 @@
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
               
-                
-                <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
 
 <!-- The total size of related posts -->
 
@@ -1670,6 +2004,18 @@
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1709,8 +2055,6 @@
 
 <time
   
-    class="small"
-  
   data-ts="1696439400"
   data-df="ll"
   
@@ -1719,7 +2063,7 @@
 </time>
 
               <h4 class="pt-0 my-2">Via Dubai & Kuwait</h4>
-              <div class="text-muted small">
+              <div class="text-muted">
                 <p>
                   
 
@@ -1768,14 +2112,68 @@ Dubai and Kuwait
           </a>
         </article>
       
+        <article class="col">
+          <a href="/posts/Memory-Boston/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1710781800"
+  data-df="ll"
+  
+>
+  Mar 18, 2024
+</time>
+
+              <h4 class="pt-0 my-2">2024 Boston</h4>
+              <div class="text-muted">
+                <p>
+                  
+
+
+
+
+
+                  春假的时候，我跟宇宇一块去了趟波士顿，玩了五天。
+
+她在
+
+
+真的很喜欢波士顿的云
+
+
+Quincy Market 的小龙虾
+
+
+停车场的好天气
+
+
+昕宇喜欢的甜筒
+
+Quincy Market分为室内和半室外区域，室内区域中间是廊道，两侧是不同的开放式门店。然后在室内的每一侧，隔一段距离就有一个通向室外的出入口，从这里出去就有很多摊位，在半室外区域的
+
+
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
     </nav>
   </aside>
   <!-- #related-posts -->
 
 
+            
               
-                
-                <!-- Navigation buttons at the bottom of the post. -->
+              <!-- Navigation buttons at the bottom of the post. -->
 
 <nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
   
@@ -1802,12 +2200,11 @@ Dubai and Kuwait
   
 </nav>
 
+            
               
-                
-                <!--  The comments switcher -->
+              <!--  The comments switcher -->
 
 
-              
             
 
             <!-- The Footer -->
@@ -1821,7 +2218,7 @@ Dubai and Kuwait
 >
   <p>
     ©
-    <time>2023</time>
+    <time>2024</time>
     <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
     
       <span
@@ -1832,7 +2229,7 @@ Dubai and Kuwait
     
   </p>
 
-  <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
   </p>
 </footer>
 
@@ -1865,35 +2262,6 @@ Dubai and Kuwait
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1928,10 +2296,6 @@ Dubai and Kuwait
     
     
     
-      
-        
-        
-
   
     
     
@@ -1947,10 +2311,6 @@ Dubai and Kuwait
     
     
     
-      
-        
-        
-
   
     
     
@@ -1965,8 +2325,6 @@ Dubai and Kuwait
     
     
     
-    
-      
     
   
     
@@ -2002,6 +2360,96 @@ Dubai and Kuwait
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2016,33 +2464,10 @@ Dubai and Kuwait
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2054,7 +2479,10 @@ Dubai and Kuwait
     
     
     
-      
+  
+    
+    
+    
     
   
     
@@ -2090,7 +2518,35 @@ Dubai and Kuwait
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2125,6 +2581,295 @@ Dubai and Kuwait
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2148,25 +2893,28 @@ Dubai and Kuwait
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
       
     </div>
   </section>
@@ -2320,7 +3068,7 @@ Dubai and Kuwait
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.9/dayjs.min.js,npm/dayjs@1.11.9/locale/zh.min.js,npm/dayjs@1.11.9/plugin/relativeTime.min.js,npm/dayjs@1.11.9/plugin/localizedFormat.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/zh.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
 
 
 

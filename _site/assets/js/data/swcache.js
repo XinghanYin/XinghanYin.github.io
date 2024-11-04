@@ -46,6 +46,8 @@ const allowedDomains = [
   'localhost:4000',
 
   
+    'data.yinxinghan.com',
+  
 
   'fonts.gstatic.com',
   'fonts.googleapis.com',

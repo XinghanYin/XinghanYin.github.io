@@ -13,12 +13,8 @@
 
 
 
-
-
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh" 
-  
->
+<html lang="zh" >
   <!-- The Head -->
 
 <head>
@@ -38,7 +34,7 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="XINGHAN YIN" />
 <meta property="og:locale" content="zh" />
 <meta name="description" content="随心，克己，想象，欢愉。" />
@@ -102,13 +98,17 @@
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
 
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
   
 
   
@@ -275,7 +275,7 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="/images/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="https://data.yinxinghan.com/Blog/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
@@ -402,7 +402,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['xy5','njit.edu'].join('@')"
+          href="javascript:location.href = 'mailto:' + ['yinchuba','gmail.com'].join('@')"
           aria-label="email"
           
 
@@ -441,7 +441,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container px-xxl-5">
+      <div class="container d-flex flex-column px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -488,42 +488,10 @@
 </header>
 
 
-        <div class="row">
-          <main
-            aria-label="Main Content"
-            class="col-12 col-lg-11 col-xl-9 px-md-4 pb-5"
-          >
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-
-
-
-
-
-
-
-
-<!-- Get pinned posts -->
-
-
-
-
-
-
-<!-- Get default posts -->
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="post-list" class="flex-grow-1 pe-xl-2">
-  <!-- Refactor the HTML structure -->
+              <!-- Refactor the HTML structure -->
 
 
 
@@ -545,7 +513,9 @@
 <!-- Change the icon of checkbox -->
 
 
-<!-- images -->
+
+<!-- Handle images -->
+
 
 
 
@@ -585,40 +555,72 @@
 
 <!-- return -->
 
+
+
+
+
+
+
+
+
+<!-- Get pinned posts -->
+
+
+
+
+
+
+<!-- Get default posts -->
+
+
+
+
+
+
+
+
+
+
+<div id="post-list" class="flex-grow-1 px-xl-1">
   
-    <article class="card-wrapper">
-      <a href="/posts/some_dps/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/My-First-Calculator/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">常用背包模板</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">CASIO FX-991CW</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              背包问题主要是背模板，这一段时间一直在学习背包相关的问题，记录几个dp模板吧。
+                随着最近计算需求的增加，加上SPM本身有很多Numerical Questions，我发现有一个趁手的计算器真的是迫在眉睫。
 
-一些复杂的背包问题（如泛化物品）未收录
+特别是前两天在Quiz之前跑到Van Houten Library借了一个FX-115，把我香坏了。
 
-01背包问题：
 
-无优化
+FX-115
+在了解一番信息之后，发现CASIO的FX-991 好评如潮，遂下单了一个，实际花费应该在16美元左右。
 
-for(int i=1;i&amp;lt;=n;i++) { for(int j=0;j&amp;lt;=m;c++) { f[i][j]=f[i-1][j]; if(j&amp;gt;=w[i])
-f[i][j]=max(f[i][j],f[i-1][j-w[i]...
-            </p>
-          </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+比国内便宜很多
+
+手感好，功能多，真不...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -628,66 +630,65 @@ f[i][j]=max(f[i][j],f[i-1][j-w[i]...
 
 <time
   
-  data-ts="1543255200"
+  data-ts="1713305400"
   data-df="ll"
   
 >
-  Nov 26, 2018
+  Apr 16, 2024
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Daily,
+                      Toy
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/prime_linear_sieve/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/SPM-Cost-Estimation/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">线性筛素数</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">SPM - Cost Estimation</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              日常突然更新的学习笔记。
+                
 
-最近做了一道在很大的范围里筛选出素数的神仙题，因为超时搞得很头疼，所以想来深入了解一下线性筛法，提高程序运行效率。
+Excample Description
 
-我们常说的线性筛是指在线性时间内把素数表筛出来的过程，这里介绍两种筛法.
+A project ‘X’ has 2 iterations, each 6 months. Certain problem may arise within the project at the 6 months which may cause devastating effects. You as a project manager, ha...
+              </p>
+            </div>
 
-一般筛法（埃拉托斯特尼筛法）：
-
-基本思想：素数的倍数一定不是素数
-
-实现方法：用一个长度为N+1的数组保存信息（0表示素数，1表示非素数），先假设所有的数都是素数（初始化...
-            </p>
-          </div>
-
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -697,61 +698,75 @@ f[i][j]=max(f[i][j],f[i-1][j-w[i]...
 
 <time
   
-  data-ts="1543165200"
+  data-ts="1713276600"
   data-df="ll"
   
 >
-  Nov 25, 2018
+  Apr 16, 2024
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Study,
+                      Software Project Management
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/some_gcds/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/CS-Inventory-Tier/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">GCD的几种实现方法</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">CS库存等级划分 – 参考《斗破苍穹》</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              最简单的gcd算法：
+                
+  本文逻辑很不严谨，只为博诸君一笑，请勿上纲上线上态度。
 
-int gcd(int x, int y)
-{
-if(y == 0) return x;
-if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用的gcd算法： [cc] int gcd(int a, int b){ return a == 0 ? b : gcd(b % a, a); ...
-            </p>
-          </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+等级
+
+CS库存等级，从低到高共可分为十二级，分别是斗之气、斗者、斗师、大斗师、斗灵、斗王、斗皇、斗宗、斗尊、半圣、斗圣、斗帝。
+
+斗之气（≈0）：
+
+知晓CS的饰品系统，但几乎没有库存。
+
+斗者（100元以内） ：
+
+这是游戏中最多的一类人，他们常常是休闲玩家，或者对饰品完全不感兴趣的玩家。他们的库存中会有经验掉落的狩猎网格...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -761,74 +776,78 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
 
 <time
   
-  data-ts="1541995200"
+  data-ts="1710976200"
   data-df="ll"
   
 >
-  Nov 11, 2018
+  Mar 20, 2024
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      CS
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/acm-icpc-asia-qingdao-regional-contest-online/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Memory-Boston/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">ACM-ICPC Asia Qingdao Regional Contest, Online</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">2024 Boston</h1>
 
-
-
-
-
-              
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
-前言：
 
-昨天参加了一波青岛赛区的ACM网络赛，很快乐的水了一下午，感觉自己一直不在状态。
 
-只做出来五道题，C题思路有问题，WA了几次，超时了几次，罚时罚到爆炸。
+                春假的时候，我跟宇宇一块去了趟波士顿，玩了五天。
 
-简单记录一下五道题的思路和代码。
+她在
 
-Problem A. Live Love：
 
-非常水的一道题，本质就是一个数列问题，求数列中特殊值的连续个数最大值和最小值，纯模拟。
+真的很喜欢波士顿的云
 
-代码如下：
 
-using namespace ...
-            </p>
-          </div>
+Quincy Market 的小龙虾
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+
+停车场的好天气
+
+
+昕宇喜欢的甜筒
+
+Quincy Market分为室内和半室外区域，室内区域中间是廊道，两侧是不同的开放式门店。然后在室内的每一侧，隔一段距离就有一个通向室外的出入口，从这里出去就有很多摊位，在半室外区域的
+
+
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -838,60 +857,68 @@ using namespace ...
 
 <time
   
-  data-ts="1537192800"
+  data-ts="1710781800"
   data-df="ll"
   
 >
-  Sep 17, 2018
+  Mar 18, 2024
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Travel,
+                      Boston
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/sshd-problem/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/iPhone15ProMax/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">sshd连接修复笔记</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">媳妇送的手机</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              前言：阿毛这个博客服务器的sshd从几个月前就出现问题，命令只能通过管理控制台自带的SVN去执行，并且是osx自带的ssh和windows的xshell都连不上。这就让人很难受了。
+                
+哈哈哈
 
-查了很多资料，但是鄙人实在是太菜了，一直没找到是哪里出的问题，重启也重启了，补包也补包了，重装也重装了，甚至还自己写了几个脚本想强行启动，但始终是不行。
 
-所以阿毛就需要找一个解决方案，因为本身就是一个linu...
-            </p>
-          </div>
+哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+爱媳妇！！
+
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -901,66 +928,65 @@ using namespace ...
 
 <time
   
-  data-ts="1534327200"
+  data-ts="1700154000"
   data-df="ll"
   
 >
-  Aug 15, 2018
+  Nov 16, 2023
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Love,
+                      Gift
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Bridge-construction/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Hello-World-for-Linux-Kernel/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">大桥施工笔记</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Linux Kernel Note 1</h1>
 
-
-
-
-
-              鉴于某些不可描述的原因，科学上网的路越来越窄，笔者不得不自己搭桥。
-
-为了以防记忆丧失，无法正确使用大桥，便写下这篇笔记。
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
-已于2019年8月23日更新
-SSR部署脚本（CentOS6/Debian6/Ubuntu14 ）：
-yum -y install wget
 
-wget –no-check-certificate https://freed.ga/github/shadowsoc...
-            </p>
-          </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+                After talking with Zephyr, I got the Unix73 paper and prepared to build Linux kernel by myself.
+
+In fact, I almost did’t have used Linux except sometimes host websites or webapps.
+
+
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -970,62 +996,80 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 
 <time
   
-  data-ts="1533571200"
+  data-ts="1696618800"
   data-df="ll"
   
 >
-  Aug  6, 2018
+  Oct  6, 2023
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      System,
+                      Linux Kernel
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Dalian/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Some-Photos/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">大连游记</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">一些照片</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              从2015年起，我就想来大连了。苦于被时间和琐事所困，这个心愿一直搁置到了2018年的夏天才得以实现。
+                前两天去了史蒂文斯，在曼哈顿对岸，拍了一些还不错的照片。
 
-还记得当初是因为学信竞才认识的安康和导师。时间飞逝，不知不觉间我们已经是相识多年的老朋友了。从懵懂的中学少年时代到奋进的大学青年时代，我们经历的很少，也经历了很多。我很感慨，这是一种很幸福的感慨，一种怀念过去的感慨。
 
-2018年7月11日
+Building
 
-7月11日晚，我从济南机场飞往大连。其间一路...
-            </p>
-          </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+Hudson上的一盏小帆
+
+
+天龙人的座驾
+
+
+Manhattan
+
+
+Manhattan at Night
+
+
+Moon at Newark
+
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1035,67 +1079,95 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 
 <time
   
-  data-ts="1532240100"
+  data-ts="1696564560"
   data-df="ll"
   
 >
-  Jul 22, 2018
+  Oct  5, 2023
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Travel,
-                    Asia,
-                    China
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Photo,
+                      USA
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/WBSYS/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Via-Dubai-and-Kuwait/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">《我不是药神》短评</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Via Dubai & Kuwait</h1>
 
-
-
-
-
-              我的朋友圈被药神刷屏了。
-
-上周六，我和大邱、登申一块去了电影院，看了这部已经被刷疯了的片子。
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
-正在分析剧情的大邱。
 
-整部电影给我的感受是很细腻的。我体验到了一种很现实的、充满市井气息的、触人心弦的人性美。
 
-那天晚上我了解到了电影的原型，2015年那个真正的程勇接受的司法审判。就记得当时嚼着口香糖，边嚼边想这人真他妈是个好人。从头到尾，这实际上都是一个很真善美的故事，不管是电影中，还...
-            </p>
-          </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+                
+Dubai and Kuwait
+
+接上文，8月25日从中国出发后的第一个目的地，迪拜。
+
+
+中国边检
+
+
+天空太美了
+
+历经9小时飞行，在当地时间晚上10点抵达。
+
+
+落地滑行中
+
+
+机场通道的Rolex
+
+
+轻轨
+
+
+轻轨
+
+停机坪通往机场大厅是轻轨连接的，因为迪拜的温度实在太高了。
+
+
+落地就送电话卡
+
+我们带着大小六个箱子，还有两个背包，总计160公斤的行李
+
+
+出海关就送电话卡
+...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1105,66 +1177,77 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 
 <time
   
-  data-ts="1531213200"
+  data-ts="1696439400"
   data-df="ll"
   
 >
-  Jul 10, 2018
+  Oct  4, 2023
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Travel,
+                      Asia
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Above-the-Stars2/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/Hello-World-Again/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">星空之上_第二集</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Hello World Again!</h1>
 
-
-
-
-
-              
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
-庞勇坐到车里的第一时间起，他就听到了自己剧烈的心跳声。
 
-加厚过的车体、狭窄且密封的防弹玻璃窗、用精制钢板隔开的宽敞车厢，都彰显着庞勇身边这个中年人不同寻常的身份。
 
-庞勇努力地保持着冷静，绞尽脑汁的思考着这个中年人究竟是谁。
+                
 
-“庞教授，我这么做是出于对您的安全考虑，还希望您能谅解。”在这辆车开出很久以后，中年人终于开口了。从庞勇上车后他就一直看着庞勇，富有磁性的嗓音和线条分明的轮...
-            </p>
-          </div>
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+
+来美国快40天了，算是人生一个新阶段的开始吧。
+
+ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战…
+
+好多的事，好多的人。
+
+说实在的，好像已经几年没有认真的写点东西了。
+
+身为一个不太优秀的小镇做题家，之前和国内大多数人一样，从来没出过国。今年8月底，我们从成都出发，从迪拜到纽约，跨国大洲大洋，回头一想还是别有一番滋味。
+
+
+
+时间就像水，一不留神就被海绵吸...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1174,63 +1257,68 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 
 <time
   
-  data-ts="1530036000"
+  data-ts="1696395600"
   data-df="ll"
   
 >
-  Jun 26, 2018
+  Oct  4, 2023
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Thinking
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper">
-      <a href="/posts/Above-the-Stars/" class="card post-preview flex-md-row-reverse">
+    <article class="card-wrapper card">
+      <a href="/posts/pw05/" class="post-preview row g-0 flex-md-row-reverse">
         
 
-        <div class="card-body d-flex flex-column">
-          <h1 class="card-title my-2 mt-md-0">星空之上_第一集</h1>
+        
 
-          <div class="card-text content mt-0 mb-2">
-            <p>
-              
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">不管你信不信，俺下地狱了</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                
 
 
 
 
 
-              
+                说来你可能不信，我下地狱了
 
-前言：
+那天的天气是什么样的我不记得了，具体是什么时间地点也不记得了，只记得我正准备睡觉，天空就突然变成了紫红色，满溢着鬼魅的样子。漂浮着血色极光的天空里混杂着阵阵黑烟，远方的天空甚至黑压压地出现了沙暴一样的异界……
 
-我是一个深度的科幻作品爱好者。最喜欢的科幻小说是《银河帝国》系列，没有其次。读过很多脍炙人口的科幻小说，风格迥异，构思新奇，都给我带来了快乐，但印象大都不太深刻，有一种吃快餐的感觉。
-几年来一直忙高中课程的学习，忙高考。高考终于结束了，如今，我终于有了一点时间来写一部我自己的科幻小说。
-这是我的处女作，作品名暂定为《星空之上》，向我所向往着的星空致敬。
-文字中不乏天马行空的地方...
-            </p>
-          </div>
+我勒个去！这可真是，百年难得一见啊！
 
-          <div class="post-meta flex-grow-1 d-flex align-items-end">
-            <div class="me-auto">
-              <!-- posted date -->
-              <i class="far fa-calendar fa-fw me-1"></i>
-              <!--
+当然，这又和我即将睡觉有什么关系呢，我翻了个身准备睡去——没有什么能阻止我午睡。
+
+“喂，去地狱了。”一个人在我...
+              </p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1240,34 +1328,34 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 
 <time
   
-  data-ts="1530028800"
+  data-ts="1615194000"
   data-df="ll"
   
 >
-  Jun 26, 2018
+  Mar  8, 2021
 </time>
 
 
-              <!-- categories -->
-              
-                <i class="far fa-folder-open fa-fw me-1"></i>
-                <span class="categories">
-                  
-                    Archive
-                </span>
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      Archive,
+                      pw0
+                  </span>
+                
+              </div>
+
               
             </div>
-
-            
+            <!-- .post-meta -->
           </div>
-          <!-- .post-meta -->
+          <!-- .card-body -->
         </div>
-        <!-- .card-body -->
       </a>
     </article>
   
-
-
 </div>
 <!-- #post-list -->
 
@@ -1344,11 +1432,29 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
         </li>
       
     
+      
+      
+      
+      
+      
+
+      
+
+      
+        <!-- show number -->
+        <li class="page-item ">
+          <a
+            class="page-link"
+            href="/page4"
+          >4</a>
+        </li>
+      
+    
 
     <!-- mobile pagination -->
     <li class="page-index align-middle">
       <span>2</span>
-      <span class="text-muted">/ 3</span>
+      <span class="text-muted">/ 4</span>
     </li>
 
     <!-- right arrow -->
@@ -1365,10 +1471,12 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 
 
 
+
+            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
               <!-- Get the last 5 posts from lastmod list. -->
 
@@ -1393,35 +1501,35 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Hello-World-Again/">Hello World Again!</a>
+          <a href="/posts/Leetcode1845/">Leetcode 1845</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Via-Dubai-and-Kuwait/">Via Dubai & Kuwait</a>
+          <a href="/posts/Dalian/">大连游记</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Above-the-Stars/">星空之上_第一集</a>
+          <a href="/posts/sshd-problem/">sshd连接修复笔记</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Eighteen-Years-Old/">我的十八岁</a>
+          <a href="/posts/satellite_information_GUI/">Sat Finder</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Story-of-Blog/">网站折腾记</a>
+          <a href="/posts/HHKB/">HHKB</a>
         </li>
       
     </ul>
@@ -1450,35 +1558,6 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1513,10 +1592,6 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
-      
-        
-        
-
   
     
     
@@ -1532,10 +1607,6 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
-      
-        
-        
-
   
     
     
@@ -1550,8 +1621,6 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
-    
-      
     
   
     
@@ -1587,6 +1656,96 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1601,33 +1760,10 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1639,7 +1775,10 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
-      
+  
+    
+    
+    
     
   
     
@@ -1675,7 +1814,35 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1710,6 +1877,295 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1733,25 +2189,28 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
       
     </div>
   </section>
@@ -1779,7 +2238,7 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 >
   <p>
     ©
-    <time>2023</time>
+    <time>2024</time>
     <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
     
       <span
@@ -1790,7 +2249,7 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
   </p>
 
-  <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
   </p>
 </footer>
 
@@ -1823,35 +2282,6 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1886,10 +2316,6 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
-      
-        
-        
-
   
     
     
@@ -1905,10 +2331,6 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
-      
-        
-        
-
   
     
     
@@ -1923,8 +2345,6 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
-    
-      
     
   
     
@@ -1960,6 +2380,96 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1974,33 +2484,10 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2012,7 +2499,10 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
-      
+  
+    
+    
+    
     
   
     
@@ -2048,7 +2538,35 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2083,6 +2601,295 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2106,25 +2913,28 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
       
     </div>
   </section>
@@ -2261,7 +3071,7 @@ wget –no-check-certificate https://freed.ga/github/shadowsoc...
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/dayjs@1.11.9/dayjs.min.js,npm/dayjs@1.11.9/locale/zh.min.js,npm/dayjs@1.11.9/plugin/relativeTime.min.js,npm/dayjs@1.11.9/plugin/localizedFormat.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/zh.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
 
 
 

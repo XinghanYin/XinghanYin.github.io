@@ -1,0 +1,22 @@
+[
+  {
+    "series": "Landscape",
+    "url": "/Blog/Before2024/Dubai2023/1.jpeg",
+    "camera": "Canon EOS R5",
+    "lens": "Canon RF 24-70mm f/2.8L IS USM",
+    "focalLength": "35mm",
+    "location": "New York, USA"
+  },
+  {
+    "series": "Portrait",
+    "url": "/Blog/Before2024/Dubai2023/11.jpeg",
+    "camera": "Sony Alpha a7R IV",
+    "lens": "Sony FE 16-35mm f/2.8 GM",
+    "focalLength": "24mm",
+    "location": "Paris, France"
+  },
+  {
+    "series": "Street",
+    "url": "/Blog/Before2024/Dubai2023/10.jpeg"
+  }
+]

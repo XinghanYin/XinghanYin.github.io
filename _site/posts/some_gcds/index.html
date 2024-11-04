@@ -13,12 +13,8 @@
 
 
 
-
-
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh" 
-  
->
+<html lang="zh" >
   <!-- The Head -->
 
 <head>
@@ -38,9 +34,9 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="GCD的几种实现方法" />
-<meta name="author" content="XINGHAN YIN" />
+<meta name="author" content="XINGHAN" />
 <meta property="og:locale" content="zh" />
 <meta name="description" content="最简单的gcd算法：" />
 <meta property="og:description" content="最简单的gcd算法：" />
@@ -52,9 +48,9 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="GCD的几种实现方法" />
 <meta name="twitter:site" content="@twitter_username" />
-<meta name="twitter:creator" content="@XINGHAN YIN" />
+<meta name="twitter:creator" content="@XINGHAN" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"XINGHAN YIN","url":"https://github.com/XinghanYin/"},"dateModified":"2018-11-11T23:00:00-05:00","datePublished":"2018-11-11T23:00:00-05:00","description":"最简单的gcd算法：","headline":"GCD的几种实现方法","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/some_gcds/"},"url":"http://localhost:4000/posts/some_gcds/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"XINGHAN","url":"https://github.com/XinghanYin/"},"dateModified":"2024-04-15T20:04:49-05:00","datePublished":"2018-11-11T23:00:00-05:00","description":"最简单的gcd算法：","headline":"GCD的几种实现方法","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/some_gcds/"},"url":"http://localhost:4000/posts/some_gcds/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -103,7 +99,7 @@
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
@@ -111,7 +107,11 @@
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.1/dist/tocbot.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.2/dist/tocbot.min.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
   
 
   
@@ -281,7 +281,7 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="/images/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="https://data.yinxinghan.com/Blog/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
@@ -408,7 +408,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['xy5','njit.edu'].join('@')"
+          href="javascript:location.href = 'mailto:' + ['yinchuba','gmail.com'].join('@')"
           aria-label="email"
           
 
@@ -447,7 +447,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container px-xxl-5">
+      <div class="container d-flex flex-column px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -510,18 +510,10 @@
 </header>
 
 
-        <div class="row">
-          <main
-            aria-label="Main Content"
-            class="col-12 col-lg-11 col-xl-9 px-md-4"
-          >
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-
-<article class="px-1">
-  
-    
-  
-    <!-- Refactor the HTML structure -->
+              <!-- Refactor the HTML structure -->
 
 
 
@@ -543,7 +535,9 @@
 <!-- Change the icon of checkbox -->
 
 
-<!-- images -->
+
+<!-- Handle images -->
+
 
 
 
@@ -586,14 +580,15 @@
 
 
 
-<header>
-  <h1 data-toc-skip>GCD的几种实现方法</h1>
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>GCD的几种实现方法</h1>
 
-  <div class="post-meta text-muted">
-    <!-- published date -->
-    <span>
-      Posted
-      <!--
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -612,32 +607,55 @@
   Nov 11, 2018
 </time>
 
-    </span>
-
-    <!-- lastmod date -->
-    
-
-    
-
-    <div class="d-flex justify-content-between">
-      <!-- author(s) -->
-      <span>
-        
-
-        By
-
-        <em>
-          
-            
-              <a href="https://github.com/XinghanYin/">XINGHAN YIN</a>
-              
-            
-          
-        </em>
       </span>
 
-      <!-- read time -->
-      <!-- Calculate the post's reading time, and display the word count in tooltip -->
+      <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1713229489"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Apr 15, 2024
+</time>
+
+        </span>
+      
+
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              
+                <a href="https://github.com/XinghanYin/">XINGHAN</a>
+                
+              
+            
+          </em>
+        </span>
+
+        <!-- read time -->
+        <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
@@ -661,18 +679,18 @@
 >
   <em>1 min</em> read</span>
 
+      </div>
+      <!-- .d-flex -->
     </div>
-    <!-- .d-flex -->
-  </div>
-  <!-- .post-meta -->
-</header>
+    <!-- .post-meta -->
+  </header>
 
-<div class="content">
-  <p>最简单的gcd算法：</p>
+  <div class="content">
+    <p>最简单的gcd算法：</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -684,7 +702,7 @@ if(x &lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用的gc
 <p>经过优化的gcd算法(分成奇偶两种情况)：</p>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -726,50 +744,50 @@ return gcd(y,x-y);
 }
 </pre></td></tr></tbody></table></code></div></div>
 
-</div>
+  </div>
 
-<div class="post-tail-wrapper text-muted">
-  <!-- categories -->
-  
-    <div class="post-meta mb-3">
-      <i class="far fa-folder-open fa-fw me-1"></i>
-      
-        <a href="/categories/archive/">Archive</a>
-    </div>
-  
-
-  <!-- tags -->
-  
-    <div class="post-tags">
-      <i class="fa fa-tags fa-fw me-1"></i>
-      
-        <a
-          href="/tags/codes/"
-          class="post-tag no-text-decoration"
-        >Codes</a>
-      
-    </div>
-  
-
-  <div
-    class="
-      post-tail-bottom
-      d-flex justify-content-between align-items-center mt-5 pb-2
-    "
-  >
-    <div class="license-wrapper">
-      
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
         
+          <a href="/categories/archive/">Archive</a>
+      </div>
+    
 
-        This post is licensed under 
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/codes/"
+            class="post-tag no-text-decoration"
+          >Codes</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
          by the author.
-      
-    </div>
+        
+      </div>
 
-    <!-- Post sharing snippet -->
+      <!-- Post sharing snippet -->
 
 <div class="share-wrapper d-flex align-items-center">
   <span class="share-label text-muted me-1">Share</span>
@@ -833,21 +851,18 @@ return gcd(y,x-y);
   </span>
 </div>
 
+    </div>
+    <!-- .post-tail-bottom -->
   </div>
-  <!-- .post-tail-bottom -->
-</div>
-<!-- div.post-tail-wrapper -->
-
-
-  
-
-  
+  <!-- div.post-tail-wrapper -->
 </article>
 
+
+            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
               <!-- Get the last 5 posts from lastmod list. -->
 
@@ -872,35 +887,35 @@ return gcd(y,x-y);
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Hello-World-Again/">Hello World Again!</a>
+          <a href="/posts/Leetcode1845/">Leetcode 1845</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Via-Dubai-and-Kuwait/">Via Dubai & Kuwait</a>
+          <a href="/posts/Dalian/">大连游记</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Above-the-Stars/">星空之上_第一集</a>
+          <a href="/posts/sshd-problem/">sshd连接修复笔记</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Eighteen-Years-Old/">我的十八岁</a>
+          <a href="/posts/satellite_information_GUI/">Sat Finder</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Story-of-Blog/">网站折腾记</a>
+          <a href="/posts/HHKB/">HHKB</a>
         </li>
       
     </ul>
@@ -929,35 +944,6 @@ return gcd(y,x-y);
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -992,10 +978,6 @@ return gcd(y,x-y);
     
     
     
-      
-        
-        
-
   
     
     
@@ -1011,10 +993,6 @@ return gcd(y,x-y);
     
     
     
-      
-        
-        
-
   
     
     
@@ -1029,8 +1007,6 @@ return gcd(y,x-y);
     
     
     
-    
-      
     
   
     
@@ -1066,6 +1042,96 @@ return gcd(y,x-y);
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1080,33 +1146,10 @@ return gcd(y,x-y);
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1118,7 +1161,10 @@ return gcd(y,x-y);
     
     
     
-      
+  
+    
+    
+    
     
   
     
@@ -1154,7 +1200,35 @@ return gcd(y,x-y);
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1189,6 +1263,295 @@ return gcd(y,x-y);
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1212,25 +1575,28 @@ return gcd(y,x-y);
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
       
     </div>
   </section>
@@ -1254,8 +1620,7 @@ return gcd(y,x-y);
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
               
-                
-                <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
 
 <!-- The total size of related posts -->
 
@@ -1510,6 +1875,30 @@ return gcd(y,x-y);
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -1537,8 +1926,6 @@ return gcd(y,x-y);
 
 <time
   
-    class="small"
-  
   data-ts="1696618800"
   data-df="ll"
   
@@ -1547,7 +1934,7 @@ return gcd(y,x-y);
 </time>
 
               <h4 class="pt-0 my-2">Linux Kernel Note 1</h4>
-              <div class="text-muted small">
+              <div class="text-muted">
                 <p>
                   
 
@@ -1559,6 +1946,7 @@ return gcd(y,x-y);
 
 In fact, I almost did’t have used Linux except sometimes host websites or webapps.
 
+
                 </p>
               </div>
             </div>
@@ -1566,7 +1954,7 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
         </article>
       
         <article class="col">
-          <a href="/posts/acm-icpc-asia-qingdao-regional-contest-online/" class="post-preview card h-100">
+          <a href="/posts/Leetcode1845/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1578,17 +1966,15 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
 
 <time
   
-    class="small"
-  
-  data-ts="1537192800"
+  data-ts="1727658600"
   data-df="ll"
   
 >
-  Sep 17, 2018
+  Sep 29, 2024
 </time>
 
-              <h4 class="pt-0 my-2">ACM-ICPC Asia Qingdao Regional Contest, Online</h4>
-              <div class="text-muted small">
+              <h4 class="pt-0 my-2">Leetcode 1845</h4>
+              <div class="text-muted">
                 <p>
                   
 
@@ -1596,25 +1982,18 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
 
 
 
-                  
+                  今天遇到的有意思的题，难度看起来不算大，我最开始看到的时候以为能秒杀这道题但是有几个输入极大的check point，所以第一个版本的code挂了。
+
+先看题面吧：
+
+Leetcode 1845. Seat Reservation Manager
+
+请你设计一个管理 n 个座位预约的系统，座位编号从 1 到 n 。
+
+请你实现 SeatManager 类：
 
 
-
-前言：
-
-昨天参加了一波青岛赛区的ACM网络赛，很快乐的水了一下午，感觉自己一直不在状态。
-
-只做出来五道题，C题思路有问题，WA了几次，超时了几次，罚时罚到爆炸。
-
-简单记录一下五道题的思路和代码。
-
-Problem A. Live Love：
-
-非常水的一道题，本质就是一个数列问题，求数列中特殊值的连续个数最大值和最小值，纯模拟。
-
-代码如下：
-
-using namespace ...
+  SeatManager(i...
                 </p>
               </div>
             </div>
@@ -1622,7 +2001,7 @@ using namespace ...
         </article>
       
         <article class="col">
-          <a href="/posts/prime_linear_sieve/" class="post-preview card h-100">
+          <a href="/posts/TurntoPY/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -1634,17 +2013,15 @@ using namespace ...
 
 <time
   
-    class="small"
-  
-  data-ts="1543165200"
+  data-ts="1727747100"
   data-df="ll"
   
 >
-  Nov 25, 2018
+  Sep 30, 2024
 </time>
 
-              <h4 class="pt-0 my-2">线性筛素数</h4>
-              <div class="text-muted small">
+              <h4 class="pt-0 my-2">要转PY了</h4>
+              <div class="text-muted">
                 <p>
                   
 
@@ -1652,17 +2029,32 @@ using namespace ...
 
 
 
-                  日常突然更新的学习笔记。
+                  在研究动规问题的时候，看了不少大神的代码，发现Python好像天生就适合做动态规划。
 
-最近做了一道在很大的范围里筛选出素数的神仙题，因为超时搞得很头疼，所以想来深入了解一下线性筛法，提高程序运行效率。
+比如同样都是要剪枝，Cpp需要判断条件：
 
-我们常说的线性筛是指在线性时间内把素数表筛出来的过程，这里介绍两种筛法.
+1
+2
+3
+4
+int&amp;amp; res = memo[i];
+if (res) {
+return res;
+}
 
-一般筛法（埃拉托斯特尼筛法）：
+而Python只需要一个缓存装饰器就解决了：
 
-基本思想：素数的倍数一定不是素数
+1
+@cache
 
-实现方法：用一个长度为N+1的数组保存信息（0表示素数，1表示非素数），先假设所有的数都是素数（初始化...
+
+又比如用Cpp写的这句：
+
+1
+2
+3
+4
+auto dfs = [&amp;amp...
                 </p>
               </div>
             </div>
@@ -1674,9 +2066,9 @@ using namespace ...
   <!-- #related-posts -->
 
 
+            
               
-                
-                <!-- Navigation buttons at the bottom of the post. -->
+              <!-- Navigation buttons at the bottom of the post. -->
 
 <nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
   
@@ -1703,12 +2095,11 @@ using namespace ...
   
 </nav>
 
+            
               
-                
-                <!--  The comments switcher -->
+              <!--  The comments switcher -->
 
 
-              
             
 
             <!-- The Footer -->
@@ -1722,7 +2113,7 @@ using namespace ...
 >
   <p>
     ©
-    <time>2023</time>
+    <time>2024</time>
     <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
     
       <span
@@ -1733,7 +2124,7 @@ using namespace ...
     
   </p>
 
-  <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
   </p>
 </footer>
 
@@ -1766,35 +2157,6 @@ using namespace ...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1829,10 +2191,6 @@ using namespace ...
     
     
     
-      
-        
-        
-
   
     
     
@@ -1848,10 +2206,6 @@ using namespace ...
     
     
     
-      
-        
-        
-
   
     
     
@@ -1866,8 +2220,6 @@ using namespace ...
     
     
     
-    
-      
     
   
     
@@ -1903,6 +2255,96 @@ using namespace ...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1917,33 +2359,10 @@ using namespace ...
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1955,7 +2374,10 @@ using namespace ...
     
     
     
-      
+  
+    
+    
+    
     
   
     
@@ -1991,7 +2413,35 @@ using namespace ...
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2026,6 +2476,295 @@ using namespace ...
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2049,25 +2788,28 @@ using namespace ...
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
       
     </div>
   </section>
@@ -2221,7 +2963,7 @@ using namespace ...
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.9/dayjs.min.js,npm/dayjs@1.11.9/locale/zh.min.js,npm/dayjs@1.11.9/plugin/relativeTime.min.js,npm/dayjs@1.11.9/plugin/localizedFormat.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/zh.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
 
 
 

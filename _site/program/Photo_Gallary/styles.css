@@ -1,0 +1,25 @@
+body {
+    background-color: white;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+#bg1, #bg2 {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: opacity 1s ease-in-out;
+    border-radius: 50%; /* 将边框半径设置为50%,即圆形 */
+    overflow: hidden; /* 隐藏溢出部分,确保圆角可见 */
+}
+#bg2 {
+    opacity: 0;
+}
+.loading {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999;
+}

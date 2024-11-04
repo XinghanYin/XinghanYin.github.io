@@ -13,12 +13,8 @@
 
 
 
-
-
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh" 
-  
->
+<html lang="zh" >
   <!-- The Head -->
 
 <head>
@@ -38,9 +34,9 @@
 
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.3.4" />
 <meta property="og:title" content="《我不是药神》短评" />
-<meta name="author" content="XINGHAN YIN" />
+<meta name="author" content="XINGHAN" />
 <meta property="og:locale" content="zh" />
 <meta name="description" content="我的朋友圈被药神刷屏了。" />
 <meta property="og:description" content="我的朋友圈被药神刷屏了。" />
@@ -48,13 +44,13 @@
 <meta property="og:url" content="http://localhost:4000/posts/WBSYS/" />
 <meta property="og:site_name" content="XINGHAN YIN" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-07-10T05:00:00-04:00" />
+<meta property="article:published_time" content="2018-07-10T04:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="《我不是药神》短评" />
 <meta name="twitter:site" content="@twitter_username" />
-<meta name="twitter:creator" content="@XINGHAN YIN" />
+<meta name="twitter:creator" content="@XINGHAN" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"XINGHAN YIN","url":"https://github.com/XinghanYin/"},"dateModified":"2018-07-10T05:00:00-04:00","datePublished":"2018-07-10T05:00:00-04:00","description":"我的朋友圈被药神刷屏了。","headline":"《我不是药神》短评","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/WBSYS/"},"url":"http://localhost:4000/posts/WBSYS/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"XINGHAN","url":"https://github.com/XinghanYin/"},"dateModified":"2024-04-15T20:04:49-05:00","datePublished":"2018-07-10T04:00:00-05:00","description":"我的朋友圈被药神刷屏了。","headline":"《我不是药神》短评","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/WBSYS/"},"url":"http://localhost:4000/posts/WBSYS/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -103,7 +99,7 @@
   
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
@@ -111,7 +107,11 @@
   <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.1/dist/tocbot.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.2/dist/tocbot.min.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
   
 
   
@@ -281,7 +281,7 @@
     <a href="/" id="avatar" class="rounded-circle">
       
         
-        <img src="/images/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        <img src="https://data.yinxinghan.com/Blog/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
       
     </a>
 
@@ -408,7 +408,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['xy5','njit.edu'].join('@')"
+          href="javascript:location.href = 'mailto:' + ['yinchuba','gmail.com'].join('@')"
           aria-label="email"
           
 
@@ -447,7 +447,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container px-xxl-5">
+      <div class="container d-flex flex-column px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -510,18 +510,10 @@
 </header>
 
 
-        <div class="row">
-          <main
-            aria-label="Main Content"
-            class="col-12 col-lg-11 col-xl-9 px-md-4"
-          >
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-
-<article class="px-1">
-  
-    
-  
-    <!-- Refactor the HTML structure -->
+              <!-- Refactor the HTML structure -->
 
 
 
@@ -543,7 +535,9 @@
 <!-- Change the icon of checkbox -->
 
 
-<!-- images -->
+
+<!-- Handle images -->
+
 
 
 
@@ -573,7 +567,6 @@
     
     
     
-    
 
     
       
@@ -597,21 +590,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -621,12 +608,14 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
     
 
@@ -638,7 +627,6 @@
     
     
 
-    
     
     
     
@@ -665,21 +653,15 @@
     
 
     
-
     
 
     
 
-    <!-- lazy-load images <https://github.com/aFarkas/lazysizes#readme> -->
-    
-    
-
-    <!-- add image placeholder -->
     
       
     
 
-    <!-- Bypass the HTML-proofer test -->
+    <!-- lazy-load images -->
     
 
     
@@ -689,16 +671,17 @@
       
         <!-- create the image wrapper -->
         
+
+        
+        
       
     
 
     <!-- combine -->
     
-
   
 
   
-
 
 
 <!-- Add header for code snippets -->
@@ -739,14 +722,15 @@
 
 
 
-<header>
-  <h1 data-toc-skip>《我不是药神》短评</h1>
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>《我不是药神》短评</h1>
 
-  <div class="post-meta text-muted">
-    <!-- published date -->
-    <span>
-      Posted
-      <!--
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -765,32 +749,55 @@
   Jul 10, 2018
 </time>
 
-    </span>
-
-    <!-- lastmod date -->
-    
-
-    
-
-    <div class="d-flex justify-content-between">
-      <!-- author(s) -->
-      <span>
-        
-
-        By
-
-        <em>
-          
-            
-              <a href="https://github.com/XinghanYin/">XINGHAN YIN</a>
-              
-            
-          
-        </em>
       </span>
 
-      <!-- read time -->
-      <!-- Calculate the post's reading time, and display the word count in tooltip -->
+      <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1713229489"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Apr 15, 2024
+</time>
+
+        </span>
+      
+
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              
+                <a href="https://github.com/XinghanYin/">XINGHAN</a>
+                
+              
+            
+          </em>
+        </span>
+
+        <!-- read time -->
+        <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
@@ -814,18 +821,18 @@
 >
   <em>3 min</em> read</span>
 
+      </div>
+      <!-- .d-flex -->
     </div>
-    <!-- .d-flex -->
-  </div>
-  <!-- .post-meta -->
-</header>
+    <!-- .post-meta -->
+  </header>
 
-<div class="content">
-  <p>我的朋友圈被药神刷屏了。</p>
+  <div class="content">
+    <p>我的朋友圈被药神刷屏了。</p>
 
 <p>上周六，我和大邱、登申一块去了电影院，看了这部已经被刷疯了的片子。</p>
 
-<p><a href="/images/Archive//20180710-1.jpg" class="popup img-link "><img data-src="/images/Archive//20180710-1.jpg" alt="邱召晨" class="lazyload" data-proofer-ignore></a>
+<p><a href="https://data.yinxinghan.com/Bloghttps:/data.yinxinghan.com/Blog/Before2024//20180710-1.jpg" class="popup img-link  shimmer"><img src="https://data.yinxinghan.com/Bloghttps:/data.yinxinghan.com/Blog/Before2024//20180710-1.jpg" alt="邱召晨" loading="lazy"></a>
 <em>正在分析剧情的大邱。</em></p>
 
 <p>整部电影给我的感受是很细腻的。我体验到了一种很现实的、充满市井气息的、触人心弦的人性美。</p>
@@ -844,7 +851,7 @@
 
 <p>于是程勇想到了那个给他留下电话号码的男人，他开始走私药物。</p>
 
-<p><a href="/images/Archive//20180710-2.jpg" class="popup img-link "><img data-src="/images/Archive//20180710-2.jpg" alt="命就是钱" class="lazyload" data-proofer-ignore></a>
+<p><a href="https://data.yinxinghan.com/Bloghttps:/data.yinxinghan.com/Blog/Before2024//20180710-2.jpg" class="popup img-link  shimmer"><img src="https://data.yinxinghan.com/Bloghttps:/data.yinxinghan.com/Blog/Before2024//20180710-2.jpg" alt="命就是钱" loading="lazy"></a>
 <em>命就是钱</em></p>
 
 <p>一直到程勇收手的时候，我都认为，不管他是否出于钱而走私药物，他都已经成为了那些病人的“救世主”。</p>
@@ -868,50 +875,50 @@
 <p>这部电影我给满分。</p>
 
 
-</div>
+  </div>
 
-<div class="post-tail-wrapper text-muted">
-  <!-- categories -->
-  
-    <div class="post-meta mb-3">
-      <i class="far fa-folder-open fa-fw me-1"></i>
-      
-        <a href="/categories/archive/">Archive</a>
-    </div>
-  
-
-  <!-- tags -->
-  
-    <div class="post-tags">
-      <i class="fa fa-tags fa-fw me-1"></i>
-      
-        <a
-          href="/tags/friends/"
-          class="post-tag no-text-decoration"
-        >Friends</a>
-      
-    </div>
-  
-
-  <div
-    class="
-      post-tail-bottom
-      d-flex justify-content-between align-items-center mt-5 pb-2
-    "
-  >
-    <div class="license-wrapper">
-      
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
         
+          <a href="/categories/archive/">Archive</a>
+      </div>
+    
 
-        This post is licensed under 
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/friends/"
+            class="post-tag no-text-decoration"
+          >Friends</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
          by the author.
-      
-    </div>
+        
+      </div>
 
-    <!-- Post sharing snippet -->
+      <!-- Post sharing snippet -->
 
 <div class="share-wrapper d-flex align-items-center">
   <span class="share-label text-muted me-1">Share</span>
@@ -975,21 +982,18 @@
   </span>
 </div>
 
+    </div>
+    <!-- .post-tail-bottom -->
   </div>
-  <!-- .post-tail-bottom -->
-</div>
-<!-- div.post-tail-wrapper -->
-
-
-  
-
-  
+  <!-- div.post-tail-wrapper -->
 </article>
 
+
+            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
             <div class="access">
               <!-- Get the last 5 posts from lastmod list. -->
 
@@ -1014,35 +1018,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Hello-World-Again/">Hello World Again!</a>
+          <a href="/posts/Leetcode1845/">Leetcode 1845</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Via-Dubai-and-Kuwait/">Via Dubai & Kuwait</a>
+          <a href="/posts/Dalian/">大连游记</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Above-the-Stars/">星空之上_第一集</a>
+          <a href="/posts/sshd-problem/">sshd连接修复笔记</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Eighteen-Years-Old/">我的十八岁</a>
+          <a href="/posts/satellite_information_GUI/">Sat Finder</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Story-of-Blog/">网站折腾记</a>
+          <a href="/posts/HHKB/">HHKB</a>
         </li>
       
     </ul>
@@ -1071,35 +1075,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1134,10 +1109,6 @@
     
     
     
-      
-        
-        
-
   
     
     
@@ -1153,10 +1124,6 @@
     
     
     
-      
-        
-        
-
   
     
     
@@ -1171,8 +1138,6 @@
     
     
     
-    
-      
     
   
     
@@ -1208,6 +1173,96 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1222,33 +1277,10 @@
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1260,7 +1292,10 @@
     
     
     
-      
+  
+    
+    
+    
     
   
     
@@ -1296,7 +1331,35 @@
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1331,6 +1394,295 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1354,25 +1706,28 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
       
     </div>
   </section>
@@ -1396,8 +1751,7 @@
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
               
-                
-                <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
 
 <!-- The total size of related posts -->
 
@@ -1679,8 +2033,6 @@
 
 <time
   
-    class="small"
-  
   data-ts="1532240100"
   data-df="ll"
   
@@ -1689,7 +2041,7 @@
 </time>
 
               <h4 class="pt-0 my-2">大连游记</h4>
-              <div class="text-muted small">
+              <div class="text-muted">
                 <p>
                   
 
@@ -1723,8 +2075,6 @@
 
 <time
   
-    class="small"
-  
   data-ts="1537192800"
   data-df="ll"
   
@@ -1733,7 +2083,7 @@
 </time>
 
               <h4 class="pt-0 my-2">ACM-ICPC Asia Qingdao Regional Contest, Online</h4>
-              <div class="text-muted small">
+              <div class="text-muted">
                 <p>
                   
 
@@ -1786,8 +2136,6 @@ us...
 
 <time
   
-    class="small"
-  
   data-ts="1541995200"
   data-df="ll"
   
@@ -1796,7 +2144,7 @@ us...
 </time>
 
               <h4 class="pt-0 my-2">GCD的几种实现方法</h4>
-              <div class="text-muted small">
+              <div class="text-muted">
                 <p>
                   
 
@@ -1825,9 +2173,9 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
   <!-- #related-posts -->
 
 
+            
               
-                
-                <!-- Navigation buttons at the bottom of the post. -->
+              <!-- Navigation buttons at the bottom of the post. -->
 
 <nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
   
@@ -1854,12 +2202,11 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
   
 </nav>
 
+            
               
-                
-                <!--  The comments switcher -->
+              <!--  The comments switcher -->
 
 
-              
             
 
             <!-- The Footer -->
@@ -1873,7 +2220,7 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
 >
   <p>
     ©
-    <time>2023</time>
+    <time>2024</time>
     <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
     
       <span
@@ -1884,7 +2231,7 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
   </p>
 
-  <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+  <p>Using the <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
   </p>
 </footer>
 
@@ -1917,35 +2264,6 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1980,10 +2298,6 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
-      
-        
-        
-
   
     
     
@@ -1999,10 +2313,6 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
-      
-        
-        
-
   
     
     
@@ -2017,8 +2327,6 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
-    
-      
     
   
     
@@ -2054,6 +2362,96 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2068,33 +2466,10 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2106,7 +2481,10 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
-      
+  
+    
+    
+    
     
   
     
@@ -2142,7 +2520,35 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2177,6 +2583,295 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2200,25 +2895,28 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
       
     </div>
   </section>
@@ -2372,7 +3070,7 @@ if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用�
 
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.9/dayjs.min.js,npm/dayjs@1.11.9/locale/zh.min.js,npm/dayjs@1.11.9/plugin/relativeTime.min.js,npm/dayjs@1.11.9/plugin/localizedFormat.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/zh.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
 
 
 
