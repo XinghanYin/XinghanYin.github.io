@@ -13,39 +13,49 @@
 
 
 
+
+
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh" >
-  <head>
+<html lang="zh" 
+  
+>
+  <!-- The Head -->
+
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
-  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  ><!-- Setup Open Graph image -->
+  >
 
   
 
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.4" />
+  
+
+  
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Categories" />
 <meta property="og:locale" content="zh" />
 <meta name="description" content="随心，克己，想象，欢愉。" />
 <meta property="og:description" content="随心，克己，想象，欢愉。" />
-<link rel="canonical" href="yinxinghan.com/categories/" />
-<meta property="og:url" content="yinxinghan.com/categories/" />
+<link rel="canonical" href="http://localhost:4000/categories/" />
+<meta property="og:url" content="http://localhost:4000/categories/" />
 <meta property="og:site_name" content="XINGHAN YIN" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-11-03T23:33:12-05:00" />
+<meta property="article:published_time" content="2023-10-13T16:15:42-04:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Categories" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-11-03T23:33:12-05:00","datePublished":"2024-11-03T23:33:12-05:00","description":"随心，克己，想象，欢愉。","headline":"Categories","mainEntityOfPage":{"@type":"WebPage","@id":"yinxinghan.com/categories/"},"url":"yinxinghan.com/categories/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-10-13T16:15:42-04:00","datePublished":"2023-10-13T16:15:42-04:00","description":"随心，克己，想象，欢愉。","headline":"Categories","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/categories/"},"url":"http://localhost:4000/categories/"}</script>
 <!-- End Jekyll SEO tag -->
 
+  
 
   <title>Categories | XINGHAN YIN
   </title>
@@ -60,9 +70,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-
-  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
-
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="XINGHAN YIN">
 <meta name="application-name" content="XINGHAN YIN">
@@ -71,28 +79,34 @@
 <meta name="theme-color" content="#ffffff">
 
 
-  <!-- Resource Hints -->
   
     
+      <link rel="preconnect" href="https://fonts.googleapis.com" >
+      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+    
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+    
+      <link rel="preconnect" href="https://fonts.googleapis.com" >
+      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+    
+      <link rel="preconnect" href="https://cdn.jsdelivr.net" >
+      <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
+    
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
+  
+
+  <!-- GA -->
   
 
   <!-- Bootstrap -->
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
 
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
-
-  <!-- Web Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
-
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
 
-  <!-- 3rd-party Dependencies -->
-
-  
+  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
 
@@ -122,34 +136,54 @@
     }
 
     constructor() {
-      let self = this;this.sysDarkPrefers.addEventListener('change', () => {
+      if (this.hasMode) {
+        if (this.isDarkMode) {
+          if (!this.isSysDarkPrefer) {
+            this.setDark();
+          }
+        } else {
+          if (this.isSysDarkPrefer) {
+            this.setLight();
+          }
+        }
+      }
+
+      let self = this;
+
+      /* always follow the system prefers */
+      this.sysDarkPrefers.addEventListener('change', () => {
         if (self.hasMode) {
+          if (self.isDarkMode) {
+            if (!self.isSysDarkPrefer) {
+              self.setDark();
+            }
+          } else {
+            if (self.isSysDarkPrefer) {
+              self.setLight();
+            }
+          }
+
           self.clearMode();
         }
+
         self.notify();
       });
-
-      if (!this.hasMode) {
-        return;
-      }
-
-      if (this.isDarkMode) {
-        this.setDark();
-      } else {
-        this.setLight();
-      }
-    }
+    } /* constructor() */
 
     get sysDarkPrefers() {
       return window.matchMedia('(prefers-color-scheme: dark)');
     }
 
-    get isPreferDark() {
+    get isSysDarkPrefer() {
       return this.sysDarkPrefers.matches;
     }
 
     get isDarkMode() {
       return this.mode === ModeToggle.DARK_MODE;
+    }
+
+    get isLightMode() {
+      return this.mode === ModeToggle.LIGHT_MODE;
     }
 
     get hasMode() {
@@ -158,11 +192,14 @@
 
     get mode() {
       return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }get modeStatus() {
-      if (this.hasMode) {
-        return this.mode;
+    }
+
+    /* get the current mode on screen */
+    get modeStatus() {
+      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
+        return ModeToggle.DARK_MODE;
       } else {
-        return this.isPreferDark ? ModeToggle.DARK_MODE : ModeToggle.LIGHT_MODE;
+        return ModeToggle.LIGHT_MODE;
       }
     }
 
@@ -179,7 +216,10 @@
     clearMode() {
       document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
       sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }notify() {
+    }
+
+    /* Notify another plugins that the theme mode has changed */
+    notify() {
       window.postMessage(
         {
           direction: ModeToggle.ID,
@@ -191,9 +231,21 @@
 
     flipMode() {
       if (this.hasMode) {
-        this.clearMode();
+        if (this.isSysDarkPrefer) {
+          if (this.isLightMode) {
+            this.clearMode();
+          } else {
+            this.setLight();
+          }
+        } else {
+          if (this.isDarkMode) {
+            this.clearMode();
+          } else {
+            this.setDark();
+          }
+        }
       } else {
-        if (this.isPreferDark) {
+        if (this.isSysDarkPrefer) {
           this.setLight();
         } else {
           this.setDark();
@@ -201,8 +253,8 @@
       }
 
       this.notify();
-    }
-  }
+    } /* flipMode() */
+  } /* ModeToggle */
 
   const modeToggle = new ModeToggle();
 </script>
@@ -219,9 +271,16 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="https://data.yinxinghan.com/Blog/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle">
+      
+        
+        <img src="/images/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      
+    </a>
 
-    <a class="site-title d-block" href="/">XINGHAN YIN</a>
+    <h1 class="site-title">
+      <a href="/">XINGHAN YIN</a>
+    </h1>
     <p class="site-subtitle fst-italic mb-0">尹星寒的博客</p>
   </header>
   <!-- .profile-wrapper -->
@@ -282,7 +341,7 @@
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
-      <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
+      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
         <i class="fas fa-adjust"></i>
       </button>
 
@@ -342,7 +401,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['yinchuba','gmail.com'].join('@')"
+          href="javascript:location.href = 'mailto:' + ['xy5','njit.edu'].join('@')"
           aria-label="email"
           
 
@@ -381,7 +440,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container d-flex flex-column px-xxl-5">
+      <div class="container px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -396,7 +455,9 @@
         
           
             <span>
-              <a href="/">Home</a>
+              <a href="/">
+                Home
+              </a>
             </span>
 
           
@@ -424,7 +485,7 @@
       <i class="fas fa-search fa-fw"></i>
     </button>
 
-    <search id="search" class="align-items-center ms-3 ms-lg-0">
+    <search class="align-items-center ms-3 ms-lg-0">
       <i class="fas fa-search fa-fw"></i>
       <input
         class="form-control"
@@ -440,12 +501,12 @@
 </header>
 
 
-        <div class="row flex-grow-1">
-          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+        <div class="row">
+          <main
+            aria-label="Main Content"
+            class="col-12 col-lg-11 col-xl-9 px-md-4 pb-5"
+          >
             
-              
-
-
 
 <article class="px-1">
   
@@ -456,6 +517,8 @@
     </h1>
     <div class="content">
       
+  
+    
 
 
 
@@ -577,12 +640,6 @@
   
 
   
-
-  
-  
-  
-
-  
     
 
     
@@ -594,528 +651,6 @@
       <!-- top-category -->
       <div
         id="h_1"
-        class="card-header d-flex justify-content-between hide-border-bottom"
-      >
-        <span class="ms-2">
-          <i class="far fa-folder fa-fw"></i>
-
-          
-          <a href="/categories/code/" class="mx-2">Code</a>
-
-          <!-- content count -->
-          
-          <span class="text-muted small font-weight-light">
-            
-
-            2
-
-            
-              posts
-            
-          </span>
-        </span>
-
-        <!-- arrow -->
-        
-          <span data-bs-toggle="collapse" class="category-trigger hide-border-bottom disabled">
-            <i class="fas fa-fw fa-angle-right"></i>
-          </span>
-        
-      </div>
-      <!-- .card-header -->
-
-      <!-- Sub-categories -->
-      
-    </div>
-    <!-- .card -->
-
-    
-  
-
-  
-  
-  
-
-  
-    
-
-    
-
-    
-    
-
-    <div class="card categories">
-      <!-- top-category -->
-      <div
-        id="h_2"
-        class="card-header d-flex justify-content-between hide-border-bottom"
-      >
-        <span class="ms-2">
-          <i class="far fa-folder fa-fw"></i>
-
-          
-          <a href="/categories/codes/" class="mx-2">Codes</a>
-
-          <!-- content count -->
-          
-          <span class="text-muted small font-weight-light">
-            
-
-            2
-
-            
-              posts
-            
-          </span>
-        </span>
-
-        <!-- arrow -->
-        
-          <span data-bs-toggle="collapse" class="category-trigger hide-border-bottom disabled">
-            <i class="fas fa-fw fa-angle-right"></i>
-          </span>
-        
-      </div>
-      <!-- .card-header -->
-
-      <!-- Sub-categories -->
-      
-    </div>
-    <!-- .card -->
-
-    
-  
-
-  
-  
-  
-
-  
-    
-
-    
-
-    
-    
-
-    <div class="card categories">
-      <!-- top-category -->
-      <div
-        id="h_3"
-        class="card-header d-flex justify-content-between hide-border-bottom"
-      >
-        <span class="ms-2">
-          <i class="far fa-folder-open fa-fw"></i>
-
-          
-          <a href="/categories/daily/" class="mx-2">Daily</a>
-
-          <!-- content count -->
-          
-          <span class="text-muted small font-weight-light">
-            
-              1
-              
-                category
-              ,
-            
-
-            2
-
-            
-              posts
-            
-          </span>
-        </span>
-
-        <!-- arrow -->
-        
-          <a
-            href="#l_3"
-            data-bs-toggle="collapse"
-            aria-expanded="true"
-            aria-label="h_3-trigger"
-            class="category-trigger hide-border-bottom"
-          >
-            <i class="fas fa-fw fa-angle-down"></i>
-          </a>
-        
-      </div>
-      <!-- .card-header -->
-
-      <!-- Sub-categories -->
-      
-        <div id="l_3" class="collapse show" aria-expanded="true">
-          <ul class="list-group">
-            
-              <li class="list-group-item">
-                <i class="far fa-folder fa-fw"></i>
-
-                
-                <a href="/categories/toy/" class="mx-2">Toy</a>
-
-                
-                <span class="text-muted small font-weight-light">
-                  2
-
-                  
-                    posts
-                  
-                </span>
-              </li>
-            
-          </ul>
-        </div>
-      
-    </div>
-    <!-- .card -->
-
-    
-  
-
-  
-  
-  
-
-  
-    
-
-    
-
-    
-    
-
-    <div class="card categories">
-      <!-- top-category -->
-      <div
-        id="h_4"
-        class="card-header d-flex justify-content-between hide-border-bottom"
-      >
-        <span class="ms-2">
-          <i class="far fa-folder-open fa-fw"></i>
-
-          
-          <a href="/categories/development/" class="mx-2">Development</a>
-
-          <!-- content count -->
-          
-          <span class="text-muted small font-weight-light">
-            
-              1
-              
-                category
-              ,
-            
-
-            1
-
-            
-              post
-            
-          </span>
-        </span>
-
-        <!-- arrow -->
-        
-          <a
-            href="#l_4"
-            data-bs-toggle="collapse"
-            aria-expanded="true"
-            aria-label="h_4-trigger"
-            class="category-trigger hide-border-bottom"
-          >
-            <i class="fas fa-fw fa-angle-down"></i>
-          </a>
-        
-      </div>
-      <!-- .card-header -->
-
-      <!-- Sub-categories -->
-      
-        <div id="l_4" class="collapse show" aria-expanded="true">
-          <ul class="list-group">
-            
-              <li class="list-group-item">
-                <i class="far fa-folder fa-fw"></i>
-
-                
-                <a href="/categories/project/" class="mx-2">Project</a>
-
-                
-                <span class="text-muted small font-weight-light">
-                  1
-
-                  
-                    post
-                  
-                </span>
-              </li>
-            
-          </ul>
-        </div>
-      
-    </div>
-    <!-- .card -->
-
-    
-  
-
-  
-  
-  
-
-  
-    
-
-    
-
-    
-    
-
-    <div class="card categories">
-      <!-- top-category -->
-      <div
-        id="h_5"
-        class="card-header d-flex justify-content-between hide-border-bottom"
-      >
-        <span class="ms-2">
-          <i class="far fa-folder fa-fw"></i>
-
-          
-          <a href="/categories/food/" class="mx-2">Food</a>
-
-          <!-- content count -->
-          
-          <span class="text-muted small font-weight-light">
-            
-
-            1
-
-            
-              post
-            
-          </span>
-        </span>
-
-        <!-- arrow -->
-        
-          <span data-bs-toggle="collapse" class="category-trigger hide-border-bottom disabled">
-            <i class="fas fa-fw fa-angle-right"></i>
-          </span>
-        
-      </div>
-      <!-- .card-header -->
-
-      <!-- Sub-categories -->
-      
-    </div>
-    <!-- .card -->
-
-    
-  
-
-  
-  
-  
-
-  
-    
-
-    
-
-    
-    
-
-    <div class="card categories">
-      <!-- top-category -->
-      <div
-        id="h_6"
-        class="card-header d-flex justify-content-between hide-border-bottom"
-      >
-        <span class="ms-2">
-          <i class="far fa-folder-open fa-fw"></i>
-
-          
-          <a href="/categories/game/" class="mx-2">Game</a>
-
-          <!-- content count -->
-          
-          <span class="text-muted small font-weight-light">
-            
-              1
-              
-                category
-              ,
-            
-
-            1
-
-            
-              post
-            
-          </span>
-        </span>
-
-        <!-- arrow -->
-        
-          <a
-            href="#l_6"
-            data-bs-toggle="collapse"
-            aria-expanded="true"
-            aria-label="h_6-trigger"
-            class="category-trigger hide-border-bottom"
-          >
-            <i class="fas fa-fw fa-angle-down"></i>
-          </a>
-        
-      </div>
-      <!-- .card-header -->
-
-      <!-- Sub-categories -->
-      
-        <div id="l_6" class="collapse show" aria-expanded="true">
-          <ul class="list-group">
-            
-              <li class="list-group-item">
-                <i class="far fa-folder fa-fw"></i>
-
-                
-                <a href="/categories/cs/" class="mx-2">CS</a>
-
-                
-                <span class="text-muted small font-weight-light">
-                  2
-
-                  
-                    posts
-                  
-                </span>
-              </li>
-            
-          </ul>
-        </div>
-      
-    </div>
-    <!-- .card -->
-
-    
-  
-
-  
-  
-  
-
-  
-
-  
-  
-  
-
-  
-
-  
-  
-  
-
-  
-    
-
-    
-
-    
-    
-
-    <div class="card categories">
-      <!-- top-category -->
-      <div
-        id="h_7"
-        class="card-header d-flex justify-content-between hide-border-bottom"
-      >
-        <span class="ms-2">
-          <i class="far fa-folder-open fa-fw"></i>
-
-          
-          <a href="/categories/love/" class="mx-2">Love</a>
-
-          <!-- content count -->
-          
-          <span class="text-muted small font-weight-light">
-            
-              1
-              
-                category
-              ,
-            
-
-            1
-
-            
-              post
-            
-          </span>
-        </span>
-
-        <!-- arrow -->
-        
-          <a
-            href="#l_7"
-            data-bs-toggle="collapse"
-            aria-expanded="true"
-            aria-label="h_7-trigger"
-            class="category-trigger hide-border-bottom"
-          >
-            <i class="fas fa-fw fa-angle-down"></i>
-          </a>
-        
-      </div>
-      <!-- .card-header -->
-
-      <!-- Sub-categories -->
-      
-        <div id="l_7" class="collapse show" aria-expanded="true">
-          <ul class="list-group">
-            
-              <li class="list-group-item">
-                <i class="far fa-folder fa-fw"></i>
-
-                
-                <a href="/categories/gift/" class="mx-2">Gift</a>
-
-                
-                <span class="text-muted small font-weight-light">
-                  1
-
-                  
-                    post
-                  
-                </span>
-              </li>
-            
-          </ul>
-        </div>
-      
-    </div>
-    <!-- .card -->
-
-    
-  
-
-  
-  
-  
-
-  
-    
-
-    
-
-    
-    
-
-    <div class="card categories">
-      <!-- top-category -->
-      <div
-        id="h_8"
         class="card-header d-flex justify-content-between hide-border-bottom"
       >
         <span class="ms-2">
@@ -1145,10 +680,10 @@
         <!-- arrow -->
         
           <a
-            href="#l_8"
+            href="#l_1"
             data-bs-toggle="collapse"
             aria-expanded="true"
-            aria-label="h_8-trigger"
+            aria-label="h_1-trigger"
             class="category-trigger hide-border-bottom"
           >
             <i class="fas fa-fw fa-angle-down"></i>
@@ -1159,7 +694,7 @@
 
       <!-- Sub-categories -->
       
-        <div id="l_8" class="collapse show" aria-expanded="true">
+        <div id="l_1" class="collapse show" aria-expanded="true">
           <ul class="list-group">
             
               <li class="list-group-item">
@@ -1192,18 +727,6 @@
   
 
   
-
-  
-  
-  
-
-  
-
-  
-  
-  
-
-  
     
 
     
@@ -1214,94 +737,7 @@
     <div class="card categories">
       <!-- top-category -->
       <div
-        id="h_9"
-        class="card-header d-flex justify-content-between hide-border-bottom"
-      >
-        <span class="ms-2">
-          <i class="far fa-folder-open fa-fw"></i>
-
-          
-          <a href="/categories/study/" class="mx-2">Study</a>
-
-          <!-- content count -->
-          
-          <span class="text-muted small font-weight-light">
-            
-              1
-              
-                category
-              ,
-            
-
-            2
-
-            
-              posts
-            
-          </span>
-        </span>
-
-        <!-- arrow -->
-        
-          <a
-            href="#l_9"
-            data-bs-toggle="collapse"
-            aria-expanded="true"
-            aria-label="h_9-trigger"
-            class="category-trigger hide-border-bottom"
-          >
-            <i class="fas fa-fw fa-angle-down"></i>
-          </a>
-        
-      </div>
-      <!-- .card-header -->
-
-      <!-- Sub-categories -->
-      
-        <div id="l_9" class="collapse show" aria-expanded="true">
-          <ul class="list-group">
-            
-              <li class="list-group-item">
-                <i class="far fa-folder fa-fw"></i>
-
-                
-                <a href="/categories/software-project-management/" class="mx-2">Software Project Management</a>
-
-                
-                <span class="text-muted small font-weight-light">
-                  1
-
-                  
-                    post
-                  
-                </span>
-              </li>
-            
-          </ul>
-        </div>
-      
-    </div>
-    <!-- .card -->
-
-    
-  
-
-  
-  
-  
-
-  
-    
-
-    
-
-    
-    
-
-    <div class="card categories">
-      <!-- top-category -->
-      <div
-        id="h_10"
+        id="h_2"
         class="card-header d-flex justify-content-between hide-border-bottom"
       >
         <span class="ms-2">
@@ -1331,10 +767,10 @@
         <!-- arrow -->
         
           <a
-            href="#l_10"
+            href="#l_2"
             data-bs-toggle="collapse"
             aria-expanded="true"
-            aria-label="h_10-trigger"
+            aria-label="h_2-trigger"
             class="category-trigger hide-border-bottom"
           >
             <i class="fas fa-fw fa-angle-down"></i>
@@ -1345,7 +781,7 @@
 
       <!-- Sub-categories -->
       
-        <div id="l_10" class="collapse show" aria-expanded="true">
+        <div id="l_2" class="collapse show" aria-expanded="true">
           <ul class="list-group">
             
               <li class="list-group-item">
@@ -1388,7 +824,7 @@
     <div class="card categories">
       <!-- top-category -->
       <div
-        id="h_11"
+        id="h_3"
         class="card-header d-flex justify-content-between hide-border-bottom"
       >
         <span class="ms-2">
@@ -1402,10 +838,10 @@
           <span class="text-muted small font-weight-light">
             
 
-            2
+            1
 
             
-              posts
+              post
             
           </span>
         </span>
@@ -1432,12 +868,6 @@
   
 
   
-
-  
-  
-  
-
-  
     
 
     
@@ -1448,7 +878,7 @@
     <div class="card categories">
       <!-- top-category -->
       <div
-        id="h_12"
+        id="h_4"
         class="card-header d-flex justify-content-between hide-border-bottom"
       >
         <span class="ms-2">
@@ -1461,13 +891,13 @@
           
           <span class="text-muted small font-weight-light">
             
-              2
+              1
               
-                categories
+                category
               ,
             
 
-            3
+            2
 
             
               posts
@@ -1478,10 +908,10 @@
         <!-- arrow -->
         
           <a
-            href="#l_12"
+            href="#l_4"
             data-bs-toggle="collapse"
             aria-expanded="true"
-            aria-label="h_12-trigger"
+            aria-label="h_4-trigger"
             class="category-trigger hide-border-bottom"
           >
             <i class="fas fa-fw fa-angle-down"></i>
@@ -1492,7 +922,7 @@
 
       <!-- Sub-categories -->
       
-        <div id="l_12" class="collapse show" aria-expanded="true">
+        <div id="l_4" class="collapse show" aria-expanded="true">
           <ul class="list-group">
             
               <li class="list-group-item">
@@ -1507,22 +937,6 @@
 
                   
                     posts
-                  
-                </span>
-              </li>
-            
-              <li class="list-group-item">
-                <i class="far fa-folder fa-fw"></i>
-
-                
-                <a href="/categories/boston/" class="mx-2">Boston</a>
-
-                
-                <span class="text-muted small font-weight-light">
-                  1
-
-                  
-                    post
                   
                 </span>
               </li>
@@ -1549,17 +963,18 @@
   
 
 
+  
+
     </div>
   
 </article>
 
-            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
             <div class="access">
-              <!-- Get 5 last posted/updated posts -->
+              <!-- Get the last 5 posts from lastmod list. -->
 
 
 
@@ -1582,35 +997,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/SJMClubV1/">三脚猫俱乐部 | SJM Club</a>
+          <a href="/posts/Hello-World-Again/">Hello World Again!</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Leetcode1845/">Leetcode 1845</a>
+          <a href="/posts/Via-Dubai-and-Kuwait/">Via Dubai & Kuwait</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/TurntoPY/">要转PY了</a>
+          <a href="/posts/Above-the-Stars/">星空之上_第一集</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Dalian/">大连游记</a>
+          <a href="/posts/Eighteen-Years-Old/">我的十八岁</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/sshd-problem/">sshd连接修复笔记</a>
+          <a href="/posts/Story-of-Blog/">网站折腾记</a>
         </li>
       
     </ul>
@@ -1639,60 +1054,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1741,299 +1106,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2095,39 +1167,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2152,6 +1191,41 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -2181,6 +1255,42 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -2203,50 +1313,7 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
+      
     
   
     
@@ -2270,28 +1337,25 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
       
     </div>
   </section>
@@ -2317,13 +1381,10 @@
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>©
-    <time>2024</time>
-
-    
-      <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
-    
-
+  <p>
+    ©
+    <time>2023</time>
+    <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -2333,14 +1394,7 @@
     
   </p>
 
-  <p>Using the <a
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="v6.2.3"
-        href="https://github.com/cotes2020/jekyll-theme-chirpy"
-        target="_blank"
-        rel="noopener"
-      >Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+  <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
   </p>
 </footer>
 
@@ -2349,7 +1403,7 @@
 
         <!-- The Search results -->
 
-<div id="search-result-wrapper" class="d-flex justify-content-center d-none">
+<div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
   <div class="col-11 content">
     <div id="search-hints">
       <!-- The trending tags list -->
@@ -2373,60 +1427,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2475,299 +1479,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2829,39 +1540,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2886,6 +1564,41 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -2915,6 +1628,42 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -2937,50 +1686,7 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
+      
     
   
     
@@ -3004,28 +1710,25 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
       
     </div>
   </section>
@@ -3045,7 +1748,7 @@
       </aside>
     </div>
 
-    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
+    <div id="mask"></div>
 
     
       <aside
@@ -3076,6 +1779,7 @@
     
 
     <!-- JavaScripts -->
+
     <!-- JS selector for site. -->
 
 <!-- commons -->
@@ -3106,27 +1810,37 @@
 
   
 
+  
+    
 
+    
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+  
 
+  
+    
 
+    
 
-
-
-
-
-<script src="/assets/js/dist/categories.min.js"></script>
-
-
-
-<!-- Pageviews -->
-
+  
 
 
 
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
 
 
+
+
+
+
+<script defer src="/assets/js/dist/categories.min.js"></script>
+
+
+
+
+
+
+    
 
     <!--
   Jekyll Simple Search loader
@@ -3137,12 +1851,14 @@
 
 
 
-<script>SimpleJekyllSearch({
+<script>
+  /* Note: dependent library will be loaded in `js-selector.html` */
+  SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('search-results'),
     json: '/assets/js/data/search.json',
     searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
-    noResultsText: '<p class="mt-5">Oops! No results found.</p>',
+    noResultsText: '<p class="mt-5"></p>',
     templateMiddleware: function(prop, value, template) {
       if (prop === 'categories') {
         if (value === '') {

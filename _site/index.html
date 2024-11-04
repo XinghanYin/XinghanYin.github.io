@@ -13,39 +13,49 @@
 
 
 
+
+
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh" >
-  <head>
+<html lang="zh" 
+  
+>
+  <!-- The Head -->
+
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
-  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  ><!-- Setup Open Graph image -->
+  >
 
   
 
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.4" />
+  
+
+  
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="XINGHAN YIN" />
 <meta property="og:locale" content="zh" />
 <meta name="description" content="随心，克己，想象，欢愉。" />
 <meta property="og:description" content="随心，克己，想象，欢愉。" />
-<link rel="canonical" href="yinxinghan.com/" />
-<meta property="og:url" content="yinxinghan.com/" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="XINGHAN YIN" />
 <meta property="og:type" content="website" />
-<link rel="next" href="yinxinghan.com/page2" />
+<link rel="next" href="http://localhost:4000/page2" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="XINGHAN YIN" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"随心，克己，想象，欢愉。","headline":"XINGHAN YIN","name":"XINGHAN YIN","sameAs":["https://github.com/XinghanYin"],"url":"yinxinghan.com/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","description":"随心，克己，想象，欢愉。","headline":"XINGHAN YIN","name":"XINGHAN YIN","sameAs":["https://github.com/XinghanYin"],"url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 
+  
 
   <title>XINGHAN YIN
   </title>
@@ -60,9 +70,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-
-  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
-
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="XINGHAN YIN">
 <meta name="application-name" content="XINGHAN YIN">
@@ -71,31 +79,35 @@
 <meta name="theme-color" content="#ffffff">
 
 
-  <!-- Resource Hints -->
   
     
+      <link rel="preconnect" href="https://fonts.googleapis.com" >
+      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+    
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+    
+      <link rel="preconnect" href="https://fonts.googleapis.com" >
+      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+    
+      <link rel="preconnect" href="https://cdn.jsdelivr.net" >
+      <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
+    
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
+  
+
+  <!-- GA -->
   
 
   <!-- Bootstrap -->
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
 
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
-
-  <!-- Web Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
-
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
 
-  <!-- 3rd-party Dependencies -->
+  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
-  
-
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
   
 
   
@@ -124,34 +136,54 @@
     }
 
     constructor() {
-      let self = this;this.sysDarkPrefers.addEventListener('change', () => {
+      if (this.hasMode) {
+        if (this.isDarkMode) {
+          if (!this.isSysDarkPrefer) {
+            this.setDark();
+          }
+        } else {
+          if (this.isSysDarkPrefer) {
+            this.setLight();
+          }
+        }
+      }
+
+      let self = this;
+
+      /* always follow the system prefers */
+      this.sysDarkPrefers.addEventListener('change', () => {
         if (self.hasMode) {
+          if (self.isDarkMode) {
+            if (!self.isSysDarkPrefer) {
+              self.setDark();
+            }
+          } else {
+            if (self.isSysDarkPrefer) {
+              self.setLight();
+            }
+          }
+
           self.clearMode();
         }
+
         self.notify();
       });
-
-      if (!this.hasMode) {
-        return;
-      }
-
-      if (this.isDarkMode) {
-        this.setDark();
-      } else {
-        this.setLight();
-      }
-    }
+    } /* constructor() */
 
     get sysDarkPrefers() {
       return window.matchMedia('(prefers-color-scheme: dark)');
     }
 
-    get isPreferDark() {
+    get isSysDarkPrefer() {
       return this.sysDarkPrefers.matches;
     }
 
     get isDarkMode() {
       return this.mode === ModeToggle.DARK_MODE;
+    }
+
+    get isLightMode() {
+      return this.mode === ModeToggle.LIGHT_MODE;
     }
 
     get hasMode() {
@@ -160,11 +192,14 @@
 
     get mode() {
       return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }get modeStatus() {
-      if (this.hasMode) {
-        return this.mode;
+    }
+
+    /* get the current mode on screen */
+    get modeStatus() {
+      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
+        return ModeToggle.DARK_MODE;
       } else {
-        return this.isPreferDark ? ModeToggle.DARK_MODE : ModeToggle.LIGHT_MODE;
+        return ModeToggle.LIGHT_MODE;
       }
     }
 
@@ -181,7 +216,10 @@
     clearMode() {
       document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
       sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }notify() {
+    }
+
+    /* Notify another plugins that the theme mode has changed */
+    notify() {
       window.postMessage(
         {
           direction: ModeToggle.ID,
@@ -193,9 +231,21 @@
 
     flipMode() {
       if (this.hasMode) {
-        this.clearMode();
+        if (this.isSysDarkPrefer) {
+          if (this.isLightMode) {
+            this.clearMode();
+          } else {
+            this.setLight();
+          }
+        } else {
+          if (this.isDarkMode) {
+            this.clearMode();
+          } else {
+            this.setDark();
+          }
+        }
       } else {
-        if (this.isPreferDark) {
+        if (this.isSysDarkPrefer) {
           this.setLight();
         } else {
           this.setDark();
@@ -203,8 +253,8 @@
       }
 
       this.notify();
-    }
-  }
+    } /* flipMode() */
+  } /* ModeToggle */
 
   const modeToggle = new ModeToggle();
 </script>
@@ -221,9 +271,16 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="https://data.yinxinghan.com/Blog/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle">
+      
+        
+        <img src="/images/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      
+    </a>
 
-    <a class="site-title d-block" href="/">XINGHAN YIN</a>
+    <h1 class="site-title">
+      <a href="/">XINGHAN YIN</a>
+    </h1>
     <p class="site-subtitle fst-italic mb-0">尹星寒的博客</p>
   </header>
   <!-- .profile-wrapper -->
@@ -284,7 +341,7 @@
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
-      <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
+      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
         <i class="fas fa-adjust"></i>
       </button>
 
@@ -344,7 +401,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['yinchuba','gmail.com'].join('@')"
+          href="javascript:location.href = 'mailto:' + ['xy5','njit.edu'].join('@')"
           aria-label="email"
           
 
@@ -383,7 +440,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container d-flex flex-column px-xxl-5">
+      <div class="container px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -414,7 +471,7 @@
       <i class="fas fa-search fa-fw"></i>
     </button>
 
-    <search id="search" class="align-items-center ms-3 ms-lg-0">
+    <search class="align-items-center ms-3 ms-lg-0">
       <i class="fas fa-search fa-fw"></i>
       <input
         class="form-control"
@@ -430,10 +487,42 @@
 </header>
 
 
-        <div class="row flex-grow-1">
-          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+        <div class="row">
+          <main
+            aria-label="Main Content"
+            class="col-12 col-lg-11 col-xl-9 px-md-4 pb-5"
+          >
             
-              <!-- Refactor the HTML structure -->
+
+
+
+
+
+
+
+
+<!-- Get pinned posts -->
+
+
+
+
+
+
+<!-- Get default posts -->
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="post-list" class="flex-grow-1 pe-xl-2">
+  <!-- Refactor the HTML structure -->
 
 
 
@@ -455,9 +544,7 @@
 <!-- Change the icon of checkbox -->
 
 
-
-<!-- Handle images -->
-
+<!-- images -->
 
 
 
@@ -497,58 +584,34 @@
 
 <!-- return -->
 
-
-
-
-
-
-
-
-
-<!-- Get pinned posts on current page -->
-
-
-
-
-
-
-<!-- Get normal posts on current page -->
-
-
-
-
-
-<div id="post-list" class="flex-grow-1 px-xl-1">
   
-    <article class="card-wrapper card">
-      <a href="/posts/SJMClubV1/" class="post-preview row g-0 flex-md-row-reverse">
+    <article class="card-wrapper">
+      <a href="/posts/Hello-World-for-Linux-Kernel/" class="card post-preview flex-md-row-reverse">
         
 
-        
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">Linux Kernel Note 1</h1>
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">三脚猫俱乐部 | SJM Club</h1>
+          <div class="card-text content mt-0 mb-2">
+            <p>
+              
 
-            <div class="card-text content mt-0 mb-3">
-              <p>三脚猫俱乐部 | SJM Club
 
-三脚猫俱乐部是给我们的三脚猫俱乐部开发的官网。 目前的V1版本是纯粹的，一个探索前端动画交互的小型静态网站项目，完全基于CSS、JavaScript、HTML进行开发，包含多种视觉特效和交互体验。今天特地写这篇文章，详细介绍项目的设计、部分代码文件的功能，以及背后的实现原理。
 
-目录
 
-  项目概览
-  界面预览
-  代码文件讲解
-    
-      ...</p>
-            </div>
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+              After talking with Zephyr, I got the Unix73 paper and prepared to build Linux kernel by myself.
+
+In fact, I almost did’t have used Linux except sometimes host websites or webapps.
+
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -558,69 +621,76 @@
 
 <time
   
-  data-ts="1730655000"
+  data-ts="1696618800"
   data-df="ll"
   
 >
-  Nov  3, 2024
+  Oct  6, 2023
 </time>
 
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Development,
-                      Project
-                  </span>
-                
-              </div>
-
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    System,
+                    Linux Kernel
+                </span>
               
             </div>
-            <!-- .post-meta -->
+
+            
           </div>
-          <!-- .card-body -->
+          <!-- .post-meta -->
         </div>
+        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper card">
-      <a href="/posts/TurntoPY/" class="post-preview row g-0 flex-md-row-reverse">
+    <article class="card-wrapper">
+      <a href="/posts/Some-Photos/" class="card post-preview flex-md-row-reverse">
         
 
-        
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">一些照片</h1>
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">要转PY了</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>在研究动规问题的时候，看了不少大神的代码，发现Python好像天生就适合做动态规划。
-
-比如同样都是要剪枝，Cpp需要判断条件：
-
-int&amp;amp; res = memo[i];
-if (res) {
-return res;
-}
-
-而Python只需要一个缓存装饰器就解决了：
-
-@cache
+          <div class="card-text content mt-0 mb-2">
+            <p>
+              
 
 
-又比如用Cpp写的这句：
 
-auto dfs = [&amp;amp;](auto&amp;amp;&amp;amp; ...</p>
-            </div>
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+
+              前两天去了史蒂文斯，在曼哈顿对岸，拍了一些还不错的照片。
+
+
+Building
+
+
+Hudson上的一盏小帆
+
+
+天龙人的座驾
+
+
+Manhattan
+
+
+Manhattan at Night
+
+
+Moon at Newark
+
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -630,63 +700,91 @@ auto dfs = [&amp;amp;](auto&amp;amp;&amp;amp; ...</p>
 
 <time
   
-  data-ts="1727747100"
+  data-ts="1696564560"
   data-df="ll"
   
 >
-  Sep 30, 2024
+  Oct  5, 2023
 </time>
 
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Codes
-                  </span>
-                
-              </div>
-
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Photo,
+                    USA
+                </span>
               
             </div>
-            <!-- .post-meta -->
+
+            
           </div>
-          <!-- .card-body -->
+          <!-- .post-meta -->
         </div>
+        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper card">
-      <a href="/posts/Leetcode1845/" class="post-preview row g-0 flex-md-row-reverse">
+    <article class="card-wrapper">
+      <a href="/posts/Via-Dubai-and-Kuwait/" class="card post-preview flex-md-row-reverse">
         
 
-        
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">Via Dubai & Kuwait</h1>
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Leetcode 1845</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>今天遇到的有意思的题，难度看起来不算大，我最开始看到的时候以为能秒杀这道题但是有几个输入极大的check point，所以第一个版本的code挂了。
-
-先看题面吧：
-
-Leetcode 1845. Seat Reservation Manager
-
-请你设计一个管理 n 个座位预约的系统，座位编号从 1 到 n 。
-
-请你实现 SeatManager 类：
+          <div class="card-text content mt-0 mb-2">
+            <p>
+              
 
 
-  SeatManager(i...</p>
-            </div>
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+
+
+              
+Dubai and Kuwait
+
+接上文，8月25日从中国出发后的第一个目的地，迪拜。
+
+
+中国边检
+
+
+天空太美了
+
+历经9小时飞行，在当地时间晚上10点抵达。
+
+
+落地滑行中
+
+
+机场通道的Rolex
+
+
+轻轨
+
+
+轻轨
+
+停机坪通往机场大厅是轻轨连接的，因为迪拜的温度实在太高了。
+
+
+落地就送电话卡
+
+我们带着大小六个箱子，还有两个背包，总计160公斤的行李
+
+
+出海关就送电话卡
+...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -696,73 +794,73 @@ Leetcode 1845. Seat Reservation Manager
 
 <time
   
-  data-ts="1727658600"
+  data-ts="1696439400"
   data-df="ll"
   
 >
-  Sep 29, 2024
+  Oct  4, 2023
 </time>
 
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Codes
-                  </span>
-                
-              </div>
-
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Travel,
+                    Asia
+                </span>
               
             </div>
-            <!-- .post-meta -->
+
+            
           </div>
-          <!-- .card-body -->
+          <!-- .post-meta -->
         </div>
+        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper card">
-      <a href="/posts/HHKB/" class="post-preview row g-0 flex-md-row-reverse">
+    <article class="card-wrapper">
+      <a href="/posts/Hello-World-Again/" class="card post-preview flex-md-row-reverse">
         
 
-        
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">Hello World Again!</h1>
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">HHKB</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>记得第一次了解到HHKB，是在高中的时候。
-
-这把键盘被称为是编码的终极大杀器。
-
-而我，又曾把编码视为人生最重要的事情之一。
-
-所以最一开始听说这个键盘的时候，真的是眼前一亮，然后我一查价格，差点昏倒。
+          <div class="card-text content mt-0 mb-2">
+            <p>
+              
 
 
 
-## 折扣价：***2199！！！***
+
+
+              
 
 
 
-对于年仅15岁的我来说，这真的是个天文数字。
+来美国快40天了，算是人生一个新阶段的开始吧。
 
-当时还发了QQ空间。
+ICPC、ECO30、CSGO、金辉悦府、剧本杀、桃源柳岸、考研、二战…
 
-这个渴望的种子一直在我心里很久很久。
+好多的事，好多的人。
+
+说实在的，好像已经几年没有认真的写点东西了。
+
+身为一个不太优秀的小镇做题家，之前和国内大多数人一样，从来没出过国。今年8月底，我们从成都出发，从迪拜到纽约，跨国大洲大洋，回头一想还是别有一番滋味。
 
 
-HHKB Profe...</p>
-            </div>
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+时间就像水，一不留神就被海绵吸...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -772,61 +870,64 @@ HHKB Profe...</p>
 
 <time
   
-  data-ts="1713979800"
+  data-ts="1696395600"
   data-df="ll"
   
 >
-  Apr 24, 2024
+  Oct  4, 2023
 </time>
 
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Daily,
-                      Toy
-                  </span>
-                
-              </div>
-
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Thinking
+                </span>
               
             </div>
-            <!-- .post-meta -->
+
+            
           </div>
-          <!-- .card-body -->
+          <!-- .post-meta -->
         </div>
+        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper card">
-      <a href="/posts/satellite_information_GUI/" class="post-preview row g-0 flex-md-row-reverse">
+    <article class="card-wrapper">
+      <a href="/posts/pw05/" class="card post-preview flex-md-row-reverse">
         
 
-        
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">不管你信不信，俺下地狱了</h1>
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Sat Finder</h1>
+          <div class="card-text content mt-0 mb-2">
+            <p>
+              
 
-            <div class="card-text content mt-0 mb-3">
-              <p>This is a filter for information on all active satellites in orbit that can help you find the sat data which you want.
 
-Develop in Java, GUI.
 
-Easy to use.
 
-Data Resources: CELESTRAK
 
-Fork or Downl...</p>
-            </div>
+              说来你可能不信，我下地狱了
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+那天的天气是什么样的我不记得了，具体是什么时间地点也不记得了，只记得我正准备睡觉，天空就突然变成了紫红色，满溢着鬼魅的样子。漂浮着血色极光的天空里混杂着阵阵黑烟，远方的天空甚至黑压压地出现了沙暴一样的异界……
+
+我勒个去！这可真是，百年难得一见啊！
+
+当然，这又和我即将睡觉有什么关系呢，我翻了个身准备睡去——没有什么能阻止我午睡。
+
+“喂，去地狱了。”一个人在我...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -836,60 +937,59 @@ Fork or Downl...</p>
 
 <time
   
-  data-ts="1713884400"
+  data-ts="1615194000"
   data-df="ll"
   
 >
-  Apr 23, 2024
+  Mar  8, 2021
 </time>
 
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Code
-                  </span>
-                
-              </div>
-
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Archive,
+                    pw0
+                </span>
               
             </div>
-            <!-- .post-meta -->
+
+            
           </div>
-          <!-- .card-body -->
+          <!-- .post-meta -->
         </div>
+        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper card">
-      <a href="/posts/Iamteammates'qindie/" class="post-preview row g-0 flex-md-row-reverse">
+    <article class="card-wrapper">
+      <a href="/posts/pw04/" class="card post-preview flex-md-row-reverse">
         
 
-        
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">硬盘里失控的生命游戏</h1>
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">我，组员们的亲爹</h1>
+          <div class="card-text content mt-0 mb-2">
+            <p>
+              
 
-            <div class="card-text content mt-0 mb-3">
-              <p>这学期的Software Architecture, 有一项小组pre，分为mid pre和final pre。
 
-我们这组有四个人，其中俩人除了在mid pre的时候见过，其他时候都没见过。
 
-我记得是一个白哥，个儿还挺高，一个黑哥，一个黑妹。
 
-mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个叫Jaymee的哥们干的。
 
-你不管Jaymee干多干...</p>
-            </div>
+              我的职业是“接管者”，头衔是“处置者”。这两个名词合到一起，通常被人和“分类处理垃圾的人”混淆在一起，但实际上，我们是国家直接管理的专门负责接管并处置废旧和异常事物的人。
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+近日遇到了一桩奇怪的事，我接管的一个木制保险箱里出现了非人类的存在——一个纯粹的精神性实体，类似于童话故事中的小妖精，而手掌大的小妖精竟然与一个人类少女模样相同。虽然当初被吓得够呛，但无论如何强迫自己冷静下来是我们这一行...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -899,66 +999,65 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
 
 <time
   
-  data-ts="1713754800"
+  data-ts="1615192200"
   data-df="ll"
   
 >
-  Apr 21, 2024
+  Mar  8, 2021
 </time>
 
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Study
-                  </span>
-                
-              </div>
-
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Archive,
+                    pw0
+                </span>
               
             </div>
-            <!-- .post-meta -->
+
+            
           </div>
-          <!-- .card-body -->
+          <!-- .post-meta -->
         </div>
+        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper card">
-      <a href="/posts/DontWantEatGuandongzhuAnymore/" class="post-preview row g-0 flex-md-row-reverse">
+    <article class="card-wrapper">
+      <a href="/posts/pw03/" class="card post-preview flex-md-row-reverse">
         
 
-        
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">请和我告别</h1>
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">再也不想吃关东煮了</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>最近想靠纯饿减下肥，所以都是每天中午吃一顿，也几乎没有碳水。
-
-可能是这两天吃得太少了，从昨天开始就偏头痛，头左边隔一会就会疼一下。
-
-今天早上喝了点豆浆，一下就好多了。看网上说如果一直饿着血糖较低的话会导致大脑缺氧，可能是这个原因。
-
-
-
-正好今天weee上买的菜到了，买了一大堆的菠菜、牛肉卷、火锅底料还有豆制品。以及一大份关东煮。
+          <div class="card-text content mt-0 mb-2">
+            <p>
+              
 
 
 
 
 
-一开始煮的时候就抄了几个来吃，感觉香烂了，后来...</p>
-            </div>
+              “你知道……三色堇的花语是什么吗？”
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+那样的少女，毫无防备地，对着已经泣不成声的我诉说。要说为什么是“毫无防备”，因为我们两人早已融为了一体。
+
+
+
+一切都发生在我中考结束的那个暑假。我至今都忘不了那欢快到有些沉闷的热气，以及房间里和木质桌椅、粉笔灰的气味混杂在一起的蝉鸣声。
+
+有人说，夏天发生的一切都是虚妄，会在暑气冷却下来的时候随着世界的温度一起消散。我记不清这是谁说的，大约是我自己吧...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -968,56 +1067,61 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
 
 <time
   
-  data-ts="1713648600"
+  data-ts="1615190400"
   data-df="ll"
   
 >
-  Apr 20, 2024
+  Mar  8, 2021
 </time>
 
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Food
-                  </span>
-                
-              </div>
-
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Archive,
+                    pw0
+                </span>
               
             </div>
-            <!-- .post-meta -->
+
+            
           </div>
-          <!-- .card-body -->
+          <!-- .post-meta -->
         </div>
+        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper card">
-      <a href="/posts/BusyWeeks/" class="post-preview row g-0 flex-md-row-reverse">
+    <article class="card-wrapper">
+      <a href="/posts/pw02/" class="card post-preview flex-md-row-reverse">
         
 
-        
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">保险箱里的小妖精</h1>
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">忙碌的这些天</h1>
+          <div class="card-text content mt-0 mb-2">
+            <p>
+              
 
-            <div class="card-text content mt-0 mb-3">
-              <p>来美国有一个最大的感受，就是课业压力小。总之比国内小。
 
-在中国，一般情况下除了广义上的学术stuff，还得care导师的心情，人情世故什么的。跟老板混好了，资源和圈子自然就来了，混不好就不好出头，更有甚者给学生穿小鞋。从某种角度来说，学术剥削已经成为通病了。
 
-美国就可以just concentrate for significant things。特别是我选的是Master Projec...</p>
-            </div>
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+
+              我从事着一个平凡的职业。老实说，与其说是平凡，不如说是不起眼罢了，工作的内容也是枯燥的很。
+
+我的职业是“接管者”，头衔是“处置者”。这两个名词合到一起，通常被人和“分类处理垃圾的人”混淆在一起，但我要澄清，这是完全错误的。和处理废品的人不同，我没有自己专属的工作场所——开玩笑的。
+
+我的工作是国家直接安排的，就是说我算是半个公务员，我接管和处置的对象可能是任何事物，它们可能曾经有主可能无主...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1027,68 +1131,61 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
 
 <time
   
-  data-ts="1713508200"
+  data-ts="1615188600"
   data-df="ll"
   
 >
-  Apr 19, 2024
+  Mar  8, 2021
 </time>
 
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Thinking
-                  </span>
-                
-              </div>
-
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Archive,
+                    pw0
+                </span>
               
             </div>
-            <!-- .post-meta -->
+
+            
           </div>
-          <!-- .card-body -->
+          <!-- .post-meta -->
         </div>
+        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper card">
-      <a href="/posts/UUAim/" class="post-preview row g-0 flex-md-row-reverse">
+    <article class="card-wrapper">
+      <a href="/posts/pw0/" class="card post-preview flex-md-row-reverse">
         
 
-        
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">你知道吗，龙是存在的</h1>
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">Plan of UU</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>目标：
-
-纯租赁年利润做到20%以上，向30%靠近。
-
-周期：
-
-05/01/2024 - 05/01/2025。
-
-仓位调整：
-
-将M9多普勒等高价值低租金比例的物品卖出，换成租金比例更高的物品，同时保证稳定性。
-
-人员
+          <div class="card-text content mt-0 mb-2">
+            <p>
+              
 
 
-  寒冷大王
-  YCC</p>
-            </div>
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+
+
+              我是一个坚定的无神论者。
+
+老实说，我不相信这个世界上有什么救世主或神仙上帝，同理，我也不相信任何超自然的力量或神话传说。正如日剧《神探伽〇略》中男主角的口头禅“万事皆有因”，窗帘动了多半是由于风而非鬼魂，奇异的光柱多半是冰晶折射的气象奇观而非UFO，天空中有异象多半是风筝……而不是龙。
+
+我就是这样的网络小说作家，哪怕在奇幻世界观的小说里添上一个魔杖，都要好好构思一番魔力释放的机制和原理—...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1098,55 +1195,66 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
 
 <time
   
-  data-ts="1713391800"
+  data-ts="1615186800"
   data-df="ll"
   
 >
-  Apr 17, 2024
+  Mar  8, 2021
 </time>
 
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Game,
-                      CS
-                  </span>
-                
-              </div>
-
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Archive,
+                    pw0
+                </span>
               
             </div>
-            <!-- .post-meta -->
+
+            
           </div>
-          <!-- .card-body -->
+          <!-- .post-meta -->
         </div>
+        <!-- .card-body -->
       </a>
     </article>
   
-    <article class="card-wrapper card">
-      <a href="/posts/First-Video/" class="post-preview row g-0 flex-md-row-reverse">
+    <article class="card-wrapper">
+      <a href="/posts/Realgamer1/" class="card post-preview flex-md-row-reverse">
         
 
-        
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">真实玩者成长记 - 壹</h1>
 
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">First Video test in here</h1>
+          <div class="card-text content mt-0 mb-2">
+            <p>
+              
 
-            <div class="card-text content mt-0 mb-3">
-              <p>留坑
 
-看不到视频窗口就是还没做好。</p>
-            </div>
 
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
+
+
+              
+
+
+
+我来这里是为了逃避现实，但我发现了远比自己更重要的东西，我交到了许多朋友，我找到了真爱。 ——《头号玩家》
+
+
+
+打小我就是个喜欢游戏的孩子。与世呼吸了将近20年，很年轻，但我不知道这颗热爱游戏的心还是否能同我的生命，一直跳动下去。这些年来，遇到了很多精彩的好游戏，很多精彩的故事。我不想失去这些五颜六色的回忆，有感而发，随笔一些文字来记下从小到大我遇上的那些难忘、难言、感动的体验。
+...
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -1156,33 +1264,34 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
 
 <time
   
-  data-ts="1713391800"
+  data-ts="1543255200"
   data-df="ll"
   
 >
-  Apr 17, 2024
+  Nov 26, 2018
 </time>
 
 
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      Code
-                  </span>
-                
-              </div>
-
+              <!-- categories -->
+              
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  
+                    Archive
+                </span>
               
             </div>
-            <!-- .post-meta -->
+
+            
           </div>
-          <!-- .card-body -->
+          <!-- .post-meta -->
         </div>
+        <!-- .card-body -->
       </a>
     </article>
   
+
+
 </div>
 <!-- #post-list -->
 
@@ -1259,29 +1368,11 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
         </li>
       
     
-      
-      
-      
-      
-      
-
-      
-
-      
-        <!-- show number -->
-        <li class="page-item ">
-          <a
-            class="page-link"
-            href="/page4"
-          >4</a>
-        </li>
-      
-    
 
     <!-- mobile pagination -->
     <li class="page-index align-middle">
       <span>1</span>
-      <span class="text-muted">/ 4</span>
+      <span class="text-muted">/ 3</span>
     </li>
 
     <!-- right arrow -->
@@ -1298,14 +1389,12 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
 
 
 
-
-            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
             <div class="access">
-              <!-- Get 5 last posted/updated posts -->
+              <!-- Get the last 5 posts from lastmod list. -->
 
 
 
@@ -1328,35 +1417,35 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/SJMClubV1/">三脚猫俱乐部 | SJM Club</a>
+          <a href="/posts/Hello-World-Again/">Hello World Again!</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Leetcode1845/">Leetcode 1845</a>
+          <a href="/posts/Via-Dubai-and-Kuwait/">Via Dubai & Kuwait</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/TurntoPY/">要转PY了</a>
+          <a href="/posts/Above-the-Stars/">星空之上_第一集</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Dalian/">大连游记</a>
+          <a href="/posts/Eighteen-Years-Old/">我的十八岁</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/sshd-problem/">sshd连接修复笔记</a>
+          <a href="/posts/Story-of-Blog/">网站折腾记</a>
         </li>
       
     </ul>
@@ -1385,60 +1474,10 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1487,299 +1526,6 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1841,39 +1587,6 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1898,6 +1611,41 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -1927,6 +1675,42 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -1949,50 +1733,7 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
+      
     
   
     
@@ -2016,28 +1757,25 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
       
     </div>
   </section>
@@ -2063,13 +1801,10 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>©
-    <time>2024</time>
-
-    
-      <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
-    
-
+  <p>
+    ©
+    <time>2023</time>
+    <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -2079,14 +1814,7 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     
   </p>
 
-  <p>Using the <a
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="v6.2.3"
-        href="https://github.com/cotes2020/jekyll-theme-chirpy"
-        target="_blank"
-        rel="noopener"
-      >Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+  <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
   </p>
 </footer>
 
@@ -2095,7 +1823,7 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
 
         <!-- The Search results -->
 
-<div id="search-result-wrapper" class="d-flex justify-content-center d-none">
+<div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
   <div class="col-11 content">
     <div id="search-hints">
       <!-- The trending tags list -->
@@ -2119,60 +1847,10 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2221,299 +1899,6 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2575,39 +1960,6 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2632,6 +1984,41 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -2661,6 +2048,42 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -2683,50 +2106,7 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
+      
     
   
     
@@ -2750,28 +2130,25 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
       
     </div>
   </section>
@@ -2791,7 +2168,7 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
       </aside>
     </div>
 
-    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
+    <div id="mask"></div>
 
     
       <aside
@@ -2822,6 +2199,7 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
     
 
     <!-- JavaScripts -->
+
     <!-- JS selector for site. -->
 
 <!-- commons -->
@@ -2891,27 +2269,37 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
 
   
 
+  
+    
 
+    
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
+  
 
+  
+    
 
+    
 
-
-
-
-
-<script src="/assets/js/dist/home.min.js"></script>
-
-
-
-<!-- Pageviews -->
-
+  
 
 
 
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/dayjs@1.11.9/dayjs.min.js,npm/dayjs@1.11.9/locale/zh.min.js,npm/dayjs@1.11.9/plugin/relativeTime.min.js,npm/dayjs@1.11.9/plugin/localizedFormat.min.js"></script>
 
 
+
+
+
+
+<script defer src="/assets/js/dist/home.min.js"></script>
+
+
+
+
+
+
+    
 
     <!--
   Jekyll Simple Search loader
@@ -2922,12 +2310,14 @@ mid的slides和skeleton我做了70%，final的我做了99%，剩下的是一个�
 
 
 
-<script>SimpleJekyllSearch({
+<script>
+  /* Note: dependent library will be loaded in `js-selector.html` */
+  SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('search-results'),
     json: '/assets/js/data/search.json',
     searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
-    noResultsText: '<p class="mt-5">Oops! No results found.</p>',
+    noResultsText: '<p class="mt-5"></p>',
     templateMiddleware: function(prop, value, template) {
       if (prop === 'categories') {
         if (value === '') {

@@ -13,41 +13,51 @@
 
 
 
+
+
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="zh" >
-  <head>
+<html lang="zh" 
+  
+>
+  <!-- The Head -->
+
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
-  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta
     name="viewport"
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-  ><!-- Setup Open Graph image -->
+  >
 
   
 
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<meta name="generator" content="Jekyll v4.3.4" />
+  
+
+  
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="线性筛素数" />
-<meta name="author" content="XINGHAN" />
+<meta name="author" content="XINGHAN YIN" />
 <meta property="og:locale" content="zh" />
 <meta name="description" content="日常突然更新的学习笔记。" />
 <meta property="og:description" content="日常突然更新的学习笔记。" />
-<link rel="canonical" href="yinxinghan.com/posts/prime_linear_sieve/" />
-<meta property="og:url" content="yinxinghan.com/posts/prime_linear_sieve/" />
+<link rel="canonical" href="http://localhost:4000/posts/prime_linear_sieve/" />
+<meta property="og:url" content="http://localhost:4000/posts/prime_linear_sieve/" />
 <meta property="og:site_name" content="XINGHAN YIN" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-11-25T12:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="线性筛素数" />
 <meta name="twitter:site" content="@twitter_username" />
-<meta name="twitter:creator" content="@XINGHAN" />
+<meta name="twitter:creator" content="@XINGHAN YIN" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"XINGHAN","url":"https://github.com/XinghanYin/"},"dateModified":"2024-04-15T20:04:49-05:00","datePublished":"2018-11-25T12:00:00-05:00","description":"日常突然更新的学习笔记。","headline":"线性筛素数","mainEntityOfPage":{"@type":"WebPage","@id":"yinxinghan.com/posts/prime_linear_sieve/"},"url":"yinxinghan.com/posts/prime_linear_sieve/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"XINGHAN YIN","url":"https://github.com/XinghanYin/"},"dateModified":"2018-11-25T12:00:00-05:00","datePublished":"2018-11-25T12:00:00-05:00","description":"日常突然更新的学习笔记。","headline":"线性筛素数","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/prime_linear_sieve/"},"url":"http://localhost:4000/posts/prime_linear_sieve/"}</script>
 <!-- End Jekyll SEO tag -->
 
+  
 
   <title>线性筛素数 | XINGHAN YIN
   </title>
@@ -62,9 +72,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
-
-  <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
-
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
 <meta name="apple-mobile-web-app-title" content="XINGHAN YIN">
 <meta name="application-name" content="XINGHAN YIN">
@@ -73,38 +81,42 @@
 <meta name="theme-color" content="#ffffff">
 
 
-  <!-- Resource Hints -->
   
     
+      <link rel="preconnect" href="https://fonts.googleapis.com" >
+      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+    
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+    
+      <link rel="preconnect" href="https://fonts.googleapis.com" >
+      <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+    
+      <link rel="preconnect" href="https://cdn.jsdelivr.net" >
+      <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
+    
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
+  
+
+  <!-- GA -->
   
 
   <!-- Bootstrap -->
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
 
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
-
-  <!-- Web Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
-
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
 
-  <!-- 3rd-party Dependencies -->
+  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.2/dist/tocbot.min.css">
-  
-
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.21.1/dist/tocbot.min.css">
   
 
   
-    <!-- Image Popup -->
-    <link rel="stylesheet" href="">
+    <!-- Manific Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css">
   
 
   <!-- JavaScript -->
@@ -131,34 +143,54 @@
     }
 
     constructor() {
-      let self = this;this.sysDarkPrefers.addEventListener('change', () => {
+      if (this.hasMode) {
+        if (this.isDarkMode) {
+          if (!this.isSysDarkPrefer) {
+            this.setDark();
+          }
+        } else {
+          if (this.isSysDarkPrefer) {
+            this.setLight();
+          }
+        }
+      }
+
+      let self = this;
+
+      /* always follow the system prefers */
+      this.sysDarkPrefers.addEventListener('change', () => {
         if (self.hasMode) {
+          if (self.isDarkMode) {
+            if (!self.isSysDarkPrefer) {
+              self.setDark();
+            }
+          } else {
+            if (self.isSysDarkPrefer) {
+              self.setLight();
+            }
+          }
+
           self.clearMode();
         }
+
         self.notify();
       });
-
-      if (!this.hasMode) {
-        return;
-      }
-
-      if (this.isDarkMode) {
-        this.setDark();
-      } else {
-        this.setLight();
-      }
-    }
+    } /* constructor() */
 
     get sysDarkPrefers() {
       return window.matchMedia('(prefers-color-scheme: dark)');
     }
 
-    get isPreferDark() {
+    get isSysDarkPrefer() {
       return this.sysDarkPrefers.matches;
     }
 
     get isDarkMode() {
       return this.mode === ModeToggle.DARK_MODE;
+    }
+
+    get isLightMode() {
+      return this.mode === ModeToggle.LIGHT_MODE;
     }
 
     get hasMode() {
@@ -167,11 +199,14 @@
 
     get mode() {
       return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }get modeStatus() {
-      if (this.hasMode) {
-        return this.mode;
+    }
+
+    /* get the current mode on screen */
+    get modeStatus() {
+      if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) {
+        return ModeToggle.DARK_MODE;
       } else {
-        return this.isPreferDark ? ModeToggle.DARK_MODE : ModeToggle.LIGHT_MODE;
+        return ModeToggle.LIGHT_MODE;
       }
     }
 
@@ -188,7 +223,10 @@
     clearMode() {
       document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
       sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }notify() {
+    }
+
+    /* Notify another plugins that the theme mode has changed */
+    notify() {
       window.postMessage(
         {
           direction: ModeToggle.ID,
@@ -200,9 +238,21 @@
 
     flipMode() {
       if (this.hasMode) {
-        this.clearMode();
+        if (this.isSysDarkPrefer) {
+          if (this.isLightMode) {
+            this.clearMode();
+          } else {
+            this.setLight();
+          }
+        } else {
+          if (this.isDarkMode) {
+            this.clearMode();
+          } else {
+            this.setDark();
+          }
+        }
       } else {
-        if (this.isPreferDark) {
+        if (this.isSysDarkPrefer) {
           this.setLight();
         } else {
           this.setDark();
@@ -210,8 +260,8 @@
       }
 
       this.notify();
-    }
-  }
+    } /* flipMode() */
+  } /* ModeToggle */
 
   const modeToggle = new ModeToggle();
 </script>
@@ -228,9 +278,16 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="https://data.yinxinghan.com/Blog/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle">
+      
+        
+        <img src="/images/avatar.jpeg" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      
+    </a>
 
-    <a class="site-title d-block" href="/">XINGHAN YIN</a>
+    <h1 class="site-title">
+      <a href="/">XINGHAN YIN</a>
+    </h1>
     <p class="site-subtitle fst-italic mb-0">尹星寒的博客</p>
   </header>
   <!-- .profile-wrapper -->
@@ -291,7 +348,7 @@
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
-      <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
+      <button type="button" class="mode-toggle btn" aria-label="Switch Mode">
         <i class="fas fa-adjust"></i>
       </button>
 
@@ -351,7 +408,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['yinchuba','gmail.com'].join('@')"
+          href="javascript:location.href = 'mailto:' + ['xy5','njit.edu'].join('@')"
           aria-label="email"
           
 
@@ -390,7 +447,7 @@
 
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container d-flex flex-column px-xxl-5">
+      <div class="container px-xxl-5">
         <!-- The Top Bar -->
 
 <header id="topbar-wrapper" aria-label="Top Bar">
@@ -405,7 +462,9 @@
         
           
             <span>
-              <a href="/">Home</a>
+              <a href="/">
+                Home
+              </a>
             </span>
 
           
@@ -435,7 +494,7 @@
       <i class="fas fa-search fa-fw"></i>
     </button>
 
-    <search id="search" class="align-items-center ms-3 ms-lg-0">
+    <search class="align-items-center ms-3 ms-lg-0">
       <i class="fas fa-search fa-fw"></i>
       <input
         class="form-control"
@@ -451,10 +510,18 @@
 </header>
 
 
-        <div class="row flex-grow-1">
-          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+        <div class="row">
+          <main
+            aria-label="Main Content"
+            class="col-12 col-lg-11 col-xl-9 px-md-4"
+          >
             
-              <!-- Refactor the HTML structure -->
+
+<article class="px-1">
+  
+    
+  
+    <!-- Refactor the HTML structure -->
 
 
 
@@ -476,9 +543,7 @@
 <!-- Change the icon of checkbox -->
 
 
-
-<!-- Handle images -->
-
+<!-- images -->
 
 
 
@@ -521,22 +586,14 @@
 
 
 
+<header>
+  <h1 data-toc-skip>线性筛素数</h1>
 
-
-
-
-
-
-<article class="px-1" data-toc="false">
-  <header>
-    <h1 data-toc-skip>线性筛素数</h1>
-    
-
-    <div class="post-meta text-muted">
-      <!-- published date -->
-      <span>
-        Posted
-        <!--
+  <div class="post-meta text-muted">
+    <!-- published date -->
+    <span>
+      Posted
+      <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
 -->
@@ -555,59 +612,32 @@
   Nov 25, 2018
 </time>
 
+    </span>
+
+    <!-- lastmod date -->
+    
+
+    
+
+    <div class="d-flex justify-content-between">
+      <!-- author(s) -->
+      <span>
+        
+
+        By
+
+        <em>
+          
+            
+              <a href="https://github.com/XinghanYin/">XINGHAN YIN</a>
+              
+            
+          
+        </em>
       </span>
 
-      <!-- lastmod date -->
-      
-        <span>
-          Updated
-          <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1713229489"
-  data-df="ll"
-  
-    data-bs-toggle="tooltip" data-bs-placement="bottom"
-  
->
-  Apr 15, 2024
-</time>
-
-        </span>
-      
-
-      
-
-      <div class="d-flex justify-content-between">
-        <!-- author(s) -->
-        <span>
-          
-
-          By
-
-          <em>
-            
-              
-                <a href="https://github.com/XinghanYin/">XINGHAN</a>
-                
-              
-            
-          </em>
-        </span>
-
-        <div>
-          <!-- pageviews -->
-          
-
-          <!-- read time -->
-          <!-- Calculate the post's reading time, and display the word count in tooltip -->
+      <!-- read time -->
+      <!-- Calculate the post's reading time, and display the word count in tooltip -->
 
 
 
@@ -631,15 +661,14 @@
 >
   <em>5 min</em> read</span>
 
-        </div>
-      </div>
     </div>
-  </header>
+    <!-- .d-flex -->
+  </div>
+  <!-- .post-meta -->
+</header>
 
-  
-
-  <div class="content">
-    <p>日常突然更新的学习笔记。</p>
+<div class="content">
+  <p>日常突然更新的学习笔记。</p>
 
 <p>最近做了一道在很大的范围里筛选出素数的神仙题，因为超时搞得很头疼，所以想来深入了解一下线性筛法，提高程序运行效率。</p>
 
@@ -660,7 +689,7 @@
 <p>首先初始为（0代表不是素数，1代表是素数）</p>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -670,7 +699,7 @@
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>0 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -680,7 +709,7 @@
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>0 1 1 0 1 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -689,13 +718,13 @@
 <p>```0 1 1 0 1 0 1 0 0 0 1 0 1 0 0 0 1 0 1 0</p>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>2 3 5 7 11 13 17 19
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -715,7 +744,7 @@ for (i=0; i&gt;a A = a b y = a Z (Z = b y)
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 </pre></td></tr></tbody></table></code></div></div>
 <p>p(empty)</p>
@@ -723,14 +752,14 @@ for (i=0; i&gt;a A = a b y = a Z (Z = b y)
 <p>然后到2的位置，把2放入素数表,做当前范围内可以筛掉的处理（具体是怎样的看代码叭）：</p>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 </pre></td></tr></tbody></table></code></div></div>
 <p>p 2 到3，把3放入素数表，继续处理</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>1 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -738,7 +767,7 @@ for (i=0; i&gt;a A = a b y = a Z (Z = b y)
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>1 0 0 1 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0
 </pre></td></tr></tbody></table></code></div></div>
 <p>p 2 3 …….</p>
@@ -747,7 +776,7 @@ for (i=0; i&gt;a A = a b y = a Z (Z = b y)
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+      <button aria-label="copy" data-title-succeed=""><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>void get_list(){
 for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;=tot&amp;&amp;i*prime[j]&lt;=maxn;j++){ is_not_pr[i*prime[j]]=1;//合数标为1，同时，prime[j]是合数i*prime[j]的最小素因子 if(i%prime[j]==0) break;//即比一个合数大的质数和该合数的乘积可用一个更大的合数和比其小的质数相乘得到 } } } 
@@ -755,77 +784,95 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
 
 <p>所以说有了这两个东西后a掉那道题就很轻松了_(:зゝ∠)_</p>
 
-  </div>
+</div>
 
-  <div class="post-tail-wrapper text-muted">
-    <!-- categories -->
-    
-      <div class="post-meta mb-3">
-        <i class="far fa-folder-open fa-fw me-1"></i>
-        
-          <a href="/categories/archive/">Archive</a>
-      </div>
-    
+<div class="post-tail-wrapper text-muted">
+  <!-- categories -->
+  
+    <div class="post-meta mb-3">
+      <i class="far fa-folder-open fa-fw me-1"></i>
+      
+        <a href="/categories/archive/">Archive</a>
+    </div>
+  
 
-    <!-- tags -->
-    
-      <div class="post-tags">
-        <i class="fa fa-tags fa-fw me-1"></i>
-        
-          <a
-            href="/tags/codes/"
-            class="post-tag no-text-decoration"
-          >Codes</a>
-        
-      </div>
-    
+  <!-- tags -->
+  
+    <div class="post-tags">
+      <i class="fa fa-tags fa-fw me-1"></i>
+      
+        <a
+          href="/tags/codes/"
+          class="post-tag no-text-decoration"
+        >Codes</a>
+      
+    </div>
+  
 
-    <div
-      class="
-        post-tail-bottom
-        d-flex justify-content-between align-items-center mt-5 pb-2
-      "
-    >
-      <div class="license-wrapper">
+  <div
+    class="
+      post-tail-bottom
+      d-flex justify-content-between align-items-center mt-5 pb-2
+    "
+  >
+    <div class="license-wrapper">
+      
         
-          
 
-          This post is licensed under 
+        This post is licensed under 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
          by the author.
-        
-      </div>
+      
+    </div>
 
-      <!-- Post sharing snippet -->
+    <!-- Post sharing snippet -->
 
 <div class="share-wrapper d-flex align-items-center">
-  <span class="share-label text-muted">Share</span>
+  <span class="share-label text-muted me-1">Share</span>
   <span class="share-icons">
     
     
     
 
     
-
       
-
-      <a href="https://twitter.com/intent/tweet?text=%E7%BA%BF%E6%80%A7%E7%AD%9B%E7%B4%A0%E6%95%B0%20-%20XINGHAN%20YIN&url=yinxinghan.com%2Fposts%2Fprime_linear_sieve%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a
+        href="https://twitter.com/intent/tweet?text=%E7%BA%BF%E6%80%A7%E7%AD%9B%E7%B4%A0%E6%95%B0%20-%20XINGHAN%20YIN&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fprime_linear_sieve%2F"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Twitter"
+        target="_blank"
+        rel="noopener"
+        aria-label="Twitter"
+      >
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
-
       
-
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%E7%BA%BF%E6%80%A7%E7%AD%9B%E7%B4%A0%E6%95%B0%20-%20XINGHAN%20YIN&u=yinxinghan.com%2Fposts%2Fprime_linear_sieve%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?title=%E7%BA%BF%E6%80%A7%E7%AD%9B%E7%B4%A0%E6%95%B0%20-%20XINGHAN%20YIN&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fprime_linear_sieve%2F"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Facebook"
+        target="_blank"
+        rel="noopener"
+        aria-label="Facebook"
+      >
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
-
       
-
-      <a href="https://t.me/share/url?url=yinxinghan.com%2Fposts%2Fprime_linear_sieve%2F&text=%E7%BA%BF%E6%80%A7%E7%AD%9B%E7%B4%A0%E6%95%B0%20-%20XINGHAN%20YIN" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a
+        href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2Fprime_linear_sieve%2F&text=%E7%BA%BF%E6%80%A7%E7%AD%9B%E7%B4%A0%E6%95%B0%20-%20XINGHAN%20YIN"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Telegram"
+        target="_blank"
+        rel="noopener"
+        aria-label="Telegram"
+      >
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -839,25 +886,28 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
       title="Copy link"
       data-title-succeed="Link copied successfully!"
     >
-      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+      <i class="fa-fw fas fa-link pe-none"></i>
     </button>
   </span>
 </div>
 
-    </div>
-    <!-- .post-tail-bottom -->
   </div>
-  <!-- div.post-tail-wrapper -->
+  <!-- .post-tail-bottom -->
+</div>
+<!-- div.post-tail-wrapper -->
+
+
+  
+
+  
 </article>
 
-
-            
           </main>
 
           <!-- panel -->
-          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 mb-5 text-muted">
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
             <div class="access">
-              <!-- Get 5 last posted/updated posts -->
+              <!-- Get the last 5 posts from lastmod list. -->
 
 
 
@@ -880,35 +930,35 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/SJMClubV1/">三脚猫俱乐部 | SJM Club</a>
+          <a href="/posts/Hello-World-Again/">Hello World Again!</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Leetcode1845/">Leetcode 1845</a>
+          <a href="/posts/Via-Dubai-and-Kuwait/">Via Dubai & Kuwait</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/TurntoPY/">要转PY了</a>
+          <a href="/posts/Above-the-Stars/">星空之上_第一集</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Dalian/">大连游记</a>
+          <a href="/posts/Eighteen-Years-Old/">我的十八岁</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/sshd-problem/">sshd连接修复笔记</a>
+          <a href="/posts/Story-of-Blog/">网站折腾记</a>
         </li>
       
     </ul>
@@ -937,60 +987,10 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1039,299 +1039,6 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1393,39 +1100,6 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1450,6 +1124,41 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -1479,6 +1188,42 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -1501,50 +1246,7 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
+      
     
   
     
@@ -1568,28 +1270,25 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
       
     </div>
   </section>
@@ -1604,9 +1303,6 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
 
 
 
-
-
-
             
           </aside>
         </div>
@@ -1616,7 +1312,8 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
               
-              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+                
+                <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
 
 <!-- The total size of related posts -->
 
@@ -1638,91 +1335,6 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
 
 
 
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -1812,6 +1424,66 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -1911,98 +1583,6 @@ for(int i=2;i&lt;=maxn;i++){ if(!is_not_pr[i]) prime[++tot]=i; for(int j=1;j&lt;
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/posts/TurntoPY/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1727747100"
-  data-df="ll"
-  
->
-  Sep 30, 2024
-</time>
-
-              <h4 class="pt-0 my-2">要转PY了</h4>
-              <div class="text-muted">
-                <p>在研究动规问题的时候，看了不少大神的代码，发现Python好像天生就适合做动态规划。
-
-比如同样都是要剪枝，Cpp需要判断条件：
-
-1
-2
-3
-4
-int&amp;amp; res = memo[i];
-if (res) {
-return res;
-}
-
-而Python只需要一个缓存装饰器就解决了：
-
-1
-@cache
-
-
-又比如用Cpp写的这句：
-
-1
-2
-3
-4
-auto dfs = [&amp;amp...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/Leetcode1845/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1727658600"
-  data-df="ll"
-  
->
-  Sep 29, 2024
-</time>
-
-              <h4 class="pt-0 my-2">Leetcode 1845</h4>
-              <div class="text-muted">
-                <p>今天遇到的有意思的题，难度看起来不算大，我最开始看到的时候以为能秒杀这道题但是有几个输入极大的check point，所以第一个版本的code挂了。
-
-先看题面吧：
-
-Leetcode 1845. Seat Reservation Manager
-
-请你设计一个管理 n 个座位预约的系统，座位编号从 1 到 n 。
-
-请你实现 SeatManager 类：
-
-
-  SeatManager(i...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
           <a href="/posts/Hello-World-for-Linux-Kernel/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -2015,6 +1595,8 @@ Leetcode 1845. Seat Reservation Manager
 
 <time
   
+    class="small"
+  
   data-ts="1696618800"
   data-df="ll"
   
@@ -2023,10 +1605,118 @@ Leetcode 1845. Seat Reservation Manager
 </time>
 
               <h4 class="pt-0 my-2">Linux Kernel Note 1</h4>
-              <div class="text-muted">
-                <p>After talking with Zephyr, I got the Unix73 paper and prepared to build Linux kernel by myself.
+              <div class="text-muted small">
+                <p>
+                  
 
-In fact, I almost did’t have used Linux except sometimes host websites or webapps.</p>
+
+
+
+
+                  After talking with Zephyr, I got the Unix73 paper and prepared to build Linux kernel by myself.
+
+In fact, I almost did’t have used Linux except sometimes host websites or webapps.
+
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/acm-icpc-asia-qingdao-regional-contest-online/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+    class="small"
+  
+  data-ts="1537192800"
+  data-df="ll"
+  
+>
+  Sep 17, 2018
+</time>
+
+              <h4 class="pt-0 my-2">ACM-ICPC Asia Qingdao Regional Contest, Online</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  
+
+
+
+前言：
+
+昨天参加了一波青岛赛区的ACM网络赛，很快乐的水了一下午，感觉自己一直不在状态。
+
+只做出来五道题，C题思路有问题，WA了几次，超时了几次，罚时罚到爆炸。
+
+简单记录一下五道题的思路和代码。
+
+Problem A. Live Love：
+
+非常水的一道题，本质就是一个数列问题，求数列中特殊值的连续个数最大值和最小值，纯模拟。
+
+代码如下：
+
+using namespace ...
+                </p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/some_gcds/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+    class="small"
+  
+  data-ts="1541995200"
+  data-df="ll"
+  
+>
+  Nov 11, 2018
+</time>
+
+              <h4 class="pt-0 my-2">GCD的几种实现方法</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  最简单的gcd算法：
+
+int gcd(int x, int y)
+{
+if(y == 0) return x;
+if(x &amp;lt; y) return gcd(y,x); else return gcd(y, x%y); } [/cc] ACM中常用的gcd算法： [cc] int gcd(int a, int b){ return a == 0 ? b : gcd(b % a, a); ...
+                </p>
               </div>
             </div>
           </a>
@@ -2037,9 +1727,9 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
   <!-- #related-posts -->
 
 
-            
               
-              <!-- Navigation buttons at the bottom of the post. -->
+                
+                <!-- Navigation buttons at the bottom of the post. -->
 
 <nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
   
@@ -2066,11 +1756,12 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
   
 </nav>
 
-            
               
-              <!-- The comments switcher -->
+                
+                <!--  The comments switcher -->
 
 
+              
             
 
             <!-- The Footer -->
@@ -2082,13 +1773,10 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
     flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
   "
 >
-  <p>©
-    <time>2024</time>
-
-    
-      <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
-    
-
+  <p>
+    ©
+    <time>2023</time>
+    <a href="https://github.com/XinghanYin">XINGHAN YIN</a>.
     
       <span
         data-bs-toggle="tooltip"
@@ -2098,14 +1786,7 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
     
   </p>
 
-  <p>Using the <a
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="v6.2.3"
-        href="https://github.com/cotes2020/jekyll-theme-chirpy"
-        target="_blank"
-        rel="noopener"
-      >Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+  <p>Using the <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> theme <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
   </p>
 </footer>
 
@@ -2114,7 +1795,7 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
 
         <!-- The Search results -->
 
-<div id="search-result-wrapper" class="d-flex justify-content-center d-none">
+<div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
   <div class="col-11 content">
     <div id="search-hints">
       <!-- The trending tags list -->
@@ -2138,60 +1819,10 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2240,299 +1871,6 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2594,39 +1932,6 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2651,6 +1956,41 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
   
     
     
@@ -2680,6 +2020,42 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -2702,50 +2078,7 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
+      
     
   
     
@@ -2769,28 +2102,25 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
         <a class="post-tag btn btn-outline-primary" href="/tags/novel/">Novel</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/study/">Study</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/life/">Life</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/note/">Note</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/cs/">CS</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/electronic-product/">Electronic Product</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/friends/">Friends</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/toy/">Toy</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/photo/">Photo</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/emo/">EMO</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/movie/">Movie</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/photos/">Photos</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/web/">Web</a>
       
     </div>
   </section>
@@ -2810,7 +2140,7 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
       </aside>
     </div>
 
-    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
+    <div id="mask"></div>
 
     
       <aside
@@ -2841,6 +2171,7 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
     
 
     <!-- JavaScripts -->
+
     <!-- JS selector for site. -->
 
 <!-- commons -->
@@ -2886,10 +2217,6 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
   
 
   
-    <script src=""></script>
-  
-
-  
     
 
     
@@ -2924,31 +2251,44 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
 
   
 
+  
+    
 
-
-  <script src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
-
-
-
-
-
-
-
-<script src="/assets/js/dist/post.min.js"></script>
-
-
-
-<!-- Pageviews -->
+    
 
   
 
   
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.7.1/dist/jquery.min.js,npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.9/dayjs.min.js,npm/dayjs@1.11.9/locale/zh.min.js,npm/dayjs@1.11.9/plugin/relativeTime.min.js,npm/dayjs@1.11.9/plugin/localizedFormat.min.js"></script>
 
 
 
 
 
 
+<script defer src="/assets/js/dist/post.min.js"></script>
+
+
+
+
+
+
+    
 
     <!--
   Jekyll Simple Search loader
@@ -2959,12 +2299,14 @@ In fact, I almost did’t have used Linux except sometimes host websites or weba
 
 
 
-<script>SimpleJekyllSearch({
+<script>
+  /* Note: dependent library will be loaded in `js-selector.html` */
+  SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('search-results'),
     json: '/assets/js/data/search.json',
     searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
-    noResultsText: '<p class="mt-5">Oops! No results found.</p>',
+    noResultsText: '<p class="mt-5"></p>',
     templateMiddleware: function(prop, value, template) {
       if (prop === 'categories') {
         if (value === '') {

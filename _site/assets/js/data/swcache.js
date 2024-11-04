@@ -43,10 +43,8 @@ const resource = [
 const allowedDomains = [
   
 
-  'yinxinghan.com',
+  'localhost:4000',
 
-  
-    'data.yinxinghan.com',
   
 
   'fonts.gstatic.com',
